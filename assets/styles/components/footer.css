@@ -1,12 +1,10 @@
   /*----------------------------PIE---------------------------------------*/
-  ul {
-    list-style: none;
-    padding-left: 0px;
-    margin-bottom: 0;
-}
-.footer_area {
+
+footer {
+    width: 100vw;
     padding:60px 0 20px;
     position: relative;
+    bottom: 0;
     color: #fff;
     z-index: 100;
     background: #222;
@@ -33,10 +31,10 @@
     padding: 15px 46px 0 0;
 }
 .ftr_logo a img {
-    transition: all 0.4s ease-in-out 0s;
     -webkit-transition: all 0.4s ease-in-out 0s;
     -moz-transition: all 0.4s ease-in-out 0s;
     -o-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
 }
 .ftr_logo a:hover img {
     -webkit-filter: grayscale(100%);
@@ -108,9 +106,6 @@
     /* Firefox 18- */
     color: #fff;
     opacity: 1
-}
-.form-control{
-
 }
 .form-control:focus{
     border-color: #33d286;

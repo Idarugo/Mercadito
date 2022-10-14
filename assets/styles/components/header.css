@@ -1,0 +1,36 @@
+
+header{
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    align-items: center;
+    background-color: greenyellow;
+}
+header .header__logo {
+    background-image: url('../../images/logo-temporal.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 80px;
+}
+
+header .header__menu{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+header .header__menu .header__menu-item{
+    cursor: pointer;
+}
+header .header__menu .header__menu-item:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}

@@ -47,6 +47,7 @@ body{
 }
 .cover .back{
   transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 .container .cover::before,
@@ -62,6 +63,7 @@ body{
 .container .cover::after{
   opacity: 0.3;
   transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 .container .cover img{

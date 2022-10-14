@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
   <head>
-    <meta charset="UTF-8">
-    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
-    <link rel="stylesheet" href="/assets/styles/login.css">
-    <link rel="stylesheet" href="./assets/styles/pie.css">
-
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include '../components/head.php' ?>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+    <link rel="stylesheet" href="../assets/styles/pages/login.css">
    </head>
 <body>
   <div class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="/assets/images/frontImg.jpg" alt="">
+        <img src="../assets/images/frontImg.jpg" alt="">
         <div class="text">
           <span class="text-1">Cada nuevo amigo es un <br> nueva aventura</span>
           <span class="text-2">Vamos a conectarnos</span>
         </div>
       </div>
       <div class="back">
-        <img class="backImg" src="/assets/images/backImg.jpg" alt="">
+        <img class="backImg" src="../assets/images/backImg.jpg" alt="">
         <div class="text">
           <span class="text-1">Millas completas de viaje <br> con un paso</span>
           <span class="text-2">Empecemos</span>
@@ -44,7 +39,7 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Introduce tu contraseña"required>
               </div>
-              <div class="text"><a href="/pages/olvidarcontraseña.html" style="color:#b2d47d">¿Has olvidado tu contraseña?</a></div>
+              <div class="text"><a href="/pages/olvidarcontrasena.php" style="color:#b2d47d">¿Has olvidado tu contraseña?</a></div>
               <div class="button input-box">
                 <input type="submit" value="Enviar">
               </div>

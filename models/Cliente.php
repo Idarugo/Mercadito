@@ -1,13 +1,13 @@
 <?php
 class Cliente{
-	private $id;
-	private $nombre;
-	private $apellido;
-	private $correo;
-	private $pas;
+	private int $id;
+	private string $nombre;
+	private string $apellido;
+	private string $correo;
+	private string $pas;
 
 
-	public function Usuario($id,$nombre,$apellido,$correo,$pas){
+	public function Usuario(int $id,string $nombre,string $apellido,string $correo,string $pas){
 		$this->id = $id;
 		$this->nombre = $nombre;
 		$this->apellido = $apellido;
@@ -15,23 +15,23 @@ class Cliente{
 		$this->pas = $pas;
 	}
 
-	public function getidUsu(){
+	public function getidUsu(): int{
 		return $this->id;
 	}
 
-	public function getNombre(){
+	public function getNombre(): string{
 		return $this->nombre;
 	}
 
-	public function getApellido(){
+	public function getApellido(): string{
 		return $this->apellido;
 	}
 
-	public function getCorreo(){
+	public function getCorreo(): string{
 		return $this->correo;
 	}
 
-	public function getPassword(){
+	public function getPassword(): string{
 		return $this->pas;
 	}
 }
