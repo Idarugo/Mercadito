@@ -2,3 +2,26 @@
 .banner .banner__img{
     background-image: url('../../images/banner-contactanos.jpg');
 }
+
+.caja-formulario{
+height: 390px;
+}
+
+label {
+    display:block;
+    margin-top:20px;
+    letter-spacing:1px;
+}
+ 
+.principal {
+    display:block;
+    margin:0 auto;
+    width:10px;
+    color: #666666;
+    font-family:Arial;
+}
+ 
+form {
+    margin:0 auto;
+    width:400px;
+}

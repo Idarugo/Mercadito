@@ -1,0 +1,27 @@
+ 
+input, textarea {
+    width:380px;
+    height:27px;
+    background:#ffffff;
+    border:2px solid #f6f6f6;
+    padding:10px;
+    margin-top:5px;
+    font-size:10px;
+    color:#000000;
+}
+ 
+textarea {
+    height:150px;
+}
+ 
+#submit {
+  display: inline-block;
+  padding: 0.100em 1.5em;
+  font-size: 1 em;
+  cursor: pointer;
+  text-decoration: none;
+  color: #33d286;
+  background-color: #222;
+  border: none;
+  border-radius: 0;
+}
