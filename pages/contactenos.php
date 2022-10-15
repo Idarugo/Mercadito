@@ -25,7 +25,6 @@
         <textarea placeholder="Danos tu mensaje"></textarea>
         <input class="submit" name="submit" type="submit" value="Enviar">
     </form>
-    <?php include './components/whatsapp.php' ?>
     <?php include '../components/footer.php' ?>
 </body>
 </html>

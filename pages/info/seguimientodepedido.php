@@ -15,7 +15,6 @@
         <input class="submit" name="submit" type="submit" value="Buscar">
     </form>
     </div>
-    <?php include './components/whatsapp.php' ?>
     <?php include '../../components/footer.php' ?>
 </body>
 </html>

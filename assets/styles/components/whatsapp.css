@@ -1,16 +1,25 @@
-img.btn-whatsapp {
-    display: block !important;
+.btn-whatsapp {
+    position: absolute;
+    display: block ;
     position: fixed;
     z-index: 9999999;
     bottom: 20px;
     right: 20px;
     cursor: pointer;
-    border-radius:100px !important;
-    }
-    img.btn-whatsapp:hover{
-    border-radius:100px !important;
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(7,94,84,1); 
-    -moz-box-shadow: 0px 0px 15px 0px rgba(7,94,84,1);
-    box-shadow: 0px 0px 15px 0px rgba(7,94,84,1);
-    transition-duration: 1s;
-    } 
+    -webkit-border-radius:100px;
+    -moz-border-radius:100px;
+    -ms-border-radius:100px;
+    -o-border-radius:100px;
+    border-radius:100px;
+}
+.btn-whatsapp:hover{
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(7,94,84,1);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(7,94,84,1);
+    box-shadow: 0px 0px 15px 2px rgba(7,94,84,1);
+    -webkit-transition: .3s ease all;
+    -moz-transition: .3s ease all;
+    -ms-transition: .3s ease all;
+    -o-transition: .3s ease all;
+    transition: .3s ease all;
+} 

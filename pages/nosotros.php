@@ -19,7 +19,6 @@
     <div class="container container-main">
         
     </div>
-    <?php include '../components/whatsapp.php' ?>
     <?php include '../components/footer.php' ?>
 </body>
 </html>

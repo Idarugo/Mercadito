@@ -15,7 +15,6 @@
         <p>Mercadito.</p>
         <img src="./assets/images/banner-politica.jpg">
     </div>
-    <?php include './components/whatsapp.php' ?>
     <?php include '../../components/footer.php' ?>
 </body>
 </html>

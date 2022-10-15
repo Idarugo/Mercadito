@@ -10,7 +10,6 @@
     <div class="container container-main">
         <h1>Politica Privacidad</h1>
     </div>
-    <?php include './components/whatsapp.php' ?>
     <?php include '../../components/footer.php' ?>
 </body>
 </html>

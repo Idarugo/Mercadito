@@ -10,7 +10,6 @@
     <div class="container container-main">
         <p>Inicio</p><li class="header__menu-item">Servicios</li>
     </div>
-    <?php include './components/whatsapp.php' ?>
     <?php include './components/footer.php' ?>
 </body>
 </html>
