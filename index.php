@@ -8,7 +8,7 @@
 <body>
     <?php include './components/header.php' ?>
     <div class="container container-main">
-        <h1>Inicio</h1>
+        <p>Inicio</p><li class="header__menu-item">Servicios</li>
     </div>
     <?php include './components/footer.php' ?>
 </body>

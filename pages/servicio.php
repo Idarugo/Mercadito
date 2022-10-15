@@ -9,6 +9,7 @@
     <?php include '../components/header.php' ?>
     <div class="container container-main">
         <h1>Servicio</h1>
+        <img class="header__banner"/>
     </div>
     <?php include '../components/footer.php' ?>
 </body>

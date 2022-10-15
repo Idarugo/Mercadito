@@ -5,15 +5,14 @@
                <div class="single_ftr">
                    <h4 class="sf_title">INFORMACIÓN</h4>
                    <ul>
-                       <li><a href="#">Seguimiento de pedidos</a></li>
-                       <li><a href="#">Política de despachos</a></li>
-                       <li><a href="#">Contáctanos</a></li>
-                       <li><a href="#">Devoluciones</a></li>
-                       <li><a href="#">Preguntas Frecuentes</a></li>
-                       <li><a href="#">Políticas y Privacidad</a></li>
-                       <li><a href="#">Términos y Servicios</a></li>
-                       <li><a href="#">Términos del servicio</a></li>
-                       <li><a href="#">Política de reembolso</a></li>
+                       <li><a href="./info/politicadelrembolso.php">Seguimiento de pedidos</a></li>
+                       <li><a href="./info/politicadelrembolso.php">Política de despachos</a></li>
+                       <li><a href="./info/contactenos.php">Contáctanos</a></li>
+                       <li><a href="./info/devoluciones.php">Devoluciones</a></li>
+                       <li><a href="./info/politicadelrembolso.php">Preguntas Frecuentes</a></li>
+                       <li><a href="./info/politicadelrembolso.php">Políticas y Privacidad</a></li>
+                       <li><a href="./terminosyservicios.php">Términos y Servicios</a></li>
+                       <li><a href="./politicadelrembolso.php">Política de rembolso</a></li>
                    </ul>
                </div>
            </div>                       

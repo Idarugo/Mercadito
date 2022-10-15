@@ -1,0 +1,9 @@
+
+header .header__banner {
+    background-image: url('../../images/banner-servicio.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 400px;
+    height: 80px;
+}

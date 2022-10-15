@@ -3,18 +3,36 @@ header{
     width: 100vw;
     height: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 50px;
     align-items: center;
-    background-color: greenyellow;
+    background-color: #FFFF;
 }
 header .header__logo {
     background-image: url('../../images/logo-temporal.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px;
+    width: 400px;
     height: 80px;
+}
+
+header .header__login {
+    background-image: url('../../images/iconologin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+}
+
+header .header__compra {
+    background-image: url('../../images/logo-compra.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    width: 30px;
+    height: 40px;
 }
 
 header .header__menu{
