@@ -1,3 +1,4 @@
+
 <footer class="footer_area">
     <div class="container">
         <div class="row">	
@@ -100,12 +101,4 @@
         </div>
     </div>
 </footer>
-<script>
-    const redirectTo = (path) => {
-        if(location.hostname.includes('localhost')){
-            location.assign(`http://www.localhost/Mercadito/${path}`);
-        }else{
-            location.assign(`${location.hostname}/${path}`);
-        } 
-    }
-</script>
+<?php include __DIR__."/scripts.php"; ?>
