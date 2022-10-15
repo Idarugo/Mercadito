@@ -9,7 +9,7 @@
 <body>
 <?php include '../components/header.php' ?>
     <div class="container">
-        <p>Contactanos</p>
+        <p></p>
     </div>
     <section class="container-fluid banner">
         <div class="banner__img"></div>
@@ -25,7 +25,7 @@
         <textarea placeholder="Danos tu mensaje"></textarea>
         <input class="submit" name="submit" type="submit" value="Enviar">
     </form>
-
+    <?php include './components/whatsapp.php' ?>
     <?php include '../components/footer.php' ?>
 </body>
 </html>

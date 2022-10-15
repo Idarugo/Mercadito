@@ -10,6 +10,7 @@
     <div class="container container-main">
         <h1>Registrate</h1>
     </div>
+    <?php include './components/whatsapp.php' ?>
     <?php include '../components/footer.php' ?>
 </body>
 </html>
