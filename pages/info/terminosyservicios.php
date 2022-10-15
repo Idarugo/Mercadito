@@ -3,7 +3,7 @@
 <head>
     <?php include '../../components/head.php' ?>
     <link rel="stylesheet" href="../../assets/styles/main.css">
-    <link rel="stylesheet" href="/assets/styles/pages/info/terminosyservicios.css">
+    <link rel="stylesheet" href="../../assets/styles/pages/info/terminosyservicios.css">
 </head>
 <body>
     <?php include '../../components/header.php' ?>

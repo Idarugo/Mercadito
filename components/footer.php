@@ -8,11 +8,11 @@
                        <li><a href="./info/politicadelrembolso.php">Seguimiento de pedidos</a></li>
                        <li><a href="./info/politicadelrembolso.php">Política de despachos</a></li>
                        <li><a href="./info/contactenos.php">Contáctanos</a></li>
-                       <li><a href="./info/devoluciones.php">Devoluciones</a></li>
+                       <li><a onclick="redirectTo('pages/devoluciones.php')" >Devoluciones</a></li>
                        <li><a href="./info/politicadelrembolso.php">Preguntas Frecuentes</a></li>
                        <li><a href="./info/politicadelrembolso.php">Políticas y Privacidad</a></li>
-                       <li><a href="./terminosyservicios.php">Términos y Servicios</a></li>
-                       <li><a href="./politicadelrembolso.php">Política de rembolso</a></li>
+                       <li><a onclick="redirectTo('pages/info/terminosyservicios.php')">Términos y Servicios</a></li>
+                       <li><a onclick="redirectTo('pages/info/politicadelrembolso.php')">Política de rembolso</a></li>
                    </ul>
                </div>
            </div>                       
@@ -99,3 +99,12 @@
         </div>
     </div>
 </footer>
+<script>
+    const redirectTo = (path) => {
+        if(location.hostname.includes('localhost')){
+            location.assign(`http://www.localhost/Mercadito/${path}`);
+        }else{
+            location.assign(`${location.hostname}/${path}`);
+        } 
+    }
+</script>
