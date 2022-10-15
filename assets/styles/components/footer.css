@@ -114,11 +114,12 @@ footer {
 .single_ftr li {
     padding-bottom: 7px;
     color: #fff;
+    cursor: pointer;
 }
 .single_ftr a {
     color: #fff;
 }
-.single_ftr a:hover {
+.single_ftr li:hover, .single_ftr a:hover {
     color: #33d286;
 }
 
