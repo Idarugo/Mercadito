@@ -16,17 +16,15 @@
         <h1>¡CONTÁCTANOS!</h1>
         <p>Escríbenos y en breve los pondremos en contacto contigo</p>
     </section>
-    <div class="caja-formulario">
-        <form>
-            <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" placeholder="Nombre completo">
-            <label for="email">Correo Electronico</label>
-            <input id="email" name="email" type="email" placeholder="ejemplo@email.com">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Danos tu mensaje"></textarea>
-            <input id="submit" name="submit" type="submit" value="Enviar">
-        </form>
-    </div>
+    <form class="caja-formulario">
+        <label for="nombre">Nombre</label>
+        <input type="text" placeholder="Nombre completo">
+        <label for="email">Correo Electronico</label>
+        <input type="email" placeholder="ejemplo@email.com">
+        <label for="mensaje">Mensaje</label>
+        <textarea placeholder="Danos tu mensaje"></textarea>
+        <input class="submit" name="submit" type="submit" value="Enviar">
+    </form>
 
     <?php include '../components/footer.php' ?>
 </body>

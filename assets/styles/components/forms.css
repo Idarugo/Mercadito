@@ -14,7 +14,7 @@ textarea {
     height:150px;
 }
  
-#submit {
+.submit {
   display: inline-block;
   padding: 0.100em 1.5em;
   font-size: 1 em;
