@@ -10,9 +10,9 @@
                        <li><a onclick="redirectTo('pages/info/politicadedespachos.php')">Política de despachos</a></li>
                        <li><a onclick="redirectTo('pages/contactenos.php')">Contáctanos</a></li>
                        <li><a onclick="redirectTo('pages/devoluciones.php')">Devoluciones</a></li>
-                       <li><a onclick="redirectTo('pages/info/nosotros.php')">Devoluciones</a></li>
+                       <li><a onclick="redirectTo('pages/nosotros.php')">Nosotros</a></li>
                        <li><a onclick="redirectTo('pages/info/preguntasfrecuentes.php')">Preguntas Frecuentes</a></li>
-                       <li><a onclick="redirectTo('pages/info/politicayprivacidad.php')">Políticas y Privacidad</a></li>
+                       <li><a onclick="redirectTo('pages/info/politicasyprivacidad.php')">Políticas y Privacidad</a></li>
                        <li><a onclick="redirectTo('pages/info/terminosyservicios.php')">Términos y Servicios</a></li>
                        <li><a onclick="redirectTo('pages/info/politicadelrembolso.php')">Política de rembolso</a></li>
                    </ul>
