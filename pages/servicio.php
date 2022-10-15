@@ -14,9 +14,13 @@
     <section class="container-fluid banner">
         <div class="banner__img"></div>
         <h1>Servicio</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <p>A domicilios y empresa</p>
     </section>
     <div class="container container-main">
+
+        <h4>En <strong> Mercadito</strong> tenemos la misión de  <strong>darle vida a los ambientes</strong> , trayendo lo mejor de la naturaleza a hogares, lugares de trabajo y espacios personales. </h4>
+        
+        <h4>Actualmente nos hemos desarrollado en el área de <strong>creación, asesoría y mantención de espacios verdes </strong>  en hoteles, oficinas, restaurantes, tiendas, centros comerciales y muchos otros lugares que necesitan de un espacio verde.</h4>
         
         
     </div>

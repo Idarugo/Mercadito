@@ -5,12 +5,13 @@
                <div class="single_ftr">
                    <h4 class="sf_title">INFORMACIÓN</h4>
                    <ul>
-                       <li><a href="./info/politicadelrembolso.php">Seguimiento de pedidos</a></li>
-                       <li><a href="./info/politicadelrembolso.php">Política de despachos</a></li>
-                       <li><a href="./info/contactenos.php">Contáctanos</a></li>
-                       <li><a onclick="redirectTo('pages/devoluciones.php')" >Devoluciones</a></li>
-                       <li><a href="./info/politicadelrembolso.php">Preguntas Frecuentes</a></li>
-                       <li><a href="./info/politicadelrembolso.php">Políticas y Privacidad</a></li>
+                       <li><a onclick="redirectTo('pages/info/seguimientodepedido.php')">Seguimiento de pedidos</a></li>
+                       <li><a onclick="redirectTo('pages/info/politicadedespachos.php')">Política de despachos</a></li>
+                       <li><a onclick="redirectTo('pages/contactenos.php')">Contáctanos</a></li>
+                       <li><a onclick="redirectTo('pages/devoluciones.php')">Devoluciones</a></li>
+                       <li><a onclick="redirectTo('pages/info/nosotros.php')">Devoluciones</a></li>
+                       <li><a onclick="redirectTo('pages/info/preguntasfrecuentes.php')">Preguntas Frecuentes</a></li>
+                       <li><a onclick="redirectTo('pages/info/politicayprivacidad.php')">Políticas y Privacidad</a></li>
                        <li><a onclick="redirectTo('pages/info/terminosyservicios.php')">Términos y Servicios</a></li>
                        <li><a onclick="redirectTo('pages/info/politicadelrembolso.php')">Política de rembolso</a></li>
                    </ul>

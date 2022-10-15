@@ -6,12 +6,18 @@
     <link rel="stylesheet" href="../assets/styles/pages/contactenos.css">
 </head>
 <body>
-    <?php include '../components/header.php' ?>
+<?php include '../components/header.php' ?>
+    <div class="container">
+        <h1>Contactanos</h1>
+    </div>
+    <section class="container-fluid banner">
+        <div class="banner__img"></div>
+        <h1>¡CONTÁCTANOS!</h1>
+        <p>Le damos vida a tus espacios.</p>
+    </section>
     <div class="container container-main">
-        <h1>Contactenos</h1>
+        
     </div>
     <?php include '../components/footer.php' ?>
 </body>
 </html>
-
-
