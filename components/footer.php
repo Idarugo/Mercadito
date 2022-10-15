@@ -71,10 +71,10 @@
                                 <a href="http://webenlance.com" title="instagram"><i class="fab fa-instagram"></i></a>
                             </li>
                             <li>
-                                <a href="#" title="linkedin"><i class="fa fa-linkedin"></i></a>
+                                <a href="#" title="linkedin"><i class="fab fa-linkedin"></i></a>
                             </li>
                             <li>
-                                <a href="#" title="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" title="twitter"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li>
                                 <a href="#" title="rss"><i class="fa fa-rss"></i></a>

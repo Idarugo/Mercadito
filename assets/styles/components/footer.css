@@ -126,7 +126,7 @@ footer {
 .ftr_social_icon li {
     display: inline-block;
     text-align: center;
-    padding: 4px;
+    margin: 0 10px;
 }
 
 
@@ -136,7 +136,7 @@ footer {
     color: #fff;
     display: inline-block;
     font-size: 17px;
-    height: 40px;
+    /* height: 40px; */
     line-height: 32px;
     padding: 4px 8px;
     width: 40px;
@@ -166,4 +166,9 @@ footer {
     margin-left: 10px;
     font-size: 30px;
     color: #fff;
+}
+@media screen and (max-width: 1200px) {
+    .ftr_social_icon li {
+        margin: 10px;
+    }
 }
