@@ -12,7 +12,7 @@
 
         <div class="row justify-content-center mt-5">
             <div class="col-12 col-xl-10">
-                <h3 class="mb-3"><strong>Devoluciones</strong></h3>
+                <h3 class="mb-3 text-center"><strong>Devoluciones</strong></h3>
 
                 <section>
                     <p>Amamos las plantas y nos gustaría que tu también lo hagas. Haremos el mayor esfuerzo para que te sea fácil elegir las plantas acertadas a las condiciones de tu lugar, y nos aseguraremos de que las plantas entregadas sean lo más cercano a las de nuestras fotos, aunque no podemos desconsiderar que existen variaciones naturales entre unas plantas y otras, pero trabajaremos con los mejores productos a disposición para minimizar toda variación.</p>

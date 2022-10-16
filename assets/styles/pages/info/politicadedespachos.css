@@ -12,12 +12,7 @@ h3{
     color: rgb(93, 131, 80);;
 }
 
-.banner__img {
-    box-sizing:border-box;
-    display:block;
-    width:115px;   
-    height:115px;   
-    padding-left:115px; 
-    background: url(../assets/images/banner-politica.jpg)
+.img_end{
+    width:400px;
 }
 
