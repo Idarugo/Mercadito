@@ -18,3 +18,7 @@ p{
         max-width: 540px;
     }
 }
+
+h6{
+    text-decoration: underline;
+}
