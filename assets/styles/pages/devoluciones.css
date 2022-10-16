@@ -1,0 +1,25 @@
+p{
+    text-align: justify;
+    width: 100%;
+}
+
+@media (max-width: 992px){
+    p {
+        max-width: 960px;
+    }
+}
+@media (max-width: 768px){
+    p {
+        max-width: 720px;
+    }
+}
+@media (max-width: 576px){
+    p {
+        max-width: 540px;
+    }
+}
+
+.mb-3{
+    padding-left: 170px;
+}
+

@@ -15,19 +15,19 @@
                 <h3 class="mb-3">CUIDADO DE PLANTAS</h3>
 
                 <section>
-                    <h5>He tenido plantas anteriormente y se me han muerto, ¿Cómo me ayudará PlantMe para cuidarlas mejor?</h5>
+                    <h6>He tenido plantas anteriormente y se me han muerto, ¿Cómo me ayudará Mercadito para cuidarlas mejor?</h6>
                     <p>Todas nuestras plantas tienen su descripción individual, las cuales describen los espacios donde podrás establecer tu planta; como también, los principales cuidados que deben tener en términos de temperaturas, luz y riego. </p>
                 </section>
 
                 <section>
-                    <h5>¿Son nuestras plantas difíciles de mantener?</h5>
+                    <h6>¿Son nuestras plantas difíciles de mantener?</h6>
                     <p>Todas las plantas requieren de cuidados, si bien hay algunas que requieren cuidados más complejos, existen otras que son de muy fácil cuidado, ¨Las resistentes¨. A pesar de que estas requieren de pocos cuidados, todavía no hemos encontrado un tipo de planta que no requiera de algún cuidado.</p>
                     <p>De todas maneras, en nuestra página encontrarás información importante para hacer del cuidado de tus plantas lo más fácil posible. Además, con nuestros videos podrás aprender suficientes tips para convertirte en un experto en el cuidado de plantas.</p>
                 </section>
 
 
                 <section>
-                    <h5>¿Mi planta seguirá viva a la vuelta de mis vacaciones?</h5>
+                    <h6>¿Mi planta seguirá viva a la vuelta de mis vacaciones?</h6>
                     <p>Esto no se podrá saber con seguridad, y la respuesta a esta pregunta dependerá de distintos factores: de la cantidad de tiempo que no recibirá cuidado tu planta, del clima mientras está lejos, de la posición de las plantas con respecto al sol. Sin embargo, con un remojo completo antes de partir, agrupando todas las plantas juntas y preferiblemente en un lugar más sombrío.</p>
                     <p>Tus plantas deberían poder sobrevivir durante 7 días. Para periodos de tiempo más prolongados, le sugerimos que hable con alguien más para que los riegue por usted...</p>
                 </section>
@@ -45,7 +45,7 @@
                 <section>
                     <h5>TRASPLANTES</h5>
                     
-                    <h6>Si compro una planta y un macetero, ¿PlantMe hará el trasplante?</h6>
+                    <h6>Si compro una planta y un macetero, ¿Mercadito hará el trasplante?</h6>
                     <p>Nuestras plantas ya vendrán en macetas, con tierra perfectamente abonada y sana. Estas macetas son de plástico con agujeros en su parte inferior, para que de esta manera se facilite el drenaje al regar. </p>
                     <p>Tenemos también oferta de maceteros para que tu plantas se vean aún más elegantes y calcen de una mejor forma en tus espacios. Por el momento, nosotros transplantaremos las plantas por ti.</p>
                     

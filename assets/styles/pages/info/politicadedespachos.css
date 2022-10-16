@@ -1,12 +1,24 @@
-.banner .banner__img{
-    background-image: url('../../images/banner-politica.jpg');
-}
+
 p{
     text-align:justify;
     width: 900px;
 }
 
-.container{
+h1{
+padding-left: 100px;
+    text-align: center;
+}
 
+h3{
+    color: rgb(93, 131, 80);;
+}
+
+.banner__img {
+    box-sizing:border-box;
+    display:block;
+    width:115px;   
+    height:115px;   
+    padding-left:115px; 
+    background: url(../assets/images/banner-politica.jpg)
 }
 

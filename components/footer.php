@@ -10,7 +10,6 @@
                        <li><a onclick="redirectTo('pages/info/politicadedespachos.php')">Política de despachos</a></li>
                        <li><a onclick="redirectTo('pages/contactenos.php')">Contáctanos</a></li>
                        <li><a onclick="redirectTo('pages/devoluciones.php')">Devoluciones</a></li>
-                       <li><a onclick="redirectTo('pages/nosotros.php')">Nosotros</a></li>
                        <li><a onclick="redirectTo('pages/info/preguntasfrecuentes.php')">Preguntas Frecuentes</a></li>
                        <li><a onclick="redirectTo('pages/info/politicasyprivacidad.php')">Políticas y Privacidad</a></li>
                        <li><a onclick="redirectTo('pages/info/terminosyservicios.php')">Términos y Servicios</a></li>
@@ -22,7 +21,7 @@
                 <div class="single_ftr">
                     <h4 class="sf_title">CONTACTO</h4>
                     <ul>
-                        <li>Dirección del vivero:Rancagua</li>
+                        <li>Dirección del vivero: Rancagua</li>
                         <li>(+123) 685 78 455 <br> (+064) 336 987 245</li>
                         <li>mercadito@gmail.com</li>
                     </ul>
