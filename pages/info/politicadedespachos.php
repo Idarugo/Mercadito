@@ -17,8 +17,8 @@
         <p>Mercadito no se hace responsable de la integridad de la planta una vez entregada al domicilio correspondiente.</p>
         <p>¡Saludos cordiales!</p>
         <p>Mercadito.</p>
-        <img class="banner__img" src="'./assets/images/banner-politica.jpg'" />
-             </div>
+        <img src="../assets/images/banner-politica.jpg" class="banner_img"/>
+            </div>
         </div>
      </div>
     <?php include '../../components/footer.php' ?>
