@@ -12,7 +12,7 @@
 
         <div class="row justify-content-center mt-5">
             <div class="col-12 col-xl-10">
-                <h2 class="mb-3">CUIDADO DE PLANTAS</h2>
+                <h3 class="mb-3">CUIDADO DE PLANTAS</h3>
 
                 <section>
                     <h5>He tenido plantas anteriormente y se me han muerto, ¿Cómo me ayudará PlantMe para cuidarlas mejor?</h5>
