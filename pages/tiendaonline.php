@@ -11,7 +11,7 @@
     </div>
     <section class="container-fluid banner">
         <div class="banner__img"></div>
-        <h1>Todos</h1>
+        <h1>Bienvenidos</h1>
         <p></p>
     </section>
     <div class="container container-main container-plants"> 
@@ -35,7 +35,7 @@
         <a class="categoria-title" href="../pages/products.php">Planta Medicinales</a>
         <div class="categoria-image">
           <a href="#">
-            <img class="img_categories" src="../assets/images/categories/plant-medicinales.jpg" alt="Planta Medicinales Y Aromaticas">    
+            <img class="img_categories" src="../assets/images/categories/plant-exterior.jpg" alt="Planta Medicinales Y Aromaticas">    
           </a>
         </div>
       </article>
