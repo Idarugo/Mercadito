@@ -13,14 +13,23 @@ nom_categoria varchar(50),
 primary key(id_categoria)
 );  
 
-insert into categoria (id_categoria, nom_categoria) values (1,’Plantas de interior’);
-insert into categoria (id_categoria, nom_categoria) values (2,’Plantas de exterior ’);
-insert into categoria (id_categoria, nom_categoria) values (3,’Plantas Medicinales’);
-insert into categoria (id_categoria, nom_categoria) values (4,’Maceteros’);
-insert into categoria (id_categoria, nom_categoria) values (5,’Accesorios’);
-insert into categoria (id_categoria, nom_categoria) values (6,’Ofertas’);
-insert into categoria (id_categoria, nom_categoria) values (7,’Nuevos productos’);
-insert into categoria (id_categoria, nom_categoria) values (8,’Insumos’);
+insert into categoria (id_categoria, nom_categoria) values (1,'Plantas de Interior');
+insert into categoria (id_categoria, nom_categoria) values (2,'Plantas de Exterior ');
+insert into categoria (id_categoria, nom_categoria) values (3,'Plantas Medicinales');
+insert into categoria (id_categoria, nom_categoria) values (4,'Maceteros');
+insert into categoria (id_categoria, nom_categoria) values (5,'Accesorios');
+insert into categoria (id_categoria, nom_categoria) values (6,'Ofertas');
+insert into categoria (id_categoria, nom_categoria) values (7,'Nuevos Productos');
+insert into categoria (id_categoria, nom_categoria) values (8,'Insumos');
+
+create table entrega(
+id_entrega int(5) not null AUTO_INCREMENT,
+nom_entrega varchar(50),
+primary key(id_entrega)
+);  
+
+insert into entrega (id_entrega, nom_entrega) values (1,'Despacho a Domicilio');
+insert into entrega (id_entrega, nom_entrega) values (2,'Retira tu Compra');
 
 create table planta(
 id_planta int(5) not null AUTO_INCREMENT,
@@ -28,8 +37,11 @@ nom_planta varchar(50),
 id_categoria int(5) not null,
 descripcion_planta varchar(50),
 precio_plantas varchar(50),
+cantidades_planta int(5) not null,
+entrega_id int(5) not null,
 imagen_planta 
 foreign key(id_categoria) references categoria(id_categoria),
+foreign key(id_entrega) references entrega(id_entrega),
 primary key(id_planta)
 );  
 

@@ -1,0 +1,37 @@
+.caja-agregarplanta{
+    height: 410px;
+}
+
+.text-principal{
+    text-align: center;
+
+}
+
+    label {
+        display:block;
+        margin-top:10px;
+        letter-spacing:1px;
+        font-size:large;
+    }
+
+    .menu{
+        width: 380px;
+        height: 30px;
+    }
+
+    .cajatexto{
+        height: 57px;
+    }
+     
+    .principal {
+        display:block;
+        margin:0 auto;
+        width:10px;
+        color: #666666;
+        font-family:Arial;
+    }
+     
+    form {
+        margin:0 auto;
+        width:350px;
+    }
