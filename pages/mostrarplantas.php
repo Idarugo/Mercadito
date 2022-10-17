@@ -9,7 +9,7 @@
     <?php include '../components/header.php' ?>
     <div class="container container-main">
        <h1>Plantas</h1>
-     <table class="content-table">
+     <table class="styled-table">
         <tr>
             <td><strong>Nombre</strong></td>
             <td><strong>Categoria</strong></td>
