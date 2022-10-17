@@ -73,6 +73,6 @@
     </div>
     </div>
   </div>
-  <?php include './components/whatsapp.php' ?>
+  <?php include '../components/whatsapp.php' ?>
 </body>
 </html>
