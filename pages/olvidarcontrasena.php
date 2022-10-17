@@ -38,7 +38,7 @@
                <div class="button input-box">
                 <input type="submit" value="Recuperar">
               </div>
-              <div class="text sign-up-text">¿Ya tienes una cuenta? <a href="/pages/login.html" style="color:#b2d47d">Inicia sesión ahora</a></div>
+              <div class="text sign-up-text">¿Ya tienes una cuenta? <a href="./login.php" style="color:#b2d47d">Inicia sesión ahora</a></div>
             </div>
         </form>
       </div>

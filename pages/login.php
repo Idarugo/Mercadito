@@ -39,7 +39,7 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Introduce tu contraseña"required>
               </div>
-              <div class="text"><a href="/pages/olvidarcontrasena.php" style="color:#b2d47d">¿Has olvidado tu contraseña?</a></div>
+              <div class="text"><a href="./olvidarcontrasena.php" style="color:#b2d47d">¿Has olvidado tu contraseña?</a></div>
               <div class="button input-box">
                 <input type="submit" value="Enviar">
               </div>

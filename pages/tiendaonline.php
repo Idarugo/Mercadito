@@ -11,7 +11,7 @@
     </div>
     <section class="container-fluid banner">
         <div class="banner__img"></div>
-        <h1>Todos</h1>
+        <h1>Categorias</h1>
         <p></p>
     </section>
     <div class="container container-main container-plants"> 

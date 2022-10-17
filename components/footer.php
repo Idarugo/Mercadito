@@ -21,7 +21,7 @@
                 <div class="single_ftr">
                     <h4 class="sf_title">CONTACTO</h4>
                     <ul>
-                        <li>Dirección del vivero: Rancagua</li>
+                        <li>Dirección del Vivero: Rancagua</li>
                         <li>(+123) 685 78 455 <br> (+064) 336 987 245</li>
                         <li>mercadito@gmail.com</li>
                     </ul>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <p class="copyright_text text-center">© 2022 Todos los derechos reservados Mercadillo</p>
+                    <p class="copyright_text text-center">© 2022 Todos los derechos reservados Mercadito</p>
                 </div>
                 <div class="col-sm-4">
                     <div class="payment_mthd_icon text-right">

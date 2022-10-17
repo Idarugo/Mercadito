@@ -9,6 +9,7 @@
     <?php include './components/header.php' ?>
     <div class="container container-main">
         <p>Inicio</p><li class="header__menu-item">Servicios</li>
+        <h1>Bienvenido a Mercadito</h1>
     </div>
     <?php include './components/footer.php' ?>
 </body>
