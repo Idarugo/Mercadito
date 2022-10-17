@@ -16,7 +16,7 @@
     </section>
     <div class="container container-main container-plants"> 
       <article id="3685" class="categoria-listing">
-        <a class="categoria-title" href="#">Planta Interior</a>
+        <a class="categoria-title" href="../pages/products.php">Planta Interior</a>
         <div class="categoria-image">
           <a href="#">
             <img class="img_categories" src="../assets/images/categories/plant-interior.jpg" alt="Planta Interior">    
@@ -24,7 +24,7 @@
         </div>
       </article>
       <article id="3686" class="categoria-listing">
-        <a class="categoria-title" href="#">Planta Exterior</a>
+        <a class="categoria-title" href="../pages/products.php">Planta Exterior</a>
         <div class="categoria-image">
           <a href="#">
             <img class="img_categories" src="../assets/images/categories/plant-exterior.jpg" alt="Planta Exterior">   
@@ -32,7 +32,7 @@
         </div>
       </article>
       <article id="3687" class="categoria-listing">
-        <a class="categoria-title" href="#">Planta Medicinales</a>
+        <a class="categoria-title" href="../pages/products.php">Planta Medicinales</a>
         <div class="categoria-image">
           <a href="#">
             <img class="img_categories" src="../assets/images/categories/plant-medicinales.jpg" alt="Planta Medicinales Y Aromaticas">    
@@ -40,7 +40,7 @@
         </div>
       </article>
       <article id="3688" class="categoria-listing">
-        <a class="categoria-title" href="#">Maceteros</a>
+        <a class="categoria-title" href="../pages/products.php">Maceteros</a>
         <div class="categoria-image">
           <a href="#">
             <img class="img_categories" src="../assets/images/categories/plant-macetero.jpg" alt="Maceteros">    
@@ -48,7 +48,7 @@
         </div>
       </article>
       <article id="3689" class="categoria-listing">
-        <a class="categoria-title" href="#">Acessorio</a>
+        <a class="categoria-title" href="../pages/products.php">Acessorio</a>
         <div class="categoria-image">
           <a href="#">
             <img class="img_categories" src="../assets/images/categories/plant-accesorio.jpg" alt="Acessorio">   
@@ -56,7 +56,7 @@
         </div>
       </article>
       <article id="3687" class="categoria-listing">
-        <a class="categoria-title" href="#">Ofertas</a>
+        <a class="categoria-title" href="../pages/products.php">Ofertas</a>
         <div class="categoria-image">
           <a href="#">
             <img  class="img_categories" src="../assets/images/categories/plant-oferta.jpg" alt="Ofertas">   
@@ -64,7 +64,7 @@
         </div>
       </article>
       <article id="3687" class="categoria-listing">
-        <a class="categoria-title" href="#">Nuevos Productos</a>
+        <a class="categoria-title" href="../pages/products.php">Nuevos Productos</a>
         <div class="categoria-image">
           <a href="#">
             <img  class="img_categories" src="../assets/images/categories/plant-nuevoproducto.jpg" alt="Nuevos Productos">   
@@ -72,7 +72,7 @@
         </div>
       </article>
       <article id="3687" class="categoria-listing">
-        <a class="categoria-title" href="#">Insumos</a>
+        <a class="categoria-title" href="../pages/products.php">Insumos</a>
         <div class="categoria-image">
           <a href="#">
             <img class="img_categories" src="../assets/images/categories/plant-insumos.jpg" alt="Insumos">    

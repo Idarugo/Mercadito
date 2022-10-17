@@ -8,7 +8,9 @@
 <body>
     <?php include '../components/header.php' ?>
     <div class="container container-main">
-        <h1>Perfil</h1>
+        <h1>Mi cuenta</h1>
+        <p>Bienvenid@!. Aquí puedes gestionar tu información personal y pedidos.</p>
+        
     </div>
     <?php include '../components/footer.php' ?>
 </body>

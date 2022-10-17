@@ -3,3 +3,14 @@
     background-image: url('../../images/banner-nosotros.jpg');
 }
 
+.caption{
+    text-align: center;
+}
+
+.img_mision{
+    width:400px;
+    object-fit: cover;
+    flex-wrap: wrap;
+    grid-gap: 20px 10px;
+}
+
