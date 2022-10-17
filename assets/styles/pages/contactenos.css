@@ -1,4 +1,6 @@
-
+.banner{
+    height: 400px;
+}
 .banner .banner__img{
     background-image: url('../../images/banner-contactanos.jpg');
 }

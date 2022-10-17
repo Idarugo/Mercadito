@@ -33,6 +33,7 @@
                     <ul>
                         <li><a href="#">Plantas de Interior</a></li>
                         <li><a href="#">Plantas de Exterior</a></li>
+                        <li><a href="#">Plantas Medicinales</a></li>
                         <li><a href="#">Maceteros</a></li>
                         <li><a href="#">Accesorios</a></li>
                         <li><a href="#">Ofertas</a></li>
