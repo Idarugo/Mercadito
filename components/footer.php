@@ -39,7 +39,6 @@
                         <li><a href="#">Ofertas</a></li>
                         <li><a href="#">Nuevos Productos</a></li>
                         <li><a href="#">Insumos</a></li>
-                        <li><a href="#">Flores</a></li>
                     </ul>
                 </div>
             </div>

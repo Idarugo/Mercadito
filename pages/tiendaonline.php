@@ -35,7 +35,7 @@
         <a class="categoria-title" href="#">Planta Medicinales</a>
         <div class="categoria-image">
           <a href="#">
-            <img class="img_categories" src="../assets/images/categories/plant-macetero.jpg" alt="Planta Medicinales">    
+            <img class="img_categories" src="../assets/images/categories/plant-medicinales.jpg" alt="Planta Medicinales Y Aromaticas">    
           </a>
         </div>
       </article>
@@ -76,14 +76,6 @@
         <div class="categoria-image">
           <a href="#">
             <img class="img_categories" src="../assets/images/categories/plant-insumos.jpg" alt="Insumos">    
-          </a>
-        </div>
-      </article>
-      <article id="3687" class="categoria-listing">
-        <a class="categoria-title" href="#">Flores</a>
-        <div class="categoria-image">
-          <a href="#">
-            <img class="img_categories" src="../assets/images/categories/plant-flores.jpg" alt="Flores">    
           </a>
         </div>
       </article>
