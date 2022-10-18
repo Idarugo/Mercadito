@@ -3,7 +3,7 @@
 <head>
     <?php include '../components/head.php' ?>
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <link rel="stylesheet" href="../assets/styles/pages/mostrarplantas.css">
+    <link rel="stylesheet" href="../assets/styles/pages/listarproductos.css">
 </head>
 <body>
     <?php include '../components/header.php' ?>
