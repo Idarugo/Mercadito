@@ -6,7 +6,6 @@ class Cliente{
 	private string $correo;
 	private string $pas;
 
-
 	public function Usuario(int $id,string $nombre,string $apellido,string $correo,string $pas){
 		$this->id = $id;
 		$this->nombre = $nombre;
