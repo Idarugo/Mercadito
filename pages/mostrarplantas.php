@@ -8,7 +8,8 @@
 <body>
     <?php include '../components/header.php' ?>
     <div class="container container-main">
-       <h1>Plantas</h1>
+       <h1>Productos</h1>
+       <button href="../pages/agregarplantas.php"> Agregar</button>
      <table class="styled-table">
         <tr>
             <td><strong>Nombre</strong></td>

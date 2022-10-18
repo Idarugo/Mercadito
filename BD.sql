@@ -31,18 +31,18 @@ primary key(id_entrega)
 insert into entrega (id_entrega, nom_entrega) values (1,'Despacho a Domicilio');
 insert into entrega (id_entrega, nom_entrega) values (2,'Retira tu Compra');
 
-create table planta(
-id_planta int(5) not null AUTO_INCREMENT,
-nom_planta varchar(50),
+create table producto(
+id_producto int(5) not null AUTO_INCREMENT,
+nom_producto varchar(50),
 id_categoria int(5) not null,
-descripcion_planta varchar(50),
-precio_plantas varchar(50),
-cantidades_planta int(5) not null,
+descripcion_producto varchar(50),
+precio_producto varchar(50),
+cantidades_producto int(5) not null,
 entrega_id int(5) not null,
-imagen_planta 
+imagen_producto 
 foreign key(id_categoria) references categoria(id_categoria),
 foreign key(id_entrega) references entrega(id_entrega),
-primary key(id_planta)
+primary key(id_producto)
 );  
 
 create table clientes(

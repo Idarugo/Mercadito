@@ -9,10 +9,10 @@
 <body>
     <?php include '../components/header.php' ?>
     <div class="container container-main">
-        <h1 class="text-principal" style="text-align:center">Agregar Planta</h1>
+        <h1 class="text-principal" style="text-align:center">Agregar Producto</h1>
 
            <form class="caja-agregarplanta">
-            <label for="nombre">Nombre</label>
+            <label for="nombre">Nombre del producto</label>
             <input type="text" placeholder="Nombre">
             <label for="lang">Categoria</label>
             <select name="categoria" class="menu">
