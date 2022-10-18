@@ -4,9 +4,13 @@ height: 118px;
 
 }
 
+.row minifoto{
+    margin-bottom: 10px;
+}
+
 .img_plant{
     display: block;
-    width: 467px;
+    width: 490px;
     height: 622px;
 }
 
@@ -27,16 +31,55 @@ height: 118px;
     text-rendering:optimizeSpeed;
     background-color: rgba(0, 0, 0, 0);
     border-color: rgb(64, 64, 64);
+    margin: 5px;
 }
 
 .btn-comprar{
     width: 666px;
     height: 50px;
     color: rgb(21, 50, 35);
-    background-color: rgb(210, 225, 163);
+    background-color: #d2e1a3;
+    margin: 5px;
 }
 
 .accordion{
     width: 666px;
     height: 52px;
 }
+
+
+.space {
+    width: 20px;
+    height: auto;
+    display: inline-block;
+  }
+
+  .despacho{
+    color: #33d286;
+  }
+
+
+/*Valorizacion*/
+
+.clasificacion {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin: 5px;
+  }
+  
+  p.clasificacion input {
+    position: absolute;
+    top: -100px;
+  }
+  
+  p.clasificacion label {
+    float: right;
+    color: #333;
+  }
+  
+  p.clasificacion label:hover,
+  p.clasificacion label:hover ~ label,
+  p.clasificacion input:checked ~ label {
+    color: #dd4;
+  }

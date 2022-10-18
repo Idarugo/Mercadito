@@ -37,8 +37,11 @@
                 <option value="1">Despacho a Domicilio</option>
                 <option value="2">Retira tu Compra</option>
             </select>
-            <label for="imagen">Imagen de la Planta</label>
-            <input type="imagen" placeholder="Imagen de la planta">
+            <div class="mb-3">
+                <label for="formFileMultiple" class="form-label">Imagen</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple> 
+            </div>    
+        <input type="imagen" placeholder="Imagen de la planta">
             <input class="submit" name="submit" type="submit" value="Guardar">
           </form>
     </div>
