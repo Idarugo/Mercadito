@@ -11,7 +11,7 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="/assets/images/frontImg.jpg" alt="">
+        <img src="../assets/images/frontImg.jpg" alt="">
         <div class="text">
           <span class="text-1">Cada nuevo amigo es un <br> nueva aventura</span>
           <span class="text-2">Vamos a conectarnos</span>
@@ -47,6 +47,6 @@
     </div>
     </div>
   </div>
-  <?php include './components/whatsapp.php' ?>
+  <?php include '../components/whatsapp.php' ?>
 </body>
 </html>

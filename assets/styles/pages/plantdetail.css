@@ -1,10 +1,42 @@
+.product-scroller{
+width: 467px;
+height: 118px;
+
+}
+
 .img_plant{
     display: block;
     width: 467px;
     height: 622px;
 }
 
+.img_plant-min{
+    display: block;
+    width: 76px;
+    height: 101px;
+}
+
 .h1{
     font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
     margin-bottom: 10px;
+}
+
+.btn-agregar{
+    width: 666px;
+    height: 50px;
+    text-rendering:optimizeSpeed;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(64, 64, 64);
+}
+
+.btn-comprar{
+    width: 666px;
+    height: 50px;
+    color: rgb(21, 50, 35);
+    background-color: rgb(210, 225, 163);
+}
+
+.accordion{
+    width: 666px;
+    height: 52px;
 }

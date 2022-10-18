@@ -3,10 +3,10 @@
     background-image: url('../../images/categories/banner-plantasinterior.jpg');
 }
 
-.img_categories{
-    width: 250px;
+.img_planta{
+    width: 224px;
     object-fit: cover;
-    height: 250px;
+    height: 299px;
     flex-wrap: wrap;
     grid-gap: 20px 10px;
 }
@@ -41,8 +41,8 @@ h2 {
   text-decoration: none;
   z-index: 1;
   position: absolute;
-  height: 250px;
-  width: 250px;
+  height: 299px;
+  width: 224px;
   top: 0;
   left: 0;
   opacity: 0;

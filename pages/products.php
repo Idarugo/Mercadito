@@ -155,16 +155,9 @@
         </div>
       </article>
 
-       <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
 
   </div>
+  <br/>
 </div>
     <?php include '../components/footer.php' ?>
 </body>
