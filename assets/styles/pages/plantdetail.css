@@ -1,0 +1,10 @@
+.img_plant{
+    display: block;
+    width: 467px;
+    height: 622px;
+}
+
+.h1{
+    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+    margin-bottom: 10px;
+}

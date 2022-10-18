@@ -21,7 +21,7 @@
 <div class="container container-main container-plants"> 
     
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
             <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -30,7 +30,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -39,7 +39,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -48,7 +48,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -57,7 +57,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -66,7 +66,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -75,7 +75,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -84,7 +84,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -93,7 +93,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -102,7 +102,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -111,7 +111,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -120,7 +120,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -129,7 +129,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -138,7 +138,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -147,7 +147,7 @@
       </article>
 
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
@@ -156,7 +156,7 @@
       </article>
 
        <article  class="categoria-plant">
-        <a class="categoria-title" href="../assets/images/fondoplanta-temporal.jpg""></a>
+        <a class="categoria-title" href="../pages/plantdetail.php"></a>
         <div class="plant_secondary-image">
           <a href="#">
           <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
