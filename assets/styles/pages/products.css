@@ -3,3 +3,69 @@
     background-image: url('../../images/categories/banner-plantasinterior.jpg');
 }
 
+.img_categories{
+    width: 250px;
+    object-fit: cover;
+    height: 250px;
+    flex-wrap: wrap;
+    grid-gap: 20px 10px;
+}
+body {
+  font-family: sans-serif;
+}
+h2 {
+  margin-bottom: .10em;
+}
+.container-plants {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.categoria-plant {
+    position: relative;
+}
+.categoria-image {
+  line-height: 0;
+  overflow: hidden;
+}
+.categoria-image img {
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+  transform: scale(1.1);
+}
+.categoria-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1;
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  /* background: rgba(255, 255, 255, 0.4); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+  .categoria-listing:hover .categoria-title {
+    opacity: 1;
+  }
+  
+.categoria-listing:hover .categoria-image img {
+  filter: blur(2px);
+}
+
+@media (hover: none) { 
+  .categoria-title {
+    opacity: 1;
+  }
+  .categoria-image img {
+    filter: blur(2px);
+  }
+}
