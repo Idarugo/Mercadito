@@ -1,5 +1,5 @@
 <?php
-class Users{
+class User{
 	private int $id;
 	private string $nombre;
 	private string $correo;
@@ -9,7 +9,7 @@ class Users{
 	private int $rol;
     private int $estado;
 
-	public function Users(int $id,string $nombre,string $correo,string $password,string $imagen,string $direccion,int $rol,int $estado){
+	function __construct(int $id,string $nombre,string $correo,string $password,string $imagen,string $direccion,int $rol,int $estado){
 		$this->id = $id;
 		$this->nombre = $nombre;
         $this->correo = $correo;

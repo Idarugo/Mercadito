@@ -7,7 +7,7 @@
     *   Login
     */
     if(isset($_POST['btnAuthLogin'])){
-        //$auth->login($_POST["txtCorreo"],$_POST["txtPass"]);
+        $auth->login($_POST["txtCorreo"],$_POST["txtPass"]);
     }
     /*
     *   Register
@@ -23,6 +23,7 @@
     *   Logout
     */
     if(isset($_GET['logout'])){
-        // $auth->logout();
+        echo "123";
+        $auth->logout();
     }
 ?>

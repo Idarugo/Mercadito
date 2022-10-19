@@ -3,8 +3,7 @@ class Category{
 	private int $id;
 	private string $category;
 
-
-	public function Category(int $id,string $category){
+	function __construct(int $id,string $category){
 		$this->id = $id;
 		$this->category = $category;
 	}

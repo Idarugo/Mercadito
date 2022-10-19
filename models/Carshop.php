@@ -3,10 +3,9 @@ class Carshop{
 	private int $id;
 	private int $plant;
 	private int $user;
-	private int $date;
+	private string $date;
 
-
-	public function Carshop(int $id,int $plant,int $user,int $date){
+	function __construct(int $id,int $plant,int $user, string $date){
 		$this->id = $id;
 		$this->plant = $plant;
         $this->user = $user;
@@ -26,7 +25,7 @@ class Carshop{
 		return $this->user;
 	}
 
-    public function getDate(): int{
+    public function getDate(): string{
 		return $this->date;
 	}
 }

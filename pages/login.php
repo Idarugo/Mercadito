@@ -29,19 +29,19 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Inicio de Sesión</div>
-          <form action="#">
+          <form action="../routes/auth.routes.php" method="POST">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Introducir dirección de correo electrónico" required>
+                <input type="text" placeholder="Introducir dirección de correo electrónico" name="txtCorreo" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Introduce tu contraseña"required>
+                <input type="password" placeholder="Introduce tu contraseña" name="txtPass" required>
               </div>
               <div class="text"><a href="./olvidarcontrasena.php" style="color:#b2d47d">¿Has olvidado tu contraseña?</a></div>
               <div class="button input-box">
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar" name="btnAuthLogin">
               </div>
               <div class="text sign-up-text">¿No tienes una cuenta? <label for="flip">Regístrate ahora</label></div>
             </div>

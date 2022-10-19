@@ -1,5 +1,5 @@
 <?php
-    require '../models/Usuario.php';
+    require '../models/User.php';
 
     class AuthController {
     
@@ -11,26 +11,26 @@
         }
 
         public function login($user, $pass){
-        //    $this->connectDB->connect();
-        //     $sql = "SELECT * FROM users WHERE correo = '$user' AND password='$pass'";
-        //     $resp = $this->connectDB->query($sql);
-        //     if($rs = mysqli_fetch_array($resp)){
-        //         $user = new Usuario($rs['id'],$rs['nombre'],$rs['apellido'],$rs['correo'],$rs['password'],$rs['imagen'],$rs['rol'],$rs['estado']);
-        //         if($rs['estado'] === '1') {
-        //             $this->connectDB->disconnect();
-        //             header("location:  ../pages/login.php?banned");
-        //             return;
-        //         }
-        //         session_start();
-        //         $_SESSION['user'] = $user;
-        //         $this->connectDB->disconnect();
-        //         header("location:  ../index.php");
-        //         return;
-        //     }
-        //     $_SESSION['user'] = null;
-        //     $this->connectDB->disconnect();
-        //     header("location: ../pages/login.php?AuthError");
-        //     return;
+           $this->connectDB->connect();
+            $sql = "SELECT * FROM users WHERE correo = '$user' AND password='$pass'";
+            $resp = $this->connectDB->query($sql);
+            if($rs = mysqli_fetch_array($resp)){
+                $user = new User($rs['id'],$rs['nombre'],$rs['correo'],$rs['password'],$rs['imagen'],$rs['direccion'],$rs['rol'],$rs['estado']);
+                if($rs['estado'] === '1') {
+                    $this->connectDB->disconnect();
+                    header("location:  ../pages/login.php?banned");
+                    return;
+                }
+                session_start();
+                $_SESSION['user'] = $user;
+                $this->connectDB->disconnect();
+                header("location:  ../index.php");
+                return;
+            }
+            $_SESSION['user'] = null;
+            $this->connectDB->disconnect();
+            header("location: ../pages/login.php?AuthError");
+            return;
         }
 
         public function register($name, $lastName,$correo, $pass){

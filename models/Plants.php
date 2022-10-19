@@ -1,24 +1,23 @@
 <?php
-class Plants{
+class Plant{
 	private int $id;
 	private string $title;
 	private string $price;
 	private string $description;
 	private string $image;
+	private int $category;
 	private int $cant;
-	private int $type;
+	private int $typeDelivery;
 
-
-
-
-	public function Plants(int $id,string $title,string $price,string $description,string $image,int $cant,int $type){
+	function __construct(int $id,string $title,string $price,string $description,int $category,string $image,int $cant,int $typeDelivery){
 		$this->id = $id;
 		$this->title = $title;
 		$this->price = $price;
 		$this->description = $description;
 		$this->image = $image;
+		$this->category = $category;
 		$this->cant = $cant;
-		$this->type = $type;
+		$this->typeDelivery = $typeDelivery;
 
 	}
 
@@ -46,8 +45,12 @@ class Plants{
 		return $this->cant;
 	}
 
-	public function getType(): int{
-		return $this->type;
+	public function getCategory(): int{
+		return $this->category;
+	}
+
+	public function getTypeDelivery(): int{
+		return $this->typeDelivery;
 	}
 
 }
