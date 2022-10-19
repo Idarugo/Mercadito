@@ -5,6 +5,8 @@
 
 .caption{
     text-align: center;
+    background-color: #6ab041;
+    color: #FFFF;
 }
 
 .img_mision{
@@ -12,5 +14,35 @@
     object-fit: cover;
     flex-wrap: wrap;
     grid-gap: 20px 10px;
+    float: right;
 }
 
+.width{
+    width: 1200px;
+    height: 181px;
+}
+
+.circulo {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #062F1E;
+    color: #FFFF;
+    border: 9px solid #6ab041;
+    font-size: 90px;
+    font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+    margin:0px auto;
+    padding:30px;    
+}
+
+.img1{
+    width:1360px;
+    display: flex;
+    margin-top: 30px;
+    margin-left: auto;
+    
+}

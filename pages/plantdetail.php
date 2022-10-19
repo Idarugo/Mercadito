@@ -14,23 +14,23 @@
         <img class="img_plant" src="../assets/images/fondoplanta-temporal.jpg">
             <div class="row mt-2">
                 <div class="col-2">
-                <img class="img_plant-min" src="../assets/images/fondoplanta-temporal.jpg" alt="">
+                    <img class="img_plant-min" src="../assets/images/fondoplanta-temporal.jpg" alt="">
                 </div>
 
                 <div class="col-2">
-                <img class="img_plant-min" src="../assets/images/fondoplanta-temporal.jpg" alt="">
+                    <img class="img_plant-min" src="../assets/images/fondoplanta-temporal.jpg" alt="">
                 </div>
 
                 <div class="col-2">
-                <img class="img_plant-min" src="../assets/images/fondoplanta-temporal.jpg" alt="">
+                    <img class="img_plant-min" src="../assets/images/fondoplanta-temporal.jpg" alt="">
                 </div>
 
                 <div class="col-2">
-                <img class="img_plant-min" src="../assets/images/fondoplanta-temporal.jpg" alt="">
+                    <img class="img_plant-min" src="../assets/images/fondoplanta-temporal.jpg" alt="">
                 </div>
 
                 <div class="col-2">
-                <img class="img_plant-min" src="../assets/images/fondoplanta-temporal.jpg" alt="">
+                     <img class="img_plant-min" src="../assets/images/fondoplanta-temporal.jpg" alt="">
                 </div>
             </div>
 

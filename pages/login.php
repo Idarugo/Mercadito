@@ -63,8 +63,8 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Introduce tu contraseña" required>
               </div>
-              <div class="button input-box">
-                <input type="submit" value="Enviar">
+              <div  class="button input-box">
+                <input  type="submit" value="Enviar" >
               </div>
               <div class="text sign-up-text">¿Ya tienes una cuenta? <label for="flip">Inicia sesión ahora</label></div>
             </div>
