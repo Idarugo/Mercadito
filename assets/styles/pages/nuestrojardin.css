@@ -2,3 +2,25 @@
     background-image: url('../../images/banner-jardin.jpg');
 }
 
+.text-banner{
+
+    color: #16A212;
+}
+.img1{
+    width:1360px;
+    display: flex;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+.img2{
+    width:1360px;
+    display: flex;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+.mensajefinal{
+    color: #115232;
+}
+
