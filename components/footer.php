@@ -65,10 +65,10 @@
                     <div class="ftr_social_icon">
                         <ul>
                             <li>
-                                <a href="http://webenlance.com" title="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100063554051438" title="facebook"><i class="fab fa-facebook-f"></i></a>
                             </li>
                             <li>
-                                <a href="http://webenlance.com" title="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.instagram.com/mercadito_jessicamoreno" title="instagram"><i class="fab fa-instagram"></i></a>
                             </li>
                             <li>
                                 <a href="#" title="linkedin"><i class="fab fa-linkedin"></i></a>

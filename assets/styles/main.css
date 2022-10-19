@@ -25,3 +25,10 @@ a{
 .container-main{
     min-height: 100vh;
 }
+
+.img1{
+    width:1296px;
+    height: 500px;
+    display: flex;
+    margin-top: 20px;
+}

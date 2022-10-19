@@ -8,90 +8,56 @@
 </head>
 <body>
     <?php include '../components/header.php' ?>
-    <div class="container container-main">
-<<<<<<< HEAD:pages/agregarproductos.php
-        <h1 class="text-principal" style="text-align:center">Agregar Producto</h1>
+    <div class="container container-main mt-5">
 
-           <form class="caja-agregarplanta">
-            <label for="nombre">Nombre del producto</label>
-            <input type="text" placeholder="Nombre">
-            <label for="lang">Categoria</label>
-            <select name="categoria" class="menu">
-                <option value="1">Plantas de Interior</option>
-                <option value="2">Plantas de Exterior</option>
-                <option value="3">Plantas Medicinales</option>
-                <option value="4">Maceteros</option>
-                <option value="5">Accesorios</option>
-                <option value="6">Ofertas</option>
-                <option value="7">Nuevos Productos</option>
-                <option value="8">Insumos</option>
-            </select>
-            <label for="descripcion">Descripcion</label>
-            <textarea placeholder="Descripcion" class="cajatexto"></textarea>
-            <label for="precio">Precio</label>
-            <input type="precio" placeholder="Precio">
-            <label for="cantidad">Cantidad</label>
-            <input type="number" name="numero">
-
-            <label for="lang">Tipo de Entrega</label>
-            <select name="entrega" class="menu">
-                <option value="1">Despacho a Domicilio</option>
-                <option value="2">Retira tu Compra</option>
-            </select>
-            <div class="mb-3">
-                <label for="formFileMultiple" class="form-label">Imagen</label>
-                <input class="form-control" type="file" id="formFileMultiple" multiple> 
-            </div>    
-        <input type="imagen" placeholder="Imagen de la planta">
-            <input class="submit" name="submit" type="submit" value="Guardar">
-=======
-        <h1 class="text-principal text-center mt-4">Agregar Planta</h1>
-
-           <form class="caja-agregarplanta">
-            <div class="mb-3 mt-4">
-                <label for="nombre">Nombre</label>
-                <input type="text" placeholder="Nombre">
+        <form class="row g-3 justify-content-center">
+                <h1 style="text-align: center;">Agregar Productos</h1>
+            <div class="col-md-5">
+                <label for="inputName" class="form-label">Nombre</label>
+                <input type="name" class="form-control" id="inputName">
             </div>
-            <div class="mb-3">
-                <label for="lang">Categoria</label>
-                <select name="categoria" class="menu">
-                    <option value="1">Plantas de Interior</option>
-                    <option value="2">Plantas de Exterior</option>
-                    <option value="3">Plantas Medicinales</option>
-                    <option value="4">Maceteros</option>
-                    <option value="5">Accesorios</option>
-                    <option value="6">Ofertas</option>
-                    <option value="7">Nuevos Productos</option>
-                    <option value="8">Insumos</option>
+            <div class="col-md-5">
+                <label for="inputState" class="form-label">Categoria</label>
+                <select id="inputState" class="form-select">
+                    <option selected>Seleccione Una Categoria</option>
+                    <option>Plantas de Interior</option>
+                    <option>Plantas de Exterior</option>
+                    <option>Plantas Medicinales</option>
+                    <option>Maceteros</option>
+                    <option>Accesorios</option>
+                    <option>Ofertas</option>
+                    <option>Nuevos Productos</option>
+                    <option>Insumos</option>
                 </select>
             </div>
-            <div class="mb-3">
-                <label for="descripcion">Descripcion</label>
-                <textarea placeholder="Descripcion"></textarea>
+            <div class="col-md-10">
+                <label for="inputName" class="form-label">Descripcion</label>
+                <input type="name" class="form-control" id="inputName">
             </div>
-            <div class="mb-3">
-                <label for="precio">Precio</label>
-                <input type="precio" placeholder="Precio">
+            <div class="col-5">
+                <label for="inputAddress2" class="form-label">Precio</label>
+                <input type="precio" class="form-control" id="inputAddress2" placeholder="">
             </div>
-            <div class="mb-3">
-                <label for="cantidad">Cantidad</label>
-                <input type="number" name="numero">
+            <div class="col-5">
+                <label for="inputAddress2" class="form-label">Cantidad</label>
+                <input type="number" class="form-control" id="inputAddress2" placeholder="">
             </div>
-
-            <div class="mb-3">
-                <label for="lang">Tipo de Entrega</label>
-                <select name="entrega" class="menu">
-                    <option value="1">Despacho a Domicilio</option>
-                    <option value="2">Retira tu Compra</option>
+            <div class="col-md-10">
+                <label for="inputState" class="form-label">Tipo de Entrega</label>
+                <select id="inputState" class="form-select">
+                    <option selected>Seleccione Tipo de Entrega</option>
+                    <option>Despacho a Domicilio</option>
+                    <option>Retira tu Compra</option>
                 </select>
             </div>
-            <div class="mb-3">
-                <label for="imagen">Imagen de la Planta</label>
-                <input type="imagen" placeholder="Imagen de la planta">
+            <div class="col-md-10">
+                <label for="imagen" class="form-label">Imagen de la Planta</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple>
             </div>
-            <input class="submit mt-3" name="submit" type="submit" value="Guardar">
->>>>>>> c24c05f09d6caaecf2a5229e73fd3d4eeb9b81ba:pages/agregarplantas.php
-          </form>
+            <div class="col-10  justify-content-center mb-2" style="text-align: center;">
+                <button type="button" class="btn btn-success">Agregar</button>
+            </div> 
+        </form>
     </div>
     <?php include '../components/footer.php' ?>
 </body>

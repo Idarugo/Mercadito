@@ -4,3 +4,19 @@
 p{
     text-align: justify;
 }
+
+.redondo{
+    height: 300px;
+    width: 300px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+
+.caption{
+    text-align: center;
+    background-color: #6ab041;
+    color: #FFFF;
+}

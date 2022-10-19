@@ -38,8 +38,8 @@
                     <p>Te orientamos en la elección de una planta, y si lo deseas, puedes agregar a tu compra una jardinera o uno de nuestros accesorios. Realizamos envíos gratis en nuestras áreas de servicio y si tienes algún problema o duda sobre la instalación, te ayudaremos y asesoraremos sobre cómo cuidarla.</p>             
                 </div>
             </div>
-            <div class="col aling-self-center" >
-                <img class="img_mision" src="../assets/images/nosotros2.jpg ">
+            <div class="col-6" >
+                <img class="img-nosotros-2" src="../assets/images/nosotros2.jpg ">
             </div>
         </div>
 
@@ -66,8 +66,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-9">
-                <h2 style="text-align: center;">Somos el unos de los garden delivery de Rancagua</h2>
+            <div class="col-8">
+                <h2 class="text-circulo">Somos el unos de los garden delivery de Rancagua</h2>
             </div>
         </div>
 

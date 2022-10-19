@@ -9,6 +9,10 @@
     <?php include '../components/header.php' ?>
     <div class="container container-main">
         <h1>Mercaditos y Cuidados</h1>
+
+        <img class="img1" src="../assets/images/img_mantencion.png">
+
+        
     </div>
     <?php include '../components/footer.php' ?>
 </body>
