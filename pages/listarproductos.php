@@ -9,7 +9,7 @@
     <?php include '../components/header.php' ?>
     <div class="container container-main">
        <h1>Productos</h1>
-       <button href="../pages/agregarplantas.php"> Agregar</button>
+       <a class="btn btn-primary" href="../pages/agregarproductos.php" role="button">Agregar Producto</a>
      <table class="styled-table">
         <tr>
             <td><strong>Nombre</strong></td>

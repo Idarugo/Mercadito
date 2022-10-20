@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php include '../components/header.php' ?>
-    <div class="container" style="margin-top: 20px;">
+    <div class="container mb-4">
         
     </div>
     <section class="container-fluid banner" >
