@@ -3,9 +3,9 @@
 
     class AuthController {
     
-        private IConnectDB $connectDB;
+        private $connectDB;
 
-        function __construct(IConnectDB $connectDB)
+        function __construct( $connectDB)
         {
             $this->connectDB = $connectDB;
         }

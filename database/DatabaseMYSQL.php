@@ -2,11 +2,11 @@
     require 'IConnectDB.php';
 
     class DatabaseMYSQL implements IConnectDB{
-        private mysqli $db;
-        private string $localhost;
-        private string $user;
-        private string $pass;
-        private string $nameDB;        
+        private $db;
+        private $localhost;
+        private $user;
+        private $pass;
+        private $nameDB;        
 
         public function __construct($localhost, $user, $pass, $nameDB)
         {

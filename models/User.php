@@ -1,15 +1,15 @@
 <?php
 class User{
-	private int $id;
-	private string $nombre;
-	private string $correo;
-	private string $password;
-    private string $imagen;
-	private string $direccion;
-	private int $rol;
-    private int $estado;
+	private  $id;
+	private  $nombre;
+	private  $correo;
+	private  $password;
+    private  $imagen;
+	private  $direccion;
+	private  $rol;
+    private  $estado;
 
-	function __construct(int $id,string $nombre,string $correo,string $password,string $imagen,string $direccion,int $rol,int $estado){
+	function __construct( $id, $nombre, $correo, $password, $imagen, $direccion, $rol, $estado){
 		$this->id = $id;
 		$this->nombre = $nombre;
         $this->correo = $correo;
@@ -20,35 +20,35 @@ class User{
 		$this->estado = $estado;
 	}
 
-	public function getid(): int{
+	public function getid() {
 		return $this->id;
 	}
 
-	public function getNombre(): string{
+	public function getNombre() {
 		return $this->nombre;
 	}
 
-    public function getCorreo(): string{
+    public function getCorreo() {
 		return $this->correo;
 	}
 
-    public function getPassword(): string{
+    public function getPassword() {
 		return $this->password;
 	}
 
-    public function getImagen(): string{
+    public function getImagen() {
 		return $this->imagen;
 	}
 
-    public function getDireccion(): string{
+    public function getDireccion() {
 		return $this->direccion;
 	}
 
-    public function getRol(): int{
+    public function getRol() {
 		return $this->rol;
 	}
 
-    public function getEstado(): int{
+    public function getEstado() {
 		return $this->estado;
 	}
 }
