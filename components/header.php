@@ -19,7 +19,7 @@
         <li onclick="redirectTo('pages/nosotros.php')" class="header__menu-item">Nosotros</li>
         <li onclick="redirectTo('pages/servicio.php')" class="header__menu-item">Servicios</li>
         <li onclick="redirectTo('pages/contactenos.php')" class="header__menu-item">Contactanos</li>
-       <div class="header__icon">
+       <div class="header__icon" onclick="redirectTo('./pages/login.php')">
             <?php 
                if(!$login) {
                 echo
