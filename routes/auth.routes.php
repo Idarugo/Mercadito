@@ -13,11 +13,11 @@
     *   Register
     */
     if(isset($_POST['btnCrearCuenta'])){
-        // if(empty($_POST["txtNombre"]) || empty($_POST["txtApellido"]) || empty($_POST["txtCorreo"]) || empty($_POST["txtPass"])){
-        //     header("location:  ../pages/register.php?txtEmptyError");
-        //     return;
-        // }
-        // $auth->register($_POST["txtNombre"],$_POST["txtApellido"],$_POST["txtCorreo"],$_POST["txtPass"]);
+         if(empty($_POST["txtNombre"]) || empty($_POST["txtCorreo"]) || empty($_POST["txtPass"])){
+             header("location:  ../pages/login.php?txtEmptyError");
+             return;
+         }
+         $auth->register($_POST["txtNombre"],$_POST["txtCorreo"],$_POST["txtPass"]);
     }
      /*
     *   Logout

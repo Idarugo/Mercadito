@@ -53,18 +53,18 @@
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Introduce tu nombre" required>
+                <input type="text" placeholder="Introduce tu nombre" name="txtNombre" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Introducir dirección de correo electrónico" required>
+                <input type="text" placeholder="Introducir dirección de correo electrónico" name="txtCorreo"  required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Introduce tu contraseña" required>
+                <input type="password" placeholder="Introduce tu contraseña" name="txtPass"  required>
               </div>
               <div  class="button input-box">
-                <input  type="submit" value="Enviar" >
+                <input  type="submit" value="Enviar" name="btnCrearCuenta">
               </div>
               <div class="text sign-up-text">¿Ya tienes una cuenta? <label for="flip">Inicia sesión ahora</label></div>
             </div>

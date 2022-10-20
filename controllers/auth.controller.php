@@ -33,18 +33,18 @@
             return;
         }
 
-        public function register($name, $lastName,$correo, $pass){
-            // $this->connectDB->connect();
-            // $sql = "INSERT INTO `users`(`nombre`, `apellido`, `correo`, `password`) VALUES ('$name','$lastName','$correo','$pass')";
-            // $this->connectDB->query($sql);
-            // if($this->connectDB->getDB()->affected_rows){
-            //     $this->connectDB->disconnect();
-            //     header("location:  ../pages/login.php");
-            //     return;
-            // }
-            // $this->connectDB->disconnect();
-            // header("location:  ../pages/register.php?RegisterError");
-            // return;
+        public function register($user,$correo, $pass){
+             $this->connectDB->connect();
+             $sql = "INSERT INTO `users`(`nombre`, `correo`, `password`) VALUES ('$user','$correo','$pass')";
+             $this->connectDB->query($sql);
+             if($this->connectDB->getDB()->affected_rows){
+                 $this->connectDB->disconnect();
+                 header("location:  ../pages/login.php?banned");
+                 return;
+             }
+             $this->connectDB->disconnect();
+                header("location:  ../index.php");
+             return;
         }
 
         public function logout(){

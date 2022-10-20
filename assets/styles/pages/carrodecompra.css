@@ -1,0 +1,21 @@
+.center{
+    text-align: center;
+}
+.compra1{
+    width: 150px;
+    height: 200px;
+}
+
+.btn{
+    width: 420px;
+    height: 42px;
+}
+
+.colorenvio{
+    background-color: red;
+    color: #FFFF;
+    width: 420px;
+    height: 50px;
+    margin: 0 auto;
+
+}
