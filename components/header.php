@@ -19,18 +19,21 @@
         <li onclick="redirectTo('pages/nosotros.php')" class="header__menu-item">Nosotros</li>
         <li onclick="redirectTo('pages/servicio.php')" class="header__menu-item">Servicios</li>
         <li onclick="redirectTo('pages/contactenos.php')" class="header__menu-item">Contactanos</li>
-       <div class="header__icon" onclick="redirectTo('./pages/login.php')">
+       <div class="header__icon">
             <?php 
                if(!$login) {
                 echo
-                '<li onclick="redirectTo("./pages/login.php")" class="header__menu-item"></li>';
+            
+                '  <a href="pages/login.php"> <li class="header__menu-item"></li></a>';
+
                }
                else {
                    echo $user->getNombre();
+                   echo '  <a href="./pages/perfil.php"> <li class="header__menu-item"></li></a>';
                    echo '<a href="./routes/auth.routes.php?logout">Salir</a>';
                }
             ?>
-            <li onclick="redirectTo('pages/carrodecompra.php')" class="header__menu-item" href="./pages/login.php"></li>
+        <li onclick="redirectTo('pages/carrodecompra.php')" class="header__menu-item"></li>
        </div>
     </ul>
 </header>

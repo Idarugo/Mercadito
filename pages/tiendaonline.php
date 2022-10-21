@@ -9,7 +9,7 @@
 <?php include '../components/header.php' ?>
     <div class="container">
     </div>
-    <section class="container-fluid banner">
+    <section class="container-fluid banner" style="padding-top: 40px !important;">
         <div class="banner__img"></div>
         <h1>Categorias</h1>
         <p></p>
@@ -35,15 +35,15 @@
         <a class="categoria-title" href="../pages/products.php">Planta Medicinales</a>
         <div class="categoria-image">
           <a href="#">
-            <img class="img_categories" src="../assets/images/categories/plant-exterior.jpg" alt="Planta Medicinales Y Aromaticas">    
+            <img class="img_categories" src="../assets/images/categories/plant-medicinales.jpg" alt="Planta Medicinales Y Aromaticas">    
           </a>
         </div>
       </article>
       <article id="3688" class="categoria-listing">
-        <a class="categoria-title" href="../pages/products.php">Maceteros</a>
+        <a class="categoria-title" href="../pages/products.php">Verduras</a>
         <div class="categoria-image">
           <a href="#">
-            <img class="img_categories" src="../assets/images/categories/plant-macetero.jpg" alt="Maceteros">    
+            <img class="img_categories" src="../assets/images/categories/plant-verdura.jpg" alt="Maceteros">    
           </a>
         </div>
       </article>

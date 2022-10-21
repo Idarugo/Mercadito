@@ -41,7 +41,7 @@
               </div>
               <div class="text"><a href="./olvidarcontrasena.php" style="color:#b2d47d">¿Has olvidado tu contraseña?</a></div>
               <div class="button input-box">
-                <input type="submit" value="Enviar" name="btnAuthLogin">
+                <input type="submit" value="Iniciar Sesion" name="btnAuthLogin">
               </div>
               <div class="text sign-up-text">¿No tienes una cuenta? <label for="flip">Regístrate ahora</label></div>
             </div>

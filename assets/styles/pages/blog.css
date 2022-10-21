@@ -1,7 +1,14 @@
+.banner .banner__img{
+    background-image: url('../../images/banner-blog.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
 
-.img1{
-    width:900px;
-    display: flex;
-    margin-top: 20px;
-    margin-left: 250px;
+.img_categories{
+    width: 385px;
+    height: 289px;
+}
+
+.titulo-blog{
+color: black;
 }

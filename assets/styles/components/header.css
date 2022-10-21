@@ -5,9 +5,9 @@ header{
     height: 80px;
     display: flex;
     justify-content: center;
-    padding: 40 50px;
     align-items: center;
     background-color: #FFFF;
+    padding-top: 10px;
 }
 header .header__logo {
     background-image: url('../../images/logo-temporal.png');

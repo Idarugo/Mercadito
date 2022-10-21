@@ -24,7 +24,7 @@
                     <h5>Nombre</h5>
                     <h5>Correo</h5>
                     <h5>******</h5>
-                    <a class="btn btn-primary" href="" role="button">Modificar Cuenta</a>
+                    <a class="btn btn-primary" href="./modificarusuario.php" role="button">Modificar Cuenta</a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
 
     <h1>Mi cuenta</h1>
     <div class="row">
-    <a class="btn btn-primary col-md-2 offset-md-5" href="" role="button">Cerrar Sesión</a>
+    <a class="btn btn-primary col-md-2 offset-md-5" href="/routes/auth.routes.php?logout" role="button">Cerrar Sesión</a>
     </div>
 
     <div class="container overflow-hidden text-center">
@@ -48,7 +48,7 @@
                     <h5>Nombre</h5>
                     <h5>Correo</h5>
                     <h5>******</h5>
-                    <a class="btn btn-primary" href="" role="button">Modificar Cuenta</a>
+                    <a class="btn btn-primary" href="./modificarusuario.php" role="button">Modificar Cuenta</a>
                 </div>
             </div>
         </div>

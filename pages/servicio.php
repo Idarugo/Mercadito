@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php include '../components/header.php' ?>
-    <section class="container-fluid banner">
+    <section class="container-fluid banner " style="padding-top: 40px !important;">
         <div class="banner__img"></div>
         <h1>Servicio</h1>
         <p>A domicilios y empresa</p>

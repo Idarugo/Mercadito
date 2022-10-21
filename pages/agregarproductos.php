@@ -4,7 +4,6 @@
     <?php include '../components/head.php' ?>
     <link rel="stylesheet" href="../assets/styles/main.css">
     <link rel="stylesheet" href="../assets/styles/pages/agregarproductos.css">
-    <link rel="stylesheet" href="../assets/styles/components/forms.css">
 </head>
 <body>
     <?php include '../components/header.php' ?>
@@ -54,9 +53,12 @@
                 <label for="imagen" class="form-label">Imagen de la Planta</label>
                 <input class="form-control" type="file" id="formFileMultiple" multiple>
             </div>
-            <div class="col-10  justify-content-center mb-2" style="text-align: center;">
+            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
                 <button type="button" class="btn btn-success">Agregar</button>
             </div> 
+            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
+                <a href="./perfil.php" ><button type="button" class="btn btn-success btn btn-dark"> < Volver</button></a>
+            </div>  
         </form>
     </div>
     <?php include '../components/footer.php' ?>
