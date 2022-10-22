@@ -16,6 +16,7 @@
                 <div class="col">
                 <h3>Detalles de Productos</h3>
                 <a class="btn btn-primary" href="../pages/agregarproductos.php" role="button">Agregar Producto</a>
+                <a class="btn btn-primary" href="../pages/agregarblog.php" role="button">Agregar Blog</a>                
                 <a class="btn btn-primary" href="../pages/listarproductos.php" role="button">Listado de Producto</a>
 
                 </div>

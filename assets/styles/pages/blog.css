@@ -4,9 +4,12 @@
     background-size: cover; 
 }
 
-.img_categories{
+.icard-img-top{
     width: 385px;
     height: 289px;
+    border: 2px solid #ffffff;
+    object-fit: contain;
+
 }
 
 .titulo-blog{

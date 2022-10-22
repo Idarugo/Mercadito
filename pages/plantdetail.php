@@ -66,7 +66,7 @@
             </button>
 
             <button class="btn-comprar">
-                <span> Comprar Ahora </span>
+                <a href="../pages/carrodecompra.php"> Comprar Ahora</a>
             </button>
 
             <font style="vertical-align: inherit;">

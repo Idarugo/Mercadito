@@ -33,9 +33,9 @@
             return;
         }
 
-        public function register($user,$correo, $pass){
+        public function register($user,$correo, $pass,$imagen,$direccion,$rol,$estado){
              $this->connectDB->connect();
-             $sql = "INSERT INTO `users`(`nombre`, `correo`, `password`) VALUES ('$user','$correo','$pass')";
+             $sql = "INSERT INTO users(id,'nombre', 'correo', 'password','imagen','direccion','rol','estado') VALUES (NULL,'$user','$correo','$pass','default.png','nome',0,1)";
              $this->connectDB->query($sql);
              if($this->connectDB->getDB()->affected_rows){
                  $this->connectDB->disconnect();
