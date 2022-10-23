@@ -1,5 +1,5 @@
 <?php
-    require '../models/User.php';
+    require '../models/Usuario.php';
 
     class AuthController {
     
@@ -15,8 +15,8 @@
             $sql = "SELECT * FROM users WHERE correo = '$user' AND password='$pass'";
             $resp = $this->connectDB->query($sql);
             if($rs = mysqli_fetch_array($resp)){
-                $user = new User($rs['id'],$rs['nombre'],$rs['correo'],$rs['password'],$rs['imagen'],$rs['direccion'],$rs['rol'],$rs['estado']);
-                if($rs['estado'] === '1') {
+                $user = new Usuario($rs['id'],$rs['nombre'],$rs['correo'],$rs['password'],$rs['imagen'],$rs['direccion'],$rs['rol'],$rs['estado']);       
+                         if($rs['estado'] === '1') {
                     $this->connectDB->disconnect();
                     header("location:  ../pages/login.php?banned");
                     return;
@@ -33,19 +33,19 @@
             return;
         }
 
-        public function register($user,$correo, $pass,$imagen,$direccion,$rol,$estado){
+        public function register($name,$correo,$pass){
              $this->connectDB->connect();
-             $sql = "INSERT INTO users(id,'nombre', 'correo', 'password','imagen','direccion','rol','estado') VALUES (NULL,'$user','$correo','$pass','default.png','nome',0,1)";
+             $sql = "INSERT INTO `users`(`nombre`, `correo`, `password`) VALUES ('$name','$correo','$pass')";
              $this->connectDB->query($sql);
              if($this->connectDB->getDB()->affected_rows){
                  $this->connectDB->disconnect();
-                 header("location:  ../pages/login.php?banned");
+                 header("location:  ../pages/login.php");
                  return;
              }
              $this->connectDB->disconnect();
-                header("location:  ../index.php");
+             header("location:  ../pages/login.php?RegisterError");
              return;
-        }
+         }
 
         public function logout(){
             session_start();

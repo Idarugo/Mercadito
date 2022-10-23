@@ -1,6 +1,6 @@
 
 <?php
-   require dirname(__DIR__).'/models/User.php';
+   require dirname(__DIR__).'/models/Usuario.php';
    session_start();
    $login = false;
    $isAdmin = false;
