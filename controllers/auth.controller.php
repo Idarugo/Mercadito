@@ -39,7 +39,7 @@
              $this->connectDB->query($sql);
              if($this->connectDB->getDB()->affected_rows){
                  $this->connectDB->disconnect();
-                 header("location:  ../pages/login.php");
+                 header("location:  ../pages/login.php?created");
                  return;
              }
              $this->connectDB->disconnect();

@@ -49,7 +49,7 @@
       </div>
         <div class="signup-form">
           <div class="title">Inscripción</div>
-        <form action="#">
+        <form action="../routes/auth.routes.php" method="POST">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
