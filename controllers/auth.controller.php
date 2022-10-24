@@ -47,6 +47,20 @@
              return;
          }
 
+         public function modify($name,$correo,$pass,$imagen,$direccion){
+            $this->connectDB->connect();
+            $sql = "UPDATE `users` SET `nombre`=['$name'],`correo`=['$correo'],`password`=['$pass'],`imagen`=['$imagen'],`direccion`=['$direccion'] WHERE 1";
+            $this->connectDB->query($sql);
+            if($this->connectDB->getDB()->affected_rows){
+                $this->connectDB->disconnect();
+                header("location:  ../pages/modificarusuario.php?created");
+                return;
+            }
+            $this->connectDB->disconnect();
+            header("location:  ../pages/modificarusuario.php?RegisterError");
+            return;
+        }
+
         public function logout(){
             session_start();
             session_unset();

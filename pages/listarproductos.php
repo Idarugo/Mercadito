@@ -1,3 +1,8 @@
+<?
+        $plantsList = $_SESSION['plants'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,15 +30,25 @@
             </tr>
 
             <tr>
-                <td>Laura (Lavanda)</td>
-                <td>Planta Exterior</td>
-                <td>¡Laura, lavanda, es el complemento perfecto para tu hogar! Es una de nuestras plantas de exterior con flores favoritas y tiene muchos beneficios tanto para el medio ambiente como para tu salud, es decorativa y tiene un rico aroma. Tiene características que te ayudan a combatir el insomnio, el estrés y otras características que te interesan.</td>
-                <td>$19.990</td>
-                <td>6</td>
-                <td>Despacho a Domicilio</td>
-                <td>IMAGEN</td>
-                <td>Editar</td>
-                <td>Eliminar</td>
+            <?php
+                for($i = 0; $i < count($plantsList); $i++){
+                    echo "
+                    <div class='local__bus-item' id='clickTemp'>
+                    <section class='local__info'>
+                        <h6>".$plantsList[$i]->geTitle()."</h6>
+                        <p>".$plantsList[$i]->getPrice()."</p>
+                        <p>".$plantsList[$i]->getDescription()."</p>
+                        <p>".$plantsList[$i]->getImage()."</p>
+                        <p>".$plantsList[$i]->getCant()."</p>
+                        <p>".$plantsList[$i]->getCategory()."</p>
+                        <p>".$plantsList[$i]->getTypeDelivery()."</p>
+                        <p ".$plantsList[$i]->getidPlants().">Editar</p>
+                        <p ".$plantsList[$i]->getidPlants().">ELIMINAR</p>
+
+                    </section>
+                </div> ";
+                }        
+            ?>
             </tr>
         </table>
          <div class="col-5  justify-content-center mb-2" style="text-align: center;">

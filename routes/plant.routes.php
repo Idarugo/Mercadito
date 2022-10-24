@@ -15,6 +15,9 @@
         if(isset($_GET['listProducts'])){
             header("location:  ../pages/listarproductos.php");
         }
+        if(isset($_GET['listProducts'])){
+            header("location:  ../pages/agregarproductos.php");
+        }
 
         header("location:  ../pages/products.php");
     }

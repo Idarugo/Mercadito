@@ -40,7 +40,7 @@
         </div>
       </article>
       <article id="3688" class="categoria-listing">
-        <a class="categoria-title" href="../pages/products.php">Verduras</a>
+        <a class="categoria-title" href="../pages/products.php">Frutas Y Verduras</a>
         <div class="categoria-image">
           <a href="#">
             <img class="img_categories" src="../assets/images/categories/plant-verdura.jpg" alt="Maceteros">    
