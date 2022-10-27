@@ -22,8 +22,8 @@
                 </div>
                 <div class="col">
                     <h3>Detalles de la cuenta</h3>
-                    <h5>Nombre</h5>
-                    <h5>Correo</h5>
+                    <h5><?php echo $user->getNombre();?></h5>
+                    <h5><?php echo $user->getCorreo();?></h5>
                     <h5>******</h5>
                     <a class="btn btn-primary" href="./modificarusuario.php" role="button">Modificar Cuenta</a>
                 </div>

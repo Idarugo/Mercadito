@@ -8,7 +8,7 @@
        $login = true;
        $user = $_SESSION['user'];
        if($_SESSION['user']->getRol() == '1') $isAdmin = true;
-   }    
+   }  
 ?>
 <header>
     <ul class="header__menu">
