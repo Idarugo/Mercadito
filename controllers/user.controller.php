@@ -12,18 +12,17 @@
 
         public function update($name,$correo,$pass,$imagen,$direccion){
             $this->connectDB->connect();
-            $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
-            echo $_FILES['imagen'];
-           // $sql = "UPDATE `users` SET `nombre`='$name',`correo`='$correo',`password`='$pass',`imagen`='$imagen',`direccion`='$direccion'";
-           // $this->connectDB->query($sql);
-           // if($this->connectDB->getDB()->affected_rows){
-           //     $this->connectDB->disconnect();
-           //     header("location:  ../pages/modificarusuario.php?modified");
-           //     return;
-           // }
-           // $this->connectDB->disconnect();
-           // header("location:  ../pages/modificarusuario.php?ModifiedError");
-           // return;
+            $imagen = addslashes(file_get_contents($imagen['tmp_name']));
+           $sql = "UPDATE `users` SET `nombre`='$name',`correo`='$correo',`password`='$pass',`imagen`='$imagen',`direccion`='$direccion'";
+           $this->connectDB->query($sql);
+           if($this->connectDB->getDB()->affected_rows){
+               $this->connectDB->disconnect();
+               header("location:  ../pages/modificarusuario.php?modified");
+               return;
+           }
+           $this->connectDB->disconnect();
+           header("location:  ../pages/modificarusuario.php?ModifiedError");
+           return;
         }
     }
 
