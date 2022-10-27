@@ -16,6 +16,8 @@
            $sql = "UPDATE `users` SET `nombre`='$name',`correo`='$correo',`password`='$pass',`imagen`='$imagen',`direccion`='$direccion'";
            $this->connectDB->query($sql);
            if($this->connectDB->getDB()->affected_rows){
+                //TODO Esta horrible lo hizo el Ikeda
+                $_SESSION['user'] = new Usuario('',$name,$correo,$pass,$imagen,$direccion,'','');
                $this->connectDB->disconnect();
                header("location:  ../pages/modificarusuario.php?modified");
                return;
