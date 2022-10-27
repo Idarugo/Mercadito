@@ -10,11 +10,14 @@
     <?php include '../components/header.php' ?>
     <div class="container container-main">
         <h1>Información personal</h1>
-        <p>Por favor verifique su información personal antes de modificarla.</p>
-             <div class="col-md-10">
-             <center><img class="rounded"  src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>" ></center>
+        <p>Por favor verifique su información personal antes de modificarla.</p>   
+            <div class="col-md-10">
+                <center><img class="rounded"  src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>" ></center>
             </div>
         <form action="../routes/user.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data" >
+            <div class="col-md-10">
+                <input type="hidden" class="form-control" id="inputId"  name="txtId" value="<?php echo $user->getId();?>">
+            </div> 
             <div class="col-md-5">
                 <label for="inputName" class="form-label">Nombre</label>
                 <input type="name" class="form-control" id="inputName" name="txtNombre" value="<?php echo $user->getNombre();?>">
