@@ -10,19 +10,19 @@
             $this->connectDB = $connectDB;
         }
 
-        public function get($category){
+
+        public function registerPlants($title,$price,$description,$category,$image,$cant,$typeDelivery){
             $this->connectDB->connect();
-            $sql = "SELECT `id`, `category` FROM `category` WHERE 1";          
-             $this->connectDB->query($sql);
-            $st = $this->mi->query($sql);
-            while ($rs = mysqli_fetch_array($st)) {
-              $id = $rs['id'];
-              $category = $rs['category'];
-              $c   = new Category($id,$category);
-              $lista[] = $c;
+            $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant`, `type_delivery) VALUES ('$title','$price','$description','$category','$image','$cant','$typeDelivery')";
+            $this->connectDB->query($sql);
+            if($this->connectDB->getDB()->affected_rows){
+                $this->connectDB->disconnect();
+                header("location:  ../pages/agregarproductos.php?created");
+                return;
             }
             $this->connectDB->disconnect();
-            return $lista;
+            header("location:  ../pages/agregarproductos.php?RegisterError");
+            return;
         }
 
         public function getPlant($id){

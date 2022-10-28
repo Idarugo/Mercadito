@@ -1,9 +1,9 @@
 <?php
 class Category{
-	private int $id;
-	private string $category;
+	private $id;
+	private $category;
 
-	function __construct(int $id,string $category){
+	function __construct($id,$category){
 		$this->id = $id;
 		$this->category = $category;
 	}

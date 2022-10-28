@@ -11,8 +11,8 @@
     <div class="container container-main">
         <h1>Información personal</h1>
         <p>Por favor verifique su información personal antes de modificarla.</p>   
-            <div class="col-md-10">
-                <center><img class="rounded"  src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>" ></center>
+            <div class="col-md-12">
+                <center><img class="rounded"  src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>"></center>
             </div>
         <form action="../routes/user.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data" >
             <div class="col-md-10">
@@ -50,7 +50,6 @@
             </div>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
             <input  type="submit" value="Modificar" class="btn btn-success" name="btnModificarCuenta" id="btnForm">
-            
             </div>    
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
                 <a href="./perfil.php" ><button type="button" class="btn btn-success btn btn-dark"> < Volver</button></a>

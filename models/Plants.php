@@ -1,15 +1,15 @@
 <?php
 class Plant{
-	private int $id;
-	private string $title;
-	private string $price;
-	private string $description;
-	private string $image;
-	private int $category;
-	private int $cant;
-	private int $typeDelivery;
+	private  $id;
+	private  $title;
+	private  $price;
+	private  $description;
+	private  $image;
+	private  $category;
+	private  $cant;
+	private  $typeDelivery;
 
-	function __construct(int $id,string $title,string $price,string $description,int $category,string $image,int $cant,int $typeDelivery){
+	function __construct( $id, $title, $price, $description, $category,$image, $cant, $typeDelivery){
 		$this->id = $id;
 		$this->title = $title;
 		$this->price = $price;
