@@ -14,14 +14,17 @@
         <div class="container overflow-hidden text-center">
             <div class="row gx-5">
                 <div class="col">
-                <h3>Detalles de Productos</h3>
-                <a class="btn btn-primary" href="../pages/agregarproductos.php" role="button">Agregar Producto</a>
-                <a class="btn btn-primary" href="../pages/agregarblog.php" role="button">Agregar Blog</a>                
-                <a class="btn btn-primary" href="../pages/listarproductos.php" role="button">Listado de Producto</a>
+                <h3>Registro</h3>
+                <a class="btn btn-primary col-md-7 mb-3" href="../pages/agregarproductos.php" role="button">Agregar Producto</a>
+                <a class="btn btn-primary col-md-7 mb-3"" href="../pages/agregarblog.php" role="button">Agregar Blog</a>  
+                <h3>Listados</h3>              
+                <a class="btn btn-primary col-md-7 mb-3"" href="../pages/listarproductos.php" role="button">Listado de Producto</a>
+                <a class="btn btn-primary col-md-7 mb-3"" href="../pages/listarblog.php" role="button">Listado de Blog</a>
+                <a class="btn btn-primary col-md-7 mb-3"" href="../pages/listarusuario.php" role="button">Listado de Usuario</a>
 
                 </div>
                 <div class="col">
-                    <h3>Detalles de la cuenta</h3>
+                    <h3 >Detalles de la cuenta</h3>
                     <center><img class="fotoperfil img-circle"  src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>" ></center>
                     <h5><?php echo $user->getNombre();?></h5>
                     <h5><?php echo $user->getCorreo();?></h5>

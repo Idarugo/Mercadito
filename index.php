@@ -42,6 +42,11 @@
       </button>
     </div>
 
+    <div class="row mb-2" style="padding-top: 30px !important;">
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-a181f5c1-27e1-4c5d-b9c0-6a88b7e754f4"></div>
+    </div>
+
     <div class="row mb-2">
         <div class="col aling-self-center" >
         <div class="col-11">

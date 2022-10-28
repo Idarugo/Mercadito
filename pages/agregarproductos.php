@@ -22,7 +22,6 @@
                 <select id="inputState" class="form-select" name="txtCategory">
                 <?php
                 session_start();
-                $lista = $c->ListarCategory();
                 for($i=0;$i<count($lista);$i++){
                 $c = $lista[$i];
                 $id = $c->getid();
