@@ -42,6 +42,13 @@
         </div>
     </div>
 
+    <div class="container text-center mb-2">
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <div class="elfsight-app-352e0bab-718d-46ff-9d27-3fd78fa0ed55"></div>
+    </div>
+
+
+
     <h4 class="caption mb-5">COTIZA CON NOSOTROS</h4>
 
     <form class="row g-3 justify-content-center">

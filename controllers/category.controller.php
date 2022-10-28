@@ -1,7 +1,7 @@
 <?php
     require '../models/Category.php';
 
-    class PlantController {
+    class CategoryController {
     
         private $connectDB;
 
@@ -14,16 +14,18 @@
             $lista = array();
             $this->connectDB->connect();
              $sql = "select * from `category` ORDER BY `id` ASC ";
-            $this->connectDB->disconnect();
-             $st = $this->mi->query($sql);
+             $st = $this->connectDB->query($sql);
             while ($rs = mysqli_fetch_array($st)) {
               $id = $rs['id'];
-              $category = $rs['category'];
-              $c   = new Category($id,$category);
+              $name = $rs['category'];
+              $c   = new Category($id,$name);
               $lista[] = $c;
             }
+            session_start();
+            $_SESSION['categories'] = $lista;
             $this->connectDB->disconnect();
-            return $lista;
+            header("location:  ../pages/agregarproductos.php");
+            return;
           }
 
     } 

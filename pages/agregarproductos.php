@@ -1,5 +1,10 @@
 
-
+<?php
+    session_start();
+    if(!isset($_SESSION['categories'])){
+        header("location:  ../routes/category.routes.php?category&listProducts");
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,12 +26,11 @@
                 <label for="inputState" class="form-label">Seleccione Categoria</label>
                 <select id="inputState" class="form-select" name="txtCategory">
                 <?php
-                session_start();
-                for($i=0;$i<count($lista);$i++){
-                $c = $lista[$i];
+                for($i=0;$i<count($_SESSION['categories']);$i++){
+                $c = $category[$i];
                 $id = $c->getid();
-                $category = $c->getCategory();
-                echo "<option value='$id'>$nombre</option>";
+                $name = $c->getName();
+                echo "<option value='$id'>$name</option>";
                 }
                 ?>
 

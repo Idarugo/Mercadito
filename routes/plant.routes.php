@@ -1,12 +1,10 @@
 <?php
-    require '../models/Plants.php';
     require '../core/bootstraper.php';
-    require '../controllers/auth.controller.php';
+    require '../controllers/plant.controller.php';
     $plant = new PlantController( $connectDB );
 
-
     /*
-    *   Crear
+    *   PlantController
     */
     
     if(isset($_POST['btnCrearProduct'])){
@@ -15,26 +13,6 @@
             return;
         }
         $plant->registerPlants($_POST["txtTitle"],$_POST["txtPrice"],$_POST["txtDescription"],$_POST["txtCategory"],$_POST["txtImage"],$_POST["txtCant"],$_POST["txtTypeDelivery"]);
-    }
-
-
-    /*
-    *   Get Plants
-    */
-    if(isset($_GET['category'])){
-        $plant->ListarCategory($_GET['category']);
-
-        if(isset($_GET['products'])){
-            header("location:  ../pages/products.php");
-        }
-        if(isset($_GET['listProducts'])){
-            header("location:  ../pages/listarproductos.php");
-        }
-        if(isset($_GET['listProducts'])){
-            header("location:  ../pages/agregarproductos.php");
-        }
-
-        header("location:  ../pages/products.php");
     }
 
     /*

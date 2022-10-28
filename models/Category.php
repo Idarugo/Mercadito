@@ -1,19 +1,19 @@
 <?php
 class Category{
 	private $id;
-	private $category;
+	private $name;
 
-	function __construct($id,$category){
+	function __construct($id, $name){
 		$this->id = $id;
-		$this->category = $category;
+		$this->name = $name;
 	}
 
 	public function getid(): int{
 		return $this->id;
 	}
 
-	public function getCategory(): string{
-		return $this->category;
+	public function getName(): string{
+		return $this->name;
 	}
 }
 ?>
