@@ -9,7 +9,7 @@
     <?php include '../components/header.php' ?>
     <div class="container container-main mt-5">
 
-        <form action="../routes/blog.routes.php" method="POST" class="row g-3 justify-content-center">
+        <form action="../routes/blog.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data" >
                 <h1 style="text-align: center;">Agregar Blog</h1>
             <div class="col-md-5">
                 <label for="imagen" class="form-label">Imagen</label>

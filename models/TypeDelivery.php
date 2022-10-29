@@ -1,10 +1,10 @@
 <?php
 class TypeDelivery{
-	private int $id;
-	private string $name;
+	private  $id;
+	private  $name;
 
 
-	function __construct(int $id,string $name){
+	function __construct( $id, $name){
 		$this->id = $id;
 		$this->name = $name;
 	}

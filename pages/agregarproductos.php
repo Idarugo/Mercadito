@@ -5,8 +5,11 @@
    // }
    require '../core/bootstraper.php';
    require '../controllers/category.controller.php';
+   require '../controllers/type_delivery.controller.php';
    
    $category = new CategoryController($connectDB);
+   $delivery = new DeliveryController($connectDB);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,7 +22,7 @@
     <?php include '../components/header.php' ?>
     <div class="container container-main mt-5">
 
-        <form action="../routes/plant.routes.php" method="POST" class="row g-3 justify-content-center">
+        <form action="../routes/plant.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data" >
                 <h1 style="text-align: center;">Agregar Productos</h1>
             <div class="col-md-5">
                 <label for="inputName" class="form-label" name="txtTitle">Nombre</label>
@@ -27,16 +30,15 @@
             </div>
             <div class="col-md-5">
                 <label for="inputState" class="form-label">Seleccione Categoria</label>
-                <select id="inputState" class="form-select" name="txtCategory">
+                <select id="inputState" class="form-select" name="Category">
                 <?php
-                $listCategory = $category->ListarCategory();
-
-                for($i=0;$i<count($listCategory);$i++){
-                $c = $listCategory[$i];
-                $id = $c->getid();
-                $name = $c->getName();
-                echo "<option value='$id'>$name</option>";
-                }
+                    $listCategory = $category->ListarCategory();
+                    for($i=0;$i<count($listCategory);$i++){
+                    $c = $listCategory[$i];
+                    $id = $c->getid();
+                    $name = $c->getName();
+                    echo "<option value='$id'>$name</option>";
+                    }
                 ?>
 
                 </select>
@@ -55,15 +57,22 @@
             </div>
             <div class="col-md-10">
                 <label for="inputState" class="form-label">Tipo de Entrega</label>
-                <select id="inputState" class="form-select" name="txtTypeDelivery">
-                    <option selected>Seleccione Tipo de Entrega</option>
-                    <option>Despacho a Domicilio</option>
-                    <option>Retira tu Compra</option>
+                <select id="inputState" class="form-select" name="TypeDelivery">
+                    <?php
+                        $listDelivery = $delivery->ListarDelivery();
+
+                        for($i=0;$i<count($listDelivery);$i++){
+                        $d = $listDelivery[$i];
+                        $id = $d->getid();
+                        $name = $d->getNombre();
+                        echo "<option value='$id'>$name</option>";
+                        }
+                    ?>
                 </select>
             </div>
             <div class="col-md-10">
-                <label for="imagen" class="form-label">Imagen de la Planta</label>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImage" multiple>
+                <label for="imagen" class="form-label">Imagen del Producto</label>
+                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen" multiple>
             </div>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
                 <input  type="submit" value="Agregar" class="btn btn-success" name="btnCrearProduct" id="btnForm">
