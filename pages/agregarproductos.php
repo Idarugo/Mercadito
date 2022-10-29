@@ -3,6 +3,10 @@
    // if(!isset($_SESSION['categories'])){
    //     header("location:  ../routes/category.routes.php?category&route=agregarProductos");
    // }
+   require '../core/bootstraper.php';
+   require '../controllers/category.controller.php';
+   
+   $category = new CategoryController($connectDB);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,9 +29,10 @@
                 <label for="inputState" class="form-label">Seleccione Categoria</label>
                 <select id="inputState" class="form-select" name="txtCategory">
                 <?php
-                echo json_encode($_SESSION['categories']);
-                for($i=0;$i<count($_SESSION['categories']);$i++){
-                $c = $_SESSION['categories'][$i];
+                $listCategory = $category->ListarCategory();
+
+                for($i=0;$i<count($listCategory);$i++){
+                $c = $listCategory[$i];
                 $id = $c->getid();
                 $name = $c->getName();
                 echo "<option value='$id'>$name</option>";
