@@ -28,6 +28,7 @@
             header("location:  ../pages/listarproductos.php");
         }
         
+        
         header("location:  ../pages/products.php");
     }
     
