@@ -25,8 +25,8 @@
         <form action="../routes/plant.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data" >
                 <h1 style="text-align: center;">Agregar Productos</h1>
             <div class="col-md-5">
-                <label for="inputName" class="form-label" name="txtTitle">Nombre</label>
-                <input type="text" class="form-control" id="inputName">
+                <label for="inputName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="inputName" name="txtTitle">
             </div>
             <div class="col-md-5">
                 <label for="inputState" class="form-label">Seleccione Categoria</label>

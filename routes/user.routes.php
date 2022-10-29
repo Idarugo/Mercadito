@@ -14,6 +14,8 @@
         $user->update($_POST["txtId"],$_POST["txtNombre"],$_POST["txtCorreo"],$_POST["txtPass"],$_FILES["txtImagen"],$_POST["txtDireccion"]);
     }
 
+    
+
 
 
 ?>

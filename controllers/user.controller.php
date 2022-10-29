@@ -43,10 +43,11 @@
            }
            $this->connectDB->disconnect();
            header("location:  ../pages/modificarusuario.php?ModifiedError");
-           return;
+           return $lista;
             }
         }
 
     }
+
 
 ?> 

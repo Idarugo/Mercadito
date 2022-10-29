@@ -1,8 +1,9 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['select'])){
-        header("location:  ../routes/user.routes.php?user");
-    }
+   require '../core/bootstraper.php';
+   require '../controllers/user.controller.php';
+   
+   $user = new UserController($connectDB);
+   $lista = $user->select($id);
 ?>
 
 <!DOCTYPE html>
