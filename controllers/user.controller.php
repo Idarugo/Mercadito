@@ -37,7 +37,7 @@
                 $correo    = $rs['correo'];
                 $direccion  = $rs['direccion'];
                 $estado    = $rs['estado'];
-                $en  = new Usuario($id,$name,$correo,0,0,$direccion,$estado,0);
+                $en  = new Usuario($id,$name,$correo,0,0,$direccion,0,$estado);
                 $lista[] = $en;
                 }
                 $this->connectDB->disconnect();
