@@ -28,17 +28,11 @@
         public function select(){
             $lista = array();
             $this->connectDB->connect();
-            $sql = " SELECT `id`, `nombre`, `correo`, `direccion`,`estado` FROM `users`";
+            $sql = " SELECT * FROM `users`";
             if($this->connectDB->getDB()->affected_rows){     
                 $st = $this->connectDB->query($sql);
                 while($rs = mysqli_fetch_array($st)){
-                $id = $rs['id'];
-                $name    = $rs['nombre'];
-                $correo    = $rs['correo'];
-                $direccion  = $rs['direccion'];
-                $estado    = $rs['estado'];
-                $en  = new Usuario($id,$name,$correo,0,0,$direccion,0,$estado);
-                $lista[] = $en;
+                    $lista[] = new Usuario($rs['id'],$rs['nombre'],$rs['correo'],$rs['password'],$rs['imagen'],$rs['direccion'],$rs['rol'],$rs['estado']);;
                 }
                 $this->connectDB->disconnect();
             }
