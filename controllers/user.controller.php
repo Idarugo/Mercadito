@@ -26,10 +26,10 @@
         }
 
         public function select(){
+            $lista = array();
             $this->connectDB->connect();
             $sql = " SELECT `id`, `nombre`, `correo`, `direccion`,`estado` FROM `users`";
             if($this->connectDB->getDB()->affected_rows){     
-                $lista = array();
                 $st = $this->connectDB->query($sql);
                 while($rs = mysqli_fetch_array($st)){
                 $id = $rs['id'];
@@ -41,8 +41,8 @@
                 $lista[] = $en;
                 }
                 $this->connectDB->disconnect();
-                return $lista;
             }
+            return $lista;
         }
 
     }
