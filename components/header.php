@@ -11,6 +11,7 @@
    }  
 ?>
 
+
 <header>
     <ul class="header__menu">
         <li onclick="redirectTo('pages/tiendaonline.php')" class="header__menu-item">Tienda Online</li>

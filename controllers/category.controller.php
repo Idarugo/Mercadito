@@ -24,7 +24,6 @@
             session_start();
             $_SESSION['categories'] = $lista;
             $this->connectDB->disconnect();
-            header("location:  ../pages/agregarproductos.php");
             return;
           }
 

@@ -1,8 +1,7 @@
 
 <?php
-    session_start();
     if(!isset($_SESSION['categories'])){
-        header("location:  ../routes/category.routes.php?category&listProducts");
+        header("location:  ../routes/category.routes.php?category&agreProducts");
     }
 ?>
 <!DOCTYPE html>

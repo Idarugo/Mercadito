@@ -1,5 +1,5 @@
 <?php
-    require '../controllers/auth.controller.php';
+    include '../controllers/auth.controller.php';
     class UserController {
     
         private $connectDB;
@@ -25,7 +25,28 @@
            header("location:  ../pages/modificarusuario.php?ModifiedError");
            return;
         }
-    }
 
+        public function select($id){
+            $this->connectDB->connect();
+            $sql = " SELECT `id`, `nombre`, `correo`, `direccion`,`estado` FROM `users` WHERE  id=$id";
+           if($this->connectDB->getDB()->affected_rows){     
+            $lista = array();
+            $st = $this->connectDB->query($sql);
+            while($rs = mysqli_fetch_array($st)){
+              $id = $rs['id'];
+              $name    = $rs['nombre'];
+              $correo    = $rs['correo'];
+              $direccion  = $rs['direccion'];
+              $estado    = $rs['estado'];
+              $en  = new Usuario($id,$name,$correo,0,0,$direccion,$estado,0);
+              $lista[] = $en;
+           }
+           $this->connectDB->disconnect();
+           header("location:  ../pages/modificarusuario.php?ModifiedError");
+           return;
+            }
+        }
+
+    }
 
 ?> 

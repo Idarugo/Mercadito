@@ -9,14 +9,14 @@
     if(isset($_GET['category'])){
         $name->ListarCategory($_GET['category']);
 
+         if(isset($_GET['agreProducts'])){
+            header("location:  ../pages/agregarproductos.php");
+        }
         if(isset($_GET['products'])){
             header("location:  ../pages/products.php");
         }
         if(isset($_GET['listProducts'])){
             header("location:  ../pages/listarproductos.php");
-        }
-        if(isset($_GET['listProducts'])){
-            header("location:  ../pages/agregarproductos.php");
         }
 
         header("location:  ../pages/products.php");
