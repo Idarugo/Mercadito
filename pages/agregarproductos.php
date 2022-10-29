@@ -26,11 +26,11 @@
                 <h1 style="text-align: center;">Agregar Productos</h1>
             <div class="col-md-5">
                 <label for="inputName" class="form-label" name="txtTitle">Nombre</label>
-                <input type="name" class="form-control" id="inputName">
+                <input type="text" class="form-control" id="inputName">
             </div>
             <div class="col-md-5">
                 <label for="inputState" class="form-label">Seleccione Categoria</label>
-                <select id="inputState" class="form-select" name="Category">
+                <select id="inputStateCategory" class="form-select" name="Category">
                 <?php
                     $listCategory = $category->ListarCategory();
                     for($i=0;$i<count($listCategory);$i++){
@@ -45,11 +45,11 @@
             </div>
             <div class="col-md-10">
                 <label for="inputName" class="form-label">Descripcion</label>
-                <input type="name" class="form-control" id="inputName" name="txtDescription" >
+                <input type="text" class="form-control" id="inputName" name="txtDescription" >
             </div>
             <div class="col-5">
                 <label for="inputAddress2" class="form-label">Precio</label>
-                <input type="precio" class="form-control" id="inputAddress2" placeholder="" name="txtPrice">
+                <input type="number" class="form-control" id="inputAddress2" placeholder="" name="txtPrice">
             </div>
             <div class="col-5">
                 <label for="inputAddress2" class="form-label">Cantidad</label>
@@ -57,7 +57,7 @@
             </div>
             <div class="col-md-10">
                 <label for="inputState" class="form-label">Tipo de Entrega</label>
-                <select id="inputState" class="form-select" name="TypeDelivery">
+                <select id="inputStateTypeDelivery" class="form-select" name="TypeDelivery">
                     <?php
                         $listDelivery = $delivery->ListarDelivery();
 
