@@ -1,8 +1,8 @@
 
 <?php
-    if(!isset($_SESSION['categories'])){
-        header("location:  ../routes/category.routes.php?category&route='agregarProductos'");
-    }
+   // if(!isset($_SESSION['categories'])){
+   //     header("location:  ../routes/category.routes.php?category&route=agregarProductos");
+   // }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,7 +26,7 @@
                 <select id="inputState" class="form-select" name="txtCategory">
                 <?php
                 for($i=0;$i<count($_SESSION['categories']);$i++){
-                $c = $category[$i];
+                $c = $_SESSION['categories'][$i];
                 $id = $c->getid();
                 $name = $c->getName();
                 echo "<option value='$id'>$name</option>";
