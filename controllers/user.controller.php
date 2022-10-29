@@ -26,9 +26,9 @@
            return;
         }
 
-        public function select($id){
+        public function select(){
             $this->connectDB->connect();
-            $sql = " SELECT `id`, `nombre`, `correo`, `direccion`,`estado` FROM `users` WHERE  id=$id";
+            $sql = " SELECT `id`, `nombre`, `correo`, `direccion`,`estado` FROM `users`";
            if($this->connectDB->getDB()->affected_rows){     
             $lista = array();
             $st = $this->connectDB->query($sql);

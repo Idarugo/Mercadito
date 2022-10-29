@@ -2,8 +2,8 @@
    require '../core/bootstraper.php';
    require '../controllers/user.controller.php';
    
-   $user = new UserController($connectDB);
-   $lista = $user->select($id);
+   $userController = new UserController($connectDB);
+   $lista = $userController->select();
 ?>
 
 <!DOCTYPE html>
@@ -32,14 +32,13 @@
     
             <?php
                 for ($i = 0; $i < count($lista); $i++) {
-                $en = $lista[$i];
                 echo "<tr>";
-                echo "<td>" . $en->getId()  . "</td>";
-                echo "<td>" . $en->getNombre()  . "</td>";
-                echo "<td>" . $en->getCorreo() . "</td>";
-                echo "<td>" . $en->getdireccion() . "</td>";
-                echo "<td>" . $en->getEstado() . "</td>";
-                echo "<td><a href='listarusuario.php?id=" . $en->getId() ."'> ELIMINAR</a></td>";
+                echo "<td>" . $lista[$i]->getId()  . "</td>";
+                echo "<td>" . $lista[$i]->getNombre()  . "</td>";
+                echo "<td>" . $lista[$i]->getCorreo() . "</td>";
+                echo "<td>" . $lista[$i]->getdireccion() . "</td>";
+                echo "<td>" . $lista[$i]->getEstado() . "</td>";
+                echo "<td><a href='listarusuario.php?id=" . $lista[$i]->getId() ."'> ELIMINAR</a></td>";
                 echo "</tr>";
                 }
             ?>
