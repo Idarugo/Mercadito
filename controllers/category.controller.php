@@ -10,7 +10,7 @@
             $this->connectDB = $connectDB;
         }
 
-        public function ListarCategory(){
+        public function ListarCategory($route){
             $lista = array();
             $this->connectDB->connect();
              $sql = "select * from `category` ORDER BY `id` ASC ";
@@ -24,7 +24,11 @@
             session_start();
             $_SESSION['categories'] = $lista;
             $this->connectDB->disconnect();
-            header("location:  ../pages/agregarproductos.php");
+
+            if( $route == "agregarProductos"){
+              header("location:  ../pages/agregarproductos.php");
+            }
+            
             return;
           }
 
