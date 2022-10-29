@@ -25,6 +25,7 @@
                 <label for="inputState" class="form-label">Seleccione Categoria</label>
                 <select id="inputState" class="form-select" name="txtCategory">
                 <?php
+                echo json_encode($_SESSION['categories']);
                 for($i=0;$i<count($_SESSION['categories']);$i++){
                 $c = $_SESSION['categories'][$i];
                 $id = $c->getid();
