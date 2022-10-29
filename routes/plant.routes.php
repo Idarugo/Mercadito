@@ -12,7 +12,8 @@
             header("location:  ../pages/agregarproductos.php?txtEmptyError");
             return;
         }
-        $plant->registerPlants($_POST["txtTitle"],$_POST["txtPrice"],$_POST["txtDescription"],$_POST["Category"],$_FILES["txtImagen"],$_POST["txtCant"],$_POST["TypeDelivery"]);
+        echo $_POST["Category"], $_POST["TypeDelivery"];
+        // $plant->registerPlants($_POST["txtTitle"],$_POST["txtPrice"],$_POST["txtDescription"],$_POST["Category"],$_FILES["txtImagen"],$_POST["txtCant"],$_POST["TypeDelivery"]);
     }
     /*
     *   Get Plant

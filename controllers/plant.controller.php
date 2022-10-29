@@ -13,7 +13,7 @@
 
         public function registerPlants($title,$price,$description,$category,$image,$cant,$typeDelivery){
             $this->connectDB->connect();
-            $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant`, `type_delivery) VALUES ('$title','$price','$description','$category','$image','$cant','$typeDelivery')";
+            $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant`, `type_delivery`) VALUES ('$title','$price','$description','$category','$image','$cant','$typeDelivery')";
             $this->connectDB->query($sql);
             if($this->connectDB->getDB()->affected_rows){
                 $this->connectDB->disconnect();
