@@ -1,5 +1,6 @@
 <?php
-    class UserController {
+   require '../models/UsuarioDTO.php';
+   class UserController {
     
         private $connectDB;
 
@@ -7,7 +8,6 @@
         {
             $this->connectDB = $connectDB;
         }
-
 
         public function update($id,$name,$correo,$pass,$imagen,$direccion){
             $this->connectDB->connect();
@@ -29,15 +29,11 @@
             $lista = array();
             $this->connectDB->connect();
             $sql = " SELECT * FROM `users`";
-            echo "IF";
-            if($this->connectDB->getDB()->affected_rows){     
-                $st = $this->connectDB->query($sql);
-                while($rs = mysqli_fetch_array($st)){
-                    echo "WHILE";
-                    $lista[] = new Usuario($rs['id'],$rs['nombre'],$rs['correo'],$rs['password'],$rs['imagen'],$rs['direccion'],$rs['rol'],$rs['estado']);;
-                }
-                $this->connectDB->disconnect();
+            $st = $this->connectDB->query($sql);
+            while($rs = mysqli_fetch_array($st)){
+                $lista[] = new UsuarioDTO($rs['id'],$rs['nombre'],$rs['correo'],$rs['direccion'],$rs['estado']);;
             }
+            $this->connectDB->disconnect();
             return $lista;
         }
 
