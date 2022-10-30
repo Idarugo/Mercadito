@@ -15,9 +15,11 @@
             $sql = "UPDATE `users` SET `nombre`='$name',`correo`='$correo',`password`='$pass',`imagen`='$imagen',`direccion`='$direccion' WHERE `id`='$id'";
             $this->connectDB->query($sql);
            if($this->connectDB->getDB()->affected_rows){            
-                $user = new AuthController($this->connectDB);
-                $user->logout();
-               $this->connectDB->disconnect();
+                session_start();
+                session_unset();
+                session_destroy();
+                $this->connectDB->disconnect();
+                header("location:  ../pages/login.php?logout");
                return;
            }
            $this->connectDB->disconnect();
