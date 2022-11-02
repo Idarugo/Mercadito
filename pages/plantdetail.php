@@ -1,11 +1,11 @@
 <?php
 require '../core/bootstraper.php';
 require '../controllers/plant.controller.php';
-if (!isset($_GET['plants'])) {
+if (!isset($_GET['id'])) {
     header("location:  ./products.php");
 }
 $plants = new PlantController($connectDB);
-$plant = $plants->getPlantById($_GET['plants']);
+$plant = $plants->getPlantById($_GET['id']);
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -40,7 +40,7 @@ $plantsByIdCategory = $plants->getAllPlantsByIdCategory($_GET['category']);
       for ($i = 0; $i < count($plantsByIdCategory); $i++) {
         echo '
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php?id=' . $plantsByIdCategory[$i]->getidPlants() . '">' . $plantsByIdCategory[$i]->geTitle() . '</a>
+        <a class="categoria-title" href="plantdetail.php?id=' . $plantsByIdCategory[$i]->getidPlants() . '">' . $plantsByIdCategory[$i]->geTitle() . '</a>
         <div class="plant_secondary-image">
           <a href="#">
             <img class="img_planta" src="data:imagen/jpg;base64,' . base64_encode($plantsByIdCategory[$i]->getImage()) . '" alt="' . $plantsByIdCategory[$i]->geTitle() . '">
