@@ -43,6 +43,25 @@
             return;
         }
 
+        public function select(){
+            $lista = array();
+            $this->connectDB->connect();
+            $sql = " SELECT * FROM `plants`";
+            $st = $this->connectDB->query($sql);
+            while($rs = mysqli_fetch_array($st)){
+                $lista[] = new Plant($rs['id'],$rs['title'],$rs['price'],$rs['description'],$rs['category'],$rs['image'],$rs['cant'],$rs['type_delivery']);;
+            }
+            $this->connectDB->disconnect();
+            return $lista;
+        }
+
+        public function eliminarplant($id){
+            $this->connectDB->connect();
+            $sql = "DELETE FROM plants WHERE id = $id";
+            $st = $this->connectDB->query($sql);
+            $this->connectDB->disconnect();
+          }
+
         
     }
 

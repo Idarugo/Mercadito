@@ -9,10 +9,9 @@
             $this->connectDB = $connectDB;
         }
 
-        public function update($id,$name,$correo,$pass,$imagen,$direccion){
+        public function update($id,$name,$correo,$pass,$direccion){
             $this->connectDB->connect();
-            $imagen = addslashes(file_get_contents($imagen['tmp_name']));
-            $sql = "UPDATE `users` SET `nombre`='$name',`correo`='$correo',`password`='$pass',`imagen`='$imagen',`direccion`='$direccion' WHERE `id`='$id'";
+            $sql = "UPDATE `users` SET `nombre`='$name',`correo`='$correo',`password`='$pass',`direccion`='$direccion' WHERE `id`='$id'";
             $this->connectDB->query($sql);
            if($this->connectDB->getDB()->affected_rows){            
                 session_start();
@@ -23,7 +22,26 @@
                return;
            }
            $this->connectDB->disconnect();
-           header("location:  ../pages/modificarusuario.php?ModifiedError");
+           //header("location:  ../pages/modificarusuario.php?ModifiedError");
+           return;
+        }
+
+
+        public function updateImagen($id,$imagen){
+            $this->connectDB->connect();
+            $imagen = addslashes(file_get_contents($imagen['tmp_name']));
+            $sql = "UPDATE `users` SET `imagen`='$imagen' WHERE `id`='$id'";
+            $this->connectDB->query($sql);
+           if($this->connectDB->getDB()->affected_rows){            
+                session_start();
+                session_unset();
+                session_destroy();
+                $this->connectDB->disconnect();
+                header("location:  ../pages/login.php?logout");
+               return;
+           }
+           $this->connectDB->disconnect();
+           //header("location:  ../pages/modificarusuario.php?ModifiedError");
            return;
         }
 

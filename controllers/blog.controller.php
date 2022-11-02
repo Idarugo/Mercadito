@@ -25,6 +25,25 @@
              return;
          }
 
+         public function select(){
+            $blog = array();
+            $this->connectDB->connect();
+            $sql = " SELECT * FROM `blog`";
+            $st = $this->connectDB->query($sql);
+            while($rs = mysqli_fetch_array($st)){
+                $blog[] = new Blog($rs['id'],$rs['imagen'],$rs['name'],$rs['detail'],$rs['date']);;
+            }
+            $this->connectDB->disconnect();
+            return $blog;
+        }
+
+        public function eliminarBlog($id){
+          $this->connectDB->connect();
+          $sql = "DELETE FROM blog WHERE id = $id";
+          $st = $this->connectDB->query($sql);
+          $this->connectDB->disconnect();
+        }
+
     }
 
 

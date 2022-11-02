@@ -16,11 +16,10 @@
 <body>
     <?php include '../components/header.php' ?>
     <div class="container container-main">
-       <h1>Listado De Usuarios</h1>
+       <h1>Usuarios</h1>
        <form class="row g-3 justify-content-center"> 
         <table class="styled-table">
             <tr>
-                <td><strong>ID</strong></td>
                 <td><strong>Nombre</strong></td>
                 <td><strong>Correo</strong></td>
                 <td><strong>Direccion</strong></td>
@@ -33,7 +32,6 @@
             <?php
                 for ($i = 0; $i < count($lista); $i++) {
                 echo "<tr>";
-                echo "<td>" . $lista[$i]->getId()  . "</td>";
                 echo "<td>" . $lista[$i]->getNombre()  . "</td>";
                 echo "<td>" . $lista[$i]->getCorreo() . "</td>";
                 echo "<td>" . $lista[$i]->getdireccion() . "</td>";

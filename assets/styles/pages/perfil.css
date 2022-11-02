@@ -4,8 +4,9 @@ h1 {
   }
 
   .fotoperfil{
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
+    pointer-events: none;
 
     background-repeat: no-repeat;
     background-position: 50%;

@@ -24,7 +24,7 @@ $delivery = new DeliveryController($connectDB);
     <div class="container container-main mt-5">
 
         <form action="../routes/plant.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
-            <h1 style="text-align: center;">Agregar Productos</h1>
+            <h1 style="text-align: center;">Modificar Producto</h1>
             <div class="col-md-5">
                 <label for="inputName" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="inputName" name="txtTitle">
@@ -76,10 +76,10 @@ $delivery = new DeliveryController($connectDB);
                 <input class="form-control" type="file" id="formFileMultiple" name="txtImagen" multiple>
             </div>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
-                <input type="submit" value="Agregar" class="btn btn-success" name="btnCrearProduct" id="btnForm">
+                <input type="submit" value="Modificar" class="btn btn-success" name="btnCrearProduct" id="btnForm">
             </div>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
-                <a href="./perfil.php"><button type="button" class="btn btn-success btn btn-dark">
+                <a href="./listarproductos.php"><button type="button" class="btn btn-success btn btn-dark">
                         < Volver</button></a>
             </div>
         </form>
