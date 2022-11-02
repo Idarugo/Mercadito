@@ -24,5 +24,4 @@
             $this->connectDB->disconnect();            
             return $lista;
           }
-
     } 

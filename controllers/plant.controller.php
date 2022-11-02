@@ -42,7 +42,17 @@
             header("location:  $id");
             return;
         }
-
+        public function getAllPlantsByIdCategory($id){
+            $lista = array();
+            $this->connectDB->connect();
+            $sql = "SELECT * FROM `plants` WHERE `category`= $id";
+            $st = $this->connectDB->query($sql);
+            while($rs = mysqli_fetch_array($st)){
+                $lista[] = new Plant($rs['id'],$rs['title'],$rs['price'],$rs['description'],$rs['category'],$rs['image'],$rs['cant'],$rs['type_delivery']);;
+            }
+            $this->connectDB->disconnect();
+            return $lista;
+        }
         public function select(){
             $lista = array();
             $this->connectDB->connect();

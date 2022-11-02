@@ -1,3 +1,13 @@
+<?php
+  require '../core/bootstraper.php';
+  require '../controllers/plant.controller.php';
+  if(!isset($_GET['category'])){
+    header("location:  ./tiendaonline.php");
+  }
+  $plants = new PlantController($connectDB);
+  $plantsByIdCategory = $plants->getAllPlantsByIdCategory($_GET['category']);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,6 +17,7 @@
 </head>
 <body>
 <?php include '../components/header.php' ?>
+
     <div class="container">
         <h1></h1>
     </div>
@@ -16,145 +27,28 @@
         <p></p>
     </section>
     <div class="container container-main">
-<div class="collection_filter_item">50 Articulos</div>
+<div class="collection_filter_item"><?= count($plantsByIdCategory);?> Articulos</div>
 
 <div class="container container-main container-plants"> 
     
+  <?php
+    if(count($plantsByIdCategory) == 0){
+      echo 'No hay Productos';
+    }
+    for($i = 0; $i < count($plantsByIdCategory); $i++){
+      echo '
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
+        <a class="categoria-title" href="../pages/plantdetail.php">'.$plantsByIdCategory[$i]->geTitle().'</a>
         <div class="plant_secondary-image">
           <a href="#">
-            <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
+            <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="'.$plantsByIdCategory[$i]->geTitle().'">
           </a>
         </div>
       </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
-      <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php"></a>
-        <div class="plant_secondary-image">
-          <a href="#">
-          <img class="img_planta" src="../assets/images/fondoplanta-temporal.jpg" alt="">
-          </a>
-        </div>
-      </article>
-
+      ';
+    }
+  ?>
+      
 
   </div>
   <br/>
