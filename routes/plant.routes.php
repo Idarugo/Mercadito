@@ -33,9 +33,5 @@ if (isset($_GET['getPlant'])) {
 }
 
 if (isset($_GET['btnElminarPlant'])) {
-    if (empty($_GET["id"])) {
-        header("location:  ../pages/listarproductos.php?txtEmptyError");
-        return;
-    }
-    $blog->eliminarplant($_GET["id"]);
+    $plant->eliminarplant($_GET["btnElminarPlant"]);
 }

@@ -1,21 +1,29 @@
-
-.banner .banner__img{
-    background-image: url('../../images/categories/banner-plantasinterior.jpg');
+.banner .banner__img {
+  background-image: url('../../images/categories/banner-plantasinterior.jpg');
 }
 
-.img_planta{
-    width: 224px;
-    object-fit: cover;
-    height: 299px;
-    flex-wrap: wrap;
-    grid-gap: 20px 10px;
+.img_planta {
+  width: 224px;
+  object-fit: cover;
+  height: 299px;
+  flex-wrap: wrap;
+  grid-gap: 20px 10px;
 }
+
+.img_mensaje {
+  width: 1200px;
+  height: 900px;
+  cursor: pointer;
+}
+
 body {
   font-family: sans-serif;
 }
+
 h2 {
   margin-bottom: .10em;
 }
+
 .container-plants {
   display: flex;
   justify-content: center;
@@ -23,18 +31,23 @@ h2 {
   flex-wrap: wrap;
   gap: 20px;
 }
+
 .categoria-plant {
-    position: relative;
+  position: relative;
 }
-.categoria-image {
+
+.plant_secondary-image {
+  color: white;
   line-height: 0;
   overflow: hidden;
 }
-.categoria-image img {
+
+.plant_secondary-image img {
   filter: blur(0px);
   transition: filter 0.3s ease-in;
   transform: scale(1.1);
 }
+
 .categoria-title {
   font-size: 1.5em;
   font-weight: bold;
@@ -48,24 +61,27 @@ h2 {
   opacity: 0;
   transition: opacity .5s;
   /* background: rgba(255, 255, 255, 0.4); */
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-  
-  .categoria-listing:hover .categoria-title {
-    opacity: 1;
-  }
-  
-.categoria-listing:hover .categoria-image img {
+
+.categoria-plant:hover .categoria-title {
+  opacity: 1;
+  color: rgb(255, 255, 255);
+}
+
+.categoria-plant:hover .plant_secondary-image img {
   filter: blur(2px);
 }
 
-@media (hover: none) { 
+@media (hover: none) {
   .categoria-title {
     opacity: 1;
   }
-  .categoria-image img {
+
+  .plant_secondary-image img {
     filter: blur(2px);
   }
 }

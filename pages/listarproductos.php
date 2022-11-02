@@ -45,7 +45,7 @@ $produc = $producController->select();
                         echo "<td>" . $produc[$i]->getCategory() . "</td>";
                         echo "<td>" . $produc[$i]->getTypeDelivery() . "</td>";
                         echo "<td><a href='listarproductos.php?id=" . $produc[$i]->getidPlants() . "'>Editar</a></td>";
-                        echo "<td><a href='listarproductos.php?id=" . $produc[$i]->getidPlants() . "'>ELIMINAR</a></td>";
+                        echo "<td><a href='../routes/plant.routes.php?btnElminarPlant=" . $produc[$i]->getidPlants() . "'>ELIMINAR</a></td>";
                         echo "</tr>";
                     }
                     ?>
@@ -60,14 +60,6 @@ $produc = $producController->select();
             </div>
         </form>
     </div>
-    <?php
-    if (!empty($_GET['id'])) {
-        $id = $_GET['id'];
-        $produc = $id->eliminarplant($id);
-        header("./pages/listarproductos.php");
-    }
-    ?>
-
     <?php include '../components/footer.php' ?>
 </body>
 

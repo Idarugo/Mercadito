@@ -35,12 +35,12 @@ $plantsByIdCategory = $plants->getAllPlantsByIdCategory($_GET['category']);
 
       <?php
       if (count($plantsByIdCategory) == 0) {
-        echo 'No hay Productos';
+        echo '<a href="../pages/tiendaonline.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-categoria.png"></a>';
       }
       for ($i = 0; $i < count($plantsByIdCategory); $i++) {
         echo '
       <article  class="categoria-plant">
-        <a class="categoria-title" href="../pages/plantdetail.php">' . $plantsByIdCategory[$i]->geTitle() . '</a>
+        <a class="categoria-title" href="../pages/plantdetail.php?id=' . $plantsByIdCategory[$i]->getidPlants() . '">' . $plantsByIdCategory[$i]->geTitle() . '</a>
         <div class="plant_secondary-image">
           <a href="#">
             <img class="img_planta" src="data:imagen/jpg;base64,' . base64_encode($plantsByIdCategory[$i]->getImage()) . '" alt="' . $plantsByIdCategory[$i]->geTitle() . '">
@@ -50,8 +50,6 @@ $plantsByIdCategory = $plants->getAllPlantsByIdCategory($_GET['category']);
       ';
       }
       ?>
-
-
     </div>
     <br />
   </div>
