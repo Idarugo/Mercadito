@@ -44,7 +44,7 @@ $delivery = new DeliveryController($connectDB);
 
                 </select>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-5">
                 <label for="inputName" class="form-label">Descripcion</label>
                 <input type="text" class="form-control" id="inputName" name="txtDescription">
             </div>
@@ -56,7 +56,7 @@ $delivery = new DeliveryController($connectDB);
                 <label for="inputAddress2" class="form-label">Cantidad</label>
                 <input type="number" class="form-control" id="inputAddress2" name="txtCant" placeholder="">
             </div>
-            <div class="col-md-10">
+            <div class="col-md-5">
                 <label for="inputState" class="form-label">Tipo de Entrega</label>
                 <select id="inputStateTypeDelivery" class="form-select" name="TypeDelivery">
                     <?php
@@ -71,9 +71,29 @@ $delivery = new DeliveryController($connectDB);
                     ?>
                 </select>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-5">
                 <label for="imagen" class="form-label">Imagen del Producto</label>
                 <input class="form-control" type="file" id="formFileMultiple" name="txtImagen" multiple>
+            </div>
+            <div class="col-5">
+                <label for="inputName" class="form-label">Acerca De</label>
+                <input type="text" class="form-control" id="inputName" name="txtAbout" placeholder="">
+            </div>
+            <div class="col-5">
+                <label for="inputName" class="form-label">Tips</label>
+                <input type="text" class="form-control" id="inputName" name="txtTips" placeholder="">
+            </div>
+            <div class="col-5">
+                <label for="inputName" class="form-label">Cuidados Principales</label>
+                <input type="text" class="form-control" id="inputName" name="txtHealthbenefit" placeholder="">
+            </div>
+            <div class="col-5">
+                <label for="inputName" class="form-label">Beneficio Para la salud</label>
+                <input type="text" class="form-control" id="inputName" name="txtPrimarycare" placeholder="">
+            </div>
+            <div class="col-5">
+                <label for="inputName" class="form-label">Tambien conocido como</label>
+                <input type="text" class="form-control" id="inputName" name="txtAlsoknownas" placeholder="">
             </div>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
                 <input type="submit" value="Agregar" class="btn btn-success" name="btnCrearProduct" id="btnForm">

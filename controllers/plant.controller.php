@@ -15,8 +15,7 @@ class PlantController
     public function registerPlants($title, $price, $description, $category, $image, $cant, $typeDelivery)
     {
         $this->connectDB->connect();
-        $imagen = addslashes(file_get_contents($image['tmp_name']));
-        $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant`, `type_delivery`) VALUES ('$title','$price','$description','$category','$imagen','$cant','$typeDelivery')";
+        $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant`, `type_delivery`) VALUES ('$title','$price','$description','$category','$image','$cant','$typeDelivery')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
@@ -24,14 +23,9 @@ class PlantController
             return;
         }
         $this->connectDB->disconnect();
-        header("location:  ../pages/agregarproductos.php?created");
-        return;
-        $this->connectDB->disconnect();
         header("location:  ../pages/agregarproductos.php?RegisterError");
         return;
     }
-
-
 
     public function getPlant($id)
     {
@@ -41,7 +35,7 @@ class PlantController
         $resp = $this->connectDB->query($sql);
         $list = array();
         while ($rs = mysqli_fetch_array($resp)) {
-            $plants = new Plant($rs[0], $rs[1], $rs[2], $rs[3], $rs[4], $rs[5], $rs[6], $rs[7], $rs[8], $rs[9], $rs[10]);
+            $plants = new Plant($rs[0], $rs[1], $rs[2], $rs[3], $rs[4], $rs[5], $rs[6], $rs[7], $rs[8], $rs[9], $rs[10], $rs[11], $rs[12], $rs[13]);
             $list[] = $plants;
         }
         $_SESSION['plants'] = $list;
@@ -49,7 +43,6 @@ class PlantController
         header("location:  $id");
         return;
     }
-
     public function getAllPlantsByIdCategory($id)
     {
         $lista = array();
@@ -57,7 +50,7 @@ class PlantController
         $sql = "SELECT * FROM `plants` WHERE `category`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery']);;
+            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -70,7 +63,7 @@ class PlantController
         $sql = "SELECT * FROM `plants` WHERE `id`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery']);;
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -83,18 +76,17 @@ class PlantController
         $sql = " SELECT * FROM `plants`";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery']);;
+            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $lista;
     }
 
-    public function eliminarplant($id)
+    public function removePlant($id)
     {
         $this->connectDB->connect();
         $sql = "DELETE FROM plants WHERE id = $id";
         $st = $this->connectDB->query($sql);
         $this->connectDB->disconnect();
-        header("location:  ../pages/listarproductos.php?remove");
     }
 }

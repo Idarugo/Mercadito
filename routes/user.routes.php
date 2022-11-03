@@ -21,3 +21,7 @@ if (isset($_POST['btnModificarImagen'])) {
     }
     $user->updateImagen($_POST["txtId"], $_FILES["txtImagen"]);
 }
+
+if (isset($_GET['btnElminarUsu'])) {
+    $user->removeUser($_GET["btnElminarUsu"]);
+}

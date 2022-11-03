@@ -8,11 +8,11 @@ $plant = new PlantController($connectDB);
     */
 
 if (isset($_POST['btnCrearProduct'])) {
-    if (empty($_POST["txtTitle"])  || empty($_POST["Category"]) || empty($_POST["txtDescription"]) || empty($_POST["txtPrice"]) ||  empty($_POST["txtCant"])  || empty($_POST["TypeDelivery"]) || empty($_FILES["txtImagen"])) {
+    if (empty($_POST["txtTitle"])  || empty($_POST["Category"]) || empty($_POST["txtDescription"]) || empty($_POST["txtPrice"]) ||  empty($_POST["txtCant"])  || empty($_POST["TypeDelivery"]) || empty($_FILES["txtImagen"]) || empty($_POST["txtAbout"]) || empty($_POST["txtTips"]) || empty($_POST["txtHealthbenefit"]) || empty($_POST["txtPrimarycare"]) || empty($_POST["txtAlsoknownas"])) {
         header("location:  ../pages/agregarproductos.php?txtEmptyError");
         return;
     }
-    $plant->registerPlants($_POST["txtTitle"], $_POST["txtPrice"], $_POST["txtDescription"], $_POST["Category"], $_FILES["txtImagen"], $_POST["txtCant"], $_POST["TypeDelivery"]);
+    $plant->registerPlants($_POST["txtTitle"], $_POST["txtPrice"], $_POST["txtDescription"], $_POST["Category"], $_FILES["txtImagen"], $_POST["txtCant"], $_POST["TypeDelivery"], $_POST["txtAbout"], $_POST["txtTips"], $_POST["txtHealthbenefit"], $_POST["txtPrimarycare"], $_POST["txtAlsoknownas"]);
 }
 
 /*
@@ -33,5 +33,5 @@ if (isset($_GET['getPlant'])) {
 }
 
 if (isset($_GET['btnElminarPlant'])) {
-    $plant->eliminarplant($_GET["btnElminarPlant"]);
+    $plant->removePlant($_GET["btnElminarPlant"]);
 }
