@@ -12,10 +12,10 @@ class PlantController
     }
 
 
-    public function registerPlants($title, $price, $description, $category, $image, $cant, $typeDelivery)
+    public function registerPlants($title, $price, $description, $category, $image, $cant, $typeDelivery, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
     {
         $this->connectDB->connect();
-        $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant`, `type_delivery`) VALUES ('$title','$price','$description','$category','$image','$cant','$typeDelivery')";
+        $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant`, `type_delivery` , `about`, `tips`, `health_benefit`, `primary_care`, `also_known_as`) VALUES ('$title','$price','$description','$category','$image','$cant','$typeDelivery', '$about','$tips','$healthBenefit','$primaryCare','$alsoKnownAs')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
@@ -88,5 +88,54 @@ class PlantController
         $sql = "DELETE FROM plants WHERE id = $id";
         $st = $this->connectDB->query($sql);
         $this->connectDB->disconnect();
+        header("location:  ../pages/listarproductos.php?removedplant");
+        return;
+    }
+
+
+    public function ListProduct()
+    {
+        $lista = array();
+        $this->connectDB->connect();
+        $sql = "select * from `plants` ORDER BY `id` ASC ";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $id = $rs['id'];
+            $title = $rs['title'];
+            $price = $rs['price'];
+            $description = $rs['description'];
+            $image = $rs['image'];
+            $category = $rs['category'];
+            $cant = $rs['cant'];
+            $typeDelivery = $rs['type_delivery'];
+            $about = $rs['about'];
+            $tips = $rs['tips'];
+            $healthBenefit = $rs['health_benefit'];
+            $primaryCare = $rs['primary_care'];
+            $alsoKnownAs = $rs['also_known_as'];
+            $p   = new Plant($id, $title, $price, $description, $image, $category, $cant, $typeDelivery, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs);
+            $lista[] = $p;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
+    }
+
+    public function updateProduct($id, $title, $price, $description, $category, $image, $cant, $typeDelivery, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
+
+    {
+        $this->connectDB->connect();
+        $sql = "UPDATE `plants` SET `title`='$title',`price`='$price',`description`='$description',`category`='$category',`image`='$image',`cant`='$cant',`type_delivery`='$typeDelivery',`about`='$about', `tips`='$tips',`health_benefit`='$healthBenefit',`primary_care`='$primaryCare',`also_known_as`='$alsoKnownAs'WHERE `id`='$id'";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            session_start();
+            session_unset();
+            session_destroy();
+            $this->connectDB->disconnect();
+            header("location:  ../pages/listimages.php?edited");
+            return;
+        }
+        $this->connectDB->disconnect();
+        //header("location:  ../pages/modificarusuario.php?ModifiedError");
+        return;
     }
 }

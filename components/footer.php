@@ -1,22 +1,22 @@
 <footer class="footer_area">
-    <?php include __DIR__.'/whatsapp.php' ?>
+    <?php include __DIR__ . '/whatsapp.php' ?>
     <div class="container">
-        <div class="row">	
-           <div class="col-md-3 col-sm-6">
-               <div class="single_ftr">
-                   <h4 class="sf_title">INFORMACIÓN</h4>
-                   <ul>
-                       <li><a onclick="redirectTo('pages/info/seguimientodepedido.php')">Seguimiento de pedidos</a></li>
-                       <li><a onclick="redirectTo('pages/info/politicadedespachos.php')">Política de despachos</a></li>
-                       <li><a onclick="redirectTo('pages/contactenos.php')">Contáctanos</a></li>
-                       <li><a onclick="redirectTo('pages/devoluciones.php')">Devoluciones</a></li>
-                       <li><a onclick="redirectTo('pages/info/preguntasfrecuentes.php')">Preguntas Frecuentes</a></li>
-                       <li><a onclick="redirectTo('pages/info/politicasyprivacidad.php')">Políticas y Privacidad</a></li>
-                       <li><a onclick="redirectTo('pages/info/terminosyservicios.php')">Términos y Servicios</a></li>
-                       <li><a onclick="redirectTo('pages/info/politicadelrembolso.php')">Política de rembolso</a></li>
-                   </ul>
-               </div>
-           </div>                       
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="single_ftr">
+                    <h4 class="sf_title">INFORMACIÓN</h4>
+                    <ul>
+                        <li><a onclick="redirectTo('pages/info/seguimientodepedido.php')">Seguimiento de pedidos</a></li>
+                        <li><a onclick="redirectTo('pages/info/politicadedespachos.php')">Política de despachos</a></li>
+                        <li><a onclick="redirectTo('pages/contactenos.php')">Contáctanos</a></li>
+                        <li><a onclick="redirectTo('pages/devoluciones.php')">Devoluciones</a></li>
+                        <li><a onclick="redirectTo('pages/info/preguntasfrecuentes.php')">Preguntas Frecuentes</a></li>
+                        <li><a onclick="redirectTo('pages/info/politicasyprivacidad.php')">Políticas y Privacidad</a></li>
+                        <li><a onclick="redirectTo('pages/info/terminosyservicios.php')">Términos y Servicios</a></li>
+                        <li><a onclick="redirectTo('pages/info/politicadelrembolso.php')">Política de rembolso</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="col-md-3 col-sm-6">
                 <div class="single_ftr">
                     <h4 class="sf_title">CONTACTO</h4>
@@ -47,7 +47,7 @@
                     <h4 class="sf_title">¡REGÍSTRATE Y RECIBE INFORMACIÓN!</h4>
                     <div class="newsletter_form">
                         <p>Agrega tu correo y recibe las mejores promociones, novedades y noticias.</p>
-                        <form method="post" class="form-inline">				
+                        <form method="post" class="form-inline">
                             <input name="EMAIL" id="email" placeholder="Suscríbete a nuestra lista de correo" class="form-control" type="email">
                             <button type="submit" class="btn btn-default" title="search">
                                 <i class="fa fa-search"></i>
@@ -100,4 +100,4 @@
         </div>
     </div>
 </footer>
-<?php include __DIR__."/scripts.php"; ?>
+<?php include __DIR__ . "/scripts.php"; ?>

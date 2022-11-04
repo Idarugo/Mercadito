@@ -67,5 +67,7 @@ class UserController
         $sql = "DELETE FROM users WHERE id = $id";
         $st = $this->connectDB->query($sql);
         $this->connectDB->disconnect();
+        header("location:  ../pages/listarusuario.php?removedUsername");
+        return;
     }
 }

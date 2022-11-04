@@ -38,7 +38,7 @@ $lista = $userController->Userlist();
                         echo "<td>" . $lista[$i]->getCorreo() . "</td>";
                         echo "<td>" . $lista[$i]->getdireccion() . "</td>";
                         echo "<td>" . $lista[$i]->getEstado() . "</td>";
-                        echo "<td><a href='../routes/user.routes.php?btnElminarUsu=" . $lista[$i]->getId() . "'>ELIMINAR</a></td>";
+                        echo "<td><a href='../routes/user.routes.php?btnElminarUsu=" . $lista[$i]->getId() . "'>Eliminar</a></td>";
                         echo "</tr>";
                     }
                     ?>

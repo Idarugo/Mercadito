@@ -33,7 +33,7 @@ $delivery = new DeliveryController($connectDB);
                 <label for="inputState" class="form-label">Seleccione Categoria</label>
                 <select id="inputStateCategory" class="form-select" name="Category">
                     <?php
-                    $listCategory = $category->ListarCategory();
+                    $listCategory = $category->ListCategory();
                     for ($i = 0; $i < count($listCategory); $i++) {
                         $c = $listCategory[$i];
                         $id = $c->getid();

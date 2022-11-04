@@ -1,11 +1,14 @@
 <?php
 require '../core/bootstraper.php';
 require '../controllers/plant.controller.php';
+require '../controllers/image_plants.controller.php';
 if (!isset($_GET['id'])) {
     header("location:  ./products.php");
 }
 $plants = new PlantController($connectDB);
+$image_plants = new ImageController($connectDB);
 $plant = $plants->getPlantById($_GET['id']);
+$image = $image_plants->getImageById($_GET['id']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +25,7 @@ $plant = $plants->getPlantById($_GET['id']);
 
 
         <?php
-        if ($plant == "") {
+        if ($plant == "" || $image == "") {
             echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
         } else {
             echo '
@@ -31,23 +34,23 @@ $plant = $plants->getPlantById($_GET['id']);
             <img class="img_plant" src="data:imagen/jpg;base64,' . base64_encode($plant->getImage()) . '">
             <div class="row mt-2">
                 <div class="col-2">
-                    <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($plant->getImage()) . '" alt="">
+                    <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($image->getImage1()) . '" alt="">
                 </div>
 
                 <div class="col-2">
-                    <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($plant->getImage()) . '" alt="">
+                    <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($image->getImage2()) . '" alt="">
                 </div>
 
                 <div class="col-2">
-                    <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($plant->getImage()) . '" alt="">
+                    <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($image->getImage3()) . '" alt="">
                 </div>
 
                 <div class="col-2">
-                    <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($plant->getImage()) . '" alt="">
+                    <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($image->getImage4()) . '" alt="">
                 </div>
 
                 <div class="col-2">
-                    <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($plant->getImage()) . '" alt="">
+                    <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($image->getImage5()) . '" alt="">
                     </div>
                     </div>
     
