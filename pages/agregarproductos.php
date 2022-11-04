@@ -25,6 +25,20 @@ $delivery = new DeliveryController($connectDB);
 
         <form action="../routes/plant.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
             <h1 style="text-align: center;">Agregar Productos</h1>
+
+            <ul class="nav nav-tabs justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../pages/agregarproductos.php">Añadir Producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/agregarblog.php">Añadir Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/addproductimages.php">Añadir Imagenes Productos</a>
+                </li>
+            </ul>
+
+
             <div class="col-md-5">
                 <label for="inputName" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="inputName" name="txtTitle">
@@ -46,7 +60,7 @@ $delivery = new DeliveryController($connectDB);
             </div>
             <div class="col-md-5">
                 <label for="inputName" class="form-label">Descripcion</label>
-                <input type="text" class="form-control" id="inputName" name="txtDescription">
+                <textarea class="form-control" id="inputName" name="txtDescription" rows="3" placeholder=""></textarea>
             </div>
             <div class="col-5">
                 <label for="inputAddress2" class="form-label">Precio</label>
@@ -77,7 +91,7 @@ $delivery = new DeliveryController($connectDB);
             </div>
             <div class="col-5">
                 <label for="inputName" class="form-label">Acerca De</label>
-                <input type="text" class="form-control" id="inputName" name="txtAbout" placeholder="">
+                <textarea class="form-control" id="inputName" name="txtAbout" rows="3" placeholder=""></textarea>
             </div>
             <div class="col-5">
                 <label for="inputName" class="form-label">Tips</label>

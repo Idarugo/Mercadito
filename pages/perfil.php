@@ -55,7 +55,7 @@
             </div>
             <div class="col">
                 <h3>Detalles de la cuenta</h3>
-                <center><img class="fotoperfil" src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>"></center>
+                <center><img class="rounded-circle" src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>"></center>
                 <h5><?php echo $user->getNombre(); ?></h5>
                 <h5><?php echo $user->getCorreo(); ?></h5>
                 <h5>******</h5>

@@ -124,6 +124,7 @@ class PlantController
 
     {
         $this->connectDB->connect();
+        $image = addslashes(file_get_contents($image['tmp_name']));
         $sql = "UPDATE `plants` SET `title`='$title',`price`='$price',`description`='$description',`category`='$category',`image`='$image',`cant`='$cant',`type_delivery`='$typeDelivery',`about`='$about', `tips`='$tips',`health_benefit`='$healthBenefit',`primary_care`='$primaryCare',`also_known_as`='$alsoKnownAs'WHERE `id`='$id'";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
@@ -131,7 +132,7 @@ class PlantController
             session_unset();
             session_destroy();
             $this->connectDB->disconnect();
-            header("location:  ../pages/listimages.php?edited");
+            header("location:  ../pages/listarproductos.php?edited");
             return;
         }
         $this->connectDB->disconnect();

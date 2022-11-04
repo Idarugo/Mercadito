@@ -13,7 +13,7 @@
         <h1>Información personal</h1>
         <p>Por favor verifique su información personal antes de modificarla.</p>
         <div class="col-md-12" onclick="redirectTo('pages/modifyimage.php')">
-            <center><img class="rounded" src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>"></center>
+            <center><img class="rounded rounded-circle" src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>"></center>
         </div>
         <form action="../routes/user.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
             <div class="col-md-10">

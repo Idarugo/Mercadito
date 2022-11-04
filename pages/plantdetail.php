@@ -65,9 +65,18 @@ $image = $image_plants->getImageById($_GET['id']);
             <p class="despacho-1" style="margin: 10px;">Tipo de entrega </p>
             <li type="disc" class="despacho" style="margin: 10px;">' . $plant->getTypeDelivery() . '</li>
 
-            <button class="btn-agregar">
-                <span> Agregar al carrito </span>
-            </button>
+          
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Agregar al carrito/button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compra</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                Su carrito actualmente está vacío.
+            </div>
+            </div>
 
             <button class="btn-comprar">
                 <a href="../pages/carrodecompra.php"> Comprar Ahora</a>

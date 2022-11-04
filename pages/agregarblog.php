@@ -13,6 +13,19 @@
 
         <form action="../routes/blog.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
             <h1 style="text-align: center;">Agregar Blog</h1>
+
+            <ul class="nav nav-tabs justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="../pages/agregarproductos.php">Añadir Producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../pages/agregarblog.php">Añadir Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/addproductimages.php">Añadir Imagenes Productos</a>
+                </li>
+            </ul>
+
             <div class="col-md-5">
                 <label for="imagen" class="form-label">Imagen</label>
                 <input class="form-control" type="file" id="formFileMultiple" name="txtImagen" multiple>

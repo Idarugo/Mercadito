@@ -45,7 +45,7 @@ class ImageController
         $sql = "DELETE FROM image_plants WHERE id = $id";
         $st = $this->connectDB->query($sql);
         $this->connectDB->disconnect();
-        header("location:  ../pages/addproductimages.php?removedimages");
+        header("location:  ../pages/listimages.php?removedimages");
         return;
     }
 
@@ -60,5 +60,28 @@ class ImageController
         }
         $this->connectDB->disconnect();
         return $image;
+    }
+
+    public function updateImagen($id, $plants, $image1, $image2, $image3, $image4, $image5)
+    {
+        $this->connectDB->connect();
+        $image1 = addslashes(file_get_contents($image1['tmp_name']));
+        $image2 = addslashes(file_get_contents($image2['tmp_name']));
+        $image3 = addslashes(file_get_contents($image3['tmp_name']));
+        $image4 = addslashes(file_get_contents($image4['tmp_name']));
+        $image5 = addslashes(file_get_contents($image5['tmp_name']));
+        $sql = "UPDATE `image_plants` SET `plants`='$plants',`image_1`='$image1',`image_2`='$image2',`image_3`='$image3' ,`image_4`='$image4' ,`image_5`='$image5' WHERE `id`='$id'";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            session_start();
+            session_unset();
+            session_destroy();
+            $this->connectDB->disconnect();
+            header("location:  ../pages/listimages.php?edited");
+            return;
+        }
+        $this->connectDB->disconnect();
+        //header("location:  ../pages/modificarusuario.php?ModifiedError");
+        return;
     }
 }

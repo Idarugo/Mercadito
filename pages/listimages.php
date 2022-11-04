@@ -20,6 +20,22 @@ $image = $imageController->listimages();
     <?php include '../components/header.php' ?>
     <div class="container container-main">
         <h1>Imágenes de productos</h1>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../pages/listarproductos.php">Lista de Producto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listarblog.php">Lista de Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listarusuario.php">Lista de Usuario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="../pages/listimages.php">Lista de Foto</a>
+            </li>
+        </ul>
+
         <form class="row g-3 justify-content-center">
             <table class="styled-table">
                 <tr>
@@ -43,8 +59,8 @@ $image = $imageController->listimages();
                         echo "<td>" . $image[$i]->getImage3() . "</td>";
                         echo "<td>" . $image[$i]->getImage4() . "</td>";
                         echo "<td>" . $image[$i]->getImage5() . "</td>";
-                        echo "<td><a href='listimages.php?id=" . $image[$i]->getId() . "'>Editar</a> -
-                                  <a href='../routes/image.routes.php?btnElminarImage=" . $image[$i]->getId() . "'>Eliminar</a></td>";
+                        echo "<td><a href='editimages.php?id=" . $image[$i]->getId() . "'>Editar</a> -
+                                <a href='../routes/image.routes.php?btnElminarImage=" . $image[$i]->getId() . "'>Eliminar</a></td>";
                         echo "</tr>";
                     }
                     ?>

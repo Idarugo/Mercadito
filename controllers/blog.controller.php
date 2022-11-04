@@ -56,6 +56,7 @@ class BlogController
     public function updateBlog($id, $imagen, $nombre, $detalle, $fecha)
     {
         $this->connectDB->connect();
+        $imagen = addslashes(file_get_contents($imagen['tmp_name']));
         $sql = "UPDATE `blog` SET `imagen`='$imagen',`name`='$nombre',`detail`='$detalle',`date`='$fecha' WHERE `id`='$id'";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {

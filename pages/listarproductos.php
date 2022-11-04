@@ -20,6 +20,22 @@ $produc = $producController->select();
     <?php include '../components/header.php' ?>
     <div class="container container-main">
         <h1>Productos</h1>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../pages/listarproductos.php">Lista de Producto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listarblog.php">Lista de Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listarusuario.php">Lista de Usuario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listimages.php">Lista de Foto</a>
+            </li>
+        </ul>
+
         <form class="row g-3 justify-content-center">
             <table class="styled-table">
                 <tr>

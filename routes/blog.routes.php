@@ -16,7 +16,7 @@ if (isset($_POST['btnCrearBlog'])) {
 
 if (isset($_POST['btnModificarBlog'])) {
     if (empty($_POST["txtId"]) || empty($_FILES["txtImagen"]) || empty($_POST["txtNombre"]) || empty($_POST["txtDetalle"])  || empty($_POST["txtFecha"])) {
-        header("location:  ../pages/modificarusuario.php?txtEmptyError");
+        header("location:  ../pages/editblog.php?txtEmptyError");
         return;
     }
     $blog->updateBlog($_POST["txtId"], $_FILES["txtImagen"], $_POST["txtNombre"], $_POST["txtDetalle"], $_POST["txtFecha"]);

@@ -2,8 +2,9 @@
 require '../core/bootstraper.php';
 require '../controllers/blog.controller.php';
 
+
 $blogController = new BlogController($connectDB);
-$image = $blogController->listblog();
+$blog = $blogController->listblog();
 ?>
 
 
@@ -20,6 +21,22 @@ $image = $blogController->listblog();
     <?php include '../components/header.php' ?>
     <div class="container container-main">
         <h1>Blog</h1>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../pages/listarproductos.php">Lista de Producto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="../pages/listarblog.php">Lista de Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listarusuario.php">Lista de Usuario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listimages.php">Lista de Foto</a>
+            </li>
+        </ul>
+
         <form class="row g-3 justify-content-center">
             <table class="styled-table">
                 <tr>
@@ -30,12 +47,12 @@ $image = $blogController->listblog();
                 </tr>
                 <tr>
                     <?php
-                    for ($i = 0; $i < count($image); $i++) {
+                    for ($i = 0; $i < count($blog); $i++) {
                         echo "<tr>";
-                        echo "<td>" . $image[$i]->getNombre() . "</td>";
-                        echo "<td>" . $image[$i]->getDetalle() . "</td>";
-                        echo "<td>" . $image[$i]->getFecha() . "</td>";
-                        echo "<td><a href='editblog.php?id=" . $image[$i]->getId() . "'>Editar</a></td>";
+                        echo "<td>" . $blog[$i]->getNombre() . "</td>";
+                        echo "<td>" . $blog[$i]->getDetalle() . "</td>";
+                        echo "<td>" . $blog[$i]->getFecha() . "</td>";
+                        echo "<td><a href='editblog.php?id=" . $blog[$i]->getId() . "'>Editar</a></td>";
                         echo "</tr>";
                     }
                     ?>
