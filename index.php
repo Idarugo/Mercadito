@@ -49,13 +49,14 @@
       <div class="elfsight-app-367bdadf-cbaa-4440-8192-5b93f3398967"></div>
     </div>
 
-    <div class="row mb-2">
-      <div class="col aling-self-center">
-        <div class="col-11">
-          <a href="https://www.google.com/maps/place/34°08'28.7%22S+70°46'19.9%22W/@-34.1413002,-70.7743826,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x2c597ed84a9ca751!8m2!3d-34.1413002!4d-70.7721939?hl=es"><img class="img1" src="./assets/images/Te-esperamos.png "></a>
-        </div>
+    <div class="col-md-5">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.196849629194!2d-70.7721944!3d-34.14130559999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x917bae41b27b45dd!2zMzTCsDA4JzI4LjciUyA3MMKwNDYnMTkuOSJX!5e0!3m2!1ses!2scl!4v1667585697979!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="col-md-5">
+        <img src="./assets/images/Te-esperamos.png">
       </div>
     </div>
+
+
 
     <h2 style="text-align: center;">Síguenos en Instagram:</h2>
 

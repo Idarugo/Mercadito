@@ -6,8 +6,9 @@ if (!isset($_GET['id'])) {
     header("location:  ./products.php");
 }
 $plants = new PlantController($connectDB);
-$image_plants = new ImageController($connectDB);
 $plant = $plants->getPlantById($_GET['id']);
+
+$image_plants = new ImageController($connectDB);
 $image = $image_plants->getImageById($_GET['id']);
 ?>
 <!DOCTYPE html>
@@ -65,8 +66,7 @@ $image = $image_plants->getImageById($_GET['id']);
             <p class="despacho-1" style="margin: 10px;">Tipo de entrega </p>
             <li type="disc" class="despacho" style="margin: 10px;">' . $plant->getTypeDelivery() . '</li>
 
-          
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Agregar al carrito/button>
+            <button class="btn-agregar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Agregar al carrito</button>
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
@@ -74,13 +74,28 @@ $image = $image_plants->getImageById($_GET['id']);
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                Su carrito actualmente está vacío.
-            </div>
-            </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col aling-self-center">
+                        <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($plant->getImage()) . '">
+                    </div>
+                </div>
 
-            <button class="btn-comprar">
-                <a href="../pages/carrodecompra.php"> Comprar Ahora</a>
-            </button>
+                <div class="col aling-self-center">
+                    <h2 class="title" style="margin: 10px;">' . $plant->geTitle() . '</h2>
+                    <span style="margin: 10px;">Precio :$' . $plant->getPrice() . '</span>
+                </div>
+
+                <div class="col-5  justify-content-center mb-2" style="text-align: center;">
+                     <a href="./perfil.php"><button type="button" class="btn btn-success btn btn-dark">Ver Carrito</button></a>
+                </div>
+
+            </div>
+            </div>
+        
+
+            <a href="../pages/carrodecompra.php?=id' . $plant->getidPlants() . '"><button class="btn-comprar"> Comprar Ahora </button>
+
+            </a>
 
             <font style="vertical-align: inherit;">
                 <p>

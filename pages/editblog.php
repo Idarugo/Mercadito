@@ -6,6 +6,7 @@ if (!isset($_GET['id'])) {
 }
 $blog = new BlogController($connectDB);
 $BlogsById = $blog->getBlogById($_GET['id']);
+
 ?>
 
 <!DOCTYPE html>

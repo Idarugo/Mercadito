@@ -35,6 +35,9 @@ $blog = $blogController->listblog();
             <li class="nav-item">
                 <a class="nav-link" href="../pages/listimages.php">Lista de Foto</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link " href="../pages/listarbook.php">Listado de Reserva</a>
+            </li>
         </ul>
 
         <form class="row g-3 justify-content-center">

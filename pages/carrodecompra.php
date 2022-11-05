@@ -1,3 +1,13 @@
+<?php
+require '../core/bootstraper.php';
+require '../controllers/plant.controller.php';
+if (!isset($_GET['id'])) {
+    header("location:  ./products.php");
+}
+$plant = new PlantController($connectDB);
+$plantCompra = $plant->getPlantByIdCarro($_GET['id']);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,15 +26,21 @@
         <h1 style="text-align: center;">Carrito de compra</h1>
         <h3 style="text-align: center;">Continúe explorando aquí.</h3>
 
+
+        <?php
+        if ($plant == "") {
+            echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
+        } else {
+            echo '
+
         <div class="row align-items-start col-md-5">
             <div class="col-4">
-                <img class="compra1" src="../assets/images/instagram1.jpg ">
+                <img class="compra1" src="data:imagen/jpg;base64,' . base64_encode($plantCompra->getImage()) . '">
             </div>
             <div class="col-8">
-                <p style="text-align: left;">Lilium </p>
-                <p style="text-align: left;">Maceta: fiber clay</p>
-                <p style="text-align: right;">$5.000</p>
-
+                <p style="text-align: left;">' . $plantCompra->geTitle() . ' </p>
+                <p style="text-align: left;">' . $plantCompra->getDescription() . 'x</p>
+                <p style="text-align: right;">$' . $plantCompra->getPrice() . '</p>
             </div>
         </div>
 
@@ -94,6 +110,10 @@
                 <p>Sí hacemos despachos a regiones pero SOLO MACETEROS, ACCESORIOS E INSUMOS, no plantas. Esto porque no podemos asegurar la integridad de la planta en viajes de tal magnitud.</p>
             </div>
         </div>
+
+        ';
+        }
+        ?>
     </form>
     <?php include '../components/footer.php' ?>
 </body>

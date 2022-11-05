@@ -30,7 +30,7 @@ class ImageController
     {
         $lista = "";
         $this->connectDB->connect();
-        $sql = "SELECT * FROM `image_plants` WHERE `id`= $id";
+        $sql = "SELECT * FROM `image_plants` WHERE `plants`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
             $lista = new Images($rs['id'], $rs['plants'], $rs['image_1'], $rs['image_2'], $rs['image_3'], $rs['image_4'], $rs['image_5']);;

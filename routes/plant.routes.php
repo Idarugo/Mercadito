@@ -24,6 +24,7 @@ if (isset($_POST['btnModificarProduct'])) {
     $plant->updateProduct($_POST["txtId"], $_POST["txtTitle"], $_POST["txtPrice"], $_POST["txtDescription"], $_POST["Category"], $_FILES["txtImagen"], $_POST["txtCant"], $_POST["TypeDelivery"], $_POST["txtAbout"], $_POST["txtTips"], $_POST["txtHealthbenefit"], $_POST["txtPrimarycare"], $_POST["txtAlsoknownas"]);
 }
 
+
 /*
     *   Get Plant
     */

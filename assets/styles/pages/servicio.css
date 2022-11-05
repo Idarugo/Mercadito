@@ -1,11 +1,12 @@
-.banner .banner__img{
+.banner .banner__img {
     background-image: url('../../images/banner-servicio.jpg');
 }
-p{
+
+p {
     text-align: justify;
 }
 
-.redondo{
+.redondo {
     height: 300px;
     width: 300px;
     /* los siguientes valores son independientes del tamaño del círculo */
@@ -15,7 +16,7 @@ p{
     background-size: 100% auto;
 }
 
-.caption{
+.caption {
     text-align: center;
     background-color: #6ab041;
     color: #FFFF;

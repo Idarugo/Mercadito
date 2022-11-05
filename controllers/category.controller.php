@@ -27,4 +27,22 @@ class CategoryController
     $this->connectDB->disconnect();
     return $lista;
   }
+
+  public function updateCategory($id, $name)
+  {
+    $this->connectDB->connect();
+    $sql = "UPDATE `category` SET `category`='$name' WHERE `id`='$id'";
+    $this->connectDB->query($sql);
+    if ($this->connectDB->getDB()->affected_rows) {
+      session_start();
+      session_unset();
+      session_destroy();
+      $this->connectDB->disconnect();
+      header("location:  ../pages/listarproductos.php?edited");
+      return;
+    }
+    $this->connectDB->disconnect();
+    //header("location:  ../pages/modificarusuario.php?ModifiedError");
+    return;
+  }
 }

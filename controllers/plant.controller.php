@@ -43,6 +43,7 @@ class PlantController
         header("location:  $id");
         return;
     }
+
     public function getAllPlantsByIdCategory($id)
     {
         $lista = array();
@@ -57,6 +58,19 @@ class PlantController
     }
 
     public function getPlantById($id)
+    {
+        $lista = "";
+        $this->connectDB->connect();
+        $sql = "SELECT * FROM `plants` WHERE `id`= $id";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
+    }
+
+    public function getPlantByIdCarro($id)
     {
         $lista = "";
         $this->connectDB->connect();

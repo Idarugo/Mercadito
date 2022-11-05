@@ -4,31 +4,37 @@
 @import url('./components/whatsapp.css');
 @import url('./components/footer.css');
 
-*::after, *::before, *{
+*::after,
+*::before,
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-body{
+
+body {
     /* overflow-x: hidden; */
     width: 100vw;
     height: 100vh;
 }
+
 ul {
     list-style: none;
     padding-left: 0px;
     margin-bottom: 0;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.container-main{
+
+.container-main {
     min-height: 100vh;
 }
 
-.img1{
-    width:1296px;
-    height: 500px;
+.img1 {
+    width: 600px;
+    height: 450px;
     display: flex;
     margin-top: 20px;
 }

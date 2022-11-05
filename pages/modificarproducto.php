@@ -41,15 +41,6 @@ $PlantById = $plant->getPlantById($_GET['id']);
             <div class="col-md-5">
                 <label for="inputStateCategory" class="form-label">Categoria</label>
                 <input id="inputStateCategory" class="form-select" name="Category" value="<?php echo $PlantById->getCategory(); ?>">
-                <?php
-                $listCategory = $category->ListCategory();
-                for ($i = 0; $i < count($listCategory); $i++) {
-                    $c = $listCategory[$i];
-                    $id = $c->getid();
-                    $name = $c->getName();
-                    echo "<option value='$id'>$name</option>";
-                }
-                ?>
                 </select>
             </div>
 
@@ -85,7 +76,8 @@ $PlantById = $plant->getPlantById($_GET['id']);
             </div>
 
             <div class="col-md-5">
-                <label for="inputName" class="form-label">Foto del Producto</label>
+                <label for="inputName" class="form-label">Foto del Evento</label>
+
                 <input class="form-control" type="file" id="formFileMultiple" name="txtImagen" multiple>
             </div>
 
