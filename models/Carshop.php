@@ -2,6 +2,7 @@
 class Carshop{
 	private int $id;
 	private int $plant;
+	private int $payment;
 	private int $user;
 	private string $date;
 
@@ -29,5 +30,3 @@ class Carshop{
 		return $this->date;
 	}
 }
-?>
-

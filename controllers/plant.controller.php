@@ -83,6 +83,33 @@ class PlantController
         return $lista;
     }
 
+    public function getPlantByIdInfo($id)
+    {
+        $lista = "";
+        $this->connectDB->connect();
+        $sql = "SELECT * FROM `plants` WHERE `id`= $id";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
+    }
+
+    public function getPlantByIdPayment($id)
+    {
+        $lista = "";
+        $this->connectDB->connect();
+        $sql = "SELECT * FROM `plants` WHERE `id`= $id";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
+    }
+
+
     public function select()
     {
         $lista = array();

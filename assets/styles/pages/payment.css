@@ -1,0 +1,36 @@
+.right {
+    background: #accaaa;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 500px
+}
+
+.caja {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid #545454;
+}
+
+.derecha {
+    padding-left: 20px;
+}
+
+.button-derecha {
+    padding-left: 50px;
+
+}
+
+.nom-pago {
+    margin-top: 20px;
+}
+
+.pago-centrado {
+    text-align: center;
+}
+
+.caja-3 {
+    margin-top: 20px;
+}

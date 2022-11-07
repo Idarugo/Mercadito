@@ -2,7 +2,7 @@
 require '../core/bootstraper.php';
 require '../controllers/plant.controller.php';
 if (!isset($_GET['id'])) {
-    header("location:  ./products.php");
+    header("location:  ./plantdetail.php");
 }
 $plant = new PlantController($connectDB);
 $plantCompra = $plant->getPlantByIdCarro($_GET['id']);
@@ -33,19 +33,25 @@ $plantCompra = $plant->getPlantByIdCarro($_GET['id']);
         } else {
             echo '
 
-        <div class="row align-items-start col-md-5">
+            <div class="row align-items-start col-md-5">
             <div class="col-4">
                 <img class="compra1" src="data:imagen/jpg;base64,' . base64_encode($plantCompra->getImage()) . '">
             </div>
             <div class="col-8">
                 <p style="text-align: left;">' . $plantCompra->geTitle() . ' </p>
                 <p style="text-align: left;">' . $plantCompra->getDescription() . 'x</p>
-                <p style="text-align: right;">$' . $plantCompra->getPrice() . '</p>
+                <p style="text-align: left;">$' . $plantCompra->getPrice() . '</p>
+
+                <p class="despacho-1" style="text-align:">Cantidad</p>
+
+                <div class="col-3">
+                    <input type="number" class="form-control" id="inputAddress2" name="txtCant" min="1" max="' . $plantCompra->getCant() . '">
+                </div>
             </div>
         </div>
 
         <div class="col-md-5">
-            <legend class="col-form-label">Indícanos si necesitas boleta o factura</legend>
+            <legend class="col-form-label"> ¿Es para regalo?</legend>
 
             <div class="">
             </div>
@@ -79,14 +85,17 @@ $plantCompra = $plant->getPlantByIdCarro($_GET['id']);
             </div>
 
             <div class="col-md-10" style="text-align: left;">
-                <p>Subtotal</p>
+                <span>Subtotal</span>
+                <span class="right">
+                    <span class="money">$' . $plantCompra->getPrice() . '</span>
+                </span>
             </div>
 
-            <div class="">
+            <div class="mb-3">
             </div>
 
             <div class="col-10  justify-content-center mb-2" style="text-align: center;">
-                <button type="button" class="btn btn-success">Finalizar Pedido</button>
+                <a href="shippinginformation.php?id=' . $plantCompra->getidPlants() . '"><button class="btn btn-success"> Terminar Pedido</button>
             </div>
 
             <div class="mb-3">
@@ -111,9 +120,11 @@ $plantCompra = $plant->getPlantByIdCarro($_GET['id']);
             </div>
         </div>
 
+
         ';
         }
         ?>
+
     </form>
     <?php include '../components/footer.php' ?>
 </body>

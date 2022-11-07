@@ -15,6 +15,10 @@ $blog = $blogController->listblog();
     <?php include '../components/head.php' ?>
     <link rel="stylesheet" href="../assets/styles/main.css">
     <link rel="stylesheet" href="../assets/styles/pages/listarblog.css">
+    <script async="" src="//cdn.shopify.com/shopifycloud/shopify/assets/shop_events_listener-65cd0ba3fcd81a1df33f2510ec5bcf8c0e0958653b50e3965ec972dd638ee13f.js"></script>
+    <script async="" src="https://cdn.shopify.com/shopifycloud/web-pixels-manager/0.0.172/browser.modern.js"></script>
+    <meta http-equiv="origin-trial" content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion/376039264/?random=1667755210531&amp;cv=11&amp;fst=1667755210531&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=2oab20&amp;u_w=1440&amp;u_h=900&amp;label=sxOVCLSYoo0CEODOp7MB&amp;tiba=Pago%20-%20PlantMe%20Chile%20-%20Pantalla%20de%20pago&amp;hn=www.googleadservices.com&amp;frm=0&amp;url=https%3A%2F%2Fplantme.cl%2F4253745198%2Fcheckouts%2Fb3bfdf88a2c973d12e16021dd791dae4%3Fprevious_step%3Dcontact_information%26step%3Dpayment_method&amp;ref=https%3A%2F%2Fplantme.cl%2F&amp;capi=2&amp;gtm_ee=1&amp;auid=1387421761.1667755183&amp;data=event%3Dpage_view%3Bpage_path%3D%2Fcheckout%2Fpayment&amp;rfmt=3&amp;fmt=4"></script>
 </head>
 
 <body>

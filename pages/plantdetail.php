@@ -66,6 +66,12 @@ $image = $image_plants->getImageById($_GET['id']);
             <p class="despacho-1" style="margin: 10px;">Tipo de entrega </p>
             <li type="disc" class="despacho" style="margin: 10px;">' . $plant->getTypeDelivery() . '</li>
 
+            <div class="col-2">
+            <p class="despacho-1" style="margin: 10px;">Cantidad</p>
+            <input type="number" class="form-control" id="inputAddress2" name="txtCant" min="1"  max="' . $plant->getCant() . '">
+            </div>
+
+            
             <button class="btn-agregar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Agregar al carrito</button>
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -91,10 +97,8 @@ $image = $image_plants->getImageById($_GET['id']);
 
             </div>
             </div>
-        
-
-            <a href="../pages/carrodecompra.php?=id' . $plant->getidPlants() . '"><button class="btn-comprar"> Comprar Ahora </button>
-
+            
+            <a href="carrodecompra.php?id=' . $plant->getidPlants() . '"><button class="btn-comprar"> Comprar Ahora </button>
             </a>
 
             <font style="vertical-align: inherit;">
@@ -136,7 +140,7 @@ $image = $image_plants->getImageById($_GET['id']);
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <p>' . $plant->getHealthBenefit() . '</p>
+                        <p>' . $plant->getPrimaryCare() . '</p>
                     </div>
                 </div>
             </div>
@@ -148,7 +152,8 @@ $image = $image_plants->getImageById($_GET['id']);
                 </h2>
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <p>' . $plant->getPrimaryCare() . '</p>
+                        <p>' . $plant->getHealthBenefit() . '</p>
+
                     </div>
                 </div>
             </div>
