@@ -10,7 +10,7 @@
     <section class="container-fluid banner mb-3" style="padding-top: 40px !important;">
         <div class="banner__img"></div>
         <h1>¡CONTÁCTANOS!</h1>
-        <p>Escríbenos y en breve los pondremos en contacto contigo</p>
+        <p>Escríbenos y en breve nos pondremos en contacto contigo</p>
     </section>
 
     <form class="row g-3 justify-content-center">
