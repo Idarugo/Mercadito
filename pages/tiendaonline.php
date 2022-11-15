@@ -18,7 +18,7 @@
   </section>
   <div class="container container-main container-plants">
     <article id="3685" class="categoria-listing">
-      <a class="categoria-title" href="../pages/products.php?category=1">Planta Interior</a>
+      <a class="categoria-title" href="../pages/products.php?category=1">Plantas Interior</a>
       <div class="categoria-image">
         <a href="#">
           <img class="img_categories" src="../assets/images/categories/plant-interior.jpg" alt="Planta Interior">
@@ -26,7 +26,7 @@
       </div>
     </article>
     <article id="3686" class="categoria-listing">
-      <a class="categoria-title" href="../pages/products.php?category=2">Planta Exterior</a>
+      <a class="categoria-title" href="../pages/products.php?category=2">Plantas Exterior</a>
       <div class="categoria-image">
         <a href="#">
           <img class="img_categories" src="../assets/images/categories/plant-exterior.jpg" alt="Planta Exterior">
@@ -34,7 +34,7 @@
       </div>
     </article>
     <article id="3687" class="categoria-listing">
-      <a class="categoria-title" href="../pages/products.php?category=3">Planta Medicinales</a>
+      <a class="categoria-title" href="../pages/products.php?category=3">Plantas Medicinales</a>
       <div class="categoria-image">
         <a href="#">
           <img class="img_categories" src="../assets/images/categories/plant-medicinales.png" alt="Planta Medicinales Y Aromaticas">
@@ -50,7 +50,7 @@
       </div>
     </article>
     <article id="3689" class="categoria-listing">
-      <a class="categoria-title" href="../pages/products.php?category=5">Acessorio</a>
+      <a class="categoria-title" href="../pages/products.php?category=5">Acessorios</a>
       <div class="categoria-image">
         <a href="#">
           <img class="img_categories" src="../assets/images/categories/plant-accesorio.jpg" alt="Acessorio">
