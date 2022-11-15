@@ -15,6 +15,7 @@ $infoplant = $plants->getPlantByIdInfo($_GET['id']);
     <?php include '../components/head.php' ?>
     <link rel="stylesheet" href="../assets/styles/main.css">
     <link rel="stylesheet" href="../assets/styles/pages/shippinginformation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -42,22 +43,20 @@ $infoplant = $plants->getPlantByIdInfo($_GET['id']);
                         </br>
 
                         <div class="form-group ">
-                            <h5 class="nom-pago">Pago</h5>
-                            <h6>Forma de entrega</h6>
+                            <h5 class="nom-pago">Forma de entrega</h5>
                             <div class="caja">
                                 <div class="">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" disabled>
+                                        <input class="form-check-input" type="radio" name="opciones" id="entrega2" value="entrega2">
+
                                         <label class="form-check-label" for="exampleRadios1">
-                                            Enviar
-                                        </label>
+                                           <img class="entrega" src="../assets/images/enviar.png"> Enviar </label>
                                     </div>
                                     <hr size="2px" color="black" />
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked>
+                                        <input class="form-check-input" type="radio" name="opciones" id="entrega1" value="entrega1">
                                         <label class="form-check-label" for="exampleRadios2">
-                                            Retiro
-                                        </label>
+                                        <img class="entrega" src="../assets/images/retirar.png"> Retiro </label>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +64,37 @@ $infoplant = $plants->getPlantByIdInfo($_GET['id']);
 
                         </br>
 
-                        <div class="form-group ">
+                        <div class="form-group " id="div1" style="display:none">
+                            <h5 class="nom-pago">Dirección de envío</h5>
+                            <div class="">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+                                    </div>
+                                </div>
+                            </div>
+                            </br>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="inputAddress2" placeholder="Direccion">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Comuna" aria-label="Last name">
+                                </div>
+                            </div>
+                            </br>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="inputAddress2" placeholder="Telefono Celular">
+                            </div>
+                            </br>
+                            <div class="col-12">
+                                <h5 class="envio">!! Recuerden todos los miércoles tenemos envios a domicilio!!</h5>
+                            </div>
+                        </div>
+
+                        </br>
+
+                        <div class="form-group" id="div2" style="display:none">
                             <h5 class="nom-pago">Lugar de retiro</h5>
                             <div class="caja">
                                 <div class="">
@@ -120,10 +149,27 @@ $infoplant = $plants->getPlantByIdInfo($_GET['id']);
                     </tbody>
                 </div>
             </div>
+
             ';
             }
             ?>
         </div>
+
+        <script>
+            $(document).ready(function() {
+                $("#entrega1").click(function() {
+                    $("#div1").hide();
+                    $("#div2").show();
+
+                });
+
+                $("#entrega2").click(function() {
+                    $("#div1").show();
+                    $("#div2").hide();
+
+                });
+            });
+        </script>
     </div>
     <?php include '../components/footer.php' ?>
 </body>

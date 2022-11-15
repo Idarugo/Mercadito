@@ -62,16 +62,11 @@ $image = $image_plants->getImageById($_GET['id']);
             <h2 class="title" style="margin: 10px;">' . $plant->geTitle() . '</h2>
 
             <span style="margin: 10px;">Precio :$' . $plant->getPrice() . '</span>
-     
-            <p class="despacho-1" style="margin: 10px;">Tipo de entrega </p>
-            <li type="disc" class="despacho" style="margin: 10px;">' . $plant->getTypeDelivery() . '</li>
-
-            <div class="col-2">
-            <p class="despacho-1" style="margin: 10px;">Cantidad</p>
-            <input type="number" class="form-control" id="inputAddress2" name="txtCant" min="1"  max="' . $plant->getCant() . '">
-            </div>
 
             
+            <div class="col-md-10">
+            </div>
+
             <button class="btn-agregar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Agregar al carrito</button>
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">

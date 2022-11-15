@@ -22,6 +22,10 @@ if (isset($_POST['btnModificarImagen'])) {
     $user->updateImagen($_POST["txtId"], $_FILES["txtImagen"]);
 }
 
-if (isset($_GET['btnElminarUsu'])) {
-    $user->removeUser($_GET["btnElminarUsu"]);
+if (isset($_GET['btnBloquearUsu'])) {
+    $user->blockUser($_GET["btnBloquearUsu"]);
+}
+
+if (isset($_GET['btnDebloquearUsu'])) {
+    $user->unlockUser($_GET["btnDebloquearUsu"]);
 }

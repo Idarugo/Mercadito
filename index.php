@@ -49,9 +49,11 @@
       <div class="elfsight-app-367bdadf-cbaa-4440-8192-5b93f3398967"></div>
     </div>
 
-    <div class="col-md-5">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.196849629194!2d-70.7721944!3d-34.14130559999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x917bae41b27b45dd!2zMzTCsDA4JzI4LjciUyA3MMKwNDYnMTkuOSJX!5e0!3m2!1ses!2scl!4v1667585697979!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <div class="col-md-5">
+    <div class="row">
+      <div class="col" style="padding-left: 40px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.196849629194!2d-70.7721944!3d-34.14130559999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x917bae41b27b45dd!2zMzTCsDA4JzI4LjciUyA3MMKwNDYnMTkuOSJX!5e0!3m2!1ses!2scl!4v1667585697979!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="col">
         <img src="./assets/images/Te-esperamos.png">
       </div>
     </div>

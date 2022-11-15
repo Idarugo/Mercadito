@@ -24,3 +24,7 @@
     float: right;
     position: relative;
 }
+
+.total {
+    width: 90px;
+}

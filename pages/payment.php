@@ -44,13 +44,13 @@
                                         <label class="form-check-label" for="exampleRadios1">
                                             Transferencia Electrónica
                                         </label>
-                                        <p style="text-align:center">Nombre: Mercadito </p>
-                                        <p style="text-align:center">Rut: 11.365.712-k </p>
-                                        <p style="text-align:center">Banco: Banco estado</p>
-                                        <p style="text-align:center">Tipo de Cuenta: Cuenta Rut</p>
-                                        <p style="text-align:center">Nro: 11365712 </p>
-                                        <p style="text-align:center">Correo: nmatias1998@gmail.con </p>
-                                        <p style="text-align:center">Muchas gracias por preferirnos!!</p>
+                                        <h6 style="text-align:center">Nombre: Mercadito </h6>
+                                        <h6 style="text-align:center">Rut: 11.365.712-k </h6>
+                                        <h6 style="text-align:center">Banco: Banco estado</h6>
+                                        <h6 style="text-align:center">Tipo de Cuenta: Cuenta Rut</h6>
+                                        <h6 style="text-align:center">Nro: 11365712 </h6>
+                                        <h6 style="text-align:center">Correo: nmatias1998@gmail.con </h6>
+                                        <h6 style="text-align:center">Muchas gracias por preferirnos!!</h6>
                                     </div>
                                 </div>
                             </div>
@@ -63,19 +63,12 @@
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
                                 </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
-                                </div>
                             </div>
-                        </div>
-                        </br>
-                        <div class="col-12">
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Direccion">
                         </div>
                         </br>
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Casa" aria-label="First name">
+                                <input type="text" class="form-control" id="inputAddress2" placeholder="Direccion">
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="Comuna" aria-label="Last name">

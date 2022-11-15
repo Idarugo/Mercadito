@@ -58,34 +58,35 @@
                         <div class="form-group ">
                             <div class="caja">
                                 <h5 class="caja-3">Información del cliente</h5>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>Información de contacto</h6>
+                                        <p>Correo</p>
 
-                                <div class="col derecha">
-                                    <h6>Información de contacto</h6>
-                                    <p>Correo</p>
+                                        <h6>Lugar de retiro</h6>
 
-                                    <h6>Lugar de retiro</h6>
+                                        <body>La Rubina 3919 <br>
+                                            Ramcagua<br>
+                                            Chile<br>
+                                            +56999066039<br>
+                                        </body>
+                                    </div>
 
-                                    <body>La Rubina 3919 <br>
-                                        Ramcagua<br>
-                                        Chile<br>
-                                        +56999066039<br>
-                                    </body>
-                                </div>
+                                    <div class="col">
+                                        <h6>Metodo de pago</h6>
+                                        <p>Transferencia Electrónica - $</p>
 
-                                <div class="col">
-                                    <h6>Metodo de pago</h6>
-                                    <p>Transferencia Electrónica - $</p>
-
-                                    <h6>Dirección de facturación</h6>
-                                    <span>Nombre</span>
-                                    </br>
-                                    <span>Correo</span>
-                                    </br>
-                                    <span>Casa</span>
-                                    </br>
-                                    <span>Comuna</span>
-                                    </br>
-                                    <span>Telefono</span>
+                                        <h6>Dirección de facturación</h6>
+                                        <span>Nombre</span>
+                                        </br>
+                                        <span>Correo</span>
+                                        </br>
+                                        <span>Casa</span>
+                                        </br>
+                                        <span>Comuna</span>
+                                        </br>
+                                        <span>Telefono</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

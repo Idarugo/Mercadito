@@ -1,5 +1,9 @@
 <?php
 require '../core/bootstraper.php';
+require '../controllers/carshop.controller.php';
+$carshop = new CarshopController($connectDB);
+
+
 require '../controllers/plant.controller.php';
 if (!isset($_GET['id'])) {
     header("location:  ./plantdetail.php");
@@ -15,6 +19,7 @@ $plantCompra = $plant->getPlantByIdCarro($_GET['id']);
     <?php include '../components/head.php' ?>
     <link rel="stylesheet" href="../assets/styles/main.css">
     <link rel="stylesheet" href="../assets/styles/pages/carrodecompra.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -22,30 +27,59 @@ $plantCompra = $plant->getPlantByIdCarro($_GET['id']);
     <div class="container mb-3">
     </div>
 
-    <form class="row g-3 justify-content-center">
-        <h1 style="text-align: center;">Carrito de compra</h1>
-        <h3 style="text-align: center;">Continúe explorando aquí.</h3>
+    <div class="container container-main mt-5">
+
+        <form action="../routes/carshop.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
+
+            <h1 style="text-align: center;">Carrito de compra</h1>
+            <h3 style="text-align: center;">Continúe explorando aquí.</h3>
+
+            <script>
+                $(document).ready(() => {
+                    let unit = $('#price').val()
+                    let quantity = $('#quantity').val()
+                    let total = calculate(unit, quantity)
+                    $('#total').val(total)
+
+                    $('#quantity').on('change', () => {
+                        unit = $('#price').val()
+                        quantity = $('#quantity').val()
+                        total = calculate(unit, quantity)
+                        $('#total').val(total)
+                    })
+
+                    function calculate(price, quantity) {
+                        return price * quantity
+                    }
+                })
+            </script>
 
 
-        <?php
-        if ($plant == "") {
-            echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
-        } else {
-            echo '
+            <?php
+            if ($plant == "") {
+                echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
+            } else {
+                echo '
 
-            <div class="row align-items-start col-md-5">
+        <div class="row align-items-start col-md-5">
             <div class="col-4">
                 <img class="compra1" src="data:imagen/jpg;base64,' . base64_encode($plantCompra->getImage()) . '">
             </div>
             <div class="col-8">
-                <p style="text-align: left;">' . $plantCompra->geTitle() . ' </p>
-                <p style="text-align: left;">' . $plantCompra->getDescription() . 'x</p>
-                <p style="text-align: left;">$' . $plantCompra->getPrice() . '</p>
 
-                <p class="despacho-1" style="text-align:">Cantidad</p>
+                <input type="text" id="inputName" name="txtTitle" value="' . $plantCompra->geTitle() . ' " disabled>
+                <div class="container mb-2">
+                </div>
+                <input type="text" name="txtDescripcion" value="' . $plantCompra->getDescription() . ' " disabled>
+                <div class="container mb-2">
+                </div>
+                <input type="text" name="txtPrice" class="price" id="price" value="' . $plantCompra->getPrice() . ' " disabled>
+                <div class="container mb-3">
+                </div>
 
                 <div class="col-3">
-                    <input type="number" class="form-control" id="inputAddress2" name="txtCant" min="1" max="' . $plantCompra->getCant() . '">
+                    <p class="despacho-1" style="text-align:">Cantidad</p>
+                    <input type="number" name="txtCant" id="quantity" class="input-number" value="1" min="1" max="' . $plantCompra->getCant() . '" placeholder="1">
                 </div>
             </div>
         </div>
@@ -87,7 +121,7 @@ $plantCompra = $plant->getPlantByIdCarro($_GET['id']);
             <div class="col-md-10" style="text-align: left;">
                 <span>Subtotal</span>
                 <span class="right">
-                    <span class="money">$' . $plantCompra->getPrice() . '</span>
+                    <input type="text" id="total" class="total" name="txtSubtotal" disabled>
                 </span>
             </div>
 
@@ -95,7 +129,7 @@ $plantCompra = $plant->getPlantByIdCarro($_GET['id']);
             </div>
 
             <div class="col-10  justify-content-center mb-2" style="text-align: center;">
-                <a href="shippinginformation.php?id=' . $plantCompra->getidPlants() . '"><button class="btn btn-success"> Terminar Pedido</button>
+                <input type="submit" value="Terminar Pedido" class="btn btn-success" name="btnCrearCarshop" id="btnForm">
             </div>
 
             <div class="mb-3">
@@ -122,10 +156,11 @@ $plantCompra = $plant->getPlantByIdCarro($_GET['id']);
 
 
         ';
-        }
-        ?>
+            }
+            ?>
 
-    </form>
+        </form>
+    </div>
     <?php include '../components/footer.php' ?>
 </body>
 

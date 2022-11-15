@@ -52,7 +52,7 @@ class UserController
     {
         $lista = array();
         $this->connectDB->connect();
-        $sql = " SELECT * FROM `users`";
+        $sql = " SELECT * FROM `users` Where estado = 1";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
             $lista[] = new UsuarioDTO($rs['id'], $rs['nombre'], $rs['correo'], $rs['direccion'], $rs['estado']);;
@@ -61,13 +61,39 @@ class UserController
         return $lista;
     }
 
-    public function removeUser($id)
+    public function blockUser($id)
     {
         $this->connectDB->connect();
-        $sql = "DELETE FROM users WHERE id = $id";
+        $sql = "UPDATE users SET estado = 0 Where id = $id";
         $st = $this->connectDB->query($sql);
         $this->connectDB->disconnect();
         header("location:  ../pages/listarusuario.php?removedUsername");
+        return;
+    }
+
+
+
+    public function UserlistUnlock()
+    {
+        $lista = array();
+        $this->connectDB->connect();
+        $sql = " SELECT * FROM `users` Where estado = 0";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $lista[] = new UsuarioDTO($rs['id'], $rs['nombre'], $rs['correo'], $rs['direccion'], $rs['estado']);;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
+    }
+
+
+    public function unlockUser($id)
+    {
+        $this->connectDB->connect();
+        $sql = "UPDATE users SET estado = 1 Where id = $id";
+        $st = $this->connectDB->query($sql);
+        $this->connectDB->disconnect();
+        header("location:  ../pages/listarusuarioBloqueado.php?unlockUsername");
         return;
     }
 }

@@ -69,10 +69,6 @@ $blogs = $blog->getBlogs();
             </div>
         </div>
 
-
-
-
-
             </div>
         </div>
 

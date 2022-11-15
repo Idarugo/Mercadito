@@ -36,6 +36,12 @@ $lista = $userController->Userlist();
             <li class="nav-item">
                 <a class="nav-link " href="../pages/listarbook.php">Listado de Reserva</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/shoppinglistadm.php">Listado de Compra</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listarusuarioBloqueado.php">Listado Usuario Bloqueado</a>
+            </li>
         </ul>
 
         <form class="row g-3 justify-content-center">
@@ -44,8 +50,8 @@ $lista = $userController->Userlist();
                     <td><strong>Nombre</strong></td>
                     <td><strong>Correo</strong></td>
                     <td><strong>Direccion</strong></td>
+                    <td><strong>Estado</strong></td>
                     <td><strong>Bloquear</strong></td>
-                    <td><strong>Eliminar</strong></td>
                 </tr>
 
                 <tr>
@@ -57,7 +63,7 @@ $lista = $userController->Userlist();
                         echo "<td>" . $lista[$i]->getCorreo() . "</td>";
                         echo "<td>" . $lista[$i]->getdireccion() . "</td>";
                         echo "<td>" . $lista[$i]->getEstado() . "</td>";
-                        echo "<td><a href='../routes/user.routes.php?btnElminarUsu=" . $lista[$i]->getId() . "'>Eliminar</a></td>";
+                        echo "<td><a href='../routes/user.routes.php?btnBloquearUsu=" . $lista[$i]->getId() . "'>Bloquear</a></td>";
                         echo "</tr>";
                     }
                     ?>

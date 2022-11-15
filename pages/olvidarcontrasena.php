@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
 <html lang="en" dir="ltr">
-  <head>
-    <?php include '../components/head.php' ?>
-    <link rel="stylesheet" href="../assets/styles/main.css">
-    <link rel="stylesheet" href="../assets/styles/pages/login.css">
-   </head>
+
+<head>
+  <?php include '../components/head.php' ?>
+  <link rel="stylesheet" href="../assets/styles/main.css">
+  <link rel="stylesheet" href="../assets/styles/pages/login.css">
+</head>
+
 <body>
   <div class="container">
     <input type="checkbox" id="flip">
@@ -26,27 +28,28 @@
       </div>
     </div>
     <div class="forms">
-        <div class="form-content">
-          <div class="login-form">
-            <div class="title">Restablecer su contraseña</div>
-          <form action="#">
+      <div class="form-content">
+        <div class="login-form">
+          <div class="title">Restablecer su contraseña</div>
+          <form action="../routes/auth.routes.php" method="POST">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Introducir dirección de correo electrónico" required>
+                <input type="text" placeholder="Introducir dirección de correo electrónico" name="txtConfirmMail" required>
               </div>
-               <div class="button input-box">
-                <input type="submit" value="Recuperar">
+              <div class="button input-box">
+                <input type="submit" value="Recuperar" name="btnConfirMail">
               </div>
               <div class="text sign-up-text">¿Ya tienes una cuenta? <a href="./login.php" style="color:#b2d47d">Inicia sesión ahora</a></div>
             </div>
+          </form>
+        </div>
         </form>
       </div>
-      </form>
     </div>
-    </div>
-    </div>
+  </div>
   </div>
   <?php include '../components/whatsapp.php' ?>
 </body>
+
 </html>

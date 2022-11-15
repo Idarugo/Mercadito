@@ -1,12 +1,10 @@
-<?
+<?php
 require '../core/bootstraper.php';
-require '../controllers/book_time.controller.php';
+require '../controllers/user.controller.php';
 
-
-$bookController = new bookTimeController($connectDB);
-$book = $bookController->listbook();
+$userController = new UserController($connectDB);
+$lista = $userController->UserlistUnlock();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -14,13 +12,13 @@ $book = $bookController->listbook();
 <head>
     <?php include '../components/head.php' ?>
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <link rel="stylesheet" href="../assets/styles/pages/listarblog.css">
+    <link rel="stylesheet" href="../assets/styles/pages/listarusuariobloqueado.css">
 </head>
 
 <body>
     <?php include '../components/header.php' ?>
     <div class="container container-main">
-        <h1>Reserva</h1>
+        <h1>Usuarios Bloqueado</h1>
 
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -36,43 +34,42 @@ $book = $bookController->listbook();
                 <a class="nav-link" href="../pages/listimages.php">Lista de Foto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="../pages/listarbook.php">Listado de Reserva</a>
+                <a class="nav-link " href="../pages/listarbook.php">Listado de Reserva</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../pages/shoppinglistadm.php">Listado de Compra</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="../pages/listarusuarioBloqueado.php">Listado Usuario Bloqueado</a>
+            </li>
         </ul>
 
         <form class="row g-3 justify-content-center">
-            <table class="styled-table">
+            <table class="styled-table table table-hover">
                 <tr>
-                    <td><strong>Dia</strong></td>
-                    <td><strong>Hora</strong></td>
                     <td><strong>Nombre</strong></td>
-                    <td><strong>Email</strong></td>
-                    <td><strong>Telefono</strong></td>
-                    <td><strong>Editar</strong></td>
-
-
+                    <td><strong>Correo</strong></td>
+                    <td><strong>Direccion</strong></td>
+                    <td><strong>Estado</strong></td>
+                    <td><strong>Debloquear</strong></td>
                 </tr>
+
                 <tr>
+
                     <?php
-                    for ($i = 0; $i < count($book); $i++) {
+                    for ($i = 0; $i < count($lista); $i++) {
                         echo "<tr>";
-                        echo "<td>" . $book[$i]->getDia() . "</td>";
-                        echo "<td>" . $book[$i]->getHora() . "</td>";
-                        echo "<td>" . $book[$i]->getNombre() . "</td>";
-                        echo "<td>" . $book[$i]->getEmail() . "</td>";
-                        echo "<td>" . $book[$i]->getTelefono() . "</td>";
-                        echo "<td><a href='editbook.php?id=" . $book[$i]->getId() . "'>Editar</a></td>";
+                        echo "<td>" . $lista[$i]->getNombre()  . "</td>";
+                        echo "<td>" . $lista[$i]->getCorreo() . "</td>";
+                        echo "<td>" . $lista[$i]->getdireccion() . "</td>";
+                        echo "<td>" . $lista[$i]->getEstado() . "</td>";
+                        echo "<td><a href='../routes/user.routes.php?btnDebloquearUsu=" . $lista[$i]->getId() . "'>Recuperar</a></td>";
                         echo "</tr>";
                     }
                     ?>
+
                 </tr>
             </table>
-            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
-                <a href="./agregarblog.php"><button type="button" class="btn btn-success">Agregar Blog</button></a>
-            </div>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
                 <a href="./perfil.php"><button type="button" class="btn btn-success btn btn-dark">
                         < Volver</button></a>

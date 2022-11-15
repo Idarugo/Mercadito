@@ -8,7 +8,6 @@ if (!isset($_GET['id'])) {
 }
 $plant = new PlantController($connectDB);
 $category = new CategoryController($connectDB);
-$delivery = new DeliveryController($connectDB);
 
 $PlantById = $plant->getPlantById($_GET['id']);
 ?>
@@ -59,21 +58,6 @@ $PlantById = $plant->getPlantById($_GET['id']);
                 <input type="text" class="form-control" id="inputName" name="txtCant" value="<?php echo $PlantById->getCant(); ?>" required>
             </div>
 
-            <div class="col-md-5">
-                <label for="inputState" class="form-label">Entrega</label>
-                <input id="inputStateTypeDelivery" class="form-select" name="TypeDelivery" value="<?php echo $PlantById->getTypeDelivery(); ?>">
-                <?php
-                $listDelivery = $delivery->ListarDelivery();
-
-                for ($i = 0; $i < count($listDelivery); $i++) {
-                    $d = $listDelivery[$i];
-                    $id = $d->getid();
-                    $name = $d->getNombre();
-                    echo "<option value='$id'>$name</option>";
-                }
-                ?>
-                </select>
-            </div>
 
             <div class="col-md-5">
                 <label for="inputName" class="form-label">Foto del Evento</label>

@@ -37,6 +37,9 @@ $produc = $producController->select();
             <li class="nav-item">
                 <a class="nav-link " href="../pages/listarbook.php">Listado de Reserva</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/shoppinglistadm.php">Listado de Compra</a>
+            </li>
         </ul>
 
         <form class="row g-3 justify-content-center">
@@ -47,7 +50,6 @@ $produc = $producController->select();
                     <td><strong>Descripcion</strong></td>
                     <td><strong>Cantidad</strong></td>
                     <td><strong>Categoria</strong></td>
-                    <td><strong>Tipo de Entrega</strong></td>
                     <td><strong>Opciones</strong></td>
 
                 </tr>
@@ -61,7 +63,6 @@ $produc = $producController->select();
                         echo "<td>" . $produc[$i]->getDescription() . "</td>";
                         echo "<td>" . $produc[$i]->getCant() . "</td>";
                         echo "<td>" . $produc[$i]->getCategory() . "</td>";
-                        echo "<td>" . $produc[$i]->getTypeDelivery() . "</td>";
                         echo "<td><a href='modificarproducto.php?id=" . $produc[$i]->getidPlants() . "'>Editar</a> - <a href='../routes/plant.routes.php?btnElminarPlant=" . $produc[$i]->getidPlants() . "'>Eliminar</a></td>";
                         echo "</tr>";
                     }

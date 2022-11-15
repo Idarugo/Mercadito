@@ -8,7 +8,6 @@ class Plant
 	private  $image;
 	private  $category;
 	private  $cant;
-	private  $typeDelivery;
 	private  $about;
 	private  $tips;
 	private  $healthBenefit;
@@ -16,7 +15,7 @@ class Plant
 	private  $alsoKnownAs;
 
 
-	function __construct($id, $title, $price, $description, $category, $image, $cant, $typeDelivery, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
+	function __construct($id, $title, $price, $description, $category, $image, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
 	{
 		$this->id = $id;
 		$this->title = $title;
@@ -25,7 +24,6 @@ class Plant
 		$this->image = $image;
 		$this->category = $category;
 		$this->cant = $cant;
-		$this->typeDelivery = $typeDelivery;
 		$this->about = $about;
 		$this->tips = $tips;
 		$this->healthBenefit = $healthBenefit;
@@ -68,10 +66,6 @@ class Plant
 		return $this->category;
 	}
 
-	public function getTypeDelivery(): int
-	{
-		return $this->typeDelivery;
-	}
 	public function getAbout(): string
 	{
 		return $this->about;

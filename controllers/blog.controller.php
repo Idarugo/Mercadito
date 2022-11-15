@@ -57,7 +57,7 @@ class BlogController
     {
         $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT * FROM `blog`";
+        $sql = "SELECT * FROM `blog` ORDER BY `blog`.`id` DESC";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
             $lista[] = new Blog($rs['id'], $rs['imagen'], $rs['name'], $rs['detail'], $rs['date']);;

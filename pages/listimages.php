@@ -13,7 +13,7 @@ $image = $imageController->listimages();
 <head>
     <?php include '../components/head.php' ?>
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <link rel="stylesheet" href="../assets/styles/pages/listarblog.css">
+    <link rel="stylesheet" href="../assets/styles/pages/listimages.css">
 </head>
 
 <body>
@@ -37,6 +37,9 @@ $image = $imageController->listimages();
             <li class="nav-item">
                 <a class="nav-link " href="../pages/listarbook.php">Listado de Reserva</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/shoppinglistadm.php">Listado de Compra</a>
+            </li>
         </ul>
 
         <form class="row g-3 justify-content-center">
@@ -57,11 +60,11 @@ $image = $imageController->listimages();
                     for ($i = 0; $i < count($image); $i++) {
                         echo "<tr>";
                         echo "<td>" . $image[$i]->getPlants() . "</td>";
-                        echo "<td>" . $image[$i]->getImage1() . "</td>";
-                        echo "<td>" . $image[$i]->getImage2() . "</td>";
-                        echo "<td>" . $image[$i]->getImage3() . "</td>";
-                        echo "<td>" . $image[$i]->getImage4() . "</td>";
-                        echo "<td>" . $image[$i]->getImage5() . "</td>";
+                        echo "<td>" . base64_encode($image[$i]->getImage1()) . "</td>";
+                        echo "<td>" . base64_encode($image[$i]->getImage2()) . "</td>";
+                        echo "<td>" . base64_encode($image[$i]->getImage3()) . "</td>";
+                        echo "<td>" . base64_encode($image[$i]->getImage4()) . "</td>";
+                        echo "<td>" . base64_encode($image[$i]->getImage5()) . "</td>";
                         echo "<td><a href='editimages.php?id=" . $image[$i]->getId() . "'>Editar</a> -
                                 <a href='../routes/image.routes.php?btnElminarImage=" . $image[$i]->getId() . "'>Eliminar</a></td>";
                         echo "</tr>";

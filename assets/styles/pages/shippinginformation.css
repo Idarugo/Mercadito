@@ -132,12 +132,18 @@
     text-align: left;
 }
 
-
-
-
+.entrega {
+    width: 18px;
+    height: 18px;
+}
 
 .derecha {
     text-align: right;
     font-weight: 700;
     white-space: nowrap;
+}
+
+.envio {
+    color: #accaaa;
+    text-align: center;
 }

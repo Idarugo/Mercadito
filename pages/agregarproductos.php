@@ -4,10 +4,8 @@
 // }
 require '../core/bootstraper.php';
 require '../controllers/category.controller.php';
-require '../controllers/type_delivery.controller.php';
 
 $category = new CategoryController($connectDB);
-$delivery = new DeliveryController($connectDB);
 
 ?>
 <!DOCTYPE html>
@@ -71,25 +69,10 @@ $delivery = new DeliveryController($connectDB);
                 <input type="number" class="form-control" id="inputAddress2" name="txtCant" placeholder="">
             </div>
             <div class="col-md-5">
-                <label for="inputState" class="form-label">Tipo de Entrega</label>
-                <select id="inputStateTypeDelivery" class="form-select" name="TypeDelivery">
-                    <?php
-                    $listDelivery = $delivery->ListarDelivery();
-
-                    for ($i = 0; $i < count($listDelivery); $i++) {
-                        $d = $listDelivery[$i];
-                        $id = $d->getid();
-                        $name = $d->getNombre();
-                        echo "<option value='$id'>$name</option>";
-                    }
-                    ?>
-                </select>
-            </div>
-            <div class="col-md-5">
                 <label for="imagen" class="form-label">Imagen del Producto</label>
                 <input class="form-control" type="file" id="formFileMultiple" name="txtImagen" multiple>
             </div>
-            <div class="col-5">
+            <div class="col-10">
                 <label for="inputName" class="form-label">Acerca De</label>
                 <textarea class="form-control" id="inputName" name="txtAbout" rows="3" placeholder=""></textarea>
             </div>

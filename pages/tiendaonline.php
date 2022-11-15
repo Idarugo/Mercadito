@@ -37,7 +37,7 @@
       <a class="categoria-title" href="../pages/products.php?category=3">Planta Medicinales</a>
       <div class="categoria-image">
         <a href="#">
-          <img class="img_categories" src="../assets/images/categories/plant-medicinales.jpg" alt="Planta Medicinales Y Aromaticas">
+          <img class="img_categories" src="../assets/images/categories/plant-medicinales.png" alt="Planta Medicinales Y Aromaticas">
         </a>
       </div>
     </article>

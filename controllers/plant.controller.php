@@ -12,10 +12,10 @@ class PlantController
     }
 
 
-    public function registerPlants($title, $price, $description, $category, $image, $cant, $typeDelivery, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
+    public function registerPlants($title, $price, $description, $category, $image, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
     {
         $this->connectDB->connect();
-        $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant`, `type_delivery` , `about`, `tips`, `health_benefit`, `primary_care`, `also_known_as`) VALUES ('$title','$price','$description','$category','$image','$cant','$typeDelivery', '$about','$tips','$healthBenefit','$primaryCare','$alsoKnownAs')";
+        $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant` , `about`, `tips`, `health_benefit`, `primary_care`, `also_known_as`) VALUES ('$title','$price','$description','$category','$image','$cant','$about','$tips','$healthBenefit','$primaryCare','$alsoKnownAs')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
@@ -35,7 +35,7 @@ class PlantController
         $resp = $this->connectDB->query($sql);
         $list = array();
         while ($rs = mysqli_fetch_array($resp)) {
-            $plants = new Plant($rs[0], $rs[1], $rs[2], $rs[3], $rs[4], $rs[5], $rs[6], $rs[7], $rs[8], $rs[9], $rs[10], $rs[11], $rs[12], $rs[13]);
+            $plants = new Plant($rs[0], $rs[1], $rs[2], $rs[3], $rs[4], $rs[5], $rs[6], $rs[7], $rs[8], $rs[9], $rs[10], $rs[11], $rs[12]);
             $list[] = $plants;
         }
         $_SESSION['plants'] = $list;
@@ -51,7 +51,7 @@ class PlantController
         $sql = "SELECT * FROM `plants` WHERE `category`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -64,7 +64,7 @@ class PlantController
         $sql = "SELECT * FROM `plants` WHERE `id`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -77,7 +77,7 @@ class PlantController
         $sql = "SELECT * FROM `plants` WHERE `id`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -90,7 +90,7 @@ class PlantController
         $sql = "SELECT * FROM `plants` WHERE `id`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -103,7 +103,7 @@ class PlantController
         $sql = "SELECT * FROM `plants` WHERE `id`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -117,7 +117,7 @@ class PlantController
         $sql = " SELECT * FROM `plants`";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['type_delivery'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -148,25 +148,24 @@ class PlantController
             $image = $rs['image'];
             $category = $rs['category'];
             $cant = $rs['cant'];
-            $typeDelivery = $rs['type_delivery'];
             $about = $rs['about'];
             $tips = $rs['tips'];
             $healthBenefit = $rs['health_benefit'];
             $primaryCare = $rs['primary_care'];
             $alsoKnownAs = $rs['also_known_as'];
-            $p   = new Plant($id, $title, $price, $description, $image, $category, $cant, $typeDelivery, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs);
+            $p   = new Plant($id, $title, $price, $description, $image, $category, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs);
             $lista[] = $p;
         }
         $this->connectDB->disconnect();
         return $lista;
     }
 
-    public function updateProduct($id, $title, $price, $description, $category, $image, $cant, $typeDelivery, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
+    public function updateProduct($id, $title, $price, $description, $category, $image, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
 
     {
         $this->connectDB->connect();
         $image = addslashes(file_get_contents($image['tmp_name']));
-        $sql = "UPDATE `plants` SET `title`='$title',`price`='$price',`description`='$description',`category`='$category',`image`='$image',`cant`='$cant',`type_delivery`='$typeDelivery',`about`='$about', `tips`='$tips',`health_benefit`='$healthBenefit',`primary_care`='$primaryCare',`also_known_as`='$alsoKnownAs'WHERE `id`='$id'";
+        $sql = "UPDATE `plants` SET `title`='$title',`price`='$price',`description`='$description',`category`='$category',`image`='$image',`cant`='$cant',`about`='$about', `tips`='$tips',`health_benefit`='$healthBenefit',`primary_care`='$primaryCare',`also_known_as`='$alsoKnownAs'WHERE `id`='$id'";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             session_start();

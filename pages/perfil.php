@@ -26,6 +26,8 @@
                     <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/listarusuario.php" role="button">Lista de Usuario</a>
                     <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/listimages.php" role="button">Lista de imágenes de productos</a>
                     <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/listarbook.php" role="button">Lista de Reserva</a>
+                    <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/shoppinglistadm.php" role="button">Lista de Compra</a>
+
 
                 </div>
                 <div class="col">
