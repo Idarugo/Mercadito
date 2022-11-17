@@ -58,13 +58,18 @@ $lista = $userController->Userlist();
 
                     <?php
                     for ($i = 0; $i < count($lista); $i++) {
-                        echo "<tr>";
-                        echo "<td>" . $lista[$i]->getNombre()  . "</td>";
-                        echo "<td>" . $lista[$i]->getCorreo() . "</td>";
-                        echo "<td>" . $lista[$i]->getdireccion() . "</td>";
-                        echo "<td>" . $lista[$i]->getEstado() . "</td>";
-                        echo "<td><a href='../routes/user.routes.php?btnBloquearUsu=" . $lista[$i]->getId() . "'>Bloquear</a></td>";
-                        echo "</tr>";
+                        if ($i['rol'] === '0') {
+                            echo "<tr>";
+                            echo "</tr>";
+                        } elseif ($i['rol'] === '1') {
+                            echo "<tr>";
+                            echo "<td>" . $lista[$i]->getNombre()  . "</td>";
+                            echo "<td>" . $lista[$i]->getCorreo() . "</td>";
+                            echo "<td>" . $lista[$i]->getdireccion() . "</td>";
+                            echo "<td>" . $lista[$i]->getEstado() . "</td>";
+                            echo "<td><a href='../routes/user.routes.php?btnBloquearUsu=" . $lista[$i]->getId() . "'>Bloquear</a></td>";
+                            echo "</tr>";
+                        }
                     }
                     ?>
 

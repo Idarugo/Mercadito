@@ -31,14 +31,14 @@
                 <div class="single_ftr">
                     <h4 class="sf_title">CATEGORÍAS</h4>
                     <ul>
-                        <li><a href="#">Plantas de Interior</a></li>
-                        <li><a href="#">Plantas de Exterior</a></li>
-                        <li><a href="#">Plantas Medicinales</a></li>
-                        <li><a href="#">Maceteros</a></li>
-                        <li><a href="#">Accesorios</a></li>
-                        <li><a href="#">Ofertas</a></li>
-                        <li><a href="#">Nuevos Productos</a></li>
-                        <li><a href="#">Insumos</a></li>
+                        <li><a onclick="redirectTo('pages/products.php?category=1')">Plantas de Interior</a></li>
+                        <li><a onclick="redirectTo('pages/products.php?category=2')">Plantas de Exterior</a></li>
+                        <li><a onclick="redirectTo('pages/products.php?category=3')">Plantas Medicinales</a></li>
+                        <li><a onclick="redirectTo('pages/products.php?category=4')">Frutas y Verduras</a></li>
+                        <li><a onclick="redirectTo('pages/products.php?category=5')">Acessorios</a></li>
+                        <li><a onclick="redirectTo('pages/products.php?category=6')">Ofertas</a></li>
+                        <li><a onclick="redirectTo('pages/products.php?category=7')">Nuevos Productos</a></li>
+                        <li><a onclick="redirectTo('pages/products.php?category=8')">Insumos</a></li>
                     </ul>
                 </div>
             </div>

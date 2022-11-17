@@ -16,7 +16,7 @@ class Withdrawal
         return $this->id;
     }
 
-    public function getRetreat_location(): string
+    public function getRetrelocat(): string
     {
         return $this->retreat_location;
     }

@@ -2,11 +2,16 @@
 require '../core/bootstraper.php';
 require '../controllers/plant.controller.php';
 require '../controllers/image_plants.controller.php';
+require '../controllers/withdrawal.controller.php';
 if (!isset($_GET['id'])) {
     header("location:  ./products.php");
 }
 $plants = new PlantController($connectDB);
 $infoplant = $plants->getPlantByIdInfo($_GET['id']);
+
+$withdra = new WithdrawalController($connectDB);
+$with = $withdra->getWithdrawalById($_GET['id'])
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
