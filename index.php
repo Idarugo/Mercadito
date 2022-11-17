@@ -19,7 +19,7 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="5000">
-          <img src="./assets/images/carrusel1.mp4" class="d-block w-100" style="margin-top: 10px;" alt="">
+          <img src="./assets/images/carrusel-1.mp4" class="d-block w-100" style="margin-top: 10px;" alt="">
           <div class="carousel-caption d-none d-md-block">
           </div>
         </div>
