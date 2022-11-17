@@ -18,7 +18,7 @@
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <video class="carousel-item active" data-bs-interval="5000" muted autoplay loop>
+        <video class="carousel-item active" data-bs-interval="5000" muted autoplay loop style="margin-top: 10px;">
           <source src="./assets/images/carrusel-1.mp4" class="d-block w-100" style="margin-top: 10px;" alt="">
           <div class="carousel-caption d-none d-md-block">
           </div>
@@ -28,7 +28,7 @@
           <div class="carousel-caption d-none d-md-block">
           </div>
         </div>
-        <video class="carousel-item" data-bs-interval="9000" muted autoplay loop>
+        <video class="carousel-item" data-bs-interval="9000" muted autoplay loop style="margin-top: 10px;">
           <source src="./assets/images/carrusel3.mp4" class="d-block w-100" style="margin-top: 10px;" alt="...">
           <div class="carousel-caption d-none d-md-block">
           </div>
