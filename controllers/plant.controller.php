@@ -35,7 +35,7 @@ class PlantController
         $resp = $this->connectDB->query($sql);
         $list = array();
         while ($rs = mysqli_fetch_array($resp)) {
-            $plants = new Plant($rs[0], $rs[1], $rs[2], $rs[3], $rs[4], $rs[5], $rs[6], $rs[7], $rs[8], $rs[9], $rs[10], $rs[11], $rs[12]);
+            $plants = new Plant($rs[0], $rs[1], $rs[2], $rs[3], $rs[4], $rs[5], $rs[6], $rs[7], $rs[8], $rs[9], $rs[10], $rs[11]);
             $list[] = $plants;
         }
         $_SESSION['plants'] = $list;
@@ -156,6 +156,7 @@ class PlantController
             $p   = new Plant($id, $title, $price, $description, $image, $category, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs);
             $lista[] = $p;
         }
+
         $this->connectDB->disconnect();
         return $lista;
     }
