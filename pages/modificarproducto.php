@@ -2,7 +2,6 @@
 require '../core/bootstraper.php';
 require '../controllers/plant.controller.php';
 require '../controllers/category.controller.php';
-require '../controllers/type_delivery.controller.php';
 if (!isset($_GET['id'])) {
     header("location:  ./listarproductos.php");
 }
