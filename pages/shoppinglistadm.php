@@ -48,7 +48,7 @@ $book = $bookController->listbook();
                 <tr>
                     <td><strong>Nombre</strong></td>
                     <td><strong>Correo</strong></td>
-                    <td><strong>Entrega</strong></td>
+                    <td><strong>Tipo de entrega</strong></td>
                     <td><strong>Email</strong></td>
                     <td><strong>Mensaje</strong></td>
                     <td><strong>Telefono</strong></td>

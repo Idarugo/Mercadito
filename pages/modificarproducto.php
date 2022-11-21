@@ -23,9 +23,10 @@ $PlantById = $plant->getPlantById($_GET['id']);
 <body>
     <?php include '../components/header.php' ?>
     <div class="container container-main">
-        <h1 style="text-align: center;">Editar Productos</h1>
+        <h1 style="text-align: center;">Editar Producto</h1>
 
-        <div class="col-md-12">
+        <div class="col-md-12" onclick="redirectTo('pages/modificarimagenproducto.php?id=<?php echo $PlantById->getidPlants(); ?>')">
+
             <center><img class="img-product" src="data:imagen/jpg;base64,<?php echo base64_encode($PlantById->getImage()); ?>"></center>
         </div>
         <form action="../routes/plant.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
@@ -59,14 +60,8 @@ $PlantById = $plant->getPlantById($_GET['id']);
 
 
             <div class="col-md-5">
-                <label for="inputName" class="form-label">Foto del Evento</label>
-
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen" multiple>
-            </div>
-
-            <div class="col-md-5">
                 <label for="validationCustom03" class="form-label">Acerca De</label>
-                <input type="text" class="form-control" id="inputName" name="txtAbout" value="<?php echo $PlantById->getAbout(); ?>" required>
+                <textarea type="text" class="form-control" id="inputName" name="txtAbout" rows="3" value="<?php echo $PlantById->getAbout(); ?>"></textarea>
             </div>
 
             <div class="col-md-5">

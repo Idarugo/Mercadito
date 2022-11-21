@@ -18,7 +18,10 @@ class ImageController
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
-            header("location:  ../pages/addproductimages.php?created");
+            echo "<script>
+            alert('Imagenes agregado correctamente');
+            window.location= '../pages/addproductimages.php?created'
+            </script>";
             return;
         }
         $this->connectDB->disconnect();

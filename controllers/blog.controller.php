@@ -19,7 +19,10 @@ class BlogController
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
-            header("location:  ../pages/agregarblog.php?created");
+            echo "<script>
+            alert('Producto agregado correctamente');
+            window.location= '../pages/agregarblog.php?created'
+            </script>";
             return;
         }
         $this->connectDB->disconnect();
@@ -67,11 +70,10 @@ class BlogController
     }
 
 
-    public function updateBlog($id, $imagen, $nombre, $detalle, $fecha)
+    public function updateBlog($id, $nombre, $detalle, $fecha)
     {
         $this->connectDB->connect();
-        $imagen = addslashes(file_get_contents($imagen['tmp_name']));
-        $sql = "UPDATE `blog` SET `imagen`='$imagen',`name`='$nombre',`detail`='$detalle',`date`='$fecha' WHERE `id`='$id'";
+        $sql = "UPDATE `blog` SET `name`='$nombre',`detail`='$detalle',`date`='$fecha' WHERE `id`='$id'";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             session_start();
@@ -79,6 +81,29 @@ class BlogController
             session_destroy();
             $this->connectDB->disconnect();
             header("location:  ../pages/listarblog.php?edited");
+            return;
+        }
+        $this->connectDB->disconnect();
+        //header("location:  ../pages/modificarusuario.php?ModifiedError");
+        return;
+    }
+
+
+    public function updateImagenBlog($id, $imagen)
+    {
+        $this->connectDB->connect();
+        $imagen = addslashes(file_get_contents($imagen['tmp_name']));
+        $sql = "UPDATE `blog` SET `imagen`='$imagen' WHERE `id`='$id'";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            session_start();
+            session_unset();
+            session_destroy();
+            $this->connectDB->disconnect();
+            echo "<script>
+            alert('Imagen del blog modificado correctamente');
+            window.location= '../pages/listarblog.php?edited'
+            </script>";
             return;
         }
         $this->connectDB->disconnect();

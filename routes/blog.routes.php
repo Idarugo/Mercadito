@@ -15,9 +15,17 @@ if (isset($_POST['btnCrearBlog'])) {
 }
 
 if (isset($_POST['btnModificarBlog'])) {
-    if (empty($_POST["txtId"]) || empty($_FILES["txtImagen"]) || empty($_POST["txtNombre"]) || empty($_POST["txtDetalle"])  || empty($_POST["txtFecha"])) {
-        header("location:  ../pages/editblog.php?txtEmptyError");
+    if (empty($_POST["txtId"]) || empty($_POST["txtNombre"]) || empty($_POST["txtFecha"])  || empty($_POST["txtDetalle"])) {
+        header("location:  ../pages/modificarimagenblog.php?txtEmptyError");
         return;
     }
-    $blog->updateBlog($_POST["txtId"], $_FILES["txtImagen"], $_POST["txtNombre"], $_POST["txtDetalle"], $_POST["txtFecha"]);
+    $blog->updateBlog($_POST["txtId"], $_POST["txtNombre"], $_POST["txtDetalle"], $_POST["txtFecha"]);
+}
+
+if (isset($_POST['btnModificarImagenBlog'])) {
+    if (empty($_POST["txtId"]) || empty($_FILES["txtImagen"])) {
+        header("location:  ../pages/modificar.php?txtEmptyError");
+        return;
+    }
+    $blog->updateImagenBlog($_POST["txtId"], $_FILES["txtImagen"]);
 }

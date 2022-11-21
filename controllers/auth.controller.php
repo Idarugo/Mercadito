@@ -42,7 +42,10 @@ class AuthController
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
-            header("location:  ../pages/login.php?created");
+            echo "<script>
+            alert('Usuario Creado correctamente');
+            window.location= '../pages/login.php?created'
+            </script>";
             return;
         }
         $this->connectDB->disconnect();

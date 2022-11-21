@@ -19,7 +19,10 @@ class bookTimeController
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
-            header("location:  ../pages/servicio.php?created");
+            echo "<script>
+            alert('Su hora de visita se ah agregado correctamente');
+            window.location= '../pages/servicio.php?created'
+            </script>";
             return;
         }
         $this->connectDB->disconnect();

@@ -22,7 +22,7 @@ $BlogsById = $blog->getBlogById($_GET['id']);
     <?php include '../components/header.php' ?>
     <div class="container container-main">
         <h1 style="text-align: center;">Editar Blog</h1>
-        <div class="col-md-12">
+        <div class="col-md-12" onclick="redirectTo('pages/modificarimagenblog.php?id=<?php echo $BlogsById->getId(); ?>')">
             <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($BlogsById->getImagen()); ?>"></center>
         </div>
 
@@ -33,23 +33,18 @@ $BlogsById = $blog->getBlogById($_GET['id']);
             </div>
 
             <div class="col-md-5">
-                <label for="inputName" class="form-label">Foto del Evento</label>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen" multiple>
-            </div>
-
-            <div class="col-md-5">
                 <label for="inputName" class="form-label">Titulo</label>
                 <input type="name" class="form-control" id="inputEmail4" name="txtNombre" value="<?php echo $BlogsById->getNombre(); ?>">
             </div>
 
             <div class="col-md-5">
-                <label for="inputDetall" class="form-label">Detalle</label>
-                <input type="text" class="form-control" id="validationCustom03" name="txtDetalle" value="<?php echo $BlogsById->getDetalle(); ?>" required>
-            </div>
-
-            <div class="col-md-5">
                 <label for="inputFech" class="form-label">Fecha</label>
                 <input type="text" class="form-control" id="validationCustom03" name="txtFecha" value="<?php echo $BlogsById->getFecha(); ?>" required>
+            </div>
+
+            <div class="col-md-10">
+                <label for="inputDetall" class="form-label">Detalle</label>
+                <input type="text" class="form-control" id="validationCustom03" name="txtDetalle" rows="3" value="<?php echo $BlogsById->getDetalle(); ?>"></input>
             </div>
 
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">

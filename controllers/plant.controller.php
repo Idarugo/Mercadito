@@ -19,11 +19,15 @@ class PlantController
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
-            header("location:  ../pages/agregarproductos.php?created");
+            echo "<script>
+            alert('Producto agregado correctamente');
+            window.location= '../pages/addproductimages.php?created'
+            </script>";
             return;
         }
         $this->connectDB->disconnect();
         header("location:  ../pages/agregarproductos.php?RegisterError");
+
         return;
     }
 
@@ -161,12 +165,11 @@ class PlantController
         return $lista;
     }
 
-    public function updateProduct($id, $title, $price, $description, $category, $image, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
+    public function updateProduct($id, $title, $price, $description, $category, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
 
     {
         $this->connectDB->connect();
-        $image = addslashes(file_get_contents($image['tmp_name']));
-        $sql = "UPDATE `plants` SET `title`='$title',`price`='$price',`description`='$description',`category`='$category',`image`='$image',`cant`='$cant',`about`='$about', `tips`='$tips',`health_benefit`='$healthBenefit',`primary_care`='$primaryCare',`also_known_as`='$alsoKnownAs'WHERE `id`='$id'";
+        $sql = "UPDATE `plants` SET `title`='$title',`price`='$price',`description`='$description',`category`='$category',`cant`='$cant',`about`='$about', `tips`='$tips',`health_benefit`='$healthBenefit',`primary_care`='$primaryCare',`also_known_as`='$alsoKnownAs'WHERE `id`='$id'";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             session_start();
@@ -175,6 +178,29 @@ class PlantController
             $this->connectDB->disconnect();
             header("location:  ../pages/listarproductos.php?edited");
             return;
+        }
+        $this->connectDB->disconnect();
+        //header("location:  ../pages/modificarusuario.php?ModifiedError");
+        return;
+    }
+
+
+    public function updateImagenProduct($id, $image)
+    {
+        $this->connectDB->connect();
+        $image = addslashes(file_get_contents($image['tmp_name']));
+        $sql = "UPDATE `plants` SET `image`='$image' WHERE `id`='$id'";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            session_start();
+            session_unset();
+            session_destroy();
+            $this->connectDB->disconnect();
+            echo "<script>
+            alert('Imagen modificado correctamente');
+            window.location= '../pages/listarproductos.php?created'
+            </script>";
+            return;;
         }
         $this->connectDB->disconnect();
         //header("location:  ../pages/modificarusuario.php?ModifiedError");

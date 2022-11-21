@@ -19,7 +19,7 @@
                 <input type="hidden" class="form-control" id="inputId" name="txtId" value="<?php echo $user->getId(); ?>">
             </div>
             <div class="col-md-10">
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen" multiple>
+                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen" required>
             </div>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
                 <input type="submit" value="Modificar" class="btn btn-success" name="btnModificarImagen" id="btnForm">
