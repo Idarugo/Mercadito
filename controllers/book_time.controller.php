@@ -66,7 +66,11 @@ class bookTimeController
             session_unset();
             session_destroy();
             $this->connectDB->disconnect();
-            header("location:  ../pages/listarbook.php?edited");
+            echo "<script>
+            alert('Hora de visiota ah sido modificado correctamente');
+            window.location= '../pages/listarbook.php?edited'
+            </script>";
+            return;
             return;
         }
         $this->connectDB->disconnect();

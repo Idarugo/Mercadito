@@ -2,10 +2,10 @@
 require '../core/bootstraper.php';
 require '../controllers/image_plants.controller.php';
 if (!isset($_GET['id'])) {
-    header("location:  ./listimages.php");
+    header("location:  ../listimages.php");
 }
-$images = new ImageController($connectDB);
-$image = $images->getImageById($_GET['id']);
+$image = new ImageController($connectDB);
+$images = $image->getImageById($_GET['id']);
 ?>
 
 <!DOCTYPE html>
@@ -24,40 +24,35 @@ $image = $images->getImageById($_GET['id']);
         <form action="../routes/image.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
 
             <div class="col-md-12">
-                <input type="hidden" class="form-control" id="inputId" name="txtId" value="<?php echo $image->getid(); ?>">
+                <input type="hidden" class="form-control" id="inputId" name="txtId" value="<?php echo $images->getid(); ?>">
             </div>
             <div class="col-md-12">
-                <input type="hidden" class="form-control" id="inputId" name="Product" value="<?php echo $image->getPlants(); ?>">
+                <input type="hidden" class="form-control" id="inputId" name="Product" value="<?php echo $images->getPlants(); ?>">
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-2" onclick="redirectTo('pages/modificarimagen1.php?id=<?php echo $images->getid(); ?>')">
                 <center><label for="inputName" class="form-label">Imagen 1</label></center>
-                <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($image->getImage1()); ?>"></center>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen1" multiple>
+                <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($images->getImage1()); ?>"></center>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-2" onclick="redirectTo('pages/modificarimagen2.php?id=<?php echo $images->getid(); ?>')">
                 <center><label for="inputName" class="form-label">Imagen 2</label></center>
-                <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($image->getImage2()); ?>"></center>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen2" multiple>
+                <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($images->getImage2()); ?>"></center>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-2" onclick="redirectTo('pages/modificarimagen3.php?id=<?php echo $images->getid(); ?>')">
                 <center><label for="inputName" class="form-label">Imagen 3</label></center>
-                <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($image->getImage3()); ?>"></center>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen3" multiple>
+                <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($images->getImage3()); ?>"></center>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-2" onclick="redirectTo('pages/modificarimagen4.php?id=<?php echo $images->getid(); ?>')">
                 <center><label for="inputName" class="form-label">Imagen 4</label></center>
-                <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($image->getImage4()); ?>"></center>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen4" multiple>
+                <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($images->getImage4()); ?>"></center>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-2" onclick="redirectTo('pages/modificarimagen5.php?id=<?php echo $images->getid(); ?>')">
                 <center><label for="inputName" class="form-label">Imagen 5</label></center>
-                <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($image->getImage5()); ?>"></center>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen5" multiple>
+                <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($images->getImage5()); ?>"></center>
             </div>
 
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">

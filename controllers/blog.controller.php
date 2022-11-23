@@ -20,7 +20,7 @@ class BlogController
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
             echo "<script>
-            alert('Producto agregado correctamente');
+            alert('Blog agregado correctamente');
             window.location= '../pages/agregarblog.php?created'
             </script>";
             return;

@@ -71,9 +71,6 @@ $book = $bookController->listbook();
                 </tr>
             </table>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
-                <a href="./agregarblog.php"><button type="button" class="btn btn-success">Agregar Blog</button></a>
-            </div>
-            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
                 <a href="./perfil.php"><button type="button" class="btn btn-success btn btn-dark">
                         < Volver</button></a>
             </div>

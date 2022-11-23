@@ -63,7 +63,8 @@ $produc = $producController->select();
                         echo "<td>" . $produc[$i]->getDescription() . "</td>";
                         echo "<td>" . $produc[$i]->getCant() . "</td>";
                         echo "<td>" . $produc[$i]->getCategory() . "</td>";
-                        echo "<td><a href='modificarproducto.php?id=" . $produc[$i]->getidPlants() . "'>Editar</a> - <a href='../routes/plant.routes.php?btnElminarPlant=" . $produc[$i]->getidPlants() . "'>Eliminar</a></td>";
+                        echo "<td><a href='modificarproducto.php?id=" . $produc[$i]->getidPlants() . "'>Editar</a> - 
+                        <a href='../routes/plant.routes.php?btnElminarPlant=" . $produc[$i]->getidPlants() . "'>Eliminar</a></td>";
                         echo "</tr>";
                     }
                     ?>

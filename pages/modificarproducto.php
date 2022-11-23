@@ -61,7 +61,7 @@ $PlantById = $plant->getPlantById($_GET['id']);
 
             <div class="col-md-5">
                 <label for="validationCustom03" class="form-label">Acerca De</label>
-                <textarea type="text" class="form-control" id="inputName" name="txtAbout" rows="3" value="<?php echo $PlantById->getAbout(); ?>"></textarea>
+                <input type="text" class="form-control" id="inputName" name="txtAbout" rows="3" value="<?php echo $PlantById->getAbout(); ?>"></input>
             </div>
 
             <div class="col-md-5">

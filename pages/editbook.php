@@ -60,7 +60,7 @@ $BookById = $book->getBookById($_GET['id']);
             </div>
 
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
-                <a href="./listarblog.php"><button type="button" class="btn btn-success btn btn-dark">
+                <a href="./listarbook.php"><button type="button" class="btn btn-success btn btn-dark">
                         < Volver</button></a>
             </div>
         </form>

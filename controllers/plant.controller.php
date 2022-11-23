@@ -15,6 +15,7 @@ class PlantController
     public function registerPlants($title, $price, $description, $category, $image, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
     {
         $this->connectDB->connect();
+        $image = addslashes(file_get_contents($image['tmp_name']));
         $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant` , `about`, `tips`, `health_benefit`, `primary_care`, `also_known_as`) VALUES ('$title','$price','$description','$category','$image','$cant','$about','$tips','$healthBenefit','$primaryCare','$alsoKnownAs')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
@@ -118,10 +119,10 @@ class PlantController
     {
         $lista = array();
         $this->connectDB->connect();
-        $sql = " SELECT * FROM `plants`";
+        $sql = "SELECT plants.id, title, price, description, category.category as name, image, cant, about, tips, health_benefit, primary_care, also_known_as FROM plants , category WHERE plants.category=category.id ORDER BY `id` ASC ";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['name'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -136,7 +137,6 @@ class PlantController
         header("location:  ../pages/listarproductos.php?removedplant");
         return;
     }
-
 
     public function ListProduct()
     {
@@ -184,6 +184,20 @@ class PlantController
         return;
     }
 
+    public function selecupdateCategory()
+    {
+        $lista = array();
+        $this->connectDB->connect();
+        $sql = "SELECT id, category as name FROM category ORDER BY `id` ASC ";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $lista[] = new Category($rs['id'], $rs['getBanner'], $rs['name']);;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
+    }
+
+
 
     public function updateImagenProduct($id, $image)
     {
@@ -193,11 +207,8 @@ class PlantController
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             session_start();
-            session_unset();
-            session_destroy();
-            $this->connectDB->disconnect();
             echo "<script>
-            alert('Imagen modificado correctamente');
+            alert('Imagen del producto se ah modificado correctamente');
             window.location= '../pages/listarproductos.php?created'
             </script>";
             return;;

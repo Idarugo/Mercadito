@@ -61,7 +61,7 @@ class Plant
 		return $this->cant;
 	}
 
-	public function getCategory(): int
+	public function getCategory(): string
 	{
 		return $this->category;
 	}

@@ -3,22 +3,20 @@ class Carshop
 {
 	private  $id;
 	private  $name;
+	private  $description;
 	private  $amount;
-	private  $price;
 	private  $subtotal;
-	private  $delivery;
-	private  $billing;
+	private  $shopping_cart;
 
 
-	function __construct($id, $name, $amount, $price, $subtotal, $delivery, $billing)
+	function __construct($id, $name, $description, $amount, $subtotal, $shopping_cart)
 	{
 		$this->id = $id;
 		$this->name = $name;
+		$this->description = $description;
 		$this->amount = $amount;
-		$this->price = $price;
 		$this->subtotal = $subtotal;
-		$this->delivery = $delivery;
-		$this->billing = $billing;
+		$this->shopping_cart = $shopping_cart;
 	}
 
 	public function getid(): int
@@ -30,23 +28,23 @@ class Carshop
 		return $this->name;
 	}
 
+	public function getDescription(): string
+	{
+		return $this->description;
+	}
+
 	public function getAmount(): string
 	{
 		return $this->amount;
 	}
-	public function getPrice(): string
-	{
-		return $this->price;
-	}
-
 	public function getSubtotal(): string
 	{
 		return $this->subtotal;
 	}
 
-	public function getDelivery(): int
+	public function getShopping_cart(): int
 	{
-		return $this->delivery;
+		return $this->shopping_cart;
 	}
 
 	public function getBilling(): int

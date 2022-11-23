@@ -14,13 +14,12 @@ class ImageController
     public function registerimage($plants, $image1, $image2, $image3, $image4, $image5)
     {
         $this->connectDB->connect();
-        $sql = "INSERT INTO `image_plants`( `plants`, `image_1`, `image_2`, `image_3`, `image_4`, `image_5`) VALUES ('$plants','$image1','$image2','$image3','$image4','$image5')";
+        $sql = "INSERT INTO `image_plants`(`plants`, `image_1`, `image_2`, `image_3`, `image_4`, `image_5`) VALUES ('$plants','$image1','$image2','$image3','$image4','$image5')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
-            $this->connectDB->disconnect();
             echo "<script>
             alert('Imagenes agregado correctamente');
-            window.location= '../pages/addproductimages.php?created'
+            window.location= '../pages/perfil.php?created'
             </script>";
             return;
         }
@@ -33,7 +32,7 @@ class ImageController
     {
         $lista = "";
         $this->connectDB->connect();
-        $sql = "SELECT * FROM `image_plants` WHERE `plants`= $id";
+        $sql = "SELECT * FROM `image_plants` WHERE `id`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
             $lista = new Images($rs['id'], $rs['plants'], $rs['image_1'], $rs['image_2'], $rs['image_3'], $rs['image_4'], $rs['image_5']);;
@@ -56,35 +55,98 @@ class ImageController
     {
         $image = array();
         $this->connectDB->connect();
-        $sql = " SELECT * FROM `image_plants`";
+        $sql = " SELECT image_plants.id, title, image_1, image_2, image_3, image_4, image_5 FROM image_plants, plants WHERE image_plants.plants=plants.id ";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $image[] = new Images($rs['id'], $rs['plants'], $rs['image_1'], $rs['image_2'], $rs['image_3'], $rs['image_4'], $rs['image_5']);;
+            $image[] = new Images($rs['id'], $rs['title'], $rs['image_1'], $rs['image_2'], $rs['image_3'], $rs['image_4'], $rs['image_5']);;
         }
         $this->connectDB->disconnect();
         return $image;
     }
 
-    public function updateImagen($id, $plants, $image1, $image2, $image3, $image4, $image5)
+    public function updateImagen1($id, $plants, $image1)
     {
         $this->connectDB->connect();
         $image1 = addslashes(file_get_contents($image1['tmp_name']));
-        $image2 = addslashes(file_get_contents($image2['tmp_name']));
-        $image3 = addslashes(file_get_contents($image3['tmp_name']));
-        $image4 = addslashes(file_get_contents($image4['tmp_name']));
-        $image5 = addslashes(file_get_contents($image5['tmp_name']));
-        $sql = "UPDATE `image_plants` SET `plants`='$plants',`image_1`='$image1',`image_2`='$image2',`image_3`='$image3' ,`image_4`='$image4' ,`image_5`='$image5' WHERE `id`='$id'";
+        $sql = "UPDATE `image_plants` SET `plants`='$plants',`image_1`='$image1'  WHERE `id`='$id'";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             session_start();
-            session_unset();
-            session_destroy();
-            $this->connectDB->disconnect();
-            header("location:  ../pages/listimages.php?edited");
+            echo "<script>
+            alert('Imagen 1 modificado correctamente');
+            window.location= '../pages/listimages.php?editedd'
+            </script>";
             return;
         }
-        $this->connectDB->disconnect();
-        //header("location:  ../pages/modificarusuario.php?ModifiedError");
+        return;
+    }
+
+    public function updateImagen2($id, $plants, $image2)
+    {
+        $this->connectDB->connect();
+        $image2 = addslashes(file_get_contents($image2['tmp_name']));
+        $sql = "UPDATE `image_plants` SET `plants`='$plants',`image_2`='$image2'  WHERE `id`='$id'";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            session_start();
+            echo "<script>
+            alert('Imagen 2 modificado correctamente');
+            window.location= '../pages/listimages.php?editedd'
+            </script>";
+            return;
+        }
+        return;
+    }
+
+
+    public function updateImagen3($id, $plants, $image3)
+    {
+        $this->connectDB->connect();
+        $image3 = addslashes(file_get_contents($image3['tmp_name']));
+        $sql = "UPDATE `image_plants` SET `plants`='$plants',`image_3`='$image3'  WHERE `id`='$id'";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            session_start();
+            echo "<script>
+            alert('Imagen 3 modificado correctamente');
+            window.location= '../pages/listimages.php?editedd'
+            </script>";
+            return;
+        }
+        return;
+    }
+
+    public function updateImagen4($id, $plants, $image4)
+    {
+        $this->connectDB->connect();
+        $image4 = addslashes(file_get_contents($image4['tmp_name']));
+        $sql = "UPDATE `image_plants` SET `plants`='$plants',`image_4`='$image4'  WHERE `id`='$id'";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            session_start();
+            echo "<script>
+            alert('Imagen 4 modificado correctamente');
+            window.location= '../pages/listimages.php?editedd'
+            </script>";
+            return;
+        }
+        return;
+    }
+
+    public function updateImagen5($id, $plants, $image5)
+    {
+        $this->connectDB->connect();
+        $image5 = addslashes(file_get_contents($image5['tmp_name']));
+        $sql = "UPDATE `image_plants` SET `plants`='$plants',`image_5`='$image5'  WHERE `id`='$id'";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            session_start();
+            echo "<script>
+            alert('Imagen 5 modificado correctamente');
+            window.location= '../pages/listimages.php?editedd'
+            </script>";
+            return;
+        }
         return;
     }
 }

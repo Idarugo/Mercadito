@@ -26,7 +26,7 @@ class Images
         return $this->id;
     }
 
-    public function getPlants(): int
+    public function getPlants(): string
     {
         return $this->plants;
     }

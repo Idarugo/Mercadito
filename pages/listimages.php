@@ -56,20 +56,29 @@ $image = $imageController->listimages();
 
                 </tr>
                 <tr>
+
                     <?php
                     for ($i = 0; $i < count($image); $i++) {
                         echo "<tr>";
                         echo "<td>" . $image[$i]->getPlants() . "</td>";
-                        echo "<td>" . base64_encode($image[$i]->getImage1()) . "</td>";
-                        echo "<td>" . base64_encode($image[$i]->getImage2()) . "</td>";
-                        echo "<td>" . base64_encode($image[$i]->getImage3()) . "</td>";
-                        echo "<td>" . base64_encode($image[$i]->getImage4()) . "</td>";
-                        echo "<td>" . base64_encode($image[$i]->getImage5()) . "</td>";
+                        echo "<td>" . '<img src="data:image;base64,' . base64_encode($image[$i]->getImage1()) . '" alt="Image" style="width:100px; height:129px;">' . "</td>";
+                        echo "<td>" . '<img src="data:image;base64,' . base64_encode($image[$i]->getImage2()) . '" alt="Image" style="width:100px; height:129px;">' . "</td>";
+                        echo "<td>" . '<img src="data:image;base64,' . base64_encode($image[$i]->getImage3()) . '" alt="Image" style="width:100px; height:129px;">' . "</td>";
+                        echo "<td>" . '<img src="data:image;base64,' . base64_encode($image[$i]->getImage4()) . '" alt="Image" style="width:100px; height:129px;">' . "</td>";
+                        echo "<td>" . '<img src="data:image;base64,' . base64_encode($image[$i]->getImage5()) . '" alt="Image" style="width:100px; height:129px;">' . "</td>";
                         echo "<td><a href='editimages.php?id=" . $image[$i]->getId() . "'>Editar</a> -
                                 <a href='../routes/image.routes.php?btnElminarImage=" . $image[$i]->getId() . "'>Eliminar</a></td>";
                         echo "</tr>";
                     }
                     ?>
+
+                    <script>
+                        function Delete(Codigo) {
+                            if (confirm('Estas seguro de Eliminar este registro?')) {
+                                document.location = 'tu_php_para_eliminar?Codigo' + Codigo;
+                            }
+                        }
+                    </script>
                 </tr>
             </table>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">

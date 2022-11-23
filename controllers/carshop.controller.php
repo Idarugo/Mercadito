@@ -11,10 +11,10 @@ class CarshopController
         $this->connectDB = $connectDB;
     }
 
-    public function registerCarshop($name, $amount, $price, $subtotal)
+    public function registerCarshop($name, $description, $amount, $subtotal, $shopping_cart)
     {
         $this->connectDB->connect();
-        $sql = "INSERT INTO `carshop`(`name`, `amount`, `price` , `subtotal`) VALUES ('$name','$amount','$price','$subtotal')";
+        $sql = "INSERT INTO `carshop`(`name`, `description`, `amount`, `subtotal`, `shopping_cart`)) VALUES ('$name','$amount','$description',,'$subtotal','$shopping_cart')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
@@ -24,6 +24,40 @@ class CarshopController
         $this->connectDB->disconnect();
         header("location:  ../pages/carrodecompra.php?RegisterError");
         return;
+    }
+
+
+    public function registerPlants($title, $price, $description, $category, $image, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
+    {
+        $this->connectDB->connect();
+        $sql = "INSERT INTO `plants`(`title`, `price`, `description`, `category`, `image`, `cant` , `about`, `tips`, `health_benefit`, `primary_care`, `also_known_as`) VALUES ('$title','$price','$description','$category','$image','$cant','$about','$tips','$healthBenefit','$primaryCare','$alsoKnownAs')";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            $this->connectDB->disconnect();
+            echo "<script>
+            alert('Producto agregado correctamente');
+            window.location= '../pages/addproductimages.php?created'
+            </script>";
+            return;
+        }
+        $this->connectDB->disconnect();
+        header("location:  ../pages/agregarproductos.php?RegisterError");
+
+        return;
+    }
+
+
+    public function getPlantByIdInfo($id)
+    {
+        $lista = "";
+        $this->connectDB->connect();
+        $sql = "SELECT * FROM `plants` WHERE `id`= $id";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
     }
 
 

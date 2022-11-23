@@ -8,9 +8,9 @@ $carshop = new CarshopController($connectDB);
     */
 
 if (isset($_POST['btnCrearCarshop'])) {
-    if (empty($_POST["txtTitle"])  ||  empty($_POST["txtCant"])  || empty($_POST["txtPrice"])  || empty($_POST["txtSubtotal"])) {
+    if (empty($_POST["txtTitle"])  || empty($_POST["txtDescripcion"])  ||  empty($_POST["txtCant"])  || empty($_POST["txtSubtotal"]) || empty($_POST["txtShopping"])) {
         header("location:  ../pages/carrodecompra.php?txtEmptyError");
         return;
     }
-    $carshop->registerCarshop($_POST["txtTitle"], $_POST["txtCant"], $_POST["txtPrice"], $_POST["txtSubtotal"]);
+    $carshop->registerCarshop($_POST["txtTitle"], $_POST["txtDescripcion"], $_POST["txtCant"], $_POST["txtSubtotal"], $_POST["txtShopping"]);
 }

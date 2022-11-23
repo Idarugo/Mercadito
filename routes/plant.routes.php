@@ -53,6 +53,7 @@ if (isset($_GET['getPlant'])) {
     header("location:  ../pages/products.php");
 }
 
+
 if (isset($_GET['btnElminarPlant'])) {
     $plant->removePlant($_GET["btnElminarPlant"]);
 }

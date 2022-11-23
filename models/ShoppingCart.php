@@ -3,13 +3,11 @@ class ShoppingCart
 {
     private $id;
     private  $plants;
-    private $users;
 
-    function __construct($id, $plants, $users)
+    function __construct($id, $plants)
     {
         $this->id = $id;
         $this->plants = $plants;
-        $this->users = $users;
     }
 
     public function getid(): int
@@ -20,10 +18,5 @@ class ShoppingCart
     public function getPlants(): int
     {
         return $this->plants;
-    }
-
-    public function getUsers(): int
-    {
-        return $this->users;
     }
 }
