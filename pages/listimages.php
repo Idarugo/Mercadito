@@ -1,4 +1,4 @@
-<?
+<?php
 require '../core/bootstraper.php';
 require '../controllers/image_plants.controller.php';
 

@@ -1,4 +1,4 @@
-<?
+<?php
 require '../core/bootstraper.php';
 require '../controllers/book_time.controller.php';
 
