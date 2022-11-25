@@ -1,7 +1,7 @@
 <?php
 require '../models/ShoppingCarro.php';
 
-class ShoppingCarrito
+class ShoppingCarrito2
 {
 
     private $connectDB;

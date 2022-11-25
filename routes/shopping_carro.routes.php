@@ -1,7 +1,7 @@
 <?php
 require '../core/bootstraper.php';
 require '../controllers/shopping_carro.controller.php';
-$shoppingcant = new ShoppingCarro($connectDB);
+$shoppingcant = new ShoppingCarrito2($connectDB);
 
 /*
     *   PlantController

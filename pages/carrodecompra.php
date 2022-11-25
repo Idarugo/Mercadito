@@ -5,7 +5,7 @@ if (!isset($_GET['user'])) {
     header("location:  ./products.php");
 }
 
-$shoppingcant = new ShoppingCarrito($connectDB);
+$shoppingcant = new ShoppingCarrito2($connectDB);
 $shopping = $shoppingcant->selectShopping($_GET['user']);
 
 ?>
@@ -83,17 +83,15 @@ $shopping = $shoppingcant->selectShopping($_GET['user']);
                     </div>
 
                     <div class="btnquitar col-3">
-                    <a class="btnquitar" href="../routes/shopping_carro.routes.php?btnQuitarProducto="' . $shopping[$i]->getid() . '">Quitar</a></td>
+                    <a href="../routes/shopping_carro.routes.php?btnQuitarProducto="' . $shopping[$i]->getid() . '">Quitar</a></td>
+
                     </div>
                     <div class="col-md-12">
                         <input type="hidden" class="form-control" id="inputId" name="txtShopping" value="<?php echo $plantCompra->getidPlants(); ?>">
                     </div>
                 </div>
             </div>
-            ';
-            }
-            ?>
-
+          
             <div class="col-md-5">
                 <div class="subtotal col-10">
                     <span>Subtotal</span>
@@ -119,6 +117,11 @@ $shopping = $shoppingcant->selectShopping($_GET['user']);
                     <p class="colorenvio">* El envío personalizado es solo para las comunas: Rancagua, Machali, Graneros, Las Cabras</p>
                 </div>
             </div>
+
+            ';
+            }
+            ?>
+
 
         </form>
     </div>
