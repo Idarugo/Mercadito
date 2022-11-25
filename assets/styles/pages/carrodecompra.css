@@ -2,9 +2,15 @@
     text-align: center;
 }
 
-.compra1 {
+.imagen {
     width: 150px;
     height: 200px;
+    padding-bottom: 10px !important;
+}
+
+.btnquitar {
+    padding-top: 10px !important;
+    color: #000000;
 }
 
 .btn {

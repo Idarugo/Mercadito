@@ -8,7 +8,7 @@ $shopping = new ShoppingCant($connectDB);
     */
 
 if (isset($_POST['btnagregarCarro'])) {
-    if (empty($_POST["txtUser"])  || empty($_POST["txtPlant"]) || empty($_POST["txtCant"])) {
+    if (empty($_POST["txtUser"])  || empty($_POST["txtPlant"] || empty($_POST["txtCant"])) {
         echo "<script>
         alert('Producto no agregado correctamente');
         window.location= '../pages/plantdetail.php?txtEmptyError'

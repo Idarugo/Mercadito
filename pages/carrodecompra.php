@@ -1,12 +1,12 @@
 <?php
 require '../core/bootstraper.php';
 require '../controllers/shopping_carro.controller.php';
-if (!isset($_GET['id'])) {
+if (!isset($_GET['user'])) {
     header("location:  ./products.php");
 }
 
 $shoppingcant = new ShoppingCarrito($connectDB);
-$shopping = $shoppingcant->selectShopping($_GET['id']);
+$shopping = $shoppingcant->selectShopping($_GET['user']);
 
 ?>
 
@@ -59,37 +59,42 @@ $shopping = $shoppingcant->selectShopping($_GET['id']);
             <?php
             if ($shopping == "") {
                 echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
-            } else {
+            }
+            for ($i = 0; $i < count($shopping); $i++) {
                 echo '
-            <div class="row align-items-start col-md-5">
+            <div class="productos row align-items-start col-md-5">
                 <div class="col-4">
-                    <img name="txtImagen" class="compra1"  src="data:imagen/jpg;base64,' . base64_encode($shopping->getImagen()) . '" alt="">
+                    <img name="txtImagen" class="imagen"  src="data:imagen/jpg;base64,' . base64_encode($shopping[$i]->getImagen()) . '" alt="">
                 </div>
                 <div class="col-8">
-                    <input type="text" class="titulo form-control" id="inputName" name="txtTitle" value="' . $shopping->getTitle() . '" disabled>
+                    <input type="text" class="titulo form-control" id="inputName" name="txtTitle" value="' . $shopping[$i]->getTitle() . '" disabled>
                     <div class="container mb-3">
                     </div>
                     <div class="container mb-2">
                     </div>
-                    <input type="text" class="price" id="price" name="txtPrice" value="' . $shopping->getQuantity() . '"disabled>
+                    <input type="text" class="price" id="price" name="txtPrice" value="' . $shopping[$i]->getQuantity() . '"disabled>
 
                     <div class="container mb-3">
                     </div>
 
                     <div class="col-3">
                         <label class="despacho-1">Cantidad </label>
-                        <input type="number" name="txtCant" id="quantity" class="input-number" value="1" min="1" max="' . $shopping->getCantidad() . '" placeholder="1">
+                        <input type="number" name="txtCant" id="quantity" class="input-number" value="1" min="1" max="' . $shopping[$i]->getCantidad() . '" placeholder="1">
+                    </div>
+
+                    <div class="btnquitar col-3">
+                    <a class="btnquitar" href="../routes/shopping_carro.routes.php?btnQuitarProducto="' . $shopping[$i]->getid() . '">Quitar</a></td>
                     </div>
                     <div class="col-md-12">
                         <input type="hidden" class="form-control" id="inputId" name="txtShopping" value="<?php echo $plantCompra->getidPlants(); ?>">
                     </div>
                 </div>
             </div>
-
+            ';
+            }
+            ?>
 
             <div class="col-md-5">
-
-
                 <div class="subtotal col-10">
                     <span>Subtotal</span>
                     <span class="right">
@@ -113,11 +118,8 @@ $shopping = $shoppingcant->selectShopping($_GET['id']);
                 <div class="col-10 mb justify-content-center" style="text-align: center;">
                     <p class="colorenvio">* El envío personalizado es solo para las comunas: Rancagua, Machali, Graneros, Las Cabras</p>
                 </div>
-
             </div>
-            ';
-            }
-            ?>
+
         </form>
     </div>
     <?php include '../components/footer.php' ?>
