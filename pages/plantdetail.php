@@ -1,12 +1,17 @@
 <?php
 require '../core/bootstraper.php';
+require '../controllers/user.controller.php';
 require '../controllers/plant.controller.php';
 require '../controllers/image_plants.controller.php';
 if (!isset($_GET['id'])) {
-    header("location:  ./products.php");
+    header("location:  ./tiendaonline.php");
 }
-$plants = new PlantController($connectDB);
-$plant = $plants->getPlantById($_GET['id']);
+
+$users = new UserController($connectDB);
+$user = $users->getUsersById($_GET['id']);
+
+$plant = new PlantController($connectDB);
+$Planta = $plant->getPlantById($_GET['id']);
 
 $image_plants = new ImageController($connectDB);
 $image = $image_plants->getImageById($_GET['id']);
@@ -23,16 +28,28 @@ $image = $image_plants->getImageById($_GET['id']);
 <body>
     <?php include '../components/header.php' ?>
     <div class="container container-main">
+        <form action="../routes/shopping_cant.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
 
+            <div class="col-md-3">
+                <input type="hidden" class="form-control" id="inputUser" name="txtUser" value="<?php echo $user->getId(); ?>">
+            </div>
 
-        <?php
-        if ($plant == "" || $image == "") {
-            echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
-        } else {
-            echo '
+            <div class="col-md-3">
+                <input type="hidden" class="form-control" id="inputId" name="txtPlant" value="<?php echo $Planta->getidPlants(); ?>">
+            </div>
+
+            <div class="col-md-3">
+                <input type="hidden" class="form-control" id="inputUser" name="txtCant" value="1">
+            </div>
+
+            <?php
+            if ($plant == "" || $image == "") {
+                echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
+            } else {
+                echo '
         <div class="row" style="margin-top: 20px;">
          <div class="col aling-self-center">
-            <img class="img_plant" src="data:imagen/jpg;base64,' . base64_encode($plant->getImage()) . '">
+            <img class="img_plant" src="data:imagen/jpg;base64,' . base64_encode($Planta->getImage()) . '">
             <div class="row mt-2">
                 <div class="col-2">
                     <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($image->getImage1()) . '" alt="">
@@ -59,9 +76,9 @@ $image = $image_plants->getImageById($_GET['id']);
     
                 <div class="col aling-self-center">
 
-            <h2 class="title" style="margin: 10px;">' . $plant->geTitle() . '</h2>
+            <h2 class="title" style="margin: 10px;">' . $Planta->geTitle() . '</h2>
 
-            <span style="margin: 10px;">Precio :$' . $plant->getPrice() . '</span>
+            <span style="margin: 10px;">Precio :$' . $Planta->getPrice() . '</span>
 
             
             <div class="col-md-10">
@@ -77,13 +94,13 @@ $image = $image_plants->getImageById($_GET['id']);
             <div class="offcanvas-body">
                 <div class="row" style="margin-top: 20px;">
                     <div class="col aling-self-center">
-                        <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($plant->getImage()) . '">
+                        <img class="img_plant-min" src="data:imagen/jpg;base64,' . base64_encode($Planta->getImage()) . '">
                     </div>
                 </div>
 
                 <div class="col aling-self-center">
-                    <h2 class="title" style="margin: 10px;">' . $plant->geTitle() . '</h2>
-                    <span style="margin: 10px;">Precio :$' . $plant->getPrice() . '</span>
+                    <h2 class="title" style="margin: 10px;">' . $Planta->geTitle() . '</h2>
+                    <span style="margin: 10px;">Precio :$' . $Planta->getPrice() . '</span>
                 </div>
 
                 <div class="col-5  justify-content-center mb-2" style="text-align: center;">
@@ -92,13 +109,16 @@ $image = $image_plants->getImageById($_GET['id']);
 
             </div>
             </div>
-            
-            <a href="carrodecompra.php?id=' . $plant->getidPlants() . '"><button class="btn-comprar"> Comprar Ahora </button>
+                        
+            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
+                <input type="submit" value="Comprar Ahora " class="btn-comprar" name="btnagregarCarro" id="btnForm">
+            </div>
+
             </a>
 
             <font style="vertical-align: inherit;">
                 <p>
-                    <LI>' . $plant->getDescription() . '</LI>
+                    <LI>' . $Planta->getDescription() . '</LI>
                 </p>
             </font>
 
@@ -111,7 +131,7 @@ $image = $image_plants->getImageById($_GET['id']);
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <p>' . $plant->getAbout() . '</p>
+                        <p>' . $Planta->getAbout() . '</p>
                     </div>
                 </div>
             </div>
@@ -123,7 +143,7 @@ $image = $image_plants->getImageById($_GET['id']);
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <p>' . $plant->getTips() . '</p>
+                        <p>' . $Planta->getTips() . '</p>
                     </div>
                 </div>
             </div>
@@ -135,7 +155,7 @@ $image = $image_plants->getImageById($_GET['id']);
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <p>' . $plant->getPrimaryCare() . '</p>
+                        <p>' . $Planta->getPrimaryCare() . '</p>
                     </div>
                 </div>
             </div>
@@ -147,7 +167,7 @@ $image = $image_plants->getImageById($_GET['id']);
                 </h2>
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <p>' . $plant->getHealthBenefit() . '</p>
+                        <p>' . $Planta->getHealthBenefit() . '</p>
 
                     </div>
                 </div>
@@ -160,7 +180,7 @@ $image = $image_plants->getImageById($_GET['id']);
             </h2>
             <div id="collapseFiver" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <p>' . $plant->getAlsoKnownAs() . '</p>
+                    <p>' . $Planta->getAlsoKnownAs() . '</p>
                 </div>
             </div>
         </div>
@@ -168,8 +188,9 @@ $image = $image_plants->getImageById($_GET['id']);
         </div>
     </div>
       ';
-        }
-        ?>
+            }
+            ?>
+        </form>
     </div>
     <?php include '../components/footer.php' ?>
 </body>

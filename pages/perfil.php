@@ -1,3 +1,14 @@
+<?php
+//require '../core/bootstraper.php';
+//require '../controllers/auth.controller.php';
+//if (!isset($_GET['category'])) {
+//    header("location:  ./login.php");
+//}
+//$user = new AuthController($connectDB);
+//$userByIdRol = $plants->getAllUsersRol($_GET['category']);
+//
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 

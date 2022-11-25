@@ -110,4 +110,17 @@ class AuthController
         header("location: ../pages/recuperarcontrasena.php?AuthError");
         return;
     }
+
+    public function getAllUsersRol($id)
+    {
+        $lista = array();
+        $this->connectDB->connect();
+        $sql = "SELECT * FROM `users` WHERE `rol`= $id";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $lista[] = new Usuario($rs['id'], $rs['nombre'], $rs['correo'], $rs['password'], $rs['imagen'], $rs['direccion'], $rs['rol'], $rs['estado']);;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
+    }
 }

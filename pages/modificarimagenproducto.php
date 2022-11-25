@@ -5,7 +5,6 @@ if (!isset($_GET['id'])) {
     header("location:  ./modificarproducto.php");
 }
 $plant = new PlantController($connectDB);
-
 $PlantById = $plant->getPlantById($_GET['id']);
 ?>
 

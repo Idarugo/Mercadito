@@ -4,13 +4,13 @@ require '../controllers/plant.controller.php';
 require '../controllers/image_plants.controller.php';
 require '../controllers/withdrawal.controller.php';
 if (!isset($_GET['id'])) {
-    header("location:  ./products.php");
+    header("location:  ./plantdetail.php");
 }
 $plants = new PlantController($connectDB);
 $infoplant = $plants->getPlantByIdInfo($_GET['id']);
 
 $withdra = new WithdrawalController($connectDB);
-$with = $withdra->getWithdrawalById($_GET['id'])
+$image = $withdra->getWithdrawalById($_GET['id']);
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ $with = $withdra->getWithdrawalById($_GET['id'])
 
 <body>
     <?php include '../components/header.php' ?>
-    <div class="container-fluid">
+    <div class="container container-main">
 
         <div class="container container-main gx-5">
 
@@ -140,7 +140,7 @@ $with = $withdra->getWithdrawalById($_GET['id'])
 
                             </td>
                             <th class="product__description" scope="row">
-                                <span class="product__description__name order-summary__emphasis">' . $infoplant->geTitle() . ' - ' . $infoplant->getDescription() . ' </span>
+                                <span class="product__description__name order-summary__emphasis">' . $infoplant->geTitle() . ' </span>
                             </th>
                             <td class="product__quantity">
                                 <span class="visually-hidden">

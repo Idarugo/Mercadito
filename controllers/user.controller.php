@@ -10,6 +10,19 @@ class UserController
         $this->connectDB = $connectDB;
     }
 
+    public function getUsersById($id)
+    {
+        $lista = "";
+        $this->connectDB->connect();
+        $sql = "SELECT * FROM `users` WHERE `id`= $id";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $lista = new UsuarioDTO($rs['id'], $rs['nombre'], $rs['correo'], $rs['password'], $rs['imagen'], $rs['direccion'], $rs['rol'], $rs['estado']);;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
+    }
+
     public function update($id, $name, $correo, $pass, $direccion)
     {
         $this->connectDB->connect();
