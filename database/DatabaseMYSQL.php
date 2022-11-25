@@ -19,7 +19,7 @@
         public function connect(){
             $this->db = new mysqli($this->localhost,$this->user,$this->pass,$this->nameDB);
             if($this->db->connect_errno){
-                die("Error al establecer la conexion a la BD -> flutur");
+                die("Error al establecer la conexion a la BD -> mercadito");
             }
         }
         public function disconnect(){
