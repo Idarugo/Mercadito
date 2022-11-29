@@ -27,7 +27,7 @@ $shopping = $shoppingcant->selectShopping($_GET['user']);
 
     <div class="container container-main mt-5">
 
-        <form action="../routes/shopping_cant.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
+        <form action="../routes/shopping_carro.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
 
 
             <h1 style="text-align: center;">Carrito de compra</h1>
@@ -63,6 +63,12 @@ $shopping = $shoppingcant->selectShopping($_GET['user']);
             for ($i = 0; $i < count($shopping); $i++) {
                 echo '
             <div class="productos row align-items-start col-md-5">
+                <div class="col-md-12">
+                    <input type="hidden" class="form-control" id="inputId" name="txtId" value=' . $shopping[$i]->getid() . '">
+                </div>
+                <div class="col-md-12">
+                    <input type="hidden" class="form-control" id="inputId" name="txtUser" value=' . $shopping[$i]->getUser() . '">
+                </div>
                 <div class="col-4">
                     <img name="txtImagen" class="imagen"  src="data:imagen/jpg;base64,' . base64_encode($shopping[$i]->getImagen()) . '" alt="">
                 </div>
@@ -83,15 +89,18 @@ $shopping = $shoppingcant->selectShopping($_GET['user']);
                     </div>
 
                     <div class="btnquitar col-3">
-                    <a href="../routes/shopping_carro.routes.php?btnQuitarProducto="' . $shopping[$i]->getid() . '">Quitar</a></td>
-
+                    <a href="../routes/shopping_carro.routes.php?btnQuitarProducto="' . $shopping[$i]->getid() . '">Quitar</a></td>       
                     </div>
                     <div class="col-md-12">
                         <input type="hidden" class="form-control" id="inputId" name="txtShopping" value="<?php echo $plantCompra->getidPlants(); ?>">
                     </div>
                 </div>
             </div>
-          
+
+            ';
+            }
+            ?>
+
             <div class="col-md-5">
                 <div class="subtotal col-10">
                     <span>Subtotal</span>
@@ -104,7 +113,7 @@ $shopping = $shoppingcant->selectShopping($_GET['user']);
                 </div>
 
                 <div class="col-10  justify-content-center mb-2" style="text-align: center;">
-                    <input type="submit" value="Terminar Pedido" class="btn btn-success" name="btnCrearCarshop" id="btnForm">
+                    <input type="submit" value="Terminar Pedido" class="btn btn-success" name="btmmodcarrodecompra" id="btnForm">
                 </div>
 
                 <div class="mb-3">
@@ -117,12 +126,6 @@ $shopping = $shoppingcant->selectShopping($_GET['user']);
                     <p class="colorenvio">* El envío personalizado es solo para las comunas: Rancagua, Machali, Graneros, Las Cabras</p>
                 </div>
             </div>
-
-            ';
-            }
-            ?>
-
-
         </form>
     </div>
     <?php include '../components/footer.php' ?>

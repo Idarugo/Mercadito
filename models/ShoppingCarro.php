@@ -13,7 +13,7 @@ class ShoppingCarro
     function __construct($id, $user, $imagen, $title, $quantity, $cantidad, $cant)
     {
         $this->id = $id;
-        $this->users = $user;
+        $this->user = $user;
         $this->imagen = $imagen;
         $this->title = $title;
         $this->quantity = $quantity;

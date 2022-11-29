@@ -19,11 +19,11 @@ class ShoppingCarrito
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
-            header("location:  ../pages/carrodecompra.php?created");
+            header("location:  ../pages/carrodecompra.php?user=$user");
             return;
         }
         $this->connectDB->disconnect();
-        header("location:  ../pages/plantdetail.php?RegisterError");
+        header("location:  ../pages/tiendaonline.php?RegisterError");
         return;
     }
 }

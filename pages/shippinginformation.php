@@ -1,18 +1,15 @@
 <?php
 require '../core/bootstraper.php';
-require '../controllers/plant.controller.php';
-require '../controllers/image_plants.controller.php';
-require '../controllers/withdrawal.controller.php';
-if (!isset($_GET['id'])) {
-    header("location:  ./plantdetail.php");
+require '../controllers/shopping_carro.controller.php';
+if (!isset($_GET['user'])) {
+    header("location:  ./carrodecompra.php");
 }
-$plants = new PlantController($connectDB);
-$infoplant = $plants->getPlantByIdInfo($_GET['id']);
 
-$withdra = new WithdrawalController($connectDB);
-$image = $withdra->getWithdrawalById($_GET['id']);
+$shoppingcant = new ShoppingCarrito2($connectDB);
+$shopping = $shoppingcant->selectShopping($_GET['user']);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -28,12 +25,13 @@ $image = $withdra->getWithdrawalById($_GET['id']);
     <div class="container container-main">
 
         <div class="container container-main gx-5">
-
-            <?php
-            if ($infoplant == "") {
-                echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
-            } else {
-                echo '
+            <form action="../routes/shopping_carro.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
+                <?php
+                if ($shopping == "") {
+                    echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
+                }
+                for ($i = 0; $i < count($shopping); $i++) {
+                    echo '
             <div class="row ">
                 <div class="left col-6">
                     <form action="">
@@ -117,7 +115,7 @@ $image = $withdra->getWithdrawalById($_GET['id']);
                         </br>
                         <div class="row">
                             <div class="col">
-                                <a href="./agregarblog.php"><button type="button" class="btn btn-outline-secondary">
+                                <a href="./carrodecompra.php"><button type="button" class="btn btn-outline-secondary">
                                         < Volver a información</button></a>
                             </div>
                             <div class="col-4">
@@ -133,14 +131,14 @@ $image = $withdra->getWithdrawalById($_GET['id']);
                             <td class="product__image">
                                 <div class="product-thumbnail ">
                                     <div class="product-thumbnail__wrapper">
-                                        <img class="product-thumbnail__image" src="data:imagen/jpg;base64,' . base64_encode($infoplant->getImage()) . '">
+                                        <img class="product-thumbnail__image" src="data:imagen/jpg;base64,' . base64_encode($shopping[$i]->getImagen()) . '">
                                     </div>
-                                    <span class="product-thumbnail__quantity" aria-hidden="true">' . $infoplant->getCant() . ' </span>
+                                    <span class="product-thumbnail__quantity" aria-hidden="true">' . $shopping[$i]->getCant() . ' </span>
                                 </div>
 
                             </td>
                             <th class="product__description" scope="row">
-                                <span class="product__description__name order-summary__emphasis">' . $infoplant->geTitle() . ' </span>
+                                <span class="product__description__name order-summary__emphasis">"' . $shopping[$i]->getTitle() . '"</span>
                             </th>
                             <td class="product__quantity">
                                 <span class="visually-hidden">
@@ -148,7 +146,7 @@ $image = $withdra->getWithdrawalById($_GET['id']);
                                 </span>
                             </td>
                             <td class="product__price">
-                                <span class="order-summary__emphasis skeleton-while-loading" style="padding-left: 200px;">$' . $infoplant->getPrice() . ' </span>
+                                <span class="order-summary__emphasis skeleton-while-loading" style="padding-left: 200px;">$' . $shopping[$i]->getQuantity() . ' </span>
                             </td>
                         </tr>
                     </tbody>
@@ -156,8 +154,9 @@ $image = $withdra->getWithdrawalById($_GET['id']);
             </div>
 
             ';
-            }
-            ?>
+                }
+                ?>
+            </form>
         </div>
 
         <script>

@@ -11,11 +11,11 @@ class ShoppingCarrito2
         $this->connectDB = $connectDB;
     }
 
-    public function selectShopping($users)
+    public function selectShopping()
     {
         $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT shopping_cant.id, users, plants.image as imagen, plants.title as titulo, plants.price as precio,plants.cant as cantidad, quantity FROM shopping_cant , plants WHERE shopping_cant.plants=plants.id AND shopping_cant.plants=plants.id AND shopping_cant.plants=plants.id AND shopping_cant.plants=plants.id AND `users`= $users ORDER BY `id` ASC        ";
+        $sql = "SELECT shopping_cant.id, users, plants.image as imagen, plants.title as titulo, plants.price as precio,plants.cant as cantidad, quantity FROM shopping_cant , plants WHERE shopping_cant.plants=plants.id AND shopping_cant.plants=plants.id AND shopping_cant.plants=plants.id AND shopping_cant.plants=plants.id  ORDER BY `id` ASC        ";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
             $lista[] = new ShoppingCarro($rs['id'], $rs['users'], $rs['imagen'], $rs['titulo'], $rs['precio'], $rs['cantidad'], $rs['quantity']);;
@@ -42,10 +42,26 @@ class ShoppingCarrito2
     public function removeProducto($id)
     {
         $this->connectDB->connect();
-        $sql = "DELETE FROM shopping_cant WHERE id = $id";
+        $sql = "DELETE FROM `shopping_cant` WHERE id = id";
         $st = $this->connectDB->query($sql);
         $this->connectDB->disconnect();
-        header("location:  ../pages/carrodecompra.php?removedCarro");
+        header("location:  ../pages/carrodecompra.php?id=$id");
+        return;
+    }
+
+    public function updateCarro($id, $user, $cant)
+
+    {
+        $this->connectDB->connect();
+        $sql = "UPDATE `shopping_cant` SET `users`='$user',`quantity`='$cant' WHERE `id`='$id'";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            $this->connectDB->disconnect();
+            header("location:  ../pages/shippinginformation.php?user=$user");
+            return;
+        }
+        $this->connectDB->disconnect();
+        //header("location:  ../pages/modificarusuario.php?ModifiedError");
         return;
     }
 }
