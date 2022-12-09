@@ -1,3 +1,24 @@
+<?php
+require '../core/bootstraper.php';
+require '../controllers/tipo_envio.controller.php';
+require '../controllers/detalle_venta_envio.controller.php';
+require '../controllers/venta.controller.php';
+$venta = "";
+
+if (isset($_GET['venta'])) {
+    $venta = $_GET['venta'];
+} else {
+    header("location:  ./carrodecompra.php");
+}
+$detalleVentaEnvio = new DetalleVentaEnvio($connectDB);
+$envio = new TipoDeEnvio($connectDB);
+
+$venta = $envio->selectVenta($venta);
+$detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,7 +33,13 @@
     <div class="container-fluid">
 
         <div class="container container-main gx-5" style="padding-bottom: 30px; padding-top: 30px;">
-
+            <form action="../routes/tipo_envio.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
+                <?php
+                if ($detalle == "") {
+                    echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
+                }
+                for ($i = 0; $i < count($detalle); $i++) {
+                    echo '
             <div class="row md-10">
                 <div class="left col-6">
                     <form action="">
@@ -20,9 +47,9 @@
                         <div class="form-group ">
                             <div class="caja">
                                 <div class="">
-                                    <div>Contacto <bdo class="derecha">' . $infoplant->getCant() . '</bdo> <button class="button" style="float: right;">Cambiar</button></div>
+                                    <div>Contacto <bdo class="derecha">' . $detalle[$i]->getNombre() . '</bdo> <button class="button" style="float: right;">Cambiar</button></div>
                                     <hr size="2px" color="black" />
-                                    <div>Método <bdo class="derecha">' . $infoplant->getCant() . '</bdo> <button class="button" style="float: right;">Cambiar</button></div>
+                                    <div>Método <bdo class="derecha">' . $detalle[$i]->getCantidad() . '</bdo> <button class="button" style="float: right;">Cambiar</button></div>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +76,7 @@
                                         <h6 style="text-align:center">Banco: Banco estado</h6>
                                         <h6 style="text-align:center">Tipo de Cuenta: Cuenta Rut</h6>
                                         <h6 style="text-align:center">Nro: 11365712 </h6>
-                                        <h6 style="text-align:center">Correo: nmatias1998@gmail.con </h6>
+                                        <h6 style="text-align:center">Correo: nmatias1998@gmail.com </h6>
                                         <h6 style="text-align:center">Muchas gracias por preferirnos!!</h6>
                                     </div>
                                 </div>
@@ -85,7 +112,7 @@
                                         < Volver a información</button></a>
                             </div>
                             <div class="col-4">
-                                <a href="./confirmedorder.php"><button type="button" class="btn btn-outline-success">Finalizar el Pedido</button></a>
+                                 <input  type="submit" value="Finalizar el Pedido" class="btn btn-outline-success" name="btnagregarPago" id="btnForm">
                             </div>
                         </div>
 
@@ -94,34 +121,40 @@
                 </div>
 
                 <div class="right col-6  d-flex">
-                    <tbody data-order-summary-section="line-items">
-                        <tr class="product" data-product-id="6898364055722" data-variant-id="42969838321921" data-product-type="Árboles" data-customer-ready-visible="">
-                            <td class="product__image">
-                                <div class="product-thumbnail ">
-                                    <div class="product-thumbnail__wrapper">
-                                        <img class="product-thumbnail__image" src="data:imagen/jpg;base64,' . base64_encode($infoplant->getImage()) . '">
-                                    </div>
-                                    <span class="product-thumbnail__quantity" aria-hidden="true">' . $infoplant->getCant() . ' </span>
+                <tbody data-order-summary-section="line-items">
+                    <tr class="product" data-product-id="6898364055722" data-variant-id="42969838321921" data-product-type="Árboles" data-customer-ready-visible="">
+                        <td class="product__image">
+                            <div class="product-thumbnail ">
+                                <div class="product-thumbnail__wrapper">
+                                    <img class="product-thumbnail__image" src="data:imagen/jpg;base64,' . base64_encode($detalle[$i]->getImage()) . '">
                                 </div>
+                                <span class="product-thumbnail__quantity" aria-hidden="true">' . $detalle[$i]->getCantidad() . ' </span>
+                            </div>
 
-                            </td>
-                            <th class="product__description" scope="row">
-                                <span class="product__description__name order-summary__emphasis">' . $infoplant->geTitle() . ' - ' . $infoplant->getDescription() . ' </span>
-                            </th>
-                            <td class="product__quantity">
-                                <span class="visually-hidden">
-                                    2
-                                </span>
-                            </td>
-                            <td class="product__price">
-                                <span class="order-summary__emphasis skeleton-while-loading" style="padding-left: 200px;">$' . $infoplant->getPrice() . ' </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </div>
+                        </td>
+                        <th class="product__description" scope="row">
+                            <span class="product__description__name order-summary__emphasis"> ' . $detalle[$i]->getTitle() . '</span>
+                        </th>
+                        <td class="product__quantity">
+                            <span class="visually-hidden">
+                                2
+                            </span>
+                        </td>
+                        <td class="product__price">
+                            <span class="order-summary__emphasis skeleton-while-loading" style="padding-left: 100px;">$' . $detalle[$i]->getPrice() . ' </span>
+                        </td>
+                    </tr>
+                </tbody>
+                <td class="product__price">
+                    <span class="order-summary__emphasis skeleton-while-loading" style="padding-left: 100px;">$' . $detalle[$i]->getTotal() . ' </span>
+                </td>
+            </div>
             </div>
 
 
+            ';
+                }
+                ?>
         </div>
     </div>
     <?php include '../components/footer.php' ?>

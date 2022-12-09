@@ -41,7 +41,7 @@ class Plant
 		return $this->title;
 	}
 
-	public function getPrice(): string
+	public function getPrice(): int
 	{
 		return $this->price;
 	}

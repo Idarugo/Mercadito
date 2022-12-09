@@ -28,16 +28,17 @@
             <div class="row gx-5">
                 <div class="col">
                     <h3>Registro</h3>
-                    <a class="btn btn-primary col-md-7 mb-3" href="../pages/agregarproductos.php" role="button">Añadir un producto</a>
-                    <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/agregarblog.php" role="button">Añadir Blog</a>
-                    <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/addproductimages.php" role="button">Añadir Imagenes Productos</a>
+                    <a class="btn btn-primary col-md-5 mb-3" href="../pages/agregarproductos.php" role="button">Añadir un producto</a>
+                    <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/agregarblog.php" role="button">Añadir Blog</a>
+                    <a class="btn btn-primary col-md-10 mb-3"" href=" ../pages/addproductimages.php" role="button">Añadir Imagenes Productos</a>
                     <h3>Listados</h3>
-                    <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/listarproductos.php" role="button">Lista de Producto</a>
-                    <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/listarblog.php" role="button">Lista de Blog</a>
-                    <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/listarusuario.php" role="button">Lista de Usuario</a>
-                    <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/listimages.php" role="button">Lista de imágenes de productos</a>
-                    <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/listarbook.php" role="button">Lista de Reserva</a>
-                    <a class="btn btn-primary col-md-7 mb-3"" href=" ../pages/shoppinglistadm.php" role="button">Lista de Compra</a>
+                    <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listarproductos.php" role="button">Lista de Producto</a>
+                    <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listarblog.php" role="button">Lista de Blog</a>
+                    <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listarusuario.php" role="button">Lista de Usuario</a>
+                    <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listimages.php" role="button">Lista de imágenes</a>
+                    <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listarbook.php" role="button">Lista de Reserva</a>
+                    <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/shoppinglistadm.php" role="button">Lista de Compra</a>
+                    <a class="btn btn-primary col-md-10 mb-3"" href=" ../pages/listadoreporte.php" role="button">Lista de Reporte</a>
 
 
                 </div>

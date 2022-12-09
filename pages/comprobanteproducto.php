@@ -1,3 +1,24 @@
+<?php
+require '../core/bootstraper.php';
+require '../controllers/tipo_envio.controller.php';
+require '../controllers/detalle_venta_envio.controller.php';
+require '../controllers/venta.controller.php';
+$venta = "";
+
+if (isset($_GET['venta'])) {
+    $venta = $_GET['venta'];
+} else {
+    header("location:  ./carrodecompra.php");
+}
+$detalleVentaEnvio = new DetalleVentaEnvio($connectDB);
+$envio = new TipoDeEnvio($connectDB);
+
+$venta = $envio->selectVenta($venta);
+$detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,6 +37,12 @@
             <div class="row md-10">
                 <div class="left col-6">
                     <form action="">
+                        <?php
+                        if ($detalle == "") {
+                            echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
+                        }
+                        for ($i = 0; $i < count($detalle); $i++) {
+                            echo '
 
                         <div class="form-group ">
                             <img class="icon-verificado" src="../assets/images/verificado.png">
@@ -110,14 +137,14 @@
                             <td class="product__image">
                                 <div class="product-thumbnail ">
                                     <div class="product-thumbnail__wrapper">
-                                        <img class="product-thumbnail__image" src="data:imagen/jpg;base64,' . base64_encode($infoplant->getImage()) . '">
+                                        <img class="product-thumbnail__image" src="data:imagen/jpg;base64,' . base64_encode($detalle[$i]->getImage()) . '">
                                     </div>
-                                    <span class="product-thumbnail__quantity" aria-hidden="true">' . $infoplant->getCant() . ' </span>
+                                    <span class="product-thumbnail__quantity" aria-hidden="true">' . $detalle[$i]->getCantidad() . ' </span>
                                 </div>
 
                             </td>
                             <th class="product__description" scope="row">
-                                <span class="product__description__name order-summary__emphasis">' . $infoplant->geTitle() . ' - ' . $infoplant->getDescription() . ' </span>
+                                <span class="product__description__name order-summary__emphasis"> ' . $detalle[$i]->getTitle() . '</span>
                             </th>
                             <td class="product__quantity">
                                 <span class="visually-hidden">
@@ -125,15 +152,21 @@
                                 </span>
                             </td>
                             <td class="product__price">
-                                <span class="order-summary__emphasis skeleton-while-loading" style="padding-left: 200px;">$' . $infoplant->getPrice() . ' </span>
+                                <span class="order-summary__emphasis skeleton-while-loading" style="padding-left: 100px;">$' . $detalle[$i]->getPrice() . ' </span>
                             </td>
                         </tr>
                     </tbody>
+                    <td class="product__price">
+                        <span class="order-summary__emphasis skeleton-while-loading" style="padding-left: 100px;">$' . $detalle[$i]->getTotal() . ' </span>
+                    </td>
                 </div>
             </div>
         </div>
-    </div>
-    <?php include '../components/footer.php' ?>
+        ';
+                        }
+                        ?>
+                </div>
+                <?php include '../components/footer.php' ?>
 </body>
 
 </html>

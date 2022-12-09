@@ -21,9 +21,9 @@
                 <div class="single_ftr">
                     <h4 class="sf_title">CONTACTO</h4>
                     <ul>
-                        <li>Dirección del Vivero: Rancagua</li>
-                        <li>(+123) 685 78 455 <br> (+064) 336 987 245</li>
-                        <li>mercadito@gmail.com</li>
+                        <li>Dirección del Vivero: La Rubina 3919 </li>
+                        <li>(+569) 99 066 039 </li>
+                        <li>mercadito.jesica@gmail.com</li>
                     </ul>
                 </div>
             </div>

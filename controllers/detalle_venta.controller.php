@@ -1,7 +1,7 @@
 <?php
-require '../models/ShoppingCarro.php';
+require '../models/DetalleVenta.php';
 
-class ShoppingCarrito2
+class DetalleV
 {
 
     private $connectDB;
@@ -11,27 +11,28 @@ class ShoppingCarrito2
         $this->connectDB = $connectDB;
     }
 
-    public function selectShopping()
+    public function selectDetalleVenta($codigo)
     {
         $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT shopping_cant.id, users, plants.image as imagen, plants.title as titulo, plants.price as precio,plants.cant as cantidad, quantity FROM shopping_cant , plants WHERE shopping_cant.plants=plants.id AND shopping_cant.plants=plants.id AND shopping_cant.plants=plants.id AND shopping_cant.plants=plants.id  ORDER BY `id` ASC        ";
+        $sql = "SELECT detalle_venta.id, plants.image as imagen, plants.title as titulo, plants.price as precio,plants.cant as cantidad_prod, venta.codigo, cantidad, detalle_venta.total FROM detalle_venta , plants , venta WHERE detalle_venta.cod_prod=plants.id AND detalle_venta.cod_prod=plants.id AND detalle_venta.cod_prod=plants.id AND detalle_venta.cod_prod=plants.id AND detalle_venta.cod_vent=venta.codigo  ORDER BY `id` ASC  ";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista[] = new ShoppingCarro($rs['id'], $rs['users'], $rs['imagen'], $rs['titulo'], $rs['precio'], $rs['cantidad'], $rs['quantity']);;
+            $lista[] = new DetalleVenta($rs['id'], $rs['imagen'], $rs['titulo'], $rs['precio'], $rs['cantidad_prod'], $rs['codigo'], $rs['cantidad'], $rs['total']);;
         }
         $this->connectDB->disconnect();
         return $lista;
     }
 
-    public function registerShopping($user, $plant, $cant)
+    public function registerDetalleVenta($cod_pro, $cod_venta, $cantidad, $precio)
     {
+        $total = round(($precio * $cantidad), 0);
         $this->connectDB->connect();
-        $sql = "INSERT INTO `shopping_cant`(`users`, `plants`, `quantity`) VALUES ('$user','$plant','$cant')";
+        $sql = "INSERT INTO `detalle_venta`(`cod_prod`, `cod_vent`, `cantidad`, `total`) VALUES ('$cod_pro','$cod_venta','$cantidad','$total')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
-            header("location:  ../pages/carrodecompra.php?created");
+            header("location:  ../pages/tipodeenvio.php?venta=$cod_venta");
             return;
         }
         $this->connectDB->disconnect();
@@ -39,13 +40,15 @@ class ShoppingCarrito2
         return;
     }
 
-    public function removeProducto($id)
+
+
+    public function removeProducto()
     {
         $this->connectDB->connect();
-        $sql = "DELETE FROM `shopping_cant` WHERE id = id";
+        $sql = "DELETE FROM `detalle_venta` WHERE id  = id";
         $st = $this->connectDB->query($sql);
         $this->connectDB->disconnect();
-        header("location:  ../pages/carrodecompra.php?id=$id");
+        header("location:  ../pages/tiendaonline.php");
         return;
     }
 
@@ -53,7 +56,7 @@ class ShoppingCarrito2
 
     {
         $this->connectDB->connect();
-        $sql = "UPDATE `shopping_cant` SET `users`='$user',`quantity`='$cant' WHERE `id`='$id'";
+        $sql = "UPDATE `detalle_venta` SET `users`='$user',`quantity`='$cant' WHERE `id`='$id'";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();

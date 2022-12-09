@@ -15,6 +15,7 @@ $Planta = $plant->getPlantById($_GET['id']);
 
 $image_plants = new ImageController($connectDB);
 $image = $image_plants->getImageById($_GET['id']);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -28,10 +29,11 @@ $image = $image_plants->getImageById($_GET['id']);
 <body>
     <?php include '../components/header.php' ?>
     <div class="container container-main">
-        <form action="../routes/shopping_cant.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
+        <form action="../routes/venta.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
+
 
             <div class="col-md-3">
-                <input type="hidden" class="form-control" id="inputUser" name="txtUser" value="<?php echo $user->getId(); ?>">
+                <input type="hidden" class="form-control" id="inputUser" name="txtUsuario" value="<?php echo $user->getId(); ?>">
             </div>
 
             <div class="col-md-3">
@@ -41,6 +43,11 @@ $image = $image_plants->getImageById($_GET['id']);
             <div class="col-md-3">
                 <input type="hidden" class="form-control" id="inputUser" name="txtCant" value="1">
             </div>
+
+            <div class="col-md-3">
+                <input type="hidden" class="form-control" id="inputId" name="txtTotal" value="<?php echo $Planta->getPrice(); ?>">
+            </div>
+
 
             <?php
             if ($plant == "" || $image == "") {
@@ -78,7 +85,7 @@ $image = $image_plants->getImageById($_GET['id']);
 
             <h2 class="title" style="margin: 10px;">' . $Planta->geTitle() . '</h2>
 
-            <span style="margin: 10px;">Precio :$' . $Planta->getPrice() . '</span>
+            <span style="margin: 10px;" >Precio :$' . $Planta->getPrice() . '</span>
 
             
             <div class="col-md-10">

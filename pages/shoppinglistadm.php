@@ -39,7 +39,10 @@ $book = $bookController->listbook();
                 <a class="nav-link" href="../pages/listarbook.php">Listado de Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../pages/shoppinglistadm.php">Listado de Compra</a>
+                <a class="nav-link active" href="../pages/shoppinglistadm.php">Listado de Compra</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listadoreporte.php">Reportes</a>
             </li>
         </ul>
 
@@ -47,11 +50,11 @@ $book = $bookController->listbook();
             <table class="styled-table">
                 <tr>
                     <td><strong>Nombre</strong></td>
-                    <td><strong>Correo</strong></td>
-                    <td><strong>Tipo de entrega</strong></td>
-                    <td><strong>Email</strong></td>
-                    <td><strong>Mensaje</strong></td>
-                    <td><strong>Telefono</strong></td>
+                    <td><strong>Producto</strong></td>
+                    <td><strong>Cantidad</strong></td>
+                    <td><strong>TIpo de Envio</strong></td>
+                    <td><strong>Tipo de Pago</strong></td>
+                    <td><strong>Comprobante de Pago</strong></td>
 
 
                 </tr>
@@ -59,20 +62,17 @@ $book = $bookController->listbook();
                     <?php
                     for ($i = 0; $i < count($book); $i++) {
                         echo "<tr>";
+                        echo "<td>" . $book[$i]->getNombre() . "</td>";
                         echo "<td>" . $book[$i]->getDia() . "</td>";
                         echo "<td>" . $book[$i]->getHora() . "</td>";
-                        echo "<td>" . $book[$i]->getNombre() . "</td>";
                         echo "<td>" . $book[$i]->getEmail() . "</td>";
                         echo "<td>" . $book[$i]->getTelefono() . "</td>";
-                        echo "<td><a href='editbook.php?id=" . $book[$i]->getId() . "'>Editar</a></td>";
+                        echo "<td>" . $book[$i]->getTelefono() . "</td>";
                         echo "</tr>";
                     }
                     ?>
                 </tr>
             </table>
-            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
-                <a href="./agregarblog.php"><button type="button" class="btn btn-success">Agregar Blog</button></a>
-            </div>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
                 <a href="./perfil.php"><button type="button" class="btn btn-success btn btn-dark">
                         < Volver</button></a>

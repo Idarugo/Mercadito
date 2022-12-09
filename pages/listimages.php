@@ -32,13 +32,16 @@ $image = $imageController->listimages();
                 <a class="nav-link" href="../pages/listarusuario.php">Lista de Usuario</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="../pages/listimages.php">Lista de Foto</a>
+                <a class="nav-link active" href="../pages/listimages.php">Lista de Foto</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="../pages/listarbook.php">Listado de Reserva</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../pages/shoppinglistadm.php">Listado de Compra</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listadoreporte.php">Reportes</a>
             </li>
         </ul>
 

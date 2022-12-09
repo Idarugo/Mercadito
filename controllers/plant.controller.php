@@ -11,7 +11,6 @@ class PlantController
         $this->connectDB = $connectDB;
     }
 
-
     public function registerPlants($title, $price, $description, $category, $image, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
     {
         $this->connectDB->connect();
@@ -64,15 +63,15 @@ class PlantController
 
     public function getPlantById($id)
     {
-        $lista = "";
+        $plant = "";
         $this->connectDB->connect();
         $sql = "SELECT * FROM `plants` WHERE `id`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $plant = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
-        return $lista;
+        return $plant;
     }
 
     public function getPlantByIdCarro($id)
@@ -195,6 +194,14 @@ class PlantController
         }
         $this->connectDB->disconnect();
         return $lista;
+    }
+
+    public function productosId()
+    {
+        $lista = array();
+        $this->connectDB->connect();
+        $sql = "SELECT SUM(cant) FROM plants";
+        $st = $this->connectDB->query($sql);
     }
 
 

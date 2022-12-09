@@ -33,7 +33,7 @@ $blogs = $blog->getBlogs();
         }
         for ($i = 0; $i < count($blogs); $i++) {
             echo '
-            <div class="container text-center mt-5">
+            <div class="blogs container text-center mt-5">
             <div class="card-group">
                 <div class="card">
                     <img src="data:imagen/jpg;base64,' . base64_encode($blogs[$i]->getImagen()) . '" class="card-img-top" alt="...">
@@ -45,30 +45,6 @@ $blogs = $blog->getBlogs();
                         <small class="text-muted">' . $blogs[$i]->getFecha() . '</small>
                     </div>
                 </div>
-                
-                <div class="card">
-                <img src="data:imagen/jpg;base64,' . base64_encode($blogs[$i]->getImagen()) . '" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">' . $blogs[$i]->getNombre() . '</h5>
-                    <p class="card-text">' . $blogs[$i]->getDetalle() . '</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">' . $blogs[$i]->getFecha() . '</small>
-                </div>
-            </div>
-
-
-            <div class="card">
-            <img src="data:imagen/jpg;base64,' . base64_encode($blogs[$i]->getImagen()) . '" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">' . $blogs[$i]->getNombre() . '</h5>
-                <p class="card-text">' . $blogs[$i]->getDetalle() . '</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">' . $blogs[$i]->getFecha() . '</small>
-            </div>
-        </div>
-
             </div>
         </div>
 

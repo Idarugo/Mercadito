@@ -110,4 +110,12 @@ class BlogController
         //header("location:  ../pages/modificarusuario.php?ModifiedError");
         return;
     }
+
+    public function blogId()
+    {
+        $lista = array();
+        $this->connectDB->connect();
+        $sql = "SELECT COUNT(id) FROM blog";
+        $st = $this->connectDB->query($sql);
+    }
 }

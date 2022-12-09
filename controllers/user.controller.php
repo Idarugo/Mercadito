@@ -10,6 +10,14 @@ class UserController
         $this->connectDB = $connectDB;
     }
 
+    public function UserId()
+    {
+        $lista = array();
+        $this->connectDB->connect();
+        $sql = "SELECT COUNT(id) FROM users";
+        $st = $this->connectDB->query($sql);
+    }
+
     public function getUsersById($id)
     {
         $lista = "";
