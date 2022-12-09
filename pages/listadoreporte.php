@@ -80,21 +80,21 @@ $reserva = $ReservaController->ReservaId();
             <div class="card text-white bg-success mb-3" style="max-width: 18rem; left: 40px;">
                 <div class="card-header">Total de Usuario</div>
                 <div class="card-body">
-                    <h5 class="card-title">3 Usuarios</h5>
+                    <h5 class="card-title"><?php echo $user; ?> Usuarios</h5>
                     <img class="img-conteo" src="../assets/images/Conteo/usuario.png">
                 </div>
             </div>
             <div class="card text-white bg-danger mb-3" style="max-width: 18rem; left: 50px;">
                 <div class="card-header">Productos Vendido</div>
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $VentaId; ?> Producto Vendido</h5>
+                    <h5 class="card-title"><?php echo $venta; ?> Producto Vendido</h5>
                     <img class="img-conteo" src="../assets/images/Conteo/vendido.png">
                 </div>
             </div>
             <div class="card text-white bg-warning mb-3" style="max-width: 18rem; left: 20px;">
                 <div class="card-header">Reserva de Vivero</div>
                 <div class="card-body">
-                    <h5 class="card-title">10 Visitas</h5>
+                    <h5 class="card-title"><?php echo $reserva; ?> Visitas</h5>
                     <img class="img-conteo" src="../assets/images/Conteo/reserva.png">
                 </div>
             </div>

@@ -13,10 +13,12 @@ class bookTimeController
 
     public function ReservaId()
     {
-        $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT COUNT(id) FROM book_time";
+        $sql = "SELECT COUNT(id) as cantidad FROM book_time";
         $st = $this->connectDB->query($sql);
+        $val = mysqli_fetch_assoc($st);
+        $this->connectDB->disconnect();
+        return $val["cantidad"];
     }
 
     public function register($dia, $hora, $nombre, $email, $telefono)
