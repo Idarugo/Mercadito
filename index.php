@@ -65,16 +65,16 @@
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <a href="https://www.instagram.com/p/CK9WQEwB7tA/?utm_source=ig_web_copy_link"><img src="./assets/images/instagram1.jpg" class="inta-img d-block w-100 " alt="..."></a>
+          <a href="https://www.instagram.com/p/CK9WQEwB7tA/?utm_source=ig_web_copy_link"><img src="./assets/images/instagram1.jpg" class="inta-img d-block w-100" alt="..."></a>
         </div>
         <div class="col">
-          <a href="https://www.instagram.com/p/CdZYi34Lq4w/?utm_source=ig_web_copy_link"></a><img src="./assets/images/instagram2.jpg" class="inta-img d-block w-100" alt="..."></a>
+          <a href="https://www.instagram.com/p/CdZYi34Lq4w/?utm_source=ig_web_copy_link"><img src="./assets/images/instagram2.jpg" class="inta-img d-block w-100" alt="..."></a>
         </div>
         <div class="col">
-          <a href="https://www.instagram.com/p/CcMRlQYLi5q/?utm_source=ig_web_copy_link"></a><img src="./assets/images/instagram3.jpg" class="inta-img d-block w-100" alt="..."></a>
+          <a href="https://www.instagram.com/p/CcMRlQYLi5q/?utm_source=ig_web_copy_link"><img src="./assets/images/instagram3.jpg" class="inta-img d-block w-100" alt="..."></a>
         </div>
         <div class="col">
-          <a href="https://www.instagram.com/p/CK9WQEwB7tA/?utm_source=ig_web_copy_link"></a><img src="./assets/images/instagram4.jpg" class="inta-img d-block w-100" alt="..."></a>
+          <a href="https://www.instagram.com/p/CK9WQEwB7tA/?utm_source=ig_web_copy_link"><img src="./assets/images/instagram4.jpg" class="inta-img d-block w-100" alt="..."></a>
         </div>
       </div>
     </div>

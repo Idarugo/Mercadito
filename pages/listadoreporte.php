@@ -21,6 +21,7 @@ $venta = $ventaController->VentaId();
 
 $ReservaController = new bookTimeController($connectDB);
 $reserva = $ReservaController->ReservaId();
+
 ?>
 
 <!DOCTYPE html>
@@ -65,14 +66,14 @@ $reserva = $ReservaController->ReservaId();
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem; left: 20px;">
                 <div class="card-header">Cantidad de Producto</div>
                 <div class="card-body">
-                    <h5 class="card-title">50 Producto</h5>
+                    <h5 class="card-title"><?php echo $produc; ?> Productos </h5>
                     <img class="img-conteo" src="../assets/images/Conteo/producto.png">
                 </div>
             </div>
             <div class="card text-white bg-secondary mb-3" style="max-width: 18rem; left: 30px; right: 10px;">
                 <div class="card-header">Total de Blog</div>
                 <div class="card-body">
-                    <h5 class="card-title">6 Blog </h5>
+                    <h5 class="card-title"><?php echo $blog; ?> Blog </h5>
                     <img class="img-conteo" src="../assets/images/Conteo/blog.png">
                 </div>
             </div>
@@ -86,7 +87,7 @@ $reserva = $ReservaController->ReservaId();
             <div class="card text-white bg-danger mb-3" style="max-width: 18rem; left: 50px;">
                 <div class="card-header">Productos Vendido</div>
                 <div class="card-body">
-                    <h5 class="card-title">1 Producto Vendido</h5>
+                    <h5 class="card-title"><?php echo $VentaId; ?> Producto Vendido</h5>
                     <img class="img-conteo" src="../assets/images/Conteo/vendido.png">
                 </div>
             </div>

@@ -198,10 +198,12 @@ class PlantController
 
     public function productosId()
     {
-        $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT SUM(cant) FROM plants";
+        $sql = "SELECT SUM(cant) as cantidad FROM plants";
         $st = $this->connectDB->query($sql);
+        $val = mysqli_fetch_assoc($st);
+        $this->connectDB->disconnect();
+        return $val["cantidad"];
     }
 
 

@@ -10,13 +10,15 @@ class ventaProducto
     {
         $this->connectDB = $connectDB;
     }
-    
+
     public function VentaId()
     {
-        $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT COUNT(id) FROM venta";
+        $sql = "SELECT COUNT(id) as cantidad FROM venta";
         $st = $this->connectDB->query($sql);
+        $val = mysqli_fetch_assoc($st);
+        $this->connectDB->disconnect();
+        return $val["cantidad"];
     }
 
     public function consegirCantidad()

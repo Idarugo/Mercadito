@@ -113,9 +113,11 @@ class BlogController
 
     public function blogId()
     {
-        $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT COUNT(id) FROM blog";
+        $sql = "SELECT COUNT(id) as cantidad FROM blog";
         $st = $this->connectDB->query($sql);
+        $val = mysqli_fetch_assoc($st);
+        $this->connectDB->disconnect();
+        return $val["cantidad"];
     }
 }

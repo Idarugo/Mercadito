@@ -12,10 +12,12 @@ class UserController
 
     public function UserId()
     {
-        $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT COUNT(id) FROM users";
+        $sql = "SELECT COUNT(id) as cantidad FROM users";
         $st = $this->connectDB->query($sql);
+        $val = mysqli_fetch_assoc($st);
+        $this->connectDB->disconnect();
+        return $val["cantidad"];
     }
 
     public function getUsersById($id)
