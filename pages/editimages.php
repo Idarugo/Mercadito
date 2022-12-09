@@ -54,10 +54,6 @@ $images = $image->getImageById($_GET['id']);
                 <center><label for="inputName" class="form-label">Imagen 5</label></center>
                 <center><img class="img-blog" src="data:imagen/jpg;base64,<?php echo base64_encode($images->getImage5()); ?>"></center>
             </div>
-
-            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
-                <input type="submit" value="Modificar" class="btn btn-success" name="btnModificarImages" id="btnForm">
-            </div>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
                 <a href="./listimages.php"><button type="button" class="btn btn-success btn btn-dark">
                         < Volver</button></a>

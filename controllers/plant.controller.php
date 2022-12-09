@@ -217,7 +217,7 @@ class PlantController
         if ($this->connectDB->getDB()->affected_rows) {
             session_start();
             echo "<script>
-            alert('Imagen del producto se ah modificado correctamente');
+            alert('Imagen del producto se ha modificado correctamente');
             window.location= '../pages/listarproductos.php?created'
             </script>";
             return;;

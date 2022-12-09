@@ -14,7 +14,12 @@ class ImageController
     public function registerimage($plants, $image1, $image2, $image3, $image4, $image5)
     {
         $this->connectDB->connect();
-        $sql = "INSERT INTO `image_plants`(`plants`, `image_1`, `image_2`, `image_3`, `image_4`, `image_5`) VALUES ('$plants','$image1','$image2','$image3','$image4','$image5')";
+        $imagen1 = addslashes(file_get_contents($image1['tmp_name']));
+        $imagen2 = addslashes(file_get_contents($image2['tmp_name']));
+        $imagen3 = addslashes(file_get_contents($image3['tmp_name']));
+        $imagen4 = addslashes(file_get_contents($image4['tmp_name']));
+        $imagen5 = addslashes(file_get_contents($image5['tmp_name']));
+        $sql = "INSERT INTO `image_plants`(`plants`, `image_1`, `image_2`, `image_3`, `image_4`, `image_5`) VALUES ('$plants','$imagen1','$imagen2','$imagen3','$imagen4','$imagen5')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             echo "<script>
