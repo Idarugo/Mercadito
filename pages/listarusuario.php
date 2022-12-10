@@ -64,7 +64,7 @@ $lista = $userController->Userlist();
                         if ($i['rol'] === '0') {
                             echo "<tr>";
                             echo "</tr>";
-                        } elseif ($i['rol'] === '1') {
+                        } elseif ($i['rol'] === '2') {
                             echo "<tr>";
                             echo "<td>" . $lista[$i]->getNombre()  . "</td>";
                             echo "<td>" . $lista[$i]->getCorreo() . "</td>";

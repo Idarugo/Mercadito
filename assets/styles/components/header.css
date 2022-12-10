@@ -1,5 +1,4 @@
-
-header{
+header {
     margin: auto;
     width: 100vw;
     height: 80px;
@@ -9,6 +8,7 @@ header{
     background-color: #FFFF;
     padding-top: 10px;
 }
+
 header .header__logo {
     background-image: url('../../images/logo-temporal.png');
     background-size: contain;
@@ -17,15 +17,17 @@ header .header__logo {
     width: 400px;
     height: 80px;
 }
+
 header .header__icon {
     position: absolute;
-    right: 20px;
+    right: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 
 }
+
 header .header__icon li {
     background-size: contain;
     background-repeat: no-repeat;
@@ -33,10 +35,12 @@ header .header__icon li {
     width: 50px;
     height: 50px;
 }
-header .header__icon li:first-child{
+
+header .header__icon li:first-child {
     background-image: url('../../images/iconologin.png');
 }
-header .header__icon li:last-child{
+
+header .header__icon li:last-child {
     background-image: url('../../images/logo-compra.png');
     -webkit-transform: scale(0.6);
     -moz-transform: scale(0.6);
@@ -45,17 +49,19 @@ header .header__icon li:last-child{
     transform: scale(0.6);
 }
 
-header .header__menu{
+header .header__menu {
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
-header .header__menu .header__menu-item{
+
+header .header__menu .header__menu-item {
     cursor: pointer;
 }
-header .header__menu .header__menu-item:hover{
+
+header .header__menu .header__menu-item:hover {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);

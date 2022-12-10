@@ -65,10 +65,10 @@ class PlantController
     {
         $plant = "";
         $this->connectDB->connect();
-        $sql = "SELECT * FROM `plants` WHERE `id`= $id";
+        $sql = "SELECT plants.id, title, price, description, category.category as name, image, cant, about, tips, health_benefit, primary_care, also_known_as FROM plants , category WHERE plants.category=category.id ORDER BY `id` ASC ";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $plant = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $plant = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['name'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
         }
         $this->connectDB->disconnect();
         return $plant;
@@ -172,9 +172,6 @@ class PlantController
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             session_start();
-            session_unset();
-            session_destroy();
-            $this->connectDB->disconnect();
             header("location:  ../pages/listarproductos.php?edited");
             return;
         }

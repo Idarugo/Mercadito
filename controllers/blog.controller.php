@@ -15,7 +15,8 @@ class BlogController
     public function register($imagen, $nombre, $detalle, $fecha)
     {
         $this->connectDB->connect();
-        $sql = "INSERT INTO `blog`(`imagen`, `name`, `detail`, `date`) VALUES ('$imagen','$nombre','$detalle','$fecha')";
+        $image = addslashes(file_get_contents($imagen['tmp_name']));
+        $sql = "INSERT INTO `blog`(`imagen`, `name`, `detail`, `date`) VALUES ('$image','$nombre','$detalle','$fecha')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
@@ -77,8 +78,6 @@ class BlogController
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             session_start();
-            session_unset();
-            session_destroy();
             $this->connectDB->disconnect();
             header("location:  ../pages/listarblog.php?edited");
             return;

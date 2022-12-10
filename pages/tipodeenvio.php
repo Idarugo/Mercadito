@@ -126,7 +126,7 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                         </br>
                         <div class="row">
                             <div class="col">
-                                <a href="./carrodecompra.php"><button type="button" class="btn btn-outline-secondary">
+                                <a href="./carrodecompra.php?codigo=1&product=1"><button type="button" class="btn btn-outline-secondary">
                                         < Volver a información</button></a>
                             </div>
                             <div class="col-4">

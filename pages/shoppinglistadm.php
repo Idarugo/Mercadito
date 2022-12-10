@@ -1,10 +1,10 @@
 <?php
 require '../core/bootstraper.php';
-require '../controllers/book_time.controller.php';
+require '../controllers/venta.controller.php';
 
+$ventaController = new ventaProducto($connectDB);
+$venta = $ventaController->listVenta();
 
-$bookController = new bookTimeController($connectDB);
-$book = $bookController->listbook();
 ?>
 
 
@@ -49,9 +49,10 @@ $book = $bookController->listbook();
         <form class="row g-3 justify-content-center">
             <table class="styled-table">
                 <tr>
-                    <td><strong>Nombre</strong></td>
                     <td><strong>Producto</strong></td>
                     <td><strong>Cantidad</strong></td>
+                    <td><strong>Nombre</strong></td>
+                    <td><strong>Total</strong></td>
                     <td><strong>TIpo de Envio</strong></td>
                     <td><strong>Tipo de Pago</strong></td>
                     <td><strong>Comprobante de Pago</strong></td>
@@ -60,14 +61,14 @@ $book = $bookController->listbook();
                 </tr>
                 <tr>
                     <?php
-                    for ($i = 0; $i < count($book); $i++) {
+                    for ($i = 0; $i < count($venta); $i++) {
                         echo "<tr>";
-                        echo "<td>" . $book[$i]->getNombre() . "</td>";
-                        echo "<td>" . $book[$i]->getDia() . "</td>";
-                        echo "<td>" . $book[$i]->getHora() . "</td>";
-                        echo "<td>" . $book[$i]->getEmail() . "</td>";
-                        echo "<td>" . $book[$i]->getTelefono() . "</td>";
-                        echo "<td>" . $book[$i]->getTelefono() . "</td>";
+                        echo "<td>" . $venta[$i]->getUsuario() . "</td>";
+                        echo "<td>" . $venta[$i]->getCodigo() . "</td>";
+                        echo "<td>" . $venta[$i]->getTotal() . "</td>";
+                        echo "<td>" . $venta[$i]->getTipoEnvio() . "</td>";
+                        echo "<td>" . $venta[$i]->getTipoPago() . "</td>";
+                        echo "<td>" . $venta[$i]->getTipoPago() . "</td>";
                         echo "</tr>";
                     }
                     ?>

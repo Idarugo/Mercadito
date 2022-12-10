@@ -72,11 +72,8 @@ class bookTimeController
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             session_start();
-            session_unset();
-            session_destroy();
-            $this->connectDB->disconnect();
             echo "<script>
-            alert('Hora de visiota ah sido modificado correctamente');
+            alert('La Hora de visita ha sido modificado correctamente');
             window.location= '../pages/listarbook.php?edited'
             </script>";
             return;
