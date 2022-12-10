@@ -58,24 +58,26 @@ $lista = $userController->Userlist();
                 </tr>
 
                 <tr>
-
                     <?php
                     for ($i = 0; $i < count($lista); $i++) {
-                        if ($i['rol'] === '0') {
-                            echo "<tr>";
-                            echo "</tr>";
-                        } elseif ($i['rol'] === '2') {
-                            echo "<tr>";
-                            echo "<td>" . $lista[$i]->getNombre()  . "</td>";
-                            echo "<td>" . $lista[$i]->getCorreo() . "</td>";
-                            echo "<td>" . $lista[$i]->getdireccion() . "</td>";
-                            echo "<td>" . $lista[$i]->getEstado() . "</td>";
-                            echo "<td><a href='../routes/user.routes.php?btnBloquearUsu=" . $lista[$i]->getId() . "'>Bloquear</a></td>";
-                            echo "</tr>";
+                        echo "<tr>";
+                        echo "<td>" . $lista[$i]->getNombre()  . "</td>";
+                        echo "<td>" . $lista[$i]->getCorreo() . "</td>";
+                        echo "<td>" . $lista[$i]->getdireccion() . "</td>";
+                        if ($lista[$i]->getEstado() == 0) {
+                            echo "<td>Habilitado</td>";
+                        } elseif ($lista[$i]->getEstado() == 1) {
+                            echo "<td>Deshabilitado</td>";
                         }
+
+                        if ($lista[$i]->getEstado() == 0) {
+                            echo "<td><a href='../routes/user.routes.php?btnBloquearUsu=" . $lista[$i]->getId() . "'>Bloquear</a></td>";
+                        } elseif ($lista[$i]->getEstado() == 1) {
+                            echo "<td><a href='../routes/user.routes.php?btnBloquearUsu=" . $lista[$i]->getId() . "'>Desbloquear</a></td>";
+                        }
+                        echo "</tr>";
                     }
                     ?>
-
                 </tr>
             </table>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">

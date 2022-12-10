@@ -27,7 +27,7 @@ class Direccion
     public function registerDirecion($cod_venta, $nombre, $direccion, $comuna, $telefono, $observacion)
     {
         $this->connectDB->connect();
-        $sql = "INSERT INTO `direccion`( `cod_venta`, `nombre`, `direccion`, `comuna`, `telefono`, `observacion`) VALUES ('$cod_venta','$nombre','$direccion','$comuna','$telefono','$observacion')";
+        $sql = "INSERT INTO `direccion`( `cod_venta`, `nombre`, `direccion`, `comuna`, `telefono`, `observacion`) VALUES ($cod_venta,'$nombre','$direccion','$comuna','$telefono','$observacion')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();

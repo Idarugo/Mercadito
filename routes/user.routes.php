@@ -22,10 +22,8 @@ if (isset($_POST['btnModificarImagen'])) {
     $user->updateImagen($_POST["txtId"], $_FILES["txtImagen"]);
 }
 
-if (isset($_GET['btnBloquearUsu'])) {
-    $user->blockUser($_GET["btnBloquearUsu"]);
-}
-
-if (isset($_GET['btnDebloquearUsu'])) {
-    $user->unlockUser($_GET["btnDebloquearUsu"]);
+if (isset($_GET["btnBloquearUsu"])) {
+    $id = $_GET["btnBloquearUsu"];
+    $est = $user->conseguirEstado("estado", "users", "id", $id);
+    $user->cambiarEstado("users", "estado", $est, "id", $id);
 }

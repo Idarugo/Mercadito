@@ -13,11 +13,9 @@ if (isset($_GET['venta'])) {
 } else {
     header("location:  ./carrodecompra.php");
 }
+
 $detalleVentaEnvio = new DetalleVentaEnvio($connectDB);
 $envio = new TipoDeEnvio($connectDB);
-
-$venta = $envio->selectVenta($venta);
-$detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
 
 $venta = $envio->selectVenta($venta);
 $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
@@ -46,7 +44,7 @@ $detalleDireccion = $direccion->selectDireccion($venta);
             <form action="../routes/tipo_envio.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
 
                 <?php
-                if ($detalle == "" || $detalleDireccion == "") {
+                if ($detalle == "") {
                     echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
                 }
                 for ($i = 0; $i < count($detalle); $i++) {
@@ -58,9 +56,9 @@ $detalleDireccion = $direccion->selectDireccion($venta);
                             <div class="form-group ">
                                 <div class="caja">
                                     <div class="">
-                                        <div>Contacto <bdo class="derecha">' . $detalleDireccion[$i]->getNombre() . '</bdo> <button class="button" style="float: right;">Cambiar</button></div>
+                                        <div>Contacto <bdo class="derecha">' . $direccion[$i]->getNombre() . '</bdo> <button class="button" style="float: right;">Cambiar</button></div>
                                         <hr size="2px" color="black" />
-                                        <div>Método <bdo class="derecha">' . $detalleDireccion[$i]->getCantidad() . '</bdo> <button class="button" style="float: right;">Cambiar</button></div>
+                                        <div>Método <bdo class="derecha">' . $envio[$i]->getTipo() . '</bdo> <button class="button" style="float: right;">Cambiar</button></div>
                                     </div>
                                 </div>
                             </div>

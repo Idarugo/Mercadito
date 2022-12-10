@@ -10,6 +10,7 @@ if (isset($_GET['venta'])) {
 } else {
     header("location:  ./carrodecompra.php");
 }
+
 $detalleVentaEnvio = new DetalleVentaEnvio($connectDB);
 $envio = new TipoDeEnvio($connectDB);
 
@@ -42,9 +43,7 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                 for ($i = 0; $i < count($detalle); $i++) {
                     echo '
             <div class="row ">
-                <div class="left col-6">
-                    <form action="">
-                       
+                <div class="left col-6">                    
                         <div class="form-group ">
                             <h5 class="nom-pago">Forma de entrega</h5>
                             <div class="caja">
@@ -57,7 +56,7 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                                     </div>
                                     <hr size="2px" color="black" />
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="opciones" id="entrega1" value="entrega1">
+                                        <input class="form-check-input" type="radio" name="opciones" id="entrega1" value="2">
                                         <label class="form-check-label" for="exampleRadios2" name="txtRetirar">
                                         <img class="entrega" src="../assets/images/retirar.png"> Retiro </label>
                                     </div>
@@ -87,7 +86,7 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                                     <input type="text" class="form-control" id="inputAddress2" name="txtDireccion" placeholder="Direccion">
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Comuna" name="txtComuna" aria-label="Last name">
+                                    <input type="text" class="form-control" placeholder="Comuna" name="txtComuna">
                                 </div>
                             </div>
                             </br>
@@ -133,7 +132,6 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                                 <input  type="submit" value="Finalizar el Pedido" class="btn btn-outline-success" name="btnagregarDireecion" id="btnForm">
                             </div>
                         </div>
-                    </form>
                 </div>
 
                 <div class="right col-6  d-flex">

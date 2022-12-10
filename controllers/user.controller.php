@@ -75,7 +75,20 @@ class UserController
     {
         $lista = array();
         $this->connectDB->connect();
-        $sql = " SELECT * FROM `users` Where estado = 1";
+        $sql = " SELECT * FROM `users` Where rol = 2";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $lista[] = new UsuarioDTO($rs['id'], $rs['nombre'], $rs['correo'], $rs['direccion'], $rs['estado']);;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
+    }
+
+    public function UserBloqueList()
+    {
+        $lista = array();
+        $this->connectDB->connect();
+        $sql = " SELECT * FROM `users` Where rol = 2 and estado = 1";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
             $lista[] = new UsuarioDTO($rs['id'], $rs['nombre'], $rs['correo'], $rs['direccion'], $rs['estado']);;
@@ -94,19 +107,38 @@ class UserController
         return;
     }
 
-
-
-    public function UserlistUnlock()
+    public function conseguirEstado($campo1, $tabla, $campo2, $id)
     {
-        $lista = array();
         $this->connectDB->connect();
-        $sql = " SELECT * FROM `users` Where estado = 0";
-        $st = $this->connectDB->query($sql);
-        while ($rs = mysqli_fetch_array($st)) {
-            $lista[] = new UsuarioDTO($rs['id'], $rs['nombre'], $rs['correo'], $rs['direccion'], $rs['estado']);;
-        }
+        $sql = "select $campo1 as estado from $tabla where $campo2='$id'";
+        $ejecutar = $this->connectDB->query($sql);
+        $val = mysqli_fetch_assoc($ejecutar);
         $this->connectDB->disconnect();
-        return $lista;
+        return $val["estado"];
+    }
+
+    public function cambiarEstado($tabla, $campo1, $est, $campo2, $id)
+    {
+        if ($est == 0) {
+            $est = 1;
+        } else {
+            $est = 0;
+        }
+        $this->connectDB->connect();
+        $sql = "update $tabla set $campo1='$est' where $campo2='$id'";
+        $ejecutar = $this->connectDB->query($sql);
+        if ($this->connectDB->affected_rows) {
+            echo "<script>
+            alert('El estado del usuario se ha modificado correctamente');
+            window.location= '../pages/listarusuario.php?Bloqueado'
+            </script>";
+        } else {
+            echo "<script>
+            alert('El estado del usuario se ha modificado correctamente');
+            window.location= '../pages/listarusuario.php?Error'
+            </script>";
+        }
+        return;
     }
 
 
