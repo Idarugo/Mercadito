@@ -32,7 +32,9 @@ if (isset($_SESSION['user'])) {
                 echo '<a href="./routes/auth.routes.php?logout">Salir</a>';
             }
             ?>
-            <li type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="header__menu-item"></li>
+            <div class="header__carrocompra">
+                <li type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="header__menu-item"></li>
+            </div>
         </div>
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">

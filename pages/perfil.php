@@ -34,8 +34,8 @@
                             <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listarblog.php" role="button">Lista de Blog</a>
                             <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listarusuario.php" role="button">Lista de Usuario</a>
                             <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listimages.php" role="button">Lista de imágenes</a>
-                            <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listarbook.php" role="button">Lista de Reserva</a>
-                            <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/shoppinglistadm.php" role="button">Lista de Compra</a>
+                            <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listadoReserva.php" role="button">Lista de Reserva</a>
+                            <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listadoCompra.php" role="button">Lista de Compra</a>
                             <a class="btn btn-primary col-md-10 mb-3"" href=" ../pages/listadoreporte.php" role="button">Lista de Reporte</a>
                         </div>
                         <div class="col">

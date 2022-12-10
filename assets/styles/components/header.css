@@ -20,12 +20,12 @@ header .header__logo {
 
 header .header__icon {
     position: absolute;
-    right: 5px;
+    right: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
-
+    color: #16A212;
 }
 
 header .header__icon li {
@@ -34,6 +34,7 @@ header .header__icon li {
     background-position: center;
     width: 50px;
     height: 50px;
+
 }
 
 header .header__icon li:first-child {
@@ -41,7 +42,7 @@ header .header__icon li:first-child {
 }
 
 header .header__icon li:last-child {
-    background-image: url('../../images/logo-compra.png');
+    background-image: url('../../images/iconologin.png');
     -webkit-transform: scale(0.6);
     -moz-transform: scale(0.6);
     -ms-transform: scale(0.6);
@@ -55,6 +56,8 @@ header .header__menu {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding-right: 100px;
+    width: 1100px;
 }
 
 header .header__menu .header__menu-item {
@@ -67,4 +70,29 @@ header .header__menu .header__menu-item:hover {
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+
+header .header__carrocompra li {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+}
+
+
+header .header__carrocompra li:last-child {
+    background-image: url('../../images/logo-compra.png');
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    transform: scale(0.6);
+    color: #16A212;
+}
+
+a {
+    color: #16A212;
+
 }

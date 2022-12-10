@@ -40,10 +40,10 @@ $blog = $blogController->listblog();
                 <a class="nav-link" href="../pages/listimages.php">Lista de Foto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="../pages/listarbook.php">Listado de Reserva</a>
+                <a class="nav-link " href="../pages/listadoReserva.php">Listado de Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../pages/shoppinglistadm.php">Listado de Compra</a>
+                <a class="nav-link" href="../pages/listadoCompra.php">Listado de Compra</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../pages/listadoreporte.php">Reportes</a>

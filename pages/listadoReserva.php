@@ -1,10 +1,12 @@
 <?php
 require '../core/bootstraper.php';
-require '../controllers/user.controller.php';
+require '../controllers/book_time.controller.php';
 
-$userController = new UserController($connectDB);
-$lista = $userController->Userlist();
+
+$bookController = new bookTimeController($connectDB);
+$book = $bookController->listbook();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -12,13 +14,13 @@ $lista = $userController->Userlist();
 <head>
     <?php include '../components/head.php' ?>
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <link rel="stylesheet" href="../assets/styles/pages/listarusuario.css">
+    <link rel="stylesheet" href="../assets/styles/pages/listarblog.css">
 </head>
 
 <body>
     <?php include '../components/header.php' ?>
     <div class="container container-main">
-        <h1>Usuarios</h1>
+        <h1>Reserva</h1>
 
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -28,19 +30,16 @@ $lista = $userController->Userlist();
                 <a class="nav-link" href="../pages/listarblog.php">Lista de Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="../pages/listarusuario.php">Lista de Usuario</a>
+                <a class="nav-link" href="../pages/listarusuario.php">Lista de Usuario</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../pages/listimages.php">Lista de Foto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="../pages/listadoReserva.php">Listado de Reserva</a>
+                <a class="nav-link active" href="../pages/listadoReserva.php">Listado de Reserva</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../pages/listadoCompra.php">Listado de Compra</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../pages/listarusuarioBloqueado.php">Listado Usuario Bloqueado</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../pages/listadoreporte.php">Reportes</a>
@@ -48,34 +47,30 @@ $lista = $userController->Userlist();
         </ul>
 
         <form class="row g-3 justify-content-center">
-            <table class="styled-table table table-hover">
+            <table class="styled-table">
                 <tr>
+                    <td><strong>Dia</strong></td>
+                    <td><strong>Hora</strong></td>
                     <td><strong>Nombre</strong></td>
-                    <td><strong>Correo</strong></td>
-                    <td><strong>Direccion</strong></td>
-                    <td><strong>Estado</strong></td>
-                    <td><strong>Bloquear</strong></td>
+                    <td><strong>Email</strong></td>
+                    <td><strong>Telefono</strong></td>
+                    <td><strong>Editar</strong></td>
+
+
                 </tr>
-
                 <tr>
-
                     <?php
-                    for ($i = 0; $i < count($lista); $i++) {
-                        if ($i['rol'] === '0') {
-                            echo "<tr>";
-                            echo "</tr>";
-                        } elseif ($i['rol'] === '2') {
-                            echo "<tr>";
-                            echo "<td>" . $lista[$i]->getNombre()  . "</td>";
-                            echo "<td>" . $lista[$i]->getCorreo() . "</td>";
-                            echo "<td>" . $lista[$i]->getdireccion() . "</td>";
-                            echo "<td>" . $lista[$i]->getEstado() . "</td>";
-                            echo "<td><a href='../routes/user.routes.php?btnBloquearUsu=" . $lista[$i]->getId() . "'>Bloquear</a></td>";
-                            echo "</tr>";
-                        }
+                    for ($i = 0; $i < count($book); $i++) {
+                        echo "<tr>";
+                        echo "<td>" . $book[$i]->getDia() . "</td>";
+                        echo "<td>" . $book[$i]->getHora() . "</td>";
+                        echo "<td>" . $book[$i]->getNombre() . "</td>";
+                        echo "<td>" . $book[$i]->getEmail() . "</td>";
+                        echo "<td>" . $book[$i]->getTelefono() . "</td>";
+                        echo "<td><a href='editbook.php?id=" . $book[$i]->getId() . "'>Editar</a></td>";
+                        echo "</tr>";
                     }
                     ?>
-
                 </tr>
             </table>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">

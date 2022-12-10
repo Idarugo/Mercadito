@@ -1,8 +1,8 @@
 <?php
 require '../core/bootstraper.php';
-require '../controllers/venta.controller.php';
+require '../controllers/ventaDetalle.controller.php';
 
-$ventaController = new ventaProducto($connectDB);
+$ventaController = new ventaDetalle($connectDB);
 $venta = $ventaController->listVenta();
 
 ?>
@@ -36,10 +36,13 @@ $venta = $ventaController->listVenta();
                 <a class="nav-link" href="../pages/listimages.php">Lista de Foto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../pages/listarbook.php">Listado de Reserva</a>
+                <a class="nav-link" href="../pages/listadoReserva.php">Listado de Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="../pages/shoppinglistadm.php">Listado de Compra</a>
+                <a class="nav-link active" href="../pages/listadoCompra.php">Listado de Compra</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/listaCompraPapelera.php">Papelera de Compra</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../pages/listadoreporte.php">Reportes</a>
@@ -56,6 +59,7 @@ $venta = $ventaController->listVenta();
                     <td><strong>TIpo de Envio</strong></td>
                     <td><strong>Tipo de Pago</strong></td>
                     <td><strong>Comprobante de Pago</strong></td>
+                    <td><strong>Borrar</strong></td>
 
 
                 </tr>
