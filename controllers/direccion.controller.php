@@ -11,14 +11,14 @@ class Direccion
         $this->connectDB = $connectDB;
     }
 
-    public function selectDireccion()
+    public function selectDireccion($cod_venta)
     {
         $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT id, nombre, direccion, comuna, telefono, observacion FROM direccion ORDER BY id ASC  ";
+        $sql = "SELECT id, cod_venta, nombre, direccion, comuna, telefono, observacion FROM direccion Where cod_venta=cod_venta ORDER BY id ASC  ";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista[] = new Direccion($rs['id'], $rs['nombre'], $rs['direccion'], $rs['comuna'], $rs['telefono'], $rs['observacion']);;
+            $lista[] = new DireccionEnvio($rs['id'], $rs['cod_venta'], $rs['nombre'], $rs['direccion'], $rs['comuna'], $rs['telefono'], $rs['observacion']);;
         }
         $this->connectDB->disconnect();
         return $lista;

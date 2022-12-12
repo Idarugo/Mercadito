@@ -1,7 +1,7 @@
 <?php
 require '../models/TipoPago.php';
 
-class Tipopago
+class TipoDePago
 {
 
     private $connectDB;

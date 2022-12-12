@@ -16,10 +16,10 @@ class ventaDetalle
     {
         $venta = array();
         $this->connectDB->connect();
-        $sql = "SELECT venta.codigo, plants.title as producto , plants.cant as cantidad, users.nombre as nombre, total, tipo_envio.tipo as envio, tipo_pago.tipo as pago FROM venta, plants, users, tipo_envio, tipo_pago WHERE venta.codigo=plants.cant  AND venta.codigo=plants.title AND venta.usuario=users.id AND venta.tipo_envio=tipo_envio.id AND venta.tipo_pago=tipo_pago.id ORDER BY codigo ASC";
+        $sql = "SELECT venta.codigo, users.nombre as nombre, plants.title as producto, detalle_venta.cantidad, venta.total, tipo_envio.tipo as envio, tipo_pago.tipo as pago, comprobante.imagen FROM venta, users, plants,detalle_venta, tipo_envio, tipo_pago, comprobante WHERE venta.usuario=users.id AND venta.codigo=detalle_venta.cod_vent AND detalle_venta.cod_prod=plants.id AND venta.tipo_envio=tipo_envio.id AND venta.tipo_pago=tipo_pago.id AND comprobante.codigo_venta=venta.codigo ORDER BY codigo ASC";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $venta[] = new VentaInformacion($rs['codigo'], $rs['producto'], $rs['cantidad'], $rs['nombre'], $rs['total'], $rs['envio'], $rs['pago']);;
+            $venta[] = new VentaInformacion($rs['codigo'], $rs['nombre'], $rs['producto'], $rs['cantidad'], $rs['total'], $rs['envio'], $rs['pago'], $rs['imagen']);;
         }
         $this->connectDB->disconnect();
         return $venta;

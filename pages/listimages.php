@@ -70,21 +70,16 @@ $image = $imageController->listimages();
                         echo "<td>" . '<img src="data:image;base64,' . base64_encode($image[$i]->getImage4()) . '" alt="Image" style="width:100px; height:129px;">' . "</td>";
                         echo "<td>" . '<img src="data:image;base64,' . base64_encode($image[$i]->getImage5()) . '" alt="Image" style="width:100px; height:129px;">' . "</td>";
                         echo "<td><a href='editimages.php?id=" . $image[$i]->getId() . "'>Editar</a> -
-                                <a href='../routes/image.routes.php?btnElminarImage=" . $image[$i]->getId() . "'>Eliminar</a></td>";
+                            <a type='button' class='btn-primary' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>Eliminar</a></td>";
+
                         echo "</tr>";
                     }
                     ?>
 
-                    <script>
-                        function Delete(Codigo) {
-                            if (confirm('Estas seguro de Eliminar este registro?')) {
-                                document.location = 'tu_php_para_eliminar?Codigo' + Codigo;
-                            }
-                        }
-                    </script>
+
                 </tr>
             </table>
-            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
+            <div class=" col-5 justify-content-center mb-2" style="text-align: center;">
                 <a href="./addproductimages.php"><button type="button" class="btn btn-success">Agregar Imagenes</button></a>
             </div>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
@@ -93,6 +88,33 @@ $image = $imageController->listimages();
             </div>
         </form>
     </div>
+
+    <?php
+    for ($i = 0; $i < count($image); $i++) {
+        echo '
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar Imagen</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Está seguro de que desea eliminar Imagen del producto?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary">
+                                        <a href="../routes/image.routes.php?btnElminarImage=' .   $image[$i]->getId() . '"> Eliminar </a>
+                                    </button>
+                                </div>
+                            </div>
+                            </div>
+                            ';
+    }
+    ?>
+
+
     <?php include '../components/footer.php' ?>
 </body>
 

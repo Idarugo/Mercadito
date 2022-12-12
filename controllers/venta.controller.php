@@ -76,7 +76,7 @@ class ventaProducto
     public function registerVenta($codigo, $usuario, $product)
     {
         $this->connectDB->connect();
-        $sql = "INSERT INTO `venta`(`codigo`,`usuario`) VALUES ('$codigo','$usuario')";
+        $sql = "INSERT INTO `venta`(`codigo`,`usuario`) VALUES ($codigo,$usuario)";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();
@@ -115,6 +115,28 @@ class ventaProducto
         $this->connectDB->disconnect();
     }
 
+    public function registerPago($codigo, $tipo_pago)
+    {
+        $this->connectDB->connect();
+        $sql = "UPDATE `venta` SET `tipo_pago`=$tipo_pago WHERE codigo=$codigo";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            $this->connectDB->disconnect();
+        }
+        $this->connectDB->disconnect();
+    }
+
+    public function registerTotal($codigo, $total)
+    {
+        $this->connectDB->connect();
+        $sql = "UPDATE `venta` SET `total`=$total WHERE codigo=$codigo";
+        $this->connectDB->query($sql);
+        if ($this->connectDB->getDB()->affected_rows) {
+            $this->connectDB->disconnect();
+        }
+        $this->connectDB->disconnect();
+    }
+
     public function removeVenta($id)
     {
         $this->connectDB->connect();
@@ -122,6 +144,16 @@ class ventaProducto
         $st = $this->connectDB->query($sql);
         $this->connectDB->disconnect();
         header("location:  ../pages/carrodecompra.php?id=$id");
+        return;
+    }
+
+    public function removeVentaListado($id)
+    {
+        $this->connectDB->connect();
+        $sql = "DELETE FROM `venta` WHERE id = id";
+        $st = $this->connectDB->query($sql);
+        $this->connectDB->disconnect();
+        header("location:  ../pages/listadoCompra.php?removedimages");
         return;
     }
 }

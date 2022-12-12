@@ -11,11 +11,11 @@ class TipoDeEnvio
         $this->connectDB = $connectDB;
     }
 
-    public function selectVenta()
+    public function selectEnvio()
     {
         $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT id, tipo FROM tipo_pago ORDER BY id ASC  ";
+        $sql = "SELECT id, tipo FROM tipo_envio ORDER BY id ASC  ";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
             $lista[] = new TipoEnvio($rs['id'], $rs['tipo']);;

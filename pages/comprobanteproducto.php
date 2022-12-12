@@ -13,8 +13,8 @@ if (isset($_GET['venta'])) {
 $detalleVentaEnvio = new DetalleVentaEnvio($connectDB);
 $envio = new TipoDeEnvio($connectDB);
 
-$venta = $envio->selectVenta($venta);
 $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
+
 
 
 ?>
@@ -25,7 +25,7 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
 <head>
     <?php include '../components/head.php' ?>
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <link rel="stylesheet" href="../assets/styles/pages/confirmedorder.css">
+    <link rel="stylesheet" href="../assets/styles/pages/comprobantepedido.css">
 </head>
 
 <body>
@@ -33,20 +33,20 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
     <div class="container-fluid">
 
         <div class="container container-main gx-5" style="padding-bottom: 30px; padding-top: 30px;">
+            <form action="">
+
+                <?php
+                if ($detalle == "") {
+                    echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
+                }
+                for ($i = 0; $i < count($detalle); $i++) {
+                    echo '
 
             <div class="row md-10">
                 <div class="left col-6">
-                    <form action="">
-                        <?php
-                        if ($detalle == "") {
-                            echo '<a href="../pages/products.php"><img class="img_mensaje" src="../assets/images/categories/no-hay-producto.png"></a>';
-                        }
-                        for ($i = 0; $i < count($detalle); $i++) {
-                            echo '
-
                         <div class="form-group ">
                             <img class="icon-verificado" src="../assets/images/verificado.png">
-                            <h5 style="padding-left: 50px;">Pedido #id</h5>
+                            <h5 style="padding-left: 50px;">Pedido # ' . $detalle[$i]->getCodigo() . '</h5>
                             <h4 style="padding-left: 50px;">Gracias nombre!</h4>
                         </div>
 
@@ -128,7 +128,6 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                                 <a href="./tiendaonline.php"><button type="button" class="btn btn-outline-success">Seguir Comprando</button></a>
                             </div>
                         </div>
-                    </form>
                 </div>
 
                 <div class="right col-6  d-flex">
@@ -157,16 +156,18 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                         </tr>
                     </tbody>
                     <td class="product__price">
-                        <span class="order-summary__emphasis skeleton-while-loading" style="padding-left: 100px;">$' . $detalle[$i]->getTotal() . ' </span>
+                    <span class="order-summary__emphasis skeleton-while-loading" style="padding-left: 100px;">Total :$' . $detalle[$i]->getTotal() . ' </span>
                     </td>
                 </div>
             </div>
+            ';
+                }
+                ?>
+            </form>
         </div>
-        ';
-                        }
-                        ?>
-                </div>
-                <?php include '../components/footer.php' ?>
+    </div>
+
+    <?php include '../components/footer.php' ?>
 </body>
 
 </html>

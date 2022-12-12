@@ -1,7 +1,7 @@
 <?php
 require '../core/bootstraper.php';
 require '../controllers/tipo_pago.controller.php';
-$pago = new TipoPago($connectDB);
+$pago = new TipoDePago($connectDB);
 
 /*
     *   PlantController

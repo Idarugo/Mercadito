@@ -3,18 +3,21 @@ require '../core/bootstraper.php';
 require '../controllers/user.controller.php';
 require '../controllers/plant.controller.php';
 require '../controllers/image_plants.controller.php';
+$id = "";
 if (!isset($_GET['id'])) {
     header("location:  ./tiendaonline.php");
+} else {
+    $id = $_GET["id"];
 }
 
 $users = new UserController($connectDB);
-$user = $users->getUsersById($_GET['id']);
+$user = $users->getUsersById($id);
 
 $plant = new PlantController($connectDB);
-$Planta = $plant->getPlantById($_GET['id']);
+$Planta = $plant->getPlantById($id);
 
 $image_plants = new ImageController($connectDB);
-$image = $image_plants->getImageById($_GET['id']);
+$image = $image_plants->getImageById($id);
 
 ?>
 <!DOCTYPE html>

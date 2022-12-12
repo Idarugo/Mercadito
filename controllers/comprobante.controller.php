@@ -14,7 +14,8 @@ class ComprobantePago
     public function registrarComprobante($cod_venta, $imagen)
     {
         $this->connectDB->connect();
-        $sql = "INSERT INTO `comprobante`( `cod_venta`, `imagen`) VALUES ('$cod_venta','$imagen')";
+        $image1 = addslashes(file_get_contents($imagen['tmp_name']));
+        $sql = "INSERT INTO `comprobante`(`codigo_venta`, `imagen`) VALUES ($cod_venta,'$image1')";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();

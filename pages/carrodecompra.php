@@ -73,7 +73,7 @@ $ventaproduct = $venta->getVentaById($codigo)
                     <input type="hidden" class="form-control" id="inputId" name="txtProducto" value="' . $planta->getidPlants() . '">
                 </div>
                 <div class="col-md-12">
-                    <input type="hidden" class="form-control" id="inputId" name="txtCodigo" value="' . $codigo . '">
+                    <input type="hidden" class="form-control" id="inputId" name="txtCodigo" value="' . $_GET["codigo"] . '">
                 </div>
                 <div class="col-4">
                     <img name="txtImagen" class="imagen"  src="data:imagen/jpg;base64,' . base64_encode($planta->getImage()) . '" alt="">

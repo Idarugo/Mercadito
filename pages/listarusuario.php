@@ -40,9 +40,6 @@ $lista = $userController->Userlist();
                 <a class="nav-link" href="../pages/listadoCompra.php">Listado de Compra</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../pages/listarusuarioBloqueado.php">Listado Usuario Bloqueado</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="../pages/listadoreporte.php">Reportes</a>
             </li>
         </ul>

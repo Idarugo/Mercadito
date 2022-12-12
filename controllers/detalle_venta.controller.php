@@ -28,7 +28,7 @@ class DetalleV
     {
         $total = round(($precio * $cantidad), 0);
         $this->connectDB->connect();
-        $sql = "INSERT INTO `detalle_venta`(`cod_prod`, `cod_vent`, `cantidad`, `total`) VALUES ('$cod_pro','$cod_venta','$cantidad','$total')";
+        $sql = "INSERT INTO `detalle_venta`(`cod_prod`, `cod_vent`, `cantidad`, `total`) VALUES ($cod_pro,$cod_venta,$cantidad,$total)";
         $this->connectDB->query($sql);
         if ($this->connectDB->getDB()->affected_rows) {
             $this->connectDB->disconnect();

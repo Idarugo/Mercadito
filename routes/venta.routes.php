@@ -17,10 +17,15 @@ if (isset($_POST['btnagregarCarro'])) {
     if (is_null($cantidad)) {
         $codigo = $cantidad + 1;
     } else {
-        $codigo = $cantidad + 0;
+        $codigo = $cantidad + 1;
     }
     $venta->registerVenta($codigo, $_POST["txtUsuario"], $_POST["txtPlant"]);
 }
+
+if (isset($_GET['btnElminarVenta'])) {
+    $venta->removeVentaListado($_GET["btnElminarVenta"]);
+}
+
 
 
 

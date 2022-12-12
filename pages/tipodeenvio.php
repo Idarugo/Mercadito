@@ -14,10 +14,7 @@ if (isset($_GET['venta'])) {
 $detalleVentaEnvio = new DetalleVentaEnvio($connectDB);
 $envio = new TipoDeEnvio($connectDB);
 
-$venta = $envio->selectVenta($venta);
 $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
-
-
 ?>
 
 <!DOCTYPE html>
