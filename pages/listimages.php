@@ -71,27 +71,12 @@ $image = $imageController->listimages();
                         echo "<td>" . '<img src="data:image;base64,' . base64_encode($image[$i]->getImage5()) . '" alt="Image" style="width:100px; height:129px;">' . "</td>";
                         echo "<td><a href='editimages.php?id=" . $image[$i]->getId() . "'>Editar</a> -
                             <a type='button' class='btn-primary' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>Eliminar</a></td>";
-
                         echo "</tr>";
                     }
                     ?>
-
-
-                </tr>
-            </table>
-            <div class=" col-5 justify-content-center mb-2" style="text-align: center;">
-                <a href="./addproductimages.php"><button type="button" class="btn btn-success">Agregar Imagenes</button></a>
-            </div>
-            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
-                <a href="./perfil.php"><button type="button" class="btn btn-success btn btn-dark">
-                        < Volver</button></a>
-            </div>
-        </form>
-    </div>
-
-    <?php
-    for ($i = 0; $i < count($image); $i++) {
-        echo '
+                    <?php
+                    for ($i = 0; $i < count($image); $i++) {
+                        echo '
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
@@ -104,16 +89,27 @@ $image = $imageController->listimages();
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary">
-                                        <a href="../routes/image.routes.php?btnElminarImage=' .   $image[$i]->getId() . '"> Eliminar </a>
+                                    <button type="button" class="btn-primary">
+                                        <a class="btn btn-primary" href="../routes/image.routes.php?btnElminarImage=' .   $image[$i]->getId() . '"> Eliminar </a>
                                     </button>
                                 </div>
                             </div>
                             </div>
                             ';
-    }
-    ?>
+                    }
+                    ?>
 
+                </tr>
+            </table>
+            <div class=" col-5 justify-content-center mb-2" style="text-align: center;">
+                <a href="./addproductimages.php"><button type="button" class="btn btn-success">Agregar Imagenes</button></a>
+            </div>
+            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
+                <a href="./perfil.php"><button type="button" class="btn btn-success btn btn-dark">
+                        < Volver</button></a>
+            </div>
+        </form>
+    </div>
 
     <?php include '../components/footer.php' ?>
 </body>

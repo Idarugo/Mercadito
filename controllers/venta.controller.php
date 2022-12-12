@@ -150,10 +150,10 @@ class ventaProducto
     public function removeVentaListado($id)
     {
         $this->connectDB->connect();
-        $sql = "DELETE FROM `venta` WHERE id = id";
+        $sql = "DELETE FROM `venta` WHERE id=$id";
         $st = $this->connectDB->query($sql);
         $this->connectDB->disconnect();
-        header("location:  ../pages/listadoCompra.php?removedimages");
+        header("location:  ../pages/listadoCompra.php?removedCompra");
         return;
     }
 }

@@ -1,9 +1,18 @@
 <?php
 require '../core/bootstraper.php';
 require '../controllers/tipo_envio.controller.php';
+require '../controllers/tipo_pago.controller.php';
 require '../controllers/detalle_venta_envio.controller.php';
 require '../controllers/venta.controller.php';
+require '../controllers/comprobante.controller.php';
+require '../controllers/direccion.controller.php';
+
 $venta = "";
+$direccion = "";
+$envio = "";
+$pago = "";
+
+
 
 if (isset($_GET['venta'])) {
     $venta = $_GET['venta'];
@@ -12,8 +21,20 @@ if (isset($_GET['venta'])) {
 }
 $detalleVentaEnvio = new DetalleVentaEnvio($connectDB);
 $envio = new TipoDeEnvio($connectDB);
+$pago = new TipoDePago($connectDB);
+
 
 $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
+
+$direccionUsuario = new Direccion($connectDB);
+$direccion = $direccionUsuario->selectDireccion($venta);
+
+$envio = $envio->selectEnvio($venta);
+$envioDetalle = new ventaProducto($connectDB);
+
+
+$medioPago = $pago->selectPago($venta);
+
 
 
 
@@ -47,7 +68,7 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                         <div class="form-group ">
                             <img class="icon-verificado" src="../assets/images/verificado.png">
                             <h5 style="padding-left: 50px;">Pedido # ' . $detalle[$i]->getCodigo() . '</h5>
-                            <h4 style="padding-left: 50px;">Gracias nombre!</h4>
+                            <h4 style="padding-left: 50px;">Gracias ' . $direccion[$i]->getNombre() . '!</h4>
                         </div>
 
                         </br>
@@ -57,7 +78,7 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6604.393667992853!2d-70.772194!3d-34.141306!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1667779652932!5m2!1ses!2scl" width="571" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 <hr size="2px" color="black" />
                                 <h5 class="caja-3">Tu pedido está confirmado</h5>
-                                <h6>Recibirás un correo electrónico cuando tu pedido esté listo para ser retirado.</h6>
+                                <h6>Recibirás un Whatsapp cuando tu pedido esté listo para ser retirado.</h6>
                                 <hr size="2px" color="black" />
 
                                 <body style="text-align:left">Nombre: Mercadito <br>
@@ -76,7 +97,7 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                         <div class="form-group ">
                             <div class="caja">
                                 <h5 class="caja-3">Actualizaciones del pedido</h5>
-                                <h6>Recibirás actualizaciones del envío y entrega de tu pedido por correo electrónico.</h6>
+                                <h6>Recibirás actualizaciones del envío y entrega de tu pedido por medio de Whatsapp o llamada telefonica.</h6>
                             </div>
                         </div>
 
@@ -88,31 +109,29 @@ $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
                                 <div class="row">
                                     <div class="col">
                                         <h6>Información de contacto</h6>
-                                        <p>Correo</p>
 
                                         <h6>Lugar de retiro</h6>
 
-                                        <body>La Rubina 3919 <br>
-                                            Ramcagua<br>
-                                            Chile<br>
-                                            +56999066039<br>
+                                        <body>' . $direccion[$i]->getNombre() . '<br>
+                                        ' . $direccion[$i]->getDireccion() . '<br>
+                                        ' . $direccion[$i]->getComuna() . '<br>
+                                        ' . $direccion[$i]->getTelefono() . '<br>
                                         </body>
                                     </div>
 
                                     <div class="col">
                                         <h6>Metodo de pago</h6>
-                                        <p>Transferencia Electrónica - $</p>
+                                        <p>' . $medioPago[$i]->getTipo() . '- $' . $detalle[$i]->getTotal() . '</p>
 
                                         <h6>Dirección de facturación</h6>
-                                        <span>Nombre</span>
+                                        <span>' . $direccion[$i]->getNombre() . '</span>
                                         </br>
-                                        <span>Correo</span>
+                                        <span>' . $direccion[$i]->getDireccion() . '</span>
                                         </br>
-                                        <span>Casa</span>
+                                        <span>' . $direccion[$i]->getComuna() . '</span>
                                         </br>
-                                        <span>Comuna</span>
+                                        <span>' . $direccion[$i]->getTelefono() . '</span>
                                         </br>
-                                        <span>Telefono</span>
                                     </div>
                                 </div>
                             </div>

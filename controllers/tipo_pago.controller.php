@@ -48,4 +48,17 @@ class TipoDePago
         header("location:  ../pages/carrodecompra.php?id=$id");
         return;
     }
+
+    public function selectPago()
+    {
+        $lista = array();
+        $this->connectDB->connect();
+        $sql = "SELECT id, tipo FROM tipo_pago ORDER BY id ASC  ";
+        $st = $this->connectDB->query($sql);
+        while ($rs = mysqli_fetch_array($st)) {
+            $lista[] = new TipoPago($rs['id'], $rs['tipo']);;
+        }
+        $this->connectDB->disconnect();
+        return $lista;
+    }
 }

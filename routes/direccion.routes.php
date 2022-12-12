@@ -33,6 +33,6 @@ if (isset($_POST['btnagregarDireecion'])) {
         $direccion->registerDirecion($_POST["txtCodigo"], $_POST["txtNombre"], $_POST["txtDireccion"], $_POST["txtComuna"], $_POST["txtTelefono"], $_POST["txtObservacion"]);
     } elseif ($_POST["opciones"] == "2") {
         $venta->registerEnvio($_POST["txtCodigo"], $_POST["opciones"]);
-        $direccion->registerDirecion($_POST["txtCodigo"], "La Rubiana", "La Gozalina 3919", "Rancagua", "+56999066039", "Porton Grande de Madera");
+        $direccion->registerDirecion($_POST["txtCodigo"], "Mercadito", "La Rubina 3919", "Rancagua", "+56999066039", "Porton Grande de Madera");
     }
 }

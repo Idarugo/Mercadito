@@ -14,8 +14,7 @@ $produc = $producController->select();
     <?php include '../components/head.php' ?>
     <link rel="stylesheet" href="../assets/styles/main.css">
     <link rel="stylesheet" href="../assets/styles/pages/listarproductos.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -68,27 +67,16 @@ $produc = $producController->select();
                         echo "<td>" . $produc[$i]->getDescription() . "</td>";
                         echo "<td>" . $produc[$i]->getCant() . "</td>";
                         echo "<td>" . $produc[$i]->getCategory() . "</td>";
-                        echo "<td><a href='modificarproducto.php?id=" . $produc[$i]->getidPlants() . "'>Editar</a> - 
+                        echo "<td><a href='modificarproducto.php?id=" . $produc[$i]->getidPlants() . "'>Editar</a> -                                        
                         <a type='button' class='btn-primary' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>Eliminar</a></td>";
                         echo "</tr>";
                     }
                     ?>
-                </tr>
-            </table>
-            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
-                <a href="./agregarproductos.php"><button type="button" class="btn btn-success">Agregar Producto</button></a>
-            </div>
-            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
-                <a href="./perfil.php"><button type="button" class="btn btn-success btn btn-dark">
-                        < Volver</button></a>
-            </div>
-        </form>
-    </div>
 
-    <?php
-    for ($i = 0; $i < count($produc); $i++) {
-        echo '
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <?php
+                    for ($i = 0; $i < count($produc); $i++) {
+                        echo '
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -100,17 +88,31 @@ $produc = $producController->select();
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary">
-                                        <a href="../routes/plant.routes.php?btnElminarPlante=' .   $produc[$i]->getidPlants() . '"> Eliminar </a>
+                                    <button type="button" class="btn-primary">
+                                        <a class="btn btn-primary" href="../routes/plant.routes.php?btnElminarPlant=' . $produc[$i]->getidPlants() .  '"> Eliminar </a>
                                     </button>
                                 </div>
                             </div>
-                            </div>
-                            ';
-    }
-    ?>
+                        </div>
+                    </div>
+                    ';
+                    }
+                    ?>
+                </tr>
+            </table>
+            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
+                <a href="./agregarproductos.php"><button type="button" class="btn btn-success">Agregar Producto</button></a>
+            </div>
+            <div class="col-5  justify-content-center mb-2" style="text-align: center;">
+                <a href="./perfil.php"><button type="button" class="btn btn-success btn btn-dark">
+                        < Volver</button></a>
+            </div>
+
+        </form>
+    </div>
 
     <?php include '../components/footer.php' ?>
+
 </body>
 
 </html>

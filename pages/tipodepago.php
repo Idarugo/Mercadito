@@ -114,10 +114,6 @@ $envioDetalle = new ventaProducto($connectDB);
                             </div>
                             </br>
                             <div class="row">
-                                <div class="col">
-                                    <a href="./plantdetail.php"><button type="button" class="btn btn-outline-secondary">
-                                            < Volver a información</button></a>
-                                </div>
                                 <div class="col-4">
                                     <input type="submit" value="Finalizar el Pedido" class="btn btn-outline-success" name="btnagregarPago" id="btnForm">
                                 </div>

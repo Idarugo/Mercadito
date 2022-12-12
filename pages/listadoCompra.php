@@ -74,29 +74,41 @@ $venta = $ventaController->listVenta();
                         echo "</tr>";
                     }
                     ?>
+
+                    <?php
+                    for ($i = 0; $i < count($venta); $i++) {
+                        echo '
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar Compra</h1>
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar Imagen</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    ¿Está seguro de que desea eliminar Compra?
+                                    ¿Está seguro de que desea eliminar Imagen del producto?
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary" href="<?php "'../routes/venta.routes.php?btnElminarVenta=' . $venta[$i]->getCodigo() . '" ?>">Eliminar</button>
+                                    <button type="button" class="btn-primary">
+                                        <a class="btn btn-primary" href="../routes/venta.routes.php?btnElminarVenta=' . $venta[$i]->getCodigo() . '"> Eliminar </a>
+                                    </button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    ';
+                    }
+                    ?>
                 </tr>
             </table>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
                 <a href="./perfil.php"><button type="button" class="btn btn-success btn btn-dark">
                         < Volver</button></a>
             </div>
-        </form>
+
     </div>
+    </form>
     <?php include '../components/footer.php' ?>
 </body>
 
