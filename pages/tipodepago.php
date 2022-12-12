@@ -63,9 +63,9 @@ $envioDetalle = new ventaProducto($connectDB);
                             <div class="form-group ">
                                 <div class="caja">
                                     <div class="">
-                                        <div>Contacto <bdo class="derecha">' . $direccion[$i]->getNombre() . '</bdo></div>
+                                        <div>Contacto <bdo class="derecha">' . $detalle[$i]->getNombre() . '</bdo></div>
                                             <hr size="2px" color="black" />
-                                        <div>Método <bdo class="derecha">' . $envio[$i]->getTipo() . '</bdo></div>
+                                        <div>Método <bdo class="derecha">' . $detalle[$i]->getTipo() . '</bdo></div>
                                     </div>
                                 </div>
                             </div>

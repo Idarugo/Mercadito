@@ -10,8 +10,13 @@ class detalleVEnvio
     private $codigo;
     private $cantidad;
     private $total;
+    private $nombre;
+    private $direccion;
+    private $comuna;
+    private $telefono;
+    private $tipo;
 
-    function __construct($id, $image, $title, $price, $cod_pro, $codigo, $cantidad, $total)
+    function __construct($id, $image, $title, $price, $cod_pro, $codigo, $cantidad, $total, $nombre, $direccion, $comuna, $telefono, $tipo)
     {
         $this->id = $id;
         $this->image = $image;
@@ -21,6 +26,11 @@ class detalleVEnvio
         $this->codigo = $codigo;
         $this->cantidad = $cantidad;
         $this->total = $total;
+        $this->nombre = $nombre;
+        $this->direccion = $direccion;
+        $this->comuna = $comuna;
+        $this->telefono = $telefono;
+        $this->tipo = $tipo;
     }
 
     public function getid(): int
@@ -54,5 +64,25 @@ class detalleVEnvio
     public function getTotal(): int
     {
         return $this->total;
+    }
+    public function getNombre(): string
+    {
+        return $this->nombre;
+    }
+    public function getDireccion(): string
+    {
+        return $this->direccion;
+    }
+    public function getComuna(): string
+    {
+        return $this->comuna;
+    }
+    public function getTelefono(): string
+    {
+        return $this->telefono;
+    }
+    public function getTipo(): string
+    {
+        return $this->tipo;
     }
 }

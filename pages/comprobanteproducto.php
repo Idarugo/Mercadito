@@ -68,7 +68,7 @@ $medioPago = $pago->selectPago($venta);
                         <div class="form-group ">
                             <img class="icon-verificado" src="../assets/images/verificado.png">
                             <h5 style="padding-left: 50px;">Pedido # ' . $detalle[$i]->getCodigo() . '</h5>
-                            <h4 style="padding-left: 50px;">Gracias ' . $direccion[$i]->getNombre() . '!</h4>
+                            <h4 style="padding-left: 50px;">Gracias ' . $detalle[$i]->getNombre() . '!</h4>
                         </div>
 
                         </br>
@@ -112,10 +112,10 @@ $medioPago = $pago->selectPago($venta);
 
                                         <h6>Lugar de retiro</h6>
 
-                                        <body>' . $direccion[$i]->getNombre() . '<br>
-                                        ' . $direccion[$i]->getDireccion() . '<br>
-                                        ' . $direccion[$i]->getComuna() . '<br>
-                                        ' . $direccion[$i]->getTelefono() . '<br>
+                                        <body>' . $detalle[$i]->getNombre() . '<br>
+                                        ' . $detalle[$i]->getDireccion() . '<br>
+                                        ' . $detalle[$i]->getComuna() . '<br>
+                                        ' . $detalle[$i]->getTelefono() . '<br>
                                         </body>
                                     </div>
 
@@ -124,13 +124,13 @@ $medioPago = $pago->selectPago($venta);
                                         <p>' . $medioPago[$i]->getTipo() . '- $' . $detalle[$i]->getTotal() . '</p>
 
                                         <h6>Dirección de facturación</h6>
-                                        <span>' . $direccion[$i]->getNombre() . '</span>
+                                        <span>' . $detalle[$i]->getNombre() . '</span>
                                         </br>
-                                        <span>' . $direccion[$i]->getDireccion() . '</span>
+                                        <span>' . $detalle[$i]->getDireccion() . '</span>
                                         </br>
-                                        <span>' . $direccion[$i]->getComuna() . '</span>
+                                        <span>' . $detalle[$i]->getComuna() . '</span>
                                         </br>
-                                        <span>' . $direccion[$i]->getTelefono() . '</span>
+                                        <span>' . $detalle[$i]->getTelefono() . '</span>
                                         </br>
                                     </div>
                                 </div>
