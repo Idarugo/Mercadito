@@ -86,7 +86,7 @@ $produc = $producController->select();
     </div>
 
     <?php
-    for ($i = 0; $i < count($image); $i++) {
+    for ($i = 0; $i < count($produc); $i++) {
         echo '
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -101,7 +101,7 @@ $produc = $producController->select();
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                     <button type="button" class="btn btn-primary">
-                                        <a href="../routes/plant.routes.php?btnElminarPlante=' .   $produc[$i]->getId() . '"> Eliminar </a>
+                                        <a href="../routes/plant.routes.php?btnElminarPlante=' .   $produc[$i]->getidPlants() . '"> Eliminar </a>
                                     </button>
                                 </div>
                             </div>
