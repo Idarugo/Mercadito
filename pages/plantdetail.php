@@ -11,7 +11,6 @@ if (!isset($_GET['id'])) {
 }
 
 $users = new UserController($connectDB);
-$user = $users->getUsersById($id);
 
 $plant = new PlantController($connectDB);
 $Planta = $plant->getPlantById($id);
@@ -32,6 +31,9 @@ $image = $image_plants->getImageById($id);
 <body>
     <?php include '../components/header.php' ?>
     <div class="container container-main">
+        <?php
+        $user = $users->getUsersById($user->getId());
+        ?>
         <form action="../routes/venta.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
 
 

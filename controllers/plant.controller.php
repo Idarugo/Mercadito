@@ -65,7 +65,7 @@ class PlantController
     {
         $plant = "";
         $this->connectDB->connect();
-        $sql = "SELECT plants.id, title, price, description, category.category as name, image, cant, about, tips, health_benefit, primary_care, also_known_as FROM plants , category WHERE plants.category=category.id AND plants.id=$id ORDER BY `id` ASC ";
+        $sql = "SELECT plants.id, title, price, description, category.category as name, image, cant, about, tips, health_benefit, primary_care, also_known_as, estado FROM plants , category WHERE plants.category=category.id AND plants.id=$id ORDER BY `id` ASC ";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
             $plant = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['name'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as'], $rs['estado']);;
