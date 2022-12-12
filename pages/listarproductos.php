@@ -73,21 +73,6 @@ $produc = $producController->select();
                         echo "</tr>";
                     }
                     ?>
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar Producto</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ¿Está seguro de que desea eliminar el producto?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary" href="<?php "'../routes/plant.routes.php?btnElminarPlante=' . $produc[$i]->getidPlants() . '" ?>">Eliminar</button>
-                                </div>
-                            </div>
                 </tr>
             </table>
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">
@@ -99,6 +84,32 @@ $produc = $producController->select();
             </div>
         </form>
     </div>
+
+    <?php
+    for ($i = 0; $i < count($image); $i++) {
+        echo '
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar Imagen</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Está seguro de que desea eliminar Imagen del producto?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary">
+                                        <a href="../routes/plant.routes.php?btnElminarPlante=' .   $produc[$i]->getId() . '"> Eliminar </a>
+                                    </button>
+                                </div>
+                            </div>
+                            </div>
+                            ';
+    }
+    ?>
+
     <?php include '../components/footer.php' ?>
 </body>
 
