@@ -3,6 +3,7 @@ require dirname(__DIR__) . '/models/Usuario.php';
 session_start();
 $login = false;
 $isAdmin = false;
+
 if (isset($_SESSION['user'])) {
     $login = true;
     $user = $_SESSION['user'];

@@ -39,7 +39,7 @@ class PlantController
         $resp = $this->connectDB->query($sql);
         $list = array();
         while ($rs = mysqli_fetch_array($resp)) {
-            $plants = new Plant($rs[0], $rs[1], $rs[2], $rs[3], $rs[4], $rs[5], $rs[6], $rs[7], $rs[8], $rs[9], $rs[10], $rs[11]);
+            $plants = new Plant($rs[0], $rs[1], $rs[2], $rs[3], $rs[4], $rs[5], $rs[6], $rs[7], $rs[8], $rs[9], $rs[10], $rs[11], $rs[12]);
             $list[] = $plants;
         }
         $_SESSION['plants'] = $list;
@@ -52,10 +52,10 @@ class PlantController
     {
         $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT * FROM `plants` WHERE `category`= $id";
+        $sql = "SELECT * FROM `plants` WHERE `category`= $id and estado=0";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as'], $rs['estado']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -68,7 +68,7 @@ class PlantController
         $sql = "SELECT plants.id, title, price, description, category.category as name, image, cant, about, tips, health_benefit, primary_care, also_known_as FROM plants , category WHERE plants.category=category.id AND plants.id=$id ORDER BY `id` ASC ";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $plant = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['name'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $plant = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['name'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as'], $rs['estado']);;
         }
         $this->connectDB->disconnect();
         return $plant;
@@ -81,7 +81,7 @@ class PlantController
         $sql = "SELECT * FROM `plants` WHERE `id`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as'], $rs['estado']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -94,7 +94,7 @@ class PlantController
         $sql = "SELECT * FROM `plants` WHERE `id`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as'], $rs['estado']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -107,7 +107,7 @@ class PlantController
         $sql = "SELECT * FROM `plants` WHERE `id`= $id";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['category'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as'], $rs['estado']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -118,10 +118,10 @@ class PlantController
     {
         $lista = array();
         $this->connectDB->connect();
-        $sql = "SELECT plants.id, title, price, description, category.category as name, image, cant, about, tips, health_benefit, primary_care, also_known_as FROM plants , category WHERE plants.category=category.id ORDER BY `id` ASC ";
+        $sql = "SELECT plants.id, title, price, description, category.category as name, image, cant, about, tips, health_benefit, primary_care, also_known_as, estado FROM plants , category WHERE plants.category=category.id ORDER BY `id` ASC ";
         $st = $this->connectDB->query($sql);
         while ($rs = mysqli_fetch_array($st)) {
-            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['name'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as']);;
+            $lista[] = new Plant($rs['id'], $rs['title'], $rs['price'], $rs['description'], $rs['name'], $rs['image'], $rs['cant'], $rs['about'], $rs['tips'], $rs['health_benefit'], $rs['primary_care'], $rs['also_known_as'], $rs['estado']);;
         }
         $this->connectDB->disconnect();
         return $lista;
@@ -156,7 +156,8 @@ class PlantController
             $healthBenefit = $rs['health_benefit'];
             $primaryCare = $rs['primary_care'];
             $alsoKnownAs = $rs['also_known_as'];
-            $p   = new Plant($id, $title, $price, $description, $image, $category, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs);
+            $estado = $rs['estado'];
+            $p   = new Plant($id, $title, $price, $description, $image, $category, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs, $estado);
             $lista[] = $p;
         }
 
@@ -221,6 +222,40 @@ class PlantController
         }
         $this->connectDB->disconnect();
         //header("location:  ../pages/modificarusuario.php?ModifiedError");
+        return;
+    }
+
+    public function conseguirEstado($campo1, $tabla, $campo2, $id)
+    {
+        $this->connectDB->connect();
+        $sql = "select $campo1 as estado from $tabla where $campo2='$id'";
+        $ejecutar = $this->connectDB->query($sql);
+        $val = mysqli_fetch_assoc($ejecutar);
+        $this->connectDB->disconnect();
+        return $val["estado"];
+    }
+
+    public function cambiarEstado($tabla, $campo1, $est, $campo2, $id)
+    {
+        if ($est == 0) {
+            $est = 1;
+        } else {
+            $est = 0;
+        }
+        $this->connectDB->connect();
+        $sql = "update $tabla set $campo1='$est' where $campo2='$id'";
+        $ejecutar = $this->connectDB->query($sql);
+        if ($this->connectDB->affected_rows) {
+            echo "<script>
+            alert('El estado del producto se ha modificado correctamente');
+            window.location= '../pages/listarproductos.php?Bloqueado'
+            </script>";
+        } else {
+            echo "<script>
+            alert('El estado del producto se ha modificado correctamente');
+            window.location= '../pages/listarproductos.php?Error'
+            </script>";
+        }
         return;
     }
 }

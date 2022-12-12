@@ -35,6 +35,13 @@ if (isset($_POST['btnModificarImagenProduct'])) {
     $plant->updateImagenProduct($_POST["txtId"], $_FILES["txtImagen"]);
 }
 
+if (isset($_GET["btnBloquearPlant"])) {
+    $id = $_GET["btnBloquearPlant"];
+    $est = $plant->conseguirEstado("estado", "plants", "id", $id);
+    $plant->cambiarEstado("plants", "estado", $est, "id", $id);
+}
+
+
 
 /*
     *   Get Plant

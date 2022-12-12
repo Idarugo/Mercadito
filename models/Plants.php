@@ -13,9 +13,10 @@ class Plant
 	private  $healthBenefit;
 	private  $primaryCare;
 	private  $alsoKnownAs;
+	private  $estado;
 
 
-	function __construct($id, $title, $price, $description, $category, $image, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs)
+	function __construct($id, $title, $price, $description, $category, $image, $cant, $about, $tips, $healthBenefit, $primaryCare, $alsoKnownAs, $estado)
 	{
 		$this->id = $id;
 		$this->title = $title;
@@ -29,6 +30,7 @@ class Plant
 		$this->healthBenefit = $healthBenefit;
 		$this->primaryCare = $primaryCare;
 		$this->alsoKnownAs = $alsoKnownAs;
+		$this->estado = $estado;
 	}
 
 	public function getidPlants(): int
@@ -85,5 +87,9 @@ class Plant
 	public function getAlsoKnownAs(): string
 	{
 		return $this->alsoKnownAs;
+	}
+	public function getEstado(): int
+	{
+		return $this->estado;
 	}
 }

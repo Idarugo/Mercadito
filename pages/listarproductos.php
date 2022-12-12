@@ -54,6 +54,7 @@ $produc = $producController->select();
                     <td><strong>Descripcion</strong></td>
                     <td><strong>Cantidad</strong></td>
                     <td><strong>Categoria</strong></td>
+                    <td><strong>Estado</strong></td>
                     <td><strong>Opciones</strong></td>
 
                 </tr>
@@ -67,8 +68,13 @@ $produc = $producController->select();
                         echo "<td>" . $produc[$i]->getDescription() . "</td>";
                         echo "<td>" . $produc[$i]->getCant() . "</td>";
                         echo "<td>" . $produc[$i]->getCategory() . "</td>";
-                        echo "<td><a href='modificarproducto.php?id=" . $produc[$i]->getidPlants() . "'>Editar</a> -                                        
-                        <a type='button' class='btn-primary' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>Eliminar</a></td>";
+
+                        if ($produc[$i]->getEstado() == 0) {
+                            echo "<td>Habilitado</td>";
+                        } elseif ($produc[$i]->getEstado() == 1) {
+                            echo "<td>Deshabilitado</td>";
+                        }
+                        echo "<td><a href='modificarproducto.php?id=" . $produc[$i]->getidPlants() . "'>Editar</a>-<a href='../routes/plant.routes.php?btnBloquearPlant=" . $produc[$i]->getidPlants() . "'>Bloquear</a></td>";
                         echo "</tr>";
                     }
                     ?>

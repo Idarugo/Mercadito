@@ -25,7 +25,6 @@ class AuthController
             }
             session_start();
             $_SESSION['user'] = $user;
-            $_SESSION['id'] = $rs['id'];
             $this->connectDB->disconnect();
             header("location:  ../index.php");
             return;

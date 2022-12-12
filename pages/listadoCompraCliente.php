@@ -5,7 +5,6 @@ $usuario = "";
 
 
 $ventaController = new ventaDetalle($connectDB);
-$venta = $ventaController->listVentaCliente($usuario);
 
 ?>
 
@@ -23,7 +22,10 @@ $venta = $ventaController->listVentaCliente($usuario);
     <?php include '../components/header.php' ?>
     <div class="container container-main">
         <h1>Compra</h1>
+        <?php
 
+        $venta = $ventaController->listVentaCliente($user->getId());
+        ?>
         <form class="row g-3 justify-content-center">
             <table class="styled-table">
                 <tr>
