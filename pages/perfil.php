@@ -52,23 +52,22 @@
         ';
     } elseif ($rol == 2) {
         echo '
-        <form action="../routes/auth.routes.php" method="POST">
+        <form class="pantallaCliente" action="../routes/auth.routes.php" method="POST">
 
                 <h1>Mi cuenta</h1>
                 <div class="row">
                     <a class="btn btn-primary col-md-2 offset-md-5" href="./login.php" role="button">Cerrar Sesión</a>
                 </div>
 
-                <div class="cliente container overflow-hidden text-center">
+                <div class="container overflow-hidden text-center">
                     <div class="row gx-5">
                         <div class="col">
-                            <h3>Historial de pedidos</h3>
-                            <h5>No ha realizado algún pedido aún.</h5>
-
+                            <h3>Listado de Pedido</h3>
+                            <a class="btn btn-primary col-md-5 mb-3"" href=" ../pages/listadoCompraCliente.php" role="button">Lista de Compra</a>
                         </div>
                         <div class="col">
                             <h3>Detalles de la cuenta</h3>
-                            <center><img class="fotoperfil rounded-circle" src="data:imagen/jpg;base64,' . base64_encode($user->getImagen()) . '"></center>
+                            <center><img class="fotoperfil rounded-circle" src="data:imagen/jpg;base64,' .  base64_encode($user->getImagen()) . '"></center>
                             <h5>' . $user->getNombre() . '</h5>
                             <h5>' . $user->getCorreo() . '</h5>
                             <h5>******</h5>
