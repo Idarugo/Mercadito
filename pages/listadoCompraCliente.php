@@ -1,9 +1,11 @@
 <?php
 require '../core/bootstraper.php';
 require '../controllers/ventaDetalle.controller.php';
+$usuario = "";
+
 
 $ventaController = new ventaDetalle($connectDB);
-$venta = $ventaController->listVenta();
+$venta = $ventaController->listVentaCliente($usuario);
 
 ?>
 
@@ -32,8 +34,6 @@ $venta = $ventaController->listVenta();
                     <td><strong>TIpo de Envio</strong></td>
                     <td><strong>Tipo de Pago</strong></td>
                     <td><strong>Comprobante</strong></td>
-                    <td><strong>Eliminar</strong></td>
-
                 </tr>
                 <tr>
                     <?php
@@ -46,34 +46,7 @@ $venta = $ventaController->listVenta();
                         echo "<td>" . $venta[$i]->getEnvio() . "</td>";
                         echo "<td>" . $venta[$i]->getPago() . "</td>";
                         echo "<td>" . '<img src="data:image;base64,' . base64_encode($venta[$i]->getComprobante()) . '" alt="Image" style="width:100px; height:129px;">' . "</td>";
-                        echo "<td><a type='button' class='btn-primary' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>Eliminar</a></td>";
                         echo "</tr>";
-                    }
-                    ?>
-
-                    <?php
-                    for ($i = 0; $i < count($venta); $i++) {
-                        echo '
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar Imagen</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ¿Está seguro de que desea eliminar Imagen del producto?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn-primary">
-                                        <a class="btn btn-primary" href="../routes/venta.routes.php?btnElminarVenta=' . $venta[$i]->getCodigo() . '"> Eliminar </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    ';
                     }
                     ?>
                 </tr>
