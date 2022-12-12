@@ -3,6 +3,7 @@ require '../core/bootstraper.php';
 require '../controllers/tipo_envio.controller.php';
 require '../controllers/tipo_pago.controller.php';
 require '../controllers/detalle_venta_envio.controller.php';
+require '../controllers/detalle_venta_enviofinal.controller.php';
 require '../controllers/venta.controller.php';
 require '../controllers/comprobante.controller.php';
 require '../controllers/direccion.controller.php';
@@ -18,11 +19,14 @@ if (isset($_GET['venta'])) {
 }
 
 $detalleVentaEnvio = new DetalleVentaEnvio($connectDB);
+$detalleVentaFinal = new DetalleVentaEnvioTotal($connectDB);
 $envio = new TipoDeEnvio($connectDB);
 
 $pago = new TipoDePago($connectDB);
 
 $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
+$detalleFInal = $detalleVentaFinal->selectFinalVenta($venta);
+
 
 $direccionUsuario = new Direccion($connectDB);
 $direccion = $direccionUsuario->selectDireccion($venta);
@@ -63,9 +67,9 @@ $envioDetalle = new ventaProducto($connectDB);
                             <div class="form-group ">
                                 <div class="caja">
                                     <div class="">
-                                        <div>Contacto <bdo class="derecha">' . $detalle[$i]->getNombre() . '</bdo></div>
+                                        <div>Contacto <bdo class="derecha">' . $detalleFInal[$i]->getNombre() . '</bdo></div>
                                             <hr size="2px" color="black" />
-                                        <div>Método <bdo class="derecha">' . $detalle[$i]->getTipo() . '</bdo></div>
+                                        <div>Método <bdo class="derecha">' . $detalleFInal[$i]->getTipo() . '</bdo></div>
                                     </div>
                                 </div>
                             </div>

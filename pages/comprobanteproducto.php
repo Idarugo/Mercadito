@@ -3,6 +3,7 @@ require '../core/bootstraper.php';
 require '../controllers/tipo_envio.controller.php';
 require '../controllers/tipo_pago.controller.php';
 require '../controllers/detalle_venta_envio.controller.php';
+require '../controllers/detalle_venta_enviofinal.controller.php';
 require '../controllers/venta.controller.php';
 require '../controllers/comprobante.controller.php';
 require '../controllers/direccion.controller.php';
@@ -20,11 +21,14 @@ if (isset($_GET['venta'])) {
     header("location:  ./carrodecompra.php");
 }
 $detalleVentaEnvio = new DetalleVentaEnvio($connectDB);
+$detalleVentaFinal = new DetalleVentaEnvioTotal($connectDB);
 $envio = new TipoDeEnvio($connectDB);
 $pago = new TipoDePago($connectDB);
 
 
 $detalle = $detalleVentaEnvio->selectDetalleVenta($venta);
+$detalleFInal = $detalleVentaFinal->selectFinalVenta($venta);
+
 
 $direccionUsuario = new Direccion($connectDB);
 $direccion = $direccionUsuario->selectDireccion($venta);
@@ -67,8 +71,8 @@ $medioPago = $pago->selectPago($venta);
                 <div class="left col-6">
                         <div class="form-group ">
                             <img class="icon-verificado" src="../assets/images/verificado.png">
-                            <h5 style="padding-left: 50px;">Pedido # ' . $detalle[$i]->getCodigo() . '</h5>
-                            <h4 style="padding-left: 50px;">Gracias ' . $detalle[$i]->getNombre() . '!</h4>
+                            <h5 style="padding-left: 50px;">Pedido # ' . $detalleFInal[$i]->getCodigo() . '</h5>
+                            <h4 style="padding-left: 50px;">Gracias ' . $detalleFInal[$i]->getNombre() . '!</h4>
                         </div>
 
                         </br>
@@ -112,25 +116,25 @@ $medioPago = $pago->selectPago($venta);
 
                                         <h6>Lugar de retiro</h6>
 
-                                        <body>' . $detalle[$i]->getNombre() . '<br>
-                                        ' . $detalle[$i]->getDireccion() . '<br>
-                                        ' . $detalle[$i]->getComuna() . '<br>
-                                        ' . $detalle[$i]->getTelefono() . '<br>
+                                        <body>' . $detalleFInal[$i]->getNombre() . '<br>
+                                        ' . $detalleFInal[$i]->getDireccion() . '<br>
+                                        ' . $detalleFInal[$i]->getComuna() . '<br>
+                                        ' . $detalleFInal[$i]->getTelefono() . '<br>
                                         </body>
                                     </div>
 
                                     <div class="col">
                                         <h6>Metodo de pago</h6>
-                                        <p>' . $medioPago[$i]->getTipo() . '- $' . $detalle[$i]->getTotal() . '</p>
+                                        <p>' . $medioPago[$i]->getTipo() . '- $' . $detalleFInal[$i]->getTotal() . '</p>
 
                                         <h6>Dirección de facturación</h6>
-                                        <span>' . $detalle[$i]->getNombre() . '</span>
+                                        <span>' . $detalleFInal[$i]->getNombre() . '</span>
                                         </br>
-                                        <span>' . $detalle[$i]->getDireccion() . '</span>
+                                        <span>' . $detalleFInal[$i]->getDireccion() . '</span>
                                         </br>
-                                        <span>' . $detalle[$i]->getComuna() . '</span>
+                                        <span>' . $detalleFInal[$i]->getComuna() . '</span>
                                         </br>
-                                        <span>' . $detalle[$i]->getTelefono() . '</span>
+                                        <span>' . $detalleFInal[$i]->getTelefono() . '</span>
                                         </br>
                                     </div>
                                 </div>
