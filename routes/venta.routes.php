@@ -8,7 +8,7 @@ $codigo = "";
 if (isset($_POST['btnagregarCarro'])) {
     if (empty($_POST["txtUsuario"])) {
         echo "<script>
-        alert('Su Venta no se agrego al carro de compra correctamente');
+        alert('La Venta no se agrego al carro de compra correctamente');
         window.location= '../pages/plantdetail.php?txtEmptyError'
         </script>";
         return;
@@ -25,7 +25,7 @@ if (isset($_POST['btnagregarCarro'])) {
 if (isset($_POST['btnagregarEnvio'])) {
     if (empty($_POST["txtTotal"]) || empty($_POST["tipoEnvio"]) || empty($_POST["txtDireccion"]) || empty($_POST["txtTipoPago"])) {
         echo "<script>
-        alert('Su Venta no se agrego al carro de compra correctamente');
+        alert('La Venta no se agrego al carro de compra correctamente');
         window.location= '../pages/plantdetail.php?txtEmptyError'
         </script>";
         return;

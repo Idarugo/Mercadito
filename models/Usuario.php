@@ -33,10 +33,10 @@ class Usuario{
     public function getPass():string {
         return $this->pass;
     }
-    public function getImagen():string {
+    public function getImagen() {
         return $this->imagen;
     }
-    public function getdireccion():string {
+    public function getdireccion() {
         return $this->direccion;
     }
     public function getRol():int {
@@ -46,4 +46,3 @@ class Usuario{
         return $this->estado;
     }
 }
-?>

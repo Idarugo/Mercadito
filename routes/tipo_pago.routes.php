@@ -10,7 +10,7 @@ $pago = new TipoDePago($connectDB);
 if (isset($_POST['btnagregarPago'])) {
     if (empty($_POST["txtEnvio"])) {
         echo "<script>
-        alert('Su Direccion no se agrego al carro de compra correctamente');
+        alert('El pago no se realizo correctamente');
         window.location= '../pages/plantdetail.php?txtEmptyError'
         </script>";
         return;

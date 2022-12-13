@@ -43,7 +43,7 @@ $ventaController = new ventaDetalle($connectDB);
                         echo "<tr>";
                         echo "<td>" . $venta[$i]->getNombre() . "</td>";
                         echo "<td>" . $venta[$i]->getProducto() . "</td>";
-                        echo "<td>" . $venta[$i]->getCantidad() . "</td>";
+                        echo "<td>$" . $venta[$i]->getCantidad() . "</td>";
                         echo "<td>" . $venta[$i]->getTotal() . "</td>";
                         echo "<td>" . $venta[$i]->getEnvio() . "</td>";
                         echo "<td>" . $venta[$i]->getPago() . "</td>";

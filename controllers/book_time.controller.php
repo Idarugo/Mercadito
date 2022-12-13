@@ -73,7 +73,7 @@ class bookTimeController
         if ($this->connectDB->getDB()->affected_rows) {
             session_start();
             echo "<script>
-            alert('La Hora de visita ha sido modificado correctamente');
+            alert('La reserva de visita se ha modificado correctamente');
             window.location= '../pages/listarbook.php?edited'
             </script>";
             return;

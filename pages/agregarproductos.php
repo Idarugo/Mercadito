@@ -62,7 +62,7 @@ $category = new CategoryController($connectDB);
             </div>
             <div class="col-5">
                 <label for="inputAddress2" class="form-label">Precio</label>
-                <input type="number" class="form-control" id="inputAddress2" placeholder="" name="txtPrice">
+                <input type="number" class="form-control" id="inputAddress2" placeholder="$" name="txtPrice">
             </div>
             <div class="col-5">
                 <label for="inputAddress2" class="form-label">Cantidad</label>

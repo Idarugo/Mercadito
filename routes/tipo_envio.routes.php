@@ -10,7 +10,7 @@ $envio = new TipoDeEnvio($connectDB);
 if (isset($_POST['btnagregarEnvio'])) {
     if (empty($_POST["txtEnvio"]) || ($_POST["txtVenta"])) {
         echo "<script>
-        alert('Su Direccion no se agrego al carro de compra correctamente');
+        alert('El envio no se registro correctamente');
         window.location= '../pages/plantdetail.php?txtEmptyError'
         </script>";
         return;

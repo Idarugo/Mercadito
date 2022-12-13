@@ -13,11 +13,11 @@
         <h1>Información personal</h1>
         <p>Por favor verifique su información personal antes de modificarla.</p>
         <div class="col-md-12" onclick="redirectTo('pages/modifyimage.php')">
-            <center><img class="rounded rounded-circle" src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>"></center>
+            <center><img class="rounded rounded-circle" onerror="this.src='../assets/images/icono-defecto.png';" src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>"></center>
         </div>
         <form action="../routes/user.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
             <div class="col-md-10">
-                <input type="hidden" class="form-control" id="inputId" name="txtId" value="<?php echo $user->getId(); ?>">
+                <input type="hidden" class="form-control" id="foo" name="txtId" value="<?php echo $user->getId(); ?>">
             </div>
             <div class="col-md-5">
                 <label for="inputName" class="form-label">Nombre</label>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-5">
                 <label for="validationCustom03" class="form-label">Direccion</label>
-                <input type="text" class="form-control" id="validationCustom03" name="txtDireccion" value="<?php echo $user->getDireccion(); ?>" required>
+                <input type="text" class="form-control" id="validationCustom03" name="txtDireccion" value="<?php echo $user->getDireccion(); ?>" required placeholder="Direccion">
             </div>
             <div class="col-md-5">
                 <label for="inputEmail4" class="form-label">Contraseña</label>

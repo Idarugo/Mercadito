@@ -64,7 +64,7 @@ $venta = $ventaController->listVenta();
                         echo "<td>" . $venta[$i]->getNombre() . "</td>";
                         echo "<td>" . $venta[$i]->getProducto() . "</td>";
                         echo "<td>" . $venta[$i]->getCantidad() . "</td>";
-                        echo "<td>" . $venta[$i]->getTotal() . "</td>";
+                        echo "<td>$" . $venta[$i]->getTotal() . "</td>";
                         echo "<td>" . $venta[$i]->getEnvio() . "</td>";
                         echo "<td>" . $venta[$i]->getPago() . "</td>";
                         echo "<td>" . '<img src="data:image;base64,' . base64_encode($venta[$i]->getComprobante()) . '" alt="Image" style="width:100px; height:129px;">' . "</td>";

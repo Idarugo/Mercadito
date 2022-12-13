@@ -6,7 +6,6 @@
                 <div class="single_ftr">
                     <h4 class="sf_title">INFORMACIÓN</h4>
                     <ul>
-                        <li><a onclick="redirectTo('pages/info/seguimientodepedido.php')">Seguimiento de pedidos</a></li>
                         <li><a onclick="redirectTo('pages/info/politicadedespachos.php')">Política de despachos</a></li>
                         <li><a onclick="redirectTo('pages/contactenos.php')">Contáctanos</a></li>
                         <li><a onclick="redirectTo('pages/devoluciones.php')">Devoluciones</a></li>

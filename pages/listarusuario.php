@@ -60,7 +60,11 @@ $lista = $userController->Userlist();
                         echo "<tr>";
                         echo "<td>" . $lista[$i]->getNombre()  . "</td>";
                         echo "<td>" . $lista[$i]->getCorreo() . "</td>";
-                        echo "<td>" . $lista[$i]->getdireccion() . "</td>";
+                        if (is_null($lista[$i]->getdireccion())) {
+                            echo "<td>...</td>";
+                        } else {
+                            echo "<td>" . $lista[$i]->getdireccion() . "</td>";
+                        }
                         if ($lista[$i]->getEstado() == 0) {
                             echo "<td>Habilitado</td>";
                         } elseif ($lista[$i]->getEstado() == 1) {

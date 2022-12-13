@@ -67,7 +67,7 @@
                         </div>
                         <div class="col">
                             <h3>Detalles de la cuenta</h3>
-                            <center><img class="fotoperfil rounded-circle" src="data:imagen/jpg;base64,' .  base64_encode($user->getImagen()) . '"></center>
+                            <center><img class="fotoperfil rounded-circle"  src="data:imagen/jpg;base64,' .  base64_encode($user->getImagen()) . '"></center>
                             <h5>' . $user->getNombre() . '</h5>
                             <h5>' . $user->getCorreo() . '</h5>
                             <h5>******</h5>

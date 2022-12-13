@@ -64,7 +64,7 @@ $produc = $producController->select();
                     for ($i = 0; $i < count($produc); $i++) {
                         echo "<tr>";
                         echo "<td>" . $produc[$i]->geTitle()  . "</td>";
-                        echo "<td>" . $produc[$i]->getPrice() . "</td>";
+                        echo "<td>$" . $produc[$i]->getPrice() . "</td>";
                         echo "<td>" . $produc[$i]->getDescription() . "</td>";
                         echo "<td>" . $produc[$i]->getCant() . "</td>";
                         echo "<td>" . $produc[$i]->getCategory() . "</td>";

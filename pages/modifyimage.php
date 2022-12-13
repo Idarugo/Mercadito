@@ -12,7 +12,7 @@
     <div class="container container-main">
         <h1>Cambiar Imagen</h1>
         <div class="col-md-12">
-            <center><img class="rounded rounded-circle" src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>"></center>
+            <center><img class="rounded rounded-circle" onerror="this.src='../assets/images/icono-defecto.png';" src="data:imagen/jpg;base64,<?php echo base64_encode($user->getImagen()); ?>"></center>
         </div>
         <form action="../routes/user.routes.php" method="POST" class="row g-3 justify-content-center" enctype="multipart/form-data">
             <div class="col-md-10">
