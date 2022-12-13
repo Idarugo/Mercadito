@@ -22,7 +22,7 @@ class BlogController
             $this->connectDB->disconnect();
             echo "<script>
             alert('Blog agregado correctamente');
-            window.location= '../pages/agregarblog.php?created'
+            window.location= '../pages/listarblog.php?created'
             </script>";
             return;
         }
