@@ -53,26 +53,26 @@ $plant = new PlantController($connectDB);
             </div>
             <div class="col-md-5">
                 <label for="imagen" class="form-label">Imagen del Producto 1</label>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen1" multiple>
+                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen1" multiple required>
             </div>
 
             <div class="col-md-5">
                 <label for="imagen" class="form-label">Imagen del Producto 2</label>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen2" multiple>
+                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen2" multiple required>
             </div>
 
             <div class="col-md-5">
                 <label for="imagen" class="form-label">Imagen del Producto 3</label>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen3" multiple>
+                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen3" multiple required>
             </div>
 
             <div class="col-md-5">
                 <label for="imagen" class="form-label">Imagen del Producto 4</label>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen4" multiple>
+                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen4" multiple required>
             </div>
             <div class="col-md-5">
                 <label for="imagen" class="form-label">Imagen del Producto 5</label>
-                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen5" multiple>
+                <input class="form-control" type="file" id="formFileMultiple" name="txtImagen5" multiple required>
             </div>
 
             <div class="col-5  justify-content-center mb-2" style="text-align: center;">

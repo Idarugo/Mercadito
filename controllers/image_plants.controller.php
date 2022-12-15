@@ -24,7 +24,7 @@ class ImageController
         if ($this->connectDB->getDB()->affected_rows) {
             echo "<script>
             alert('Imagenes agregado correctamente');
-            window.location= '../pages/perfil.php?created'
+            window.location= '../pages/listimages.php?created'
             </script>";
             return;
         }
