@@ -1,0 +1,200 @@
+/* Estilos generales */
+body {
+    background-color: #fafafa;
+    font-family: Arial, sans-serif;
+}
+
+
+.header-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-bottom: 40px; /* Ajusta el valor del relleno inferior según sea necesario */
+    padding-top: 80px; /* Aumenta el valor del relleno superior según sea necesario */
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.intro {
+    color: #999;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.blog-posts {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.blog-post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 40px; /* Ajusta el valor del margen inferior según sea necesario */
+    padding: 20px;
+    position: relative;
+}
+
+
+.blog-post img {
+    height: 200px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.blog-post h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.date {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.excerpt {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    background-color: #007bff;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.overlay {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+}
+
+.overlay:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.overlay a {
+    background-color: #007bff;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.overlay a:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para nuevos productos y servicios */
+.products-services {
+    margin-top: 40px;
+}
+
+.product-service {
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.product-service img {
+    border-radius: 50%;
+    height: 80px;
+    margin-right: 20px;
+    object-fit: cover;
+    width: 80px;
+}
+
+.product-service h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product-service p {
+    color: #666;
+    font-size: 16px;
+}
+
+.product-service a {
+    background-color: #007bff;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.product-service a:hover {
+    background-color: #0056b3;
+}
+
+.read-more {
+    background-color: #333;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #666;
+}
+
+.read-more-container {
+    margin-top: 10px; /* Ajusta el valor según necesites */
+}
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .blog-posts {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .product-service {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .product-service img {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .header-container {
+        padding-bottom: 20px; /* Ajusta el valor del relleno inferior según sea necesario */
+        padding-top: 60px; /* Ajusta el valor del relleno superior según sea necesario */
+        /* Otros estilos específicos para dispositivos móviles */
+    }
+}

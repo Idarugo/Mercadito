@@ -1,0 +1,165 @@
+/* Estilos del formulario de contacto */
+.contact-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  margin-top: 80px; /* añadido para separar el título del encabezado */
+  max-width: 600px;
+  width: 90%;
+}
+
+.contact-form label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+
+
+.contact-form button[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+/* Estilos de la sección de ubicación */
+.contact-location {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem auto;
+  max-width: 800px;
+  width: 90%;
+}
+
+.contact-location__info {
+  margin-bottom: 2rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+.contact-location__info h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.contact-location__info p {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.contact-location__map {
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  height: 300px;
+  max-width: 400px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Estilos del div dividido en tres partes */
+.contact-info {
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 1rem;
+  width: 90%;
+}
+
+.contact-info__item {
+  align-items: center;
+  display: flex;
+  flex-basis: 33%;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.contact-info__item img {
+  margin-bottom: 1rem;
+}
+
+.contact-info__item h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info__item p {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 600px) {
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-location {
+    width: 100%;
+  }
+
+  .contact-location__info {
+    margin-bottom: 2rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-location__map {
+    height: 200px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .contact-info__item {
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .contact-info__item img {
+    margin-bottom: 0.5rem;
+  }
+}

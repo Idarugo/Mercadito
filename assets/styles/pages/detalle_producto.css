@@ -1,0 +1,141 @@
+        /* Estilos para la imagen del producto */
+        .producto-img-container img {
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .producto-imagen {
+            margin-left: 10px; /* Agrega el margen izquierdo deseado */
+            margin-top: 10px; /* Agrega el margen superior deseado */
+        }
+        
+
+        /* Estilos para la información del producto */
+        .producto-info-container {
+            padding: 20px;
+        }
+
+        .producto-nombre {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .producto-precio {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .producto-descripcion {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .producto-caracteristicas {
+            font-size: 16px;
+            list-style-type: disc;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .producto-garantia {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para el campo de cantidad */
+.producto-cantidad {
+    border: 1px solid #ccc; /* Establece el borde según tus preferencias */
+    font-size: 16px; /* Ajusta el tamaño de fuente según tus preferencias */
+    padding: 8px;
+    text-align: center;
+    width: 50px; /* Ajusta el ancho según tus necesidades */
+  }
+  
+  /* Estilo para el botón de "Agregar al carrito" */
+  .producto-agregar-carrito {
+    background-color: #007bff; /* Establece el color de fondo según tus preferencias */
+    border: none;
+    color: #fff; /* Establece el color de texto según tus preferencias */
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px; /* Ajusta el tamaño de fuente según tus preferencias */
+    margin-top: 10px; /* Ajusta el margen superior según tus necesidades */
+    padding: 10px 20px; /* Ajusta el relleno según tus necesidades */
+    /* Agrega estilos de animación o hover según tus preferencias */
+  }
+  
+  /* Estilo para el botón de "Agregar al carrito" en estado de hover */
+  .producto-agregar-carrito:hover {
+    /* Agrega estilos de hover según tus preferencias */
+    background-color: #0056b3; /* Cambia el color de fondo en estado de hover */
+  }
+
+  /* Estilo para el título de la sección de productos relacionados */
+  .producto-titulo-relacionado {
+    font-size: 24px; /* Ajusta el tamaño de fuente según tus preferencias */
+    margin-bottom: 20px; /* Ajusta el margen inferior según tus necesidades */
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  /* Estilo para el contenedor de los productos relacionados */
+  .producto-relacionado-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+  }
+  
+  /* Estilo para las imágenes de productos relacionados */
+  .producto-relacionado-container img {
+    cursor: pointer;
+    height: 100px; /* Ajusta la altura de las imágenes según tus preferencias */
+    margin: 0 10px; /* Ajusta el margen horizontal entre las imágenes según tus necesidades */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    width: 100px; /* Ajusta el ancho de las imágenes según tus preferencias */
+  }
+
+  .producto-relacionado-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos de navegación para el carrusel */
+.owl-prev,
+.owl-next {
+    color: #000; /* Ajusta el color de los botones de navegación según tus preferencias */
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.owl-prev {
+    left: -30px; /* Ajusta la posición del botón de navegación previo según tus necesidades */
+}
+
+.owl-next {
+    right: -30px; /* Ajusta la posición del botón de navegación siguiente según tus necesidades */
+}
+
+/* Ajustar altura de las imágenes en el carrusel */
+.imgCarrusel{
+    height: 300px; /* Cambiar el valor según tu preferencia */
+    object-fit: cover; /* Para mantener la proporción de la imagen y recortarla si es necesario */
+    width: 200px;
+}
+
+/* Centrar el carrusel en el medio de su contenedor */
+.owl-carousel {
+    align-items: center; /* Centra verticalmente */
+    display: flex; /* Cambia el display a flex para poder centrar verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    margin: 0 auto; /* Aplica margen automático a los lados para centrar horizontalmente */
+    max-width: 100%; /* Asegura que el carrusel no se desborde del contenedor */
+}
+

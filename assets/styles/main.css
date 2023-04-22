@@ -1,0 +1,96 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url("./components/header.css");
+@import url("./components/banner.css");
+@import url("./components/whatsapp.css");
+@import url("./components/footer.css");
+
+/* carrusel */
+.carousel-inner .carousel-item img {
+  height: 400px; /* Establece una altura fija para las imágenes en el carrusel */
+  object-fit: contain; /* La imagen se adapta al ancho del carrusel sin recortarla ni deformarla */
+  width: 100%; /* El ancho de la imagen se establece al 100% del ancho del carrusel */
+}
+
+html {
+  width: 100%;
+}
+
+
+
+.carousel-inner {
+  max-height: 100vh; /* Altura máxima del carrusel ajustada al 100% del alto de la ventana del navegador */
+  width: 100%; /* El carrusel ocupa todo el ancho disponible */
+}
+
+.carousel-inner .carousel-item {
+  height: 100%; /* La imagen ocupa todo el alto del carrusel */
+  width: 100%; /* La imagen ocupa todo el ancho del carrusel */
+}
+
+
+/*QUien somos*/
+.pocision {
+    font-weight: bold;
+    margin: 0px auto;
+    margin-top: 2%;
+    position: relative;
+    text-align: center;
+  }
+
+
+  .service-item {
+    text-align: center;
+}
+
+
+/* Estilo para el contenedor de las preguntas frecuentes */
+#preguntas-frecuentes {
+    margin-top: 2rem;
+  }
+  
+  /* Estilo para los botones de las preguntas */
+  .accordion-button {
+    background-color: #f5f5f5;
+    border: none;
+    box-shadow: none;
+    color: #212529;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  /* Estilo para los botones activos de las preguntas */
+  .accordion-button:not(.collapsed) {
+    background-color: #fff;
+  }
+  
+  /* Estilo para el contenido de las respuestas */
+  .accordion-body {
+    background-color: #f5f5f5;
+    color: #212529;
+    padding: 1rem;
+  }
+  
+
+/*Carrusel Testimonios*/
+
+.imgTestimonios {
+    height: auto;
+    max-height: 200px; /* ajustar a la altura deseada */
+    max-width: 100%;
+  }
+  
+
+/*Horario disponible*/
+.horario-table {
+    margin: 0 auto;
+    /* Centra la tabla horizontalmente */
+    text-align: center;
+    /* Centra el contenido de las celdas verticalmente */
+}
+
+.horario-table th,
+.horario-table td {
+    padding: 10px;
+    /* Añade un poco de espacio alrededor del contenido de las celdas */
+}

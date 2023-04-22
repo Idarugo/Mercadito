@@ -1,0 +1,104 @@
+.cardProducto{
+    width: 320px;
+}
+
+.producto-section {
+    margin-bottom: 15px;
+}
+
+.producto-section h2 {
+    margin-bottom: 10px;
+}
+
+.producto-section .row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.producto-section .col-md-4 {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.producto-section .card-img-top {
+    aspect-ratio: 1/1;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.producto-section .card-body {
+    padding: 10px;
+}
+.card-img-container {
+    overflow: hidden;
+    padding-top: 100%; /* Mantener relación de aspecto 1:1 (cuadrado) */
+    position: relative;
+}
+
+.card-img-container img {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    object-fit: contain;
+    object-position: center; /* Centrar la imagen dentro del div sin deformarla */
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  
+  .product-image {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .product-image:hover {
+    transform: rotate(5deg) scale(1.1);
+  }
+
+  .product-title {
+    color: #ff6b6b;
+  }
+  
+  .product-price {
+    color: #2ecc71;
+  }
+  
+
+  
+  /* Ejemplo de media query para diseño responsivo */
+@media (max-width: 768px) {
+    .product-image {
+      height: auto;
+      width: 100%;
+    }
+  
+    .product-title,
+    .product-price {
+      text-align: center;
+    }
+  }
+
+  .product-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .product-price {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+  }
+  

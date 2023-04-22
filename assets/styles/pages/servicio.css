@@ -1,0 +1,90 @@
+/* Estilos para los servicios */
+.services-section {
+    padding: 4rem 0;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    flex-basis: calc(33.33% - 1rem);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card-header {
+    align-items: center;
+    background-color: #1c3c67;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  
+  .card-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-header button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .card-header button:hover {
+    color: #f1c40f;
+  }
+  
+  .card-body {
+    display: none;
+    padding: 1rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .card-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .card-list li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .show {
+    display: block !important;
+  }
+  
+  
+  /* Estilos para responsive */
+  @media screen and (max-width: 768px) {
+    .card {
+      flex-basis: calc(50% - 1rem);
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .card {
+      flex-basis: 100%;
+    }
+  }
+  

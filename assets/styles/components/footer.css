@@ -1,0 +1,239 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+* {
+  font-family: Open Sans;
+}
+
+section {
+  background: #eeeeee;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+  height: 50vh;
+  margin-bottom: 100px; /* Agregar margen inferior para evitar que el contenido se solape con el footer */
+  text-align: center;
+  text-decoration: underline;
+  width: 100%;
+
+}
+
+/* Agregar estas propiedades al footer-distributed */
+.footer-distributed {
+    background: #666;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    font: bold 16px sans-serif;
+    margin-bottom: 0px; /* Añade un margen inferior para que no tape el contenido debajo */
+    padding: 55px 50px;
+    text-align: left;
+    width: 100%;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-right {
+    flex: 2;
+}
+
+.footer-right p {
+    color: #777;
+    font-size: 14px;
+    margin-top: 24px;
+    text-align: justify;
+}
+
+.footer-right .footer-company-about span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.footer-icons {
+    margin-top: 24px;
+}
+
+.footer-icons a {
+    color: #777;
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.footer-icons i {
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-icons a:hover i {
+    color: #00bcd4;
+}
+
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	color:  inherit;
+	display:inline-block;
+  font-weight:400;
+	line-height: 1.8;
+	text-decoration: none;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	border-radius: 50%;
+	color: #ffffff;
+	font-size: 25px;
+	height: 38px;
+	line-height: 42px;
+	margin: 10px 15px;
+	text-align: center;
+	vertical-align: middle;
+	width: 38px;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	color: #ffffff;
+	display: inline-block;
+  font-weight:400;
+	margin:0;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-size:14px;
+	font-weight: normal;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  color: #fff;
+  content: "|";
+  display: inline-block;
+  font-size: 20px;
+  font-weight:300;
+  left: 0;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 20px;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	color:  #ffffff;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	background-color:  #33383b;
+	border-radius: 2px;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+
+	font-size: 20px;
+	height: 35px;
+	line-height: 35px;
+	margin-bottom: 5px;
+
+	margin-right: 3px;
+	text-align: center;
+	width: 35px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		margin-bottom: 40px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}

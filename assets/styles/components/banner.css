@@ -1,0 +1,28 @@
+.banner {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    justify-content: center;
+    margin: 0px auto;
+    position: relative;
+    width: 100%;
+}
+
+.banner .banner__img {
+    background-attachment: fixed;
+    background-image: url('../../images/principal.png');
+    background-position: center;
+    background-size: 100% auto;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -100;
+}
+
+
+.banner p {
+    color: coral;
+    font-size: 18px;
+}

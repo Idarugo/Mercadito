@@ -1,0 +1,66 @@
+/* Banner */
+.banner {
+    background-image: url('../../../img/quienSomos/banner_quienSomos.png');
+}
+
+/* Texto justificado */
+.quienes-somos p.text-justify {
+    text-align: justify;
+}
+
+/* Contenedor de sección */
+.quienes-somos {
+    background-color: #f7f7f7;
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+/* Títulos */
+.quienes-somos h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+/* Párrafos */
+.quienes-somos p {
+    font-size: 1.1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Imágenes */
+.quienes-somos img {
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+}
+
+/* Subtítulos */
+.quienes-somos h4 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-top: 1rem;
+}
+
+/* Párrafos centrados */
+.quienes-somos p.text-center {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* Eliminar subrayado de enlaces */
+.quienes-somos a {
+    text-decoration: none;
+}
+
+/* Estilos responsive */
+@media screen and (max-width: 768px) {
+    .quienes-somos {
+        height: auto;
+        padding-bottom: 2rem;
+    }
+}
